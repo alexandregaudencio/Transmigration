@@ -52,51 +52,56 @@ public class PlayerController : MonoBehaviour
         playerRigidbody2D.velocity = new Vector2(Input.GetAxis("Horizontal")*Time.fixedDeltaTime*speed, playerRigidbody2D.velocity.y);
     }
 
+    //void ProcessJatpack()
+    //{
+
+    //    if (isGround)
+    //    {
+    //        if (Input.GetKeyDown(jetpackInput))
+    //        {
+    //            playerRigidbody2D.AddForce(new Vector2(playerRigidbody2D.velocity.x, impulse), ForceMode2D.Impulse);
+    //        }
+    //    } 
+
+
+
+    //    if(canJatpack)
+    //    {
+
+    //        if (Input.GetKey(jetpackInput) ) {
+    //            if(Mathf.Round(playerRigidbody2D.velocity.y) <= maxYVelocity)
+    //            {
+    //                playerRigidbody2D.AddForce(new Vector2(0, jatpackImpulse), ForceMode2D.Force);
+    //                GetComponent<SpriteRenderer>().color = Color.blue;
+    //            }
+
+    //        } else
+    //        {
+    //            GetComponent<SpriteRenderer>().color = Color.yellow;
+
+    //        }
+    //    }
+
+
+
+
+    //    if(!IsGround && Mathf.Round(playerRigidbody2D.velocity.y) < minFloatingToJatpack && !canJatpack)
+    //    {
+
+    //        canJatpack = true;
+    //        GetComponent<SpriteRenderer>().color = Color.yellow;
+
+    //    } 
+
+
+    //}
+
+
+
     void ProcessJatpack()
     {
-
-        if (isGround)
-        {
-            if (Input.GetKeyDown(jetpackInput))
-            {
-                playerRigidbody2D.AddForce(new Vector2(playerRigidbody2D.velocity.x, impulse), ForceMode2D.Impulse);
-            }
-        } 
-
-
-
-        if(canJatpack)
-        {
-
-            if (Input.GetKey(jetpackInput) ) {
-                if(Mathf.Round(playerRigidbody2D.velocity.y) <= maxYVelocity)
-                {
-                    playerRigidbody2D.AddForce(new Vector2(0, jatpackImpulse), ForceMode2D.Force);
-                    GetComponent<SpriteRenderer>().color = Color.blue;
-                }
-
-            } else
-            {
-                GetComponent<SpriteRenderer>().color = Color.yellow;
-
-            }
-        }
-           
-
-
-
-        if(!IsGround && Mathf.Round(playerRigidbody2D.velocity.y) < minFloatingToJatpack && !canJatpack)
-        {
-
-            canJatpack = true;
-            GetComponent<SpriteRenderer>().color = Color.yellow;
-
-        } 
-
-
+        playerRigidbody2D.velocity = new Vector2( playerRigidbody2D.velocity.x , Input.GetAxis("Vertical") * speed * Time.fixedDeltaTime);
     }
-
-
 
 
     private void OnCollisionEnter2D(Collision2D collision)

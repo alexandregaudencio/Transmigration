@@ -15,13 +15,21 @@ public class WeaponBase : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            GetComponent<SpriteRenderer>().enabled = true;
+        } 
+        if(Input.GetMouseButtonUp(0))
+        {
             Shoot();
+
+            GetComponent<SpriteRenderer>().enabled = false;
+
         }
     }
 
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
 
 
     }

@@ -42,3 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2255884237
+    locked: 0
+  - name: Ground
+    uniqueID: 1491418317
+    locked: 0
+  - name: Overground
+    uniqueID: 3803649033
+    locked: 0
+  - name: Characters
+    uniqueID: 226871943
+    locked: 0
+  - name: EffectsOver
+    uniqueID: 2289375097
+    locked: 0
+  - name: HUD
+    uniqueID: 602530753
+    locked: 0
