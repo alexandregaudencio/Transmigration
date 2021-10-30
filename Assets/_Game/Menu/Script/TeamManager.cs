@@ -13,26 +13,28 @@ public class TeamManager : PhotonTeamsManager
 
     }
 
-    public void TeamDefinition(Player newPlayer)
+
+    //define time e index do player
+    public void SetTeam(Player newPlayer)
     {
         int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
         if (playerCount % 2 == 1)
         {
             newPlayer.JoinTeam(2);
             TryGetTeamMembers(2, out playersTeam);
-            SetIndexPlayerProp(newPlayer, playersTeam.Length);
+            SetIndexPlayer(newPlayer, playersTeam.Length);
         }
         else
         {
             newPlayer.JoinTeam(1);
             TryGetTeamMembers(1, out playersTeam);
-            SetIndexPlayerProp(newPlayer, playersTeam.Length);
+            SetIndexPlayer(newPlayer, playersTeam.Length);
         }
 
     }
 
     //TODO: FAZER EM RELAÇÃO AO TIME    
-    public void SetIndexPlayerProp(Player newPlayer, int index)
+    public void SetIndexPlayer(Player newPlayer, int index)
     {
         hasIndexPlayer["indexPlayer"] = index;
         newPlayer.SetCustomProperties(hasIndexPlayer);   

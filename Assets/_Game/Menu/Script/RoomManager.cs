@@ -9,76 +9,66 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [SerializeField] private TeamManager teamManager;
     [SerializeField] private Text playerCountText;
 
-    private PlayerPropertiesDefinition playerPropertiesDefinition;
-
-
     private void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
-
-        playerPropertiesDefinition = GetComponent<PlayerPropertiesDefinition>();
+        PhotonNetwork.ConnectUsingSettings();
     }
 
 
-    private void Update()
-    {
 
-        //PARA TESTES
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                StartCoroutine(transitionToCharactSelectScene());
-            }
-        }
-
-    }
-
-    //AÇÃO BOTÃO START
-    public void StartMatchmaking()
+    //AÇÃO BOTÃO Join Team
+    public void JoinTeam()
     {
         PhotonNetwork.JoinRandomRoom();
     }
 
-    //AÇÃO BOTAO BACK
-    public void StopMatchmaking()
-    {
-        PhotonNetwork.LeaveRoom();
-    }
+    ////AÇÃO BOTAO LeftTeam
+    //public void LeftTeam()
+    //{
+    //    PhotonNetwork.LeaveRoom();
+    //}
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        string roomName = Random.Range(0, 2000).ToString();
+        string roomName = "#"+Random.Range(0, 2000).ToString();
         RoomOptions roomOptions = new RoomOptions()
         {
             MaxPlayers = (byte)GameConfigs.instance.maxRoomPlayers,
             IsOpen = true
         };
         PhotonNetwork.CreateRoom(roomName, roomOptions);
+        Debug.Log("criei a sala: " + roomName);
     }
 
 
+    //QUANDO O LOCAL ENTRA NA SALA
     public override void OnJoinedRoom()
     {
-        teamManager.TeamDefinition(PhotonNetwork.LocalPlayer);
+        
+        //define seu time quando entra na sala
+        teamManager.SetTeam(PhotonNetwork.LocalPlayer);
+        //GetComponent<PlayerPropertiesDefinition>().SetCharacter();
+        Debug.Log("Entrei na sala: "+PhotonNetwork.CurrentRoom.Name);
+
         UpdatePlayercountText();
+
+
     }
 
+    //QUANDO ALGUÉM ENTRA NA SALA
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
+
+
         UpdatePlayercountText();
 
-        if (PhotonNetwork.IsMasterClient)
-        {
-            if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
-            {
-                PhotonNetwork.CurrentRoom.IsOpen = false;
-                PhotonNetwork.CurrentRoom.IsVisible = false;
-                StartCoroutine(transitionToCharactSelectScene());
-            }
-        }
 
     }
+
+    //AÇÃO BOTÃO START
+
+
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
@@ -86,19 +76,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
 
 
-    IEnumerator transitionToCharactSelectScene()
-    {
-        playerPropertiesDefinition.SetCharacter();
-        yield return new WaitForSeconds(1);
-        PhotonNetwork.LoadLevel(GameConfigs.instance.gameplaySceneIndex);
 
-    }
 
     private void UpdatePlayercountText()
     {
         playerCountText.text = PhotonNetwork.CurrentRoom.PlayerCount + " de " + PhotonNetwork.CurrentRoom.MaxPlayers;
     }
-
 
 
 

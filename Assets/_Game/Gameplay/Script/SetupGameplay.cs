@@ -12,20 +12,30 @@ public class SetupGameplay : MonoBehaviour
     int indexPlayer;
     string pTeam;
 
-    public SetupGameplay instance;
-
+    private static SetupGameplay instance;
 
     void Start()
     {
-        text.text = "IndexPlayer: " + indexPlayer + " " + PhotonNetwork.LocalPlayer.TagObject.ToString();
+        instance = this;
 
         indexPlayer = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
         pTeam = PhotonNetwork.LocalPlayer.GetPhotonTeam().Name;
         InstantiatingPlayersCharacter();
 
-        instance = this;
+
+        //text.text = "IndexPlayer: " + indexPlayer + " " + PhotonNetwork.LocalPlayer.TagObject.ToString();
+        
+        //PhotonNetwork.Instantiate("PlayerA", spawnPointsBlue[indexPlayer].position, Quaternion.identity);
 
     }
+
+    void Update()
+      {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("IndexPlayer: " + indexPlayer + " / " + PhotonNetwork.LocalPlayer.TagObject.ToString());
+        }
+     }
 
     private void InstantiatingPlayersCharacter()
     {
@@ -33,14 +43,14 @@ public class SetupGameplay : MonoBehaviour
         //string pTeam = PhotonNetwork.LocalPlayer.GetPhotonTeam().Name;
         if (pTeam == "Blue")
         {
-            PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsBlue[indexPlayer].position);
-            //PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.TagObject.ToString(), spawnPointsBlue[indexPlayer].position, Quaternion.identity);
+            //PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsBlue[indexPlayer].position);
+            PhotonNetwork.Instantiate("PlayerA", spawnPointsBlue[indexPlayer].position, Quaternion.identity);
 
         }
         if (pTeam == "Red")
         {
-            PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsRed[indexPlayer].position);
-            //PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.TagObject.ToString(), spawnPointsRed[indexPlayer].position, Quaternion.identity);
+            //PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsRed[indexPlayer].position);
+            PhotonNetwork.Instantiate("PlayerA", spawnPointsRed[indexPlayer].position, Quaternion.identity);
         }
     }
 

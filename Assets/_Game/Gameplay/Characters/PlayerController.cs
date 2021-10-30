@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int impulse;
     [SerializeField] private int maxYVelocity;
 
-    [Header("Jatkack Settings")]
+    [Header("Jetpack Settings")]
     [SerializeField] private int minFloatingToJatpack;
     [SerializeField] private int jatpackImpulse;
     [SerializeField] private KeyCode jetpackInput;
@@ -21,30 +22,41 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGround { get => isGround; set => isGround = value; }
 
+    PhotonView PV;
+
     // Start is called before the first frame update
     void Awake()
     {
+        PV = GetComponent<PhotonView>();
         playerRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        Move();
-        ProcessJatpack();
-        //text.text = Mathf.Round(playerRigidbody2D.velocity.y).ToString();
-
-    //FLIP
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        if(direction.x < 0.0000f)
+        if(PV.IsMine)
         {
-            transform.rotation = Quaternion.Euler(0,180f, 0);
-        } else
-        {
-            transform.rotation = Quaternion.Euler(0, 0f, 0);
+            Move();
+            ProcessJatpack();
+
+            //text.text = Mathf.Round(playerRigidbody2D.velocity.y).ToString();
+
+            //FLIP
+            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            if (direction.x < 0.0000f)
+            {
+                transform.rotation = Quaternion.Euler(0, 180f, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0f, 0);
+
+            }
+
 
         }
+
+
     }
 
     private void Move()
