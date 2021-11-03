@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 221710744437001099}
   - component: {fileID: 1917589463773469823}
   - component: {fileID: 6202479881202935610}
+  - component: {fileID: 9115618354795775512}
   - component: {fileID: 1518043120466416320}
   - component: {fileID: -2896724483877126648}
   - component: {fileID: 5624844282928228417}
+  - component: {fileID: 2913569363864969310}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -97,7 +99,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000857234, y: 0}
@@ -115,7 +117,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -136,7 +138,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3587eeb027e06f94db8088e295cd406b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 1.79
+--- !u!114 &9115618354795775512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390771117579472041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b862645af43743d4085f735bd1b17a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
     type: 3}
 --- !u!114 &1518043120466416320
@@ -159,6 +173,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -2896724483877126648}
+  - {fileID: 5624844282928228417}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -194,3 +209,16 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &2913569363864969310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390771117579472041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889f0af944046054788148591273856b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

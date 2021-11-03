@@ -158,7 +158,6 @@ MonoBehaviour:
   - {fileID: 659978299}
   - {fileID: 2066361693}
   text: {fileID: 957001452}
-  instance: {fileID: 0}
 --- !u!114 &373504684
 MonoBehaviour:
   m_ObjectHideFlags: 0

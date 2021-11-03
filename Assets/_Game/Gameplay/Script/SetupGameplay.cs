@@ -12,7 +12,7 @@ public class SetupGameplay : MonoBehaviour
     int indexPlayer;
     string pTeam;
 
-    private static SetupGameplay instance;
+    public static SetupGameplay instance;
 
     void Start()
     {
@@ -21,8 +21,6 @@ public class SetupGameplay : MonoBehaviour
         indexPlayer = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
         pTeam = PhotonNetwork.LocalPlayer.GetPhotonTeam().Name;
         InstantiatingPlayersCharacter();
-
-
         //text.text = "IndexPlayer: " + indexPlayer + " " + PhotonNetwork.LocalPlayer.TagObject.ToString();
         
         //PhotonNetwork.Instantiate("PlayerA", spawnPointsBlue[indexPlayer].position, Quaternion.identity);

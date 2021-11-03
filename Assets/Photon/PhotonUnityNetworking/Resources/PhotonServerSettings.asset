@@ -37,6 +37,14 @@ MonoBehaviour:
   - ClickRpc
   - DestroyRpc
   - RPCInstantiateCharacter
+  - DefaulShoot
+  - DefaultShoot
+  - RpcSetupCanvasOntop
+  - RPCUpdateHPontopFill
+  - SetProps
+  - SetRendererFlipX
+  - switchComponent
+  - SwitchComponent
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

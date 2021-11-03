@@ -36,7 +36,7 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
 
 
     //[PunRPC]
-    public void SetCharacter()
+    public void SetCharacterAndProps()
     {
         SetPlayerprops();
 

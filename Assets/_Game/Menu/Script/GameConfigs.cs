@@ -13,6 +13,10 @@ public class GameConfigs : MonoBehaviour
     public int HP;
     public int timeToRespawn;
 
+    public Color TeamAColor;
+    public Color TeamBColor;
+
+
     private void Start()
     {
         instance = this;

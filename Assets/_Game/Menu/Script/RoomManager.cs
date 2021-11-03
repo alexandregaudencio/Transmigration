@@ -31,7 +31,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        string roomName = "#"+Random.Range(0, 2000).ToString();
+        string roomName = "#"+Random.Range(100, 999).ToString();
         RoomOptions roomOptions = new RoomOptions()
         {
             MaxPlayers = (byte)GameConfigs.instance.maxRoomPlayers,
