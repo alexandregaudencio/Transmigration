@@ -14,8 +14,7 @@ public class StandardState : State
 
     public override void FixedUpdateState(PlayerController playerController, StateController stateController)
     {
-        if (playerController.photonView.IsMine)
-        {
+
             HorizontalMove(playerController);
             VerticalMove(playerController);
 
@@ -38,7 +37,7 @@ public class StandardState : State
             playerController.photonView.RPC("SetRendererFlipX", RpcTarget.All, flipState);
 
 
-        }
+        //}
     }
 
     public override void OnCollisionEnter(PlayerController playerController, Collision2D collision, StateController stateController)

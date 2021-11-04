@@ -17,30 +17,44 @@ public class StateController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+
         TransitionToState(ListedStates.standardState);
     }
 
 
     public virtual void TransitionToState(State state)
     {
-        currentState = state;
-        currentState.EnterState(playerController, this);
+        if(playerController.photonView.IsMine)
+        {
+            currentState = state;
+            currentState.EnterState(playerController, this);
+        }
+
     }
 
     void Update()
     {
-        currentState.UpdateState(playerController, this);
+        if (playerController.photonView.IsMine)
+        {
+            currentState.UpdateState(playerController, this);
+
+        }
     }
 
     protected void FixedUpdate()
     {
-        currentState.FixedUpdateState(playerController, this);
-
+        if (playerController.photonView.IsMine)
+        { 
+            currentState.FixedUpdateState(playerController, this);
+        }
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        currentState.OnCollisionEnter(playerController, collision, this);
+        if(playerController.photonView.IsMine)
+        {
+            currentState.OnCollisionEnter(playerController, collision, this);
+        }
     }
 
 
