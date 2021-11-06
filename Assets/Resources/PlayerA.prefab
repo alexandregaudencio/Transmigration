@@ -293,13 +293,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3074866688293795983}
   - component: {fileID: 3074866688293795982}
-  - component: {fileID: 3074866688293795984}
   - component: {fileID: 3074866688293795985}
   - component: {fileID: 3074866688293795987}
+  - component: {fileID: -6512562405357214024}
+  - component: {fileID: 3074866688293795984}
+  - component: {fileID: 8197522545215113023}
   - component: {fileID: 4761629302037567128}
   - component: {fileID: 1256625376}
   - component: {fileID: 1256625375}
-  - component: {fileID: 8197522545215113023}
   - component: {fileID: 6424420713075694949}
   - component: {fileID: 4381876487728630972}
   - component: {fileID: 2525927732141932734}
@@ -377,22 +378,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3074866688293795984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074866688293795986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82b19c813b0e424a8f36a39679edd04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 300
-  maxYVelocity: 7
-  gravitScale: 2
-  isGround: 0
 --- !u!50 &3074866688293795985
 Rigidbody2D:
   serializedVersion: 4
@@ -408,7 +393,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -440,6 +425,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.31357834, y: 0.63478446}
   m_EdgeRadius: 0
+--- !u!95 &-6512562405357214024
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3074866688293795984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82b19c813b0e424a8f36a39679edd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 300
+  maxYVelocity: 7
+  dashSpeed: 30
+  isGround: 0
+--- !u!114 &8197522545215113023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a3f97185951c14c862f4a24d76707a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4761629302037567128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,18 +528,6 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &8197522545215113023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074866688293795986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a3f97185951c14c862f4a24d76707a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6424420713075694949
 MonoBehaviour:
   m_ObjectHideFlags: 0

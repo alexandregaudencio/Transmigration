@@ -1,9 +1,8 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,6 +10,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(PlayerProperty))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Animator))]
+
 public class PlayerController : MonoBehaviourPunCallbacks
 {
     Rigidbody2D RigidBody2D;
@@ -18,12 +19,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     PlayerProperty playerProperty;
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2D;
+    Animator animator;
 
     //Collider2D collider2D;
     [SerializeField] private float speed;
     //[SerializeField] private int impulse;
     [SerializeField] private int maxYVelocity;
-    [SerializeField] private int gravitScale = 2;
+    [SerializeField] private float dashSpeed;
+    //[SerializeField] private int gravitScale = 2;
 
     [Header("Jetpack Settings")]
     //[SerializeField] private int minFloatingToJatpack;
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public PlayerProperty PlayerProperty { get => playerProperty; set => playerProperty = value; }
     public SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
     public BoxCollider2D BoxCollider2D { get => boxCollider2D; set => boxCollider2D = value; }
+    public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
+    public Animator Animator { get => animator; set => animator = value; }
 
     //private new PhotonView photonView;
 
@@ -54,12 +59,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
         PlayerProperty = GetComponent<PlayerProperty>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
+        Animator = GetComponent<Animator>();
 
     }
 
     private void Start()
     {
-        RigidBody2D.gravityScale = gravitScale;
+        //RigidBody2D.gravityScale = gravitScale;
     }
 
     //void ProcessJatpack()
@@ -114,13 +120,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void SwitchComponent(bool value)
+    public void SwitchComponent(bool value, Vector2 position)
     {
         BoxCollider2D.enabled = value;
-        RigidBody2D.gravityScale = (value) ? gravitScale : 0;
+        //RigidBody2D.gravityScale = (value) ? gravitScale : 0;
         GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.black;
 
-        if (value) playerProperty.ResetPlayerPrps();
+        if (value) playerProperty.ResetPlayerPrps(position);
     }
 
 

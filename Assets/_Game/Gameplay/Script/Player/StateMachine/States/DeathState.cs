@@ -25,9 +25,10 @@ public class DeathState : State
 
     private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
     {
-          playerController.photonView.RPC("SwitchComponent", RpcTarget.All, false);
+          playerController.photonView.RPC("SwitchComponent", RpcTarget.All, false, Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
         yield return new WaitForSeconds(3);
-        playerController.photonView.RPC("SwitchComponent", RpcTarget.All, true);
+        playerController.photonView.RPC("SwitchComponent", RpcTarget.All, true, Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
+        
         stateController.TransitionToState(stateController.ListedStates.standardState);
     }
 

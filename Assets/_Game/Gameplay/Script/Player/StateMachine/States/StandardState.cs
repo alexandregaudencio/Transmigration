@@ -1,6 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StandardState : State
@@ -46,7 +44,15 @@ public class StandardState : State
 
     public override void UpdateState(PlayerController playerController, StateController stateController)
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            stateController.TransitionToState(stateController.ListedStates.dashState);
+        }
+
+
     }
+
+
 
 
     private void HorizontalMove(PlayerController playerController)

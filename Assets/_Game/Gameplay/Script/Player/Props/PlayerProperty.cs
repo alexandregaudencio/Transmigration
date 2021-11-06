@@ -1,7 +1,4 @@
 ﻿using Photon.Pun;
-using Photon.Realtime;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun.UtilityScripts;
 
@@ -30,7 +27,7 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
     public LayerMask GetLayer =>  LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
 
     
-    public void ResetPlayerPrps()
+    public void ResetPlayerPrps(Vector2 spawnPosition)
     {
         //TODO: not working great.
         HashProperty["HP"] = (int)PV.Controller.CustomProperties["maxHP"];
@@ -38,8 +35,8 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
         //HashProperty["timeToRespawn"] = GameConfigs.instance.timeToRespawn;
         PV.Controller.SetCustomProperties(HashProperty);
         //SetupGameplay setupGameplay = "";
-        
-        transform.position =   FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint;
+
+        transform.position = spawnPosition;
 
 
     }
