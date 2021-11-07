@@ -24,7 +24,7 @@ public class StateController : MonoBehaviourPunCallbacks
 
     public virtual void TransitionToState(State state)
     {
-        if(playerController.photonView.IsMine)
+        if(playerController.PV.IsMine)
         {
             currentState = state;
             currentState.EnterState(playerController, this);
@@ -34,7 +34,7 @@ public class StateController : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (playerController.photonView.IsMine)
+        if (playerController.PV.IsMine)
         {
             currentState.UpdateState(playerController, this);
 
@@ -43,7 +43,7 @@ public class StateController : MonoBehaviourPunCallbacks
 
     protected void FixedUpdate()
     {
-        if (playerController.photonView.IsMine)
+        if (playerController.PV.IsMine)
         { 
             currentState.FixedUpdateState(playerController, this);
         }
@@ -51,7 +51,7 @@ public class StateController : MonoBehaviourPunCallbacks
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if(playerController.photonView.IsMine)
+        if(playerController.PV.IsMine)
         {
             currentState.OnCollisionEnter(playerController, collision, this);
         }

@@ -45,6 +45,10 @@ MonoBehaviour:
   - SetRendererFlipX
   - switchComponent
   - SwitchComponent
+  - BreakOracao
+  - MeditateEvent
+  - SendTimer
+  - SwitchSpriteRender
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

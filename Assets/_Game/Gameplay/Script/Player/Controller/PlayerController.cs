@@ -21,12 +21,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     BoxCollider2D boxCollider2D;
     Animator animator;
 
-    //Collider2D collider2D;
     [SerializeField] private float speed;
-    //[SerializeField] private int impulse;
     [SerializeField] private int maxYVelocity;
     [SerializeField] private float dashSpeed;
-    //[SerializeField] private int gravitScale = 2;
 
     [Header("Jetpack Settings")]
     //[SerializeField] private int minFloatingToJatpack;
@@ -38,7 +35,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     //public bool canJatpack;
 
     public bool IsGround { get => isGround; set => isGround = value; }
-    //public PhotonView PV { get => photonView; set => photonView = value; }
+    public PhotonView PV;
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
     public float Speed { get => speed; set => speed = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
@@ -53,7 +50,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     void Awake()
     {
 
-        //PV = GetComponent<PhotonView>();
+        PV = GetComponent<PhotonView>();
         PlayerRigidbody2D = GetComponent<Rigidbody2D>();
         StateController = GetComponent<StateController>();
         PlayerProperty = GetComponent<PlayerProperty>();
@@ -61,11 +58,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
 
-    }
-
-    private void Start()
-    {
-        //RigidBody2D.gravityScale = gravitScale;
     }
 
     //void ProcessJatpack()
@@ -112,7 +104,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     //}
 
-
     [PunRPC]
     public void SetRendererFlipX( bool flipXState)
     {
@@ -120,13 +111,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void SwitchComponent(bool value, Vector2 position)
+    public void SwitchComponent(bool value/*, Vector3 spawnPosition, Player player*/)
     {
         BoxCollider2D.enabled = value;
         //RigidBody2D.gravityScale = (value) ? gravitScale : 0;
         GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.black;
 
-        if (value) playerProperty.ResetPlayerPrps(position);
     }
 
 
@@ -141,7 +131,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     //    }
     //}
 
-    
+
     //private void OnCollisionExit2D(Collision2D collision)
     //{
     //    if (collision.gameObject.CompareTag("ground"))
@@ -150,26 +140,31 @@ public class PlayerController : MonoBehaviourPunCallbacks
     //    }
     //}
 
-
-
-
-
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if (photonView.Controller == targetPlayer && changedProps.ContainsKey("isDead"))
-        {
-            if ((bool)photonView.Controller.CustomProperties["isDead"])
+        if (PV.Controller == targetPlayer && changedProps.ContainsKey("isDead"))
+            if ((bool) PV.Controller.CustomProperties["isDead"])
             {
-                StateController.TransitionToState(StateController.ListedStates.deathState);
+                GoToDeathState();
             }
-            //else
-            //{
-            //    StateController.TransitionToState(StateController.ListedStates.standardState);
-            //}
-        }
+            else
+            {
+                GoToStandartState();
+            }
+
+    }
+    
+
+    public void GoToDeathState()
+    {
+        StateController.TransitionToState(StateController.ListedStates.deathState);
 
     }
 
+    public void GoToStandartState()
+    {
+        StateController.TransitionToState(StateController.ListedStates.deathState);
 
+    }
 
 }

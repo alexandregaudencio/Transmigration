@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - sentinel
+  - character
+  - object
   layers:
   - Default
   - TransparentFX
@@ -44,6 +47,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2255884237
+    locked: 0
+  - name: Underground
+    uniqueID: 2894787335
     locked: 0
   - name: Ground
     uniqueID: 1491418317

@@ -26,16 +26,25 @@ public class WeaponBase : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                GetComponent<SpriteRenderer>().enabled = true;
+                PV.RPC("SwitchSpriteRender", RpcTarget.All, true);
+                //GetComponent<SpriteRenderer>().enabled = false;
+
             }
             if (Input.GetMouseButtonUp(0))
             {
-                GetComponent<SpriteRenderer>().enabled = false;
+                PV.RPC("SwitchSpriteRender", RpcTarget.All, false);
+                //GetComponent<SpriteRenderer>().enabled = false;
                 //TODO: ajustar o teamA 
                 PV.RPC("DefaultShoot", RpcTarget.All);
             }
         }
        
+    }
+
+    [PunRPC]
+    public void SwitchSpriteRender(bool value)
+    {
+        GetComponent<SpriteRenderer>().enabled = value;
     }
 
     //public void DefaultShoot(Vector2 position, Quaternion rotation, int teamLayer)  
