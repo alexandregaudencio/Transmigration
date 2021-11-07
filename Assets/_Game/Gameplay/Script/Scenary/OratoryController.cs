@@ -19,7 +19,7 @@ public class OratoryController : MonoBehaviour
 
     private bool canMeditate = false;
 
-    public float oracaoPercent => meditatingCount / maxMeditating;
+    public float meditatePercent => meditatingCount / maxMeditating;
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class OratoryController : MonoBehaviour
         int Layer = collision.gameObject.layer;
         if (collision.gameObject.CompareTag("character") && Layer == LayerMask.NameToLayer("TeamB"))
         {
-            
+
             OnMeditation(true);
         }
 

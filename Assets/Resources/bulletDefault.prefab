@@ -153,11 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
     type: 3}
-  collisionTags:
+  collisionTagsList:
   - ground
-  - character
   - sentinel
-  - object
+  - character
 --- !u!114 &1518043120466416320
 MonoBehaviour:
   m_ObjectHideFlags: 0

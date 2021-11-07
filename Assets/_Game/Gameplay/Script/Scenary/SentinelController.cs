@@ -12,34 +12,40 @@ public class SentinelController : MonoBehaviour
     [SerializeField] private Transform targetMass;
     [SerializeField] private List<Transform> targetCharacters;
 
+    [SerializeField] private float hpSentinel;
+
+    private bool TargetOnVision => (targetCharacters != null) ? true : false;
+
+    public float HPSentinel { get => hpSentinel; set => hpSentinel = value; }
+
 
     void Start()
-    {
+    { 
         StartCoroutine(Shoot());
 
-    }
-
-    private void Update()
-    {
-        Debug.Log(targetCharacters.Count);
     }
 
     private IEnumerator Shoot()
     {
         while(true)
         {
-            while (TargetOnVision)
+            //só pra ilustrar
+            if(TargetOnVision)
             {
-                //só pra ilustrar
-                GetComponent<SpriteRenderer>().color = TargetOnVision ? Color.red : Color.white;
+                GetComponent<SpriteRenderer>().color = Color.red;
+
                 //mira
                 weaponBase.rotation = targetRotation;
                 //atira
                 GameObject bullet = Instantiate(sentinelBullet, targetMass.position, targetMass.rotation);
                 bullet.layer = gameObject.layer;
+                //INSTANCIAR EFEITOS AQUI
                 //espera
                 yield return new WaitForSeconds(bulletSpawnInterval);
 
+            } else
+            {
+                GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
 
@@ -109,6 +115,5 @@ public class SentinelController : MonoBehaviour
     }
 
 
-    private bool TargetOnVision => (targetCharacters.Count > 0) ? true : false;
-
+ 
 }
