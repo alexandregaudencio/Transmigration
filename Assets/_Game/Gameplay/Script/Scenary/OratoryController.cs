@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class OratoryController : MonoBehaviour
 {
-    BoxCollider2D boxCollider2D;
     PhotonView PV;
     [SerializeField] private GameObject textObject;
    /* [SerializeField] */private ParticleSystem particle;
@@ -15,17 +14,16 @@ public class OratoryController : MonoBehaviour
     [SerializeField] private float emissionRate = 20;
     ParticleSystem.EmissionModule emissionModule;
 
-    [SerializeField] private float maxOracao;
-    public float OracaoCount;
+    [SerializeField] private float maxMeditating;
+    public float meditatingCount;
 
-    private bool canOrar = false;
+    private bool canMeditate = false;
 
-    public float oracaoPercent => OracaoCount / maxOracao;
+    public float oracaoPercent => meditatingCount / maxMeditating;
 
     private void Start()
     {
         particle = GetComponent<ParticleSystem>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
         PV = GetComponent<PhotonView>();
         emissionModule = particle.emission;
         emissionModule.rateOverTime = 0;
@@ -34,34 +32,35 @@ public class OratoryController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canOrar) Orar();
+        if (canMeditate) Meditate();
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        string CollisionTeam = collision.gameObject.GetComponent<PlayerProperty>().Team;
-        if (collision.gameObject.CompareTag("Player") && CollisionTeam == "Blue")
+        //ajustar o collisionTeam
+        int Layer = collision.gameObject.layer;
+        if (collision.gameObject.CompareTag("character") && Layer == LayerMask.NameToLayer("TeamB"))
         {
             
-            OnOratory(true);
+            OnMeditation(true);
         }
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        string CollisionTeam = collision.gameObject.GetComponent<PlayerProperty>().Team;
-        if (collision.gameObject.CompareTag("Player") && CollisionTeam == "Blue")
+        int Layer = collision.gameObject.layer;
+        if (collision.gameObject.CompareTag("character") && Layer == LayerMask.NameToLayer("TeamB"))
         {
 
-            OnOratory(false);
+            OnMeditation(false);
         }
     }
 
-    public void OnOratory(bool value)
+    public void OnMeditation(bool value)
     {
-        canOrar = value;
+        canMeditate = value;
         textObject.SetActive(value);
 
 
@@ -69,21 +68,21 @@ public class OratoryController : MonoBehaviour
 
 
 
-    public void Orar()
+    public void Meditate()
     {
         if (Input.GetKey(key))
         {
             PV.RPC("MeditateEvent", RpcTarget.All, true);
-            OracaoCount += Time.fixedDeltaTime;
+            meditatingCount += Time.fixedDeltaTime;
         } else
         {
             PV.RPC("MeditateEvent", RpcTarget.All, false);
         }
 
-        if(OracaoCount >= maxOracao)
+        if(meditatingCount >= maxMeditating)
         {
             //PONTUAÇÃO
-            PV.RPC("BreakOracao", RpcTarget.All);
+            PV.RPC("BreakMeditate", RpcTarget.All);
         }
         
     }
@@ -97,7 +96,7 @@ public class OratoryController : MonoBehaviour
 
 
     [PunRPC]
-    public void BreakOracao()
+    public void BreakMeditate()
     {
         this.gameObject.SetActive(false);
 

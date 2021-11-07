@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 619816247}
   - component: {fileID: 619816246}
   - component: {fileID: 619816248}
+  - component: {fileID: 619816251}
   - component: {fileID: 619816250}
   - component: {fileID: 619816249}
   m_Layer: 8
@@ -793,10 +794,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnInterval: 1.21
-  sentinelBullet: {fileID: 0}
-  targetMass: {fileID: 772435871}
-  targetPlayer: {fileID: 0}
   VisionRange: 9.16
+  sentinelBullet: {fileID: 8390771117579472041, guid: dc0da414fd23eac46a78372e0e7cc669,
+    type: 3}
+  weaponBase: {fileID: 1520182624}
+  targetMass: {fileID: 772435871}
+  targetCharacters: []
+--- !u!58 &619816251
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619816245}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0031327957, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.43337873
 --- !u!1 &659978298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,8 +1128,8 @@ MonoBehaviour:
   textObject: {fileID: 1683841421}
   key: 113
   emissionRate: 20
-  maxOracao: 3
-  OracaoCount: 0
+  maxMeditating: 0
+  meditatingCount: 0
 --- !u!114 &1047113948
 MonoBehaviour:
   m_ObjectHideFlags: 0
