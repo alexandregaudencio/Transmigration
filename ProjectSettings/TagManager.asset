@@ -8,6 +8,7 @@ TagManager:
   - sentinel
   - character
   - object
+  - bullet
   layers:
   - Default
   - TransparentFX

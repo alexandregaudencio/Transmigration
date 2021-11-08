@@ -5,23 +5,23 @@ using UnityEngine;
 public class SentinelController : MonoBehaviour
 {
     [SerializeField] [Range(0,5)] private float bulletSpawnInterval;
-    [SerializeField] private float VisionRange;
 
     [SerializeField] private GameObject sentinelBullet;
     [SerializeField] private Transform weaponBase;
     [SerializeField] private Transform targetMass;
     [SerializeField] private List<Transform> targetCharacters;
 
-    [SerializeField] private float hpSentinel;
-
     private bool TargetOnVision => (targetCharacters != null) ? true : false;
-
-    public float HPSentinel { get => hpSentinel; set => hpSentinel = value; }
-
 
     void Start()
     { 
         StartCoroutine(Shoot());
+
+    }
+
+    private void Update()
+    {
+        weaponBase.rotation = targetRotation;
 
     }
 
@@ -35,10 +35,11 @@ public class SentinelController : MonoBehaviour
                 GetComponent<SpriteRenderer>().color = Color.red;
 
                 //mira
-                weaponBase.rotation = targetRotation;
+                //weaponBase.rotation = targetRotation;
                 //atira
                 GameObject bullet = Instantiate(sentinelBullet, targetMass.position, targetMass.rotation);
                 bullet.layer = gameObject.layer;
+                
                 //INSTANCIAR EFEITOS AQUI
                 //espera
                 yield return new WaitForSeconds(bulletSpawnInterval);
@@ -48,12 +49,11 @@ public class SentinelController : MonoBehaviour
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsDifferentLayer(collision.gameObject.layer))
+        if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Add(collision.gameObject.transform);
         }
@@ -63,7 +63,7 @@ public class SentinelController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (IsDifferentLayer(collision.gameObject.layer))
+        if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Remove(collision.gameObject.transform);
         }
@@ -89,17 +89,19 @@ public class SentinelController : MonoBehaviour
 
     private Vector3 targetDirection
     {
+
         get
         {
-            Vector2 result = Vector2.zero;
+            Vector2 vectorResult = Vector2.zero;
+            float distanceResult = 0f;
             foreach (Transform t in targetCharacters)
             {
-                if (Vector3.Distance(t.position, transform.position) > 0)
+                if (Vector3.Distance(t.position, transform.position) >   distanceResult)
                 {
-                    result = t.position;
+                    vectorResult = t.position;
                 }
             }
-            return result;
+            return vectorResult;
         }
     }
 

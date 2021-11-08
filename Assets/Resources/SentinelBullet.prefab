@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 2913569363864969310}
   m_Layer: 0
   m_Name: SentinelBullet
-  m_TagString: ground
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000857234, y: 0}
@@ -156,6 +156,7 @@ MonoBehaviour:
   collisionTagsList:
   - ground
   - character
+  - bullet
 --- !u!114 &1518043120466416320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +226,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  collisionTagsList:
+  - character

@@ -14,31 +14,37 @@ public class BulletController : MonoBehaviour
         //destroir quando a distãncia for muito grande.
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (gameObject.layer == collision.gameObject.layer) return;
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (gameObject.layer == collision.gameObject.layer) return;
 
-        if (collisionTagsList.Contains(collision.gameObject.tag)) {
+    //    if (collisionTagsList.Contains(collision.gameObject.tag)) {
 
-            BulletArrived();
+    //        BulletArrived();
 
            
-        }
+    //    }
 
-        //trocar isso aqui para tag específicas
+    //    //trocar isso aqui para tag específicas
         
-        //TODO: destroir o effeito ao final da animação do efeito.
-    }
+    //    //TODO: destroir o effeito ao final da animação do efeito.
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (gameObject.layer == collision.gameObject.layer) return;
+        Debug.Log("tag: " + collision.gameObject.tag);
+
 
         if (collisionTagsList.Contains(collision.gameObject.tag))
         {
+            Debug.Log("checagem de colisão: " + true);
             BulletArrived();
         }
     }
+
+
+
 
     void BulletArrived()
     {
