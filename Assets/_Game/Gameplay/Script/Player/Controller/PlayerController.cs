@@ -167,4 +167,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     }
 
+
+    public void CanPlayWalkAnimation()
+    {
+        animator.SetBool("walking", true);
+    }
+
+
 }
+
