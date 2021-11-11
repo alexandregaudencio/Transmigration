@@ -21,8 +21,7 @@ public class BulletController : MonoBehaviour
     //    if (collisionTagsList.Contains(collision.gameObject.tag)) {
 
     //        BulletArrived();
-
-           
+    //        
     //    }
 
     //    //trocar isso aqui para tag específicas
@@ -32,9 +31,7 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (gameObject.layer == collision.gameObject.layer) return;
-        Debug.Log("tag: " + collision.gameObject.tag);
-
+        //if (gameObject.layer == collision.gameObject.layer) return;
 
         if (collisionTagsList.Contains(collision.gameObject.tag))
         {
@@ -42,9 +39,6 @@ public class BulletController : MonoBehaviour
             BulletArrived();
         }
     }
-
-
-
 
     void BulletArrived()
     {

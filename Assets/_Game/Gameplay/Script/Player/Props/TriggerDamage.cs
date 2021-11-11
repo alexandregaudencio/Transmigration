@@ -14,7 +14,6 @@ public class TriggerDamage : MonoBehaviour
 
         if (collisionTagsList.Contains(collision.gameObject.tag))
         {
-
             IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
             damageable?.TakeDamage(damage);
         }

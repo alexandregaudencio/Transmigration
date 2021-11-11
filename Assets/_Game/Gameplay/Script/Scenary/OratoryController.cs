@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -67,40 +68,48 @@ public class OratoryController : MonoBehaviour
     }
 
 
-
     public void Meditate()
     {
-        if (Input.GetKey(key))
+
+        if (Input.GetKey(key) && PV.Controller == PhotonNetwork.LocalPlayer  )
         {
-            PV.RPC("MeditateEvent", RpcTarget.All, true);
+            //PhotonNetwork.LocalPlayer.GetPhotonTeam().Name == "TeamB";
+            PV.RPC("OnMeditate", RpcTarget.All, true);
             meditatingCount += Time.fixedDeltaTime;
         } else
         {
-            PV.RPC("MeditateEvent", RpcTarget.All, false);
+            PV.RPC("OnMeditate", RpcTarget.All, false);
         }
 
         if(meditatingCount >= maxMeditating)
         {
             //PONTUAÇÃO
-            PV.RPC("BreakMeditate", RpcTarget.All);
+            PV.RPC("MeditationCompleted", RpcTarget.All);
         }
         
     }
 
+    //public void MeditateEvent(bool isMaditating)
+    //{
+    //    emissionModule.rateOverTime = isMaditating ? emissionRate : 0;
+
+    //}
+
+
     [PunRPC]
-    public void MeditateEvent(bool isMaditating)
+    public void OnMeditate(bool isMeditating)
     {
-        emissionModule.rateOverTime = isMaditating ? emissionRate : 0;
+        emissionModule.rateOverTime = isMeditating ? emissionRate : 0;
 
     }
 
-
     [PunRPC]
-    public void BreakMeditate()
+    public void MeditationCompleted()
     {
         this.gameObject.SetActive(false);
 
     }
+
 
 
 }

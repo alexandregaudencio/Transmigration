@@ -36,7 +36,6 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     {
         hp -= damage;
         lifeBarFill.fillAmount = hpPercent;
-        Debug.Log(hpPercent);
         
         CheckDeath();
     }
@@ -45,7 +44,7 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     {
         if(hp <= 0)
         {
-           PV.RPC("DeathEvent", RpcTarget.All );
+           //PV.RPC("DeathEvent", RpcTarget.All );
             DeathEvent();
         }
     }

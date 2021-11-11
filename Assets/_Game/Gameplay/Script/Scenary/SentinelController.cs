@@ -11,51 +11,93 @@ public class SentinelController : MonoBehaviour
     [SerializeField] private Transform targetMass;
     [SerializeField] private List<Transform> targetCharacters;
 
-    private bool TargetOnVision => (targetCharacters != null) ? true : false;
+    private bool TargetOnVision => (targetCharacters.Count > 0) ? true : false;
+
+
+    private Quaternion targetRotation
+    {
+        get
+        {
+            Vector2 direction = targetDirection - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            return Quaternion.AngleAxis(angle, Vector3.forward);
+
+        }
+    }
+    private Vector3 targetDirection
+    {
+
+        get
+        {
+            Vector2 vectorResult = Vector2.zero;
+            float distanceResult = 0f;
+            foreach (Transform t in targetCharacters)
+            {
+                if (Vector3.Distance(t.position, transform.position) > distanceResult)
+                {
+                    vectorResult = t.position;
+                }
+            }
+            return vectorResult;
+        }
+    }
+
 
     void Start()
     { 
-        StartCoroutine(Shoot());
-
+        StartCoroutine(WaitToShoot());
     }
+
 
     private void Update()
     {
-        weaponBase.rotation = targetRotation;
+        Debug.Log(TargetOnVision);
+        //weaponBase.rotation = targetRotation;
 
     }
 
-    private IEnumerator Shoot()
+    private IEnumerator WaitToShoot()
     {
-        while(true)
+        while (true)
         {
-            //só pra ilustrar
-            if(TargetOnVision)
-            {
-                GetComponent<SpriteRenderer>().color = Color.red;
-
-                //mira
-                //weaponBase.rotation = targetRotation;
-                //atira
-                GameObject bullet = Instantiate(sentinelBullet, targetMass.position, targetMass.rotation);
-                bullet.layer = gameObject.layer;
-                
-                //INSTANCIAR EFEITOS AQUI
-                //espera
-                yield return new WaitForSeconds(bulletSpawnInterval);
-
-            } else
-            {
-                GetComponent<SpriteRenderer>().color = Color.white;
-            }
+            yield return new WaitForSeconds(bulletSpawnInterval);
+            Shoot();
         }
+
     }
+
+    private void Shoot()
+    {
+ 
+        //só pra ilustrar
+        if (TargetOnVision)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            //mira
+            weaponBase.rotation = targetRotation;
+            //atira
+            GameObject bullet = Instantiate(sentinelBullet, targetMass.position, targetMass.rotation);
+            bullet.layer = gameObject.layer;
+
+            //INSTANCIAR EFEITOS AQUI
+            //espera
+
+        }
+        //else
+        //{
+        //    GetComponent<SpriteRenderer>().color = Color.white;
+        //}
+
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Add(collision.gameObject.transform);
+            GetComponent<SpriteRenderer>().color = Color.red;
+
         }
 
     }
@@ -66,6 +108,8 @@ public class SentinelController : MonoBehaviour
         if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Remove(collision.gameObject.transform);
+            GetComponent<SpriteRenderer>().color = Color.white;
+
         }
     }
 
@@ -87,34 +131,6 @@ public class SentinelController : MonoBehaviour
                 
    }
 
-    private Vector3 targetDirection
-    {
-
-        get
-        {
-            Vector2 vectorResult = Vector2.zero;
-            float distanceResult = 0f;
-            foreach (Transform t in targetCharacters)
-            {
-                if (Vector3.Distance(t.position, transform.position) >   distanceResult)
-                {
-                    vectorResult = t.position;
-                }
-            }
-            return vectorResult;
-        }
-    }
-
-    private Quaternion targetRotation
-    {
-        get
-        {
-            Vector2 direction = targetDirection - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            return Quaternion.AngleAxis(angle, Vector3.forward);
-
-        }
-    }
 
 
  

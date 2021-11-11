@@ -1142,11 +1142,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2996822177690539848, guid: 3fe0f4fef077b9e478334726a49665f2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.97939825
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996822177690539848, guid: 3fe0f4fef077b9e478334726a49665f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00416
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996822177690539849, guid: 3fe0f4fef077b9e478334726a49665f2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2996822177780974114, guid: 3fe0f4fef077b9e478334726a49665f2,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2996822179400406801, guid: 3fe0f4fef077b9e478334726a49665f2,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2996822179400406813, guid: 3fe0f4fef077b9e478334726a49665f2,
         type: 3}
       propertyPath: m_Name
@@ -1207,6 +1227,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2996822179512294839, guid: 3fe0f4fef077b9e478334726a49665f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.085
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe0f4fef077b9e478334726a49665f2, type: 3}
 --- !u!1001 &9099774051540078637
@@ -1216,6 +1241,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9099774051809839058, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099774052376289521, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9099774052376289525, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
         type: 3}
       propertyPath: m_Name
