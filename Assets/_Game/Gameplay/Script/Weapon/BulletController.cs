@@ -35,7 +35,7 @@ public class BulletController : MonoBehaviour
 
         if (collisionTagsList.Contains(collision.gameObject.tag))
         {
-            Debug.Log("checagem de colisão: " + true);
+
             BulletArrived();
         }
     }

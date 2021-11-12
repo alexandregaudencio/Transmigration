@@ -49,12 +49,12 @@ public class SentinelController : MonoBehaviour
     }
 
 
-    private void Update()
-    {
-        Debug.Log(TargetOnVision);
-        //weaponBase.rotation = targetRotation;
+    //private void Update()
+    //{
+    //    Debug.Log(TargetOnVision);
+    //    //weaponBase.rotation = targetRotation;
 
-    }
+    //}
 
     private IEnumerator WaitToShoot()
     {

@@ -161,6 +161,7 @@ MonoBehaviour:
   - {fileID: 659978299}
   - {fileID: 2066361693}
   text: {fileID: 957001452}
+  localCamera: {fileID: 0}
 --- !u!114 &373504684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a310423e2b40534a8963a8e6a630ba2, type: 3}
   m_Name: 

@@ -5,15 +5,15 @@ using Photon.Realtime;
 
 public class PlayerProperty : MonoBehaviourPunCallbacks
 {
-    PhotonView PV;
+    PhotonView photonview;
 
-    public string Team { get =>  PV.Controller.GetPhotonTeam().Name; }
-    public int HP  =>  (int)PV.Controller.CustomProperties["HP"]; 
+    public string Team { get =>  photonview.Controller.GetPhotonTeam().Name; }
+    public int HP  =>  (int)photonview.Controller.CustomProperties["HP"]; 
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
     private void Awake()
     {
-        PV = GetComponent<PhotonView>();
+        photonview = GetComponent<PhotonView>();
     }
 
     void Start()
@@ -26,14 +26,15 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
 
     public LayerMask GetLayer =>  LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
 
-    
+    public PhotonView PV { get => photonview; set => photonview = value; }
+
     public void ResetPlayerPrps(Vector3 spawnPosition)
     {
             //TODO: not working great.
-            HashProperty["HP"] = (int)PV.Controller.CustomProperties["maxHP"];
+            HashProperty["HP"] = (int)photonview.Controller.CustomProperties["maxHP"];
             HashProperty["isDead"] = false;
             //HashProperty["timeToRespawn"] = GameConfigs.instance.timeToRespawn;
-            PV.Controller.SetCustomProperties(HashProperty);
+            photonview.Controller.SetCustomProperties(HashProperty);
             //SetupGameplay setupGameplay = "";
 
             transform.position = spawnPosition;

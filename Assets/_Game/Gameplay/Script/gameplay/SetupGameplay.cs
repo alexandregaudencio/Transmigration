@@ -11,7 +11,7 @@ public class SetupGameplay : MonoBehaviour
     public Text text;
     int indexPlayer;
     string pTeam;
-
+    public GameObject localCamera;
     public static SetupGameplay instance;
 
     void Start()
@@ -42,13 +42,13 @@ public class SetupGameplay : MonoBehaviour
         if (pTeam == "Blue")
         {
             //PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsBlue[indexPlayer].position);
-            PhotonNetwork.Instantiate("PlayerA", spawnPointsBlue[indexPlayer].position, Quaternion.identity);
-
+         GameObject instantiate =    PhotonNetwork.Instantiate("PlayerA", spawnPointsBlue[indexPlayer].position, Quaternion.identity);
         }
         if (pTeam == "Red")
         {
             //PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsRed[indexPlayer].position);
-            PhotonNetwork.Instantiate("PlayerA", spawnPointsRed[indexPlayer].position, Quaternion.identity);
+         GameObject instantiate = PhotonNetwork.Instantiate("PlayerA", spawnPointsRed[indexPlayer].position, Quaternion.identity);
+        
         }
     }
 
