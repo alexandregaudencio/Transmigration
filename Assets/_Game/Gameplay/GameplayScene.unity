@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 365847343}
   m_Layer: 0
   m_Name: TileLeaps
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13142,7 +13142,7 @@ GameObject:
   - component: {fileID: 738232867}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13353,7 +13353,7 @@ GameObject:
   - component: {fileID: 1028404598}
   m_Layer: 0
   m_Name: troncoUnder
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15491,7 +15491,7 @@ GameObject:
   - component: {fileID: 1155762289}
   m_Layer: 0
   m_Name: tileObject
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15687,7 +15687,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -15827,9 +15827,8 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 6500910883232860350, guid: 62d7cacfa96879749b03f9218a2407f3,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -5243920643907914218, guid: 62d7cacfa96879749b03f9218a2407f3,
       type: 3}
@@ -15853,8 +15852,9 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 6425203255335965193, guid: 62d7cacfa96879749b03f9218a2407f3,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 6500910883232860350, guid: 62d7cacfa96879749b03f9218a2407f3,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 6059639155888417348, guid: 62d7cacfa96879749b03f9218a2407f3,
       type: 3}
@@ -16037,7 +16037,7 @@ GameObject:
   - component: {fileID: 1731591002}
   m_Layer: 0
   m_Name: troncoOver
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18660,7 +18660,7 @@ GameObject:
   - component: {fileID: 1793829111}
   m_Layer: 0
   m_Name: tileGround
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

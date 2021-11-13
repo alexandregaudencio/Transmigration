@@ -39,8 +39,9 @@ public class TimerController : MonoBehaviour
         {
             PV.RPC("SendTimer", RpcTarget.Others, timer.CurrentTime);
         }
-        string tempTimer = string.Format("{0:00}", timer.CurrentTime);
-        timerDisplay.text = tempTimer;
+
+        //string tempTimer = string.Format("{0:00}", timer.CurrentTime);
+        timerDisplay.text = DisplayTime(timer.CurrentTime);
     }
 
 
@@ -53,7 +54,22 @@ public class TimerController : MonoBehaviour
     }
 
 
+    private string DisplayTime(float timeToDisplay)
+    {
+        if (timeToDisplay < 0)
+        {
+            timeToDisplay = 0;
+        }
+        else if (timeToDisplay > 0)
+        {
+            timeToDisplay += 1;
+        }
 
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+
+        return  string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
 
 
 
