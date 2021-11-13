@@ -27,14 +27,6 @@ public class SetupGameplay : MonoBehaviour
 
     }
 
-    void Update()
-      {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("IndexPlayer: " + indexPlayer + " / " + PhotonNetwork.LocalPlayer.TagObject.ToString());
-        }
-     }
-
     private void InstantiatingPlayersCharacter()
     {
         //int indexPlayer = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];

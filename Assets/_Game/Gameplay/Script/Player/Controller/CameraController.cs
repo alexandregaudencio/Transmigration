@@ -1,21 +1,19 @@
 ﻿using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private GameObject targetPlayer;
+    private GameObject targetobject;
 
     [Header("Position")]
     [SerializeField] private float smoothPositionSpeed = 1f;
     [SerializeField] private Vector2 targetPositionOffSet;
 
-    public GameObject TargetPlayer { get => targetPlayer; set => targetPlayer = value; }
-
-    public static CameraController instance;
-
-    
+    public GameObject TargetObject { get => targetobject; set => targetobject = value; }
+    public Player targetPlayer;
 
     void FixedUpdate()
     {
@@ -26,18 +24,18 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        instance = this;
-        SetLocalGameObject();
+        DefineLocalPlayerObject();
     }
 
-    private void SetLocalGameObject()
+    private void DefineLocalPlayerObject()
     {
         PlayerProperty[] p = FindObjectsOfType<PlayerProperty>();
         foreach(PlayerProperty playerProp in p)
         {
             if(playerProp.PV.Controller == PhotonNetwork.LocalPlayer)
             {
-                targetPlayer = playerProp.gameObject;
+                targetobject = playerProp.gameObject;
+                targetPlayer = playerProp.PV.Controller;
                 break;
             }
         }
@@ -47,9 +45,9 @@ public class CameraController : MonoBehaviour
     void TargetPositionUpdate()
     {
         //alvo = posição alvo + um deslocamento em relação ao eixo x do alvo * ajuste manual;
-        float targetX = TargetPlayer.transform.position.x + targetPositionOffSet.x * TargetPlayer.transform.up.x;
-        float targetY = TargetPlayer.transform.position.y + targetPositionOffSet.y * TargetPlayer.transform.up.y;
-        float targetZ = TargetPlayer.transform.position.z - 10f;
+        float targetX = TargetObject.transform.position.x + targetPositionOffSet.x * TargetObject.transform.up.x;
+        float targetY = TargetObject.transform.position.y + targetPositionOffSet.y * TargetObject.transform.up.y;
+        float targetZ = TargetObject.transform.position.z - 10f;
         Vector3 targetPosition = new Vector3(targetX, targetY, targetZ);
 
         Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime * smoothPositionSpeed);
