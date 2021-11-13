@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviourPunCallbacks, IDamageable
 {
+
     PhotonView PV;
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
@@ -21,6 +22,7 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
     public void TakeDamage(int damage)
     {
         playerProperty.HP = -damage;
+        GetComponent<PlayerController>().Animator.SetTrigger("hurt");
         //int hp = (int)PV.Controller.CustomProperties["HP"];
         //HashProperty["HP"] = hp - damage;
         //PV.Controller.SetCustomProperties(HashProperty);
