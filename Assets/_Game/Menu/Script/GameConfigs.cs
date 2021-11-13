@@ -21,6 +21,7 @@ public class GameConfigs : MonoBehaviour
     public Color TeamBColor;
 
 
+    public KeyCode MeditateKey;
     private void Start()
     {
         instance = this;

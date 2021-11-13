@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
         if (PV.Controller == targetPlayer && changedProps.ContainsKey("isDead"))
-            if ((bool) PV.Controller.CustomProperties["isDead"])
+            if ((bool)PV.Controller.CustomProperties["isDead"])
             {
                 GoToDeathState();
             }

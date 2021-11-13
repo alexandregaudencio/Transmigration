@@ -5,7 +5,7 @@ public class StandardState : State
 {
     public override void EnterState(PlayerController playerController, StateController stateController)
     {
-        playerController.GetComponent<SpriteRenderer>().color = playerController.GetComponent<PlayerProperty>().GetColor;
+        //playerController.GetComponent<SpriteRenderer>().color = playerController.GetComponent<PlayerProperty>().GetColor;
         playerController.Animator.Play("Idle_Gato");
 
     }
@@ -63,6 +63,10 @@ public class StandardState : State
             stateController.TransitionToState(stateController.ListedStates.dashState);
         }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            stateController.TransitionToState(stateController.ListedStates.meditateState);
+        }
 
 
         //if(Input.GetKeyDown(KeyCode.LeftArrow) ||

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2403277291063146307}
   - component: {fileID: 3540711140114491922}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.16, y: -2.39}
+  m_AnchoredPosition: {x: 0.05, y: -1.58}
   m_SizeDelta: {x: 0.27228183, y: 0.06227666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8028242860470071451
@@ -168,7 +168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1491418317
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 0
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 9099774052376289523}
   - component: {fileID: 9099774052376289526}
   - component: {fileID: 9099774052376289520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Meditate (tombstone)
   m_TagString: object
   m_Icon: {fileID: 0}
@@ -4937,6 +4937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textObject: {fileID: 9099774053077512608}
   key: 113
+  targetTeam: Blue
   emissionRate: 20
   maxMeditating: 3
   meditatingCount: 0
@@ -5095,14 +5096,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.98
-  m_fontSizeBase: 0.98
+  m_fontSize: 0.53
+  m_fontSizeBase: 0.53
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5131,7 +5132,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 21.373571, y: 67.83765, z: 41.34433, w: 33.73798}
+  m_margin: {x: 21.373571, y: 67.83765, z: 40.41438, w: 33.73798}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

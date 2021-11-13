@@ -7,6 +7,7 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
 {
     PhotonView photonview;
 
+    public static PlayerProperty instance;
     public string Team { get =>  photonview.Controller.GetPhotonTeam().Name; }
     public int maxHP =>  (int)photonview.Controller.CustomProperties["maxHP"];
        
@@ -42,10 +43,11 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
     void Start()
     {
         gameObject.layer = GetLayer;
-        GetComponent<SpriteRenderer>().color = GetColor;
+        //GetComponent<SpriteRenderer>().color = GetColor;
+        instance = this;
     }
 
-    public Color GetColor => (Team == "Blue") ? GameConfigs.instance.TeamBColor : GameConfigs.instance.TeamAColor;
+    //public Color GetColor => (Team == "Blue") ? GameConfigs.instance.TeamBColor : GameConfigs.instance.TeamAColor;
 
     public LayerMask GetLayer =>  LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
 

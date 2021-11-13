@@ -11,7 +11,7 @@ public class OratoryController : MonoBehaviour
     [SerializeField] private GameObject textObject;
    /* [SerializeField] */private ParticleSystem particle;
     [SerializeField] private KeyCode key;
-    
+    [SerializeField] private string targetTeam;
     [SerializeField] private float emissionRate = 20;
     ParticleSystem.EmissionModule emissionModule;
 
@@ -39,24 +39,40 @@ public class OratoryController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //ajustar o collisionTeam
-        int Layer = collision.gameObject.layer;
-        if (collision.gameObject.CompareTag("character") && Layer == LayerMask.NameToLayer("TeamB"))
+        if (!IsDifferentLayer(collision.gameObject.layer) && collision.gameObject.CompareTag("character"))
         {
-
+            Debug.Log("On Meditation.");
             OnMeditation(true);
+
         }
+
+        ////ajustar o collisionTeam
+        //string colTeam = collision.gameObject.GetComponent<PlayerProperty>().Team;
+        //Debug.Log(colTeam + "ANOTHER TEAM: " + targetTeam);
+
+        //if (collision.gameObject.CompareTag("character") && colTeam == targetTeam)
+        //{
+
+        //    OnMeditation(true);
+        //}
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        int Layer = collision.gameObject.layer;
-        if (collision.gameObject.CompareTag("character") && Layer == LayerMask.NameToLayer("TeamB"))
+       if(!IsDifferentLayer(collision.gameObject.layer) && collision.gameObject.CompareTag("character")) 
         {
-
+            Debug.Log("Out Meditation.");
             OnMeditation(false);
         }
+        //string colTeam = collision.gameObject.GetComponent<PlayerProperty>().Team;
+        //Debug.Log(colTeam + "ANOTHER TEAM " + targetTeam);
+
+        //if (collision.gameObject.CompareTag("character") && colTeam == targetTeam)
+        //{
+
+        //    OnMeditation(false);
+        //}
     }
 
     public void OnMeditation(bool value)
@@ -70,23 +86,35 @@ public class OratoryController : MonoBehaviour
 
     public void Meditate()
     {
+        if(PV.Controller == PhotonNetwork.LocalPlayer)
+        {
+            if (Input.GetKeyDown(GameConfigs.instance.MeditateKey))
+            {
+                //PhotonNetwork.LocalPlayer.GetPhotonTeam().Name == "TeamB";
+                PV.RPC("OnMeditate", RpcTarget.All, emissionRate);
+                OnMeditate(emissionRate);
+                meditatingCount += Time.fixedDeltaTime;
 
-        if (Input.GetKey(key) && PV.Controller == PhotonNetwork.LocalPlayer  )
-        {
-            //PhotonNetwork.LocalPlayer.GetPhotonTeam().Name == "TeamB";
-            PV.RPC("OnMeditate", RpcTarget.All, true);
-            meditatingCount += Time.fixedDeltaTime;
-        } else
-        {
-            PV.RPC("OnMeditate", RpcTarget.All, false);
+            }
+
+           if(Input.GetKeyUp(GameConfigs.instance.MeditateKey))
+            {
+                PV.RPC("OnMeditate", RpcTarget.All, 0);
+                OnMeditate(0);
+            }
+
+
+
         }
+          
 
         if(meditatingCount >= maxMeditating)
         {
             //PONTUAÇÃO
             PV.RPC("MeditationCompleted", RpcTarget.All);
         }
-        
+
+
     }
 
     //public void MeditateEvent(bool isMaditating)
@@ -97,9 +125,9 @@ public class OratoryController : MonoBehaviour
 
 
     [PunRPC]
-    public void OnMeditate(bool isMeditating)
+    public void OnMeditate(float isMeditating)
     {
-        emissionModule.rateOverTime = isMeditating ? emissionRate : 0;
+        emissionModule.rateOverTime = isMeditating;
 
     }
 
@@ -110,6 +138,25 @@ public class OratoryController : MonoBehaviour
 
     }
 
+
+
+    private bool IsDifferentLayer(LayerMask layer)
+    {
+
+        if (this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
+        {
+            return true;
+        }
+        else if (this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
 
 
 }
