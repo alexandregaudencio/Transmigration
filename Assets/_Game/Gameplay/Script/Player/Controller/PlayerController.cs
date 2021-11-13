@@ -3,8 +3,6 @@ using Photon.Realtime;
 
 using UnityEngine;
 
-
-
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(StateController))]
 [RequireComponent(typeof(PlayerProperty))]

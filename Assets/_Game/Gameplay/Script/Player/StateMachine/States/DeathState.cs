@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DeathState : State
 {
+    bool state = false;
     public override void EnterState(PlayerController playerController, StateController stateController)
     {
-        stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
-
+        state = true;
+        if(playerController.PV.IsMine && state) {
+            stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
+        }
+        
         //playerController.GetComponent<Collider2D>().enabled = false;
     }
 
@@ -26,12 +30,14 @@ public class DeathState : State
     
     }
 
+
+
     private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
     {
         playerController.photonView.RPC("SwitchComponent", RpcTarget.All, false);
         yield return new WaitForSeconds(3);
         playerController.photonView.RPC("SwitchComponent", RpcTarget.All, true);
-        
+        state = false;
         //playerController.SwitchComponent(false, UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
         //yield return new WaitForSeconds(3);
         //playerController.SwitchComponent(true, UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);

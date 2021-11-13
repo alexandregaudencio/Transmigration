@@ -8,7 +8,30 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
     PhotonView photonview;
 
     public string Team { get =>  photonview.Controller.GetPhotonTeam().Name; }
-    public int HP  =>  (int)photonview.Controller.CustomProperties["HP"]; 
+    public int maxHP =>  (int)photonview.Controller.CustomProperties["maxHP"];
+       
+    public int HP
+    {
+        get
+        {
+            return (int)photonview.Controller.CustomProperties["HP"];
+        }
+        set
+        {
+            int hp = (int)PV.Controller.CustomProperties["HP"];
+            HashProperty["HP"] = hp + value;
+            PV.Controller.SetCustomProperties(HashProperty);
+        }
+    }
+    public void IncreaseHP(int value)
+    {
+        if(HP <= maxHP)
+        {
+            HP = value;
+
+        }
+    }
+
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
     private void Awake()
