@@ -19,6 +19,10 @@ public class OratoryController : MonoBehaviour
     public float meditatingCount;
 
     private bool canMeditate = false;
+    public bool RedTombstone;
+    
+    
+
 
     public float meditatePercent => meditatingCount / maxMeditating;
 
@@ -42,7 +46,7 @@ public class OratoryController : MonoBehaviour
         if (!IsDifferentLayer(collision.gameObject.layer) && collision.gameObject.CompareTag("character"))
         {
             Debug.Log("On Meditation.");
-            OnMeditation(true);
+            OnMeditationZone(true);
 
         }
 
@@ -63,7 +67,7 @@ public class OratoryController : MonoBehaviour
        if(!IsDifferentLayer(collision.gameObject.layer) && collision.gameObject.CompareTag("character")) 
         {
             Debug.Log("Out Meditation.");
-            OnMeditation(false);
+            OnMeditationZone(false);
         }
         //string colTeam = collision.gameObject.GetComponent<PlayerProperty>().Team;
         //Debug.Log(colTeam + "ANOTHER TEAM " + targetTeam);
@@ -75,7 +79,7 @@ public class OratoryController : MonoBehaviour
         //}
     }
 
-    public void OnMeditation(bool value)
+    public void OnMeditationZone(bool value)
     {
         canMeditate = value;
         textObject.SetActive(value);
@@ -86,29 +90,35 @@ public class OratoryController : MonoBehaviour
 
     public void Meditate()
     {
-        if(PV.Controller == PhotonNetwork.LocalPlayer)
+        if (PV.IsMine == RedTombstone)
         {
+            if (Input.GetKey(GameConfigs.instance.MeditateKey) )
+            {
+                PV.RPC("UpdateMeditateCount", RpcTarget.All);
+            }
+
+
             if (Input.GetKeyDown(GameConfigs.instance.MeditateKey))
             {
+
                 //PhotonNetwork.LocalPlayer.GetPhotonTeam().Name == "TeamB";
                 PV.RPC("OnMeditate", RpcTarget.All, emissionRate);
-                OnMeditate(emissionRate);
-                meditatingCount += Time.fixedDeltaTime;
+                //OnMeditate(emissionRate);
 
             }
 
-           if(Input.GetKeyUp(GameConfigs.instance.MeditateKey))
+            if(Input.GetKeyUp(GameConfigs.instance.MeditateKey))
             {
-                PV.RPC("OnMeditate", RpcTarget.All, 0);
-                OnMeditate(0);
+                PV.RPC("OnMeditate", RpcTarget.All, 0f);
+            //OnMeditate(0);
             }
 
 
 
         }
-          
 
-        if(meditatingCount >= maxMeditating)
+
+        if (meditatingCount >= maxMeditating)
         {
             //PONTUAÇÃO
             PV.RPC("MeditationCompleted", RpcTarget.All);
@@ -128,6 +138,13 @@ public class OratoryController : MonoBehaviour
     public void OnMeditate(float isMeditating)
     {
         emissionModule.rateOverTime = isMeditating;
+
+    }
+
+    [PunRPC]
+    public void UpdateMeditateCount()
+    {
+        meditatingCount += Time.fixedDeltaTime;
 
     }
 

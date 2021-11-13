@@ -54,6 +54,7 @@ MonoBehaviour:
   - DeathEvent
   - MeditationCompleted
   - OnMeditate
+  - UpdateMeditateCount
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

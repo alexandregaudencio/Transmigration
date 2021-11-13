@@ -28638,6 +28638,11 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9099774052376289523, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9099774052376289525, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
         type: 3}
       propertyPath: m_Name
@@ -28647,6 +28652,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099774052376289526, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
+        type: 3}
+      propertyPath: emissionRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099774052376289526, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
+        type: 3}
+      propertyPath: BluetombStone
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9099774052376289527, guid: 28ec022cec15a9e4ea9236bca9ccd2b6,
         type: 3}
