@@ -724,7 +724,7 @@ MonoBehaviour:
   menuSceneIndex: 0
   gameplaySceneIndex: 1
   HP: 200
-  timeToRespawn: 3
+  timeToRespawn: 5
   timeGameplay: 180
   timestartup: 10
   TeamAColor: {r: 0.63529414, g: 0.09019608, b: 0.0627451, a: 1}
