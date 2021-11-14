@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class SentinelController : MonoBehaviour
 {
     [SerializeField] [Range(0,5)] private float bulletSpawnInterval;
@@ -12,14 +11,14 @@ public class SentinelController : MonoBehaviour
     [SerializeField] private Transform targetMass;
     [SerializeField] private List<Transform> targetCharacters;
 
-    AudioSource audioSource;
+     [SerializeField] private AudioSource audioSource;
     public AudioClip shootClip;
     public AudioClip onVisionClip;
 
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    //private void Awake()
+    //{
+    //    audioSource = GetComponent<AudioSource>();
+    //}
 
     private bool TargetOnVision => (targetCharacters.Count > 0) ? true : false;
 

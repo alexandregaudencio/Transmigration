@@ -10,7 +10,7 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     [SerializeField] private Image lifeBarFill;
     PhotonView PV;
     Animator animator;
-    AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
     public AudioClip deathClip;
     
 
@@ -23,7 +23,7 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     {
         PV = GetComponent<PhotonView>();
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         
     }
 

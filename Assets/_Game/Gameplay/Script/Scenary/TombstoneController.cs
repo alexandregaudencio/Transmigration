@@ -20,7 +20,7 @@ public class TombstoneController : MonoBehaviour
 
     private bool canMeditate = false;
     [SerializeField] private bool RedTombstone;
-    AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
     public AudioClip playDoneClip;
     
     
@@ -33,7 +33,6 @@ public class TombstoneController : MonoBehaviour
     {
         particle = GetComponent<ParticleSystem>();
         PV = GetComponent<PhotonView>();
-        audioSource = GetComponent<AudioSource>();
         emissionModule = particle.emission;
         emissionModule.rateOverTime = 0;
 
