@@ -57,33 +57,17 @@ public class TombstoneController : MonoBehaviour
 
         }
 
-        ////ajustar o collisionTeam
-        //string colTeam = collision.gameObject.GetComponent<PlayerProperty>().Team;
-        //Debug.Log(colTeam + "ANOTHER TEAM: " + targetTeam);
-
-        //if (collision.gameObject.CompareTag("character") && colTeam == targetTeam)
-        //{
-
-        //    OnMeditation(true);
-        //}
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-       if(!IsDifferentLayer(collision.gameObject.layer) && collision.gameObject.CompareTag("character")) 
+       if(/*!IsDifferentLayer(collision.gameObject.layer) &&*/ collision.gameObject.CompareTag("character")) 
         {
             Debug.Log("Out Meditation.");
             OnMeditationZone(false);
         }
-        //string colTeam = collision.gameObject.GetComponent<PlayerProperty>().Team;
-        //Debug.Log(colTeam + "ANOTHER TEAM " + targetTeam);
 
-        //if (collision.gameObject.CompareTag("character") && colTeam == targetTeam)
-        //{
-
-        //    OnMeditation(false);
-        //}
     }
 
     public void OnMeditationZone(bool value)
@@ -102,8 +86,8 @@ public class TombstoneController : MonoBehaviour
 
     public void Meditate()
     {
-        if (PV.IsMine == RedTombstone)
-        {
+        //if (PV.IsMine == RedTombstone)
+        //{
             if (Input.GetKey(GameConfigs.instance.MeditateKey) )
             {
                 PV.RPC("UpdateMeditateCount", RpcTarget.All);
@@ -127,7 +111,7 @@ public class TombstoneController : MonoBehaviour
 
 
 
-        }
+        //}
 
 
         if (meditatingCount >= maxMeditating)
@@ -177,19 +161,18 @@ public class TombstoneController : MonoBehaviour
     private bool IsDifferentLayer(LayerMask layer)
     {
 
-        //if (this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
-        //{
-        //    return true;
-        //}
-        //else if (this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
-        //{
-        //    return true;
-        //}
-        //else
-        //{
-        //    return false;
-        //}
-        return true;
+        if (this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
+        {
+            return true;
+        }
+        else if (this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 

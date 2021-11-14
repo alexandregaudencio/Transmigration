@@ -21,6 +21,15 @@ public class GameController : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+
+        if (timerController.timer.IsCountdownOver())
+        {
+            EndGame();
+        }
+    }
+
 
 
 

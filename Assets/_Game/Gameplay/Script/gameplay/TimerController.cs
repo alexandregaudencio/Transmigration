@@ -7,7 +7,7 @@ using UnityEngine;
 public class TimerController : MonoBehaviour
 {
     [SerializeField] private TMP_Text timerDisplay;
-    Timer timer;
+    public Timer timer;
     PhotonView PV;
 
 
@@ -20,7 +20,6 @@ public class TimerController : MonoBehaviour
 
     private void Awake()
     {
-
         audioSource = GetComponent<AudioSource>();
         PV = GetComponent<PhotonView>();
         timer = GetComponent<Timer>();

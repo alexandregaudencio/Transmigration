@@ -10,10 +10,10 @@ public class TriggerDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (gameObject.layer == collision.gameObject.layer) return;
+        //if (gameObject.layer == collision.gameObject.layer) return;
 
-        if (collisionTagsList.Contains(collision.gameObject.tag))
-        {
+        //if (collisionTagsList.Contains(collision.gameObject.tag))
+        if(collision.gameObject != this.gameObject)   {
             IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
             damageable?.TakeDamage(damage);
         }

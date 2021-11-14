@@ -104,7 +104,7 @@ public class SentinelController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
+        if (/*IsDifferentLayer(collision.gameObject.layer) && */!collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Add(collision.gameObject.transform);
             GetComponent<SpriteRenderer>().sprite = spriteAttack;
