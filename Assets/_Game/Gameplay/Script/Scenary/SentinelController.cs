@@ -10,8 +10,11 @@ public class SentinelController : MonoBehaviour
     [SerializeField] private Transform weaponBase;
     [SerializeField] private Transform targetMass;
     [SerializeField] private List<Transform> targetCharacters;
+    [SerializeField] private Sprite spriteStandard;
+    [SerializeField] private Sprite spriteAttack;
 
-     [SerializeField] private AudioSource audioSource;
+
+    [SerializeField] private AudioSource audioSource;
     public AudioClip shootClip;
     public AudioClip onVisionClip;
 
@@ -82,7 +85,7 @@ public class SentinelController : MonoBehaviour
         //só pra ilustrar
         if (TargetOnVision)
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            //GetComponent<SpriteRenderer>().color = Color.red;
             //mira
             weaponBase.rotation = targetRotation;
             //atira
@@ -104,7 +107,7 @@ public class SentinelController : MonoBehaviour
         if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Add(collision.gameObject.transform);
-            GetComponent<SpriteRenderer>().color = Color.red;
+            GetComponent<SpriteRenderer>().sprite = spriteAttack;
             //audioSource.clip = onVisionClip;
             //audioSource.Play();
 
@@ -118,7 +121,7 @@ public class SentinelController : MonoBehaviour
         if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Remove(collision.gameObject.transform);
-            GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponent<SpriteRenderer>().sprite = spriteStandard;
 
         }
     }
