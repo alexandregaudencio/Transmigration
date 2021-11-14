@@ -25,14 +25,12 @@ public class PlayerAudioManager : MonoBehaviour
         audioSource.clip = audio;
         audioSource.loop = onLoop;
         audioSource.Play();
-
     }
 
-
-
-    // Update is called once per frame
-    void Update()
+    public void StopAudio()
     {
-        
+        audioSource.Stop();
     }
+
+
 }

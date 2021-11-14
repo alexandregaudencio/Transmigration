@@ -92,15 +92,10 @@ public class SentinelController : MonoBehaviour
 
 
             //INSTANCIAR EFEITOS AQUI
-            //espera
             audioSource.clip = shootClip;
             audioSource.Play();
 
         }
-        //else
-        //{
-        //    GetComponent<SpriteRenderer>().color = Color.white;
-        //}
 
     }
 

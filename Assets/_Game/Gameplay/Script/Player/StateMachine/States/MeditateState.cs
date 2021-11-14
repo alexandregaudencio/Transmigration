@@ -28,8 +28,10 @@ public class MeditateState : State
     {
         if (Input.GetKeyUp(KeyCode.Q))
         {
+            playerController.AudioManager.StopAudio();
             playerController.Animator.SetBool("meditating", false);
             stateController.TransitionToState(stateController.ListedStates.standardState);
+        
         }
     }
 }
