@@ -8,9 +8,8 @@ public class DeathState : State
     {
         //if(playerController.PV.IsMine)
         //{
-        playerController.Animator.SetBool("dead", true);
         //playerController.Animator.Play("death");
-            stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
+        stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
 
         //}
 
@@ -37,7 +36,7 @@ public class DeathState : State
     private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
     {
         playerController.photonView.RPC("SwitchComponent", RpcTarget.All, false);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(GameConfigs.instance.timeToRespawn);
         playerController.photonView.RPC("SwitchComponent", RpcTarget.All, true);
 
         stateController.TransitionToState(stateController.ListedStates.standardState);

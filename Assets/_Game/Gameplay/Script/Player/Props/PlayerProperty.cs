@@ -55,14 +55,12 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
 
     public void ResetPlayerPrps(Vector3 spawnPosition)
     {
-            //TODO: not working great.
-            HashProperty["HP"] = (int)PhotonNetwork.LocalPlayer.CustomProperties["maxHP"];
-            HashProperty["isDead"] = false;
-        //HashProperty["timeToRespawn"] = GameConfigs.instance.timeToRespawn;
-            PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
-        //SetupGameplay setupGameplay = "";
+        //TODO: not working great.
+        HashProperty["HP"] = (int)PhotonNetwork.LocalPlayer.CustomProperties["maxHP"];
+        HashProperty["isDead"] = false;
+        PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
         GetComponent<SpriteRenderer>().enabled = true;
-            transform.position = spawnPosition;
+        transform.position = spawnPosition;
 
 
     }

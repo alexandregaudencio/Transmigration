@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField] private int maxYVelocity;
     [SerializeField] private float dashSpeed;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
+    [SerializeField] private GameObject billboard;
 
     //[Header("Jetpack Settings")]
     //[SerializeField] private int minFloatingToJatpack;
@@ -63,49 +64,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     }
 
-    //void ProcessJatpack()
-    //{
-
-    //    if (isGround)
-    //    {
-    //        if (Input.GetKeyDown(jetpackInput))
-    //        {
-    //            playerRigidbody2D.AddForce(new Vector2(playerRigidbody2D.velocity.x, impulse), ForceMode2D.Impulse);
-    //        }
-    //    } 
-
-
-
-    //    if(canJatpack)
-    //    {
-
-    //        if (Input.GetKey(jetpackInput) ) {
-    //            if(Mathf.Round(playerRigidbody2D.velocity.y) <= maxYVelocity)
-    //            {
-    //                playerRigidbody2D.AddForce(new Vector2(0, jatpackImpulse), ForceMode2D.Force);
-    //                GetComponent<SpriteRenderer>().color = Color.blue;
-    //            }
-
-    //        } else
-    //        {
-    //            GetComponent<SpriteRenderer>().color = Color.yellow;
-
-    //        }
-    //    }
-
-
-
-
-    //    if(!IsGround && Mathf.Round(playerRigidbody2D.velocity.y) < minFloatingToJatpack && !canJatpack)
-    //    {
-
-    //        canJatpack = true;
-    //        GetComponent<SpriteRenderer>().color = Color.yellow;
-
-    //    } 
-
-
-    //}
 
     [PunRPC]
     public void SetRendererFlipX( bool flipXState)
@@ -117,10 +75,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void SwitchComponent(bool value/*, Vector3 spawnPosition, Player player*/)
     {
-      
+        billboard.SetActive(value);
+        Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
-        GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.gray;
-
+        //GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.gray;
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
@@ -141,15 +99,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public void GoToDeathState()
     {
         StateController.TransitionToState(StateController.ListedStates.deathState);
-
     }
 
     public void GoToStandartState()
     {
         StateController.TransitionToState(StateController.ListedStates.deathState);
-
     }
-
 
     public void CanPlayWalkAnimation()
     {

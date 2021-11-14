@@ -36,11 +36,10 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
         {
             if((int)targetPlayer.CustomProperties["HP"] <= 0 && !(bool)targetPlayer.CustomProperties["isDead"])
             {
-                GetComponent<PlayerController>().GoToDeathState();
-                
                 HashProperty["isDead"] = true;
-                
                 PV.Controller.SetCustomProperties(HashProperty);
+                GetComponent<PlayerController>().GoToDeathState();
+
             }
         }
     }

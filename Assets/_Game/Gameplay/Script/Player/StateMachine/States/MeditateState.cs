@@ -8,7 +8,7 @@ public class MeditateState : State
     {
         playerController.Animator.SetBool("meditating", true);
 
-        playerController.Animator.Play("meditate");
+        //playerController.Animator.Play("meditate");
         playerController.PlayerRigidbody2D.velocity = Vector2.zero;
 
 

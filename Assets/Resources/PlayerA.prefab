@@ -542,6 +542,7 @@ MonoBehaviour:
   maxYVelocity: 7
   dashSpeed: 30
   weaponSpriteRenderer: {fileID: 3074866688810890590}
+  billboard: {fileID: 1078416516883609246}
 --- !u!114 &8197522545215113023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,9 +666,6 @@ MonoBehaviour:
   - Type: 9
     SynchronizeType: 1
     Name: shoot
-  - Type: 4
-    SynchronizeType: 1
-    Name: Hurt
   - Type: 4
     SynchronizeType: 1
     Name: preWalking
