@@ -11,16 +11,22 @@ public class StartupTimer : MonoBehaviour
     PhotonView PV;
     [SerializeField] private List<GameObject> BlockZoneObjects;
 
+    AudioSource audioSource;
+    public AudioClip startupMusic;
+
 
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
         timer = GetComponent<Timer>();
+        audioSource = GetComponent<AudioSource>();
+
     }
     private void OnEnable()
     {
         timer.CurrentTime = GameConfigs.instance.timeStartup;
-
+        audioSource.clip = startupMusic;
+        audioSource.Play();
     }
 
     private void FixedUpdate()

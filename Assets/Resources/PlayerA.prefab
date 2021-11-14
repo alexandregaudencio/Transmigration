@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 1789463040483444686}
   - component: {fileID: 3104569666897470248}
   - component: {fileID: 221426466214061600}
+  - component: {fileID: 1976188006017426453}
   m_Layer: 0
   m_Name: PlayerA
   m_TagString: character
@@ -724,7 +725,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 15.274816
+  MinDistance: 0.9
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -760,7 +761,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.839
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -800,6 +801,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &1976188006017426453
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
 --- !u!1 &3074866688810890528
 GameObject:
   m_ObjectHideFlags: 0

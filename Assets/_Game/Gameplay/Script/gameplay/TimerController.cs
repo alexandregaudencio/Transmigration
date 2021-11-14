@@ -11,9 +11,17 @@ public class TimerController : MonoBehaviour
     PhotonView PV;
 
 
+    AudioSource audioSource;
+    public AudioClip gameplayMusic;
+
+
+
+
 
     private void Awake()
     {
+
+        audioSource = GetComponent<AudioSource>();
         PV = GetComponent<PhotonView>();
         timer = GetComponent<Timer>();
     }
@@ -23,6 +31,9 @@ public class TimerController : MonoBehaviour
     {
         timer.CurrentTime = GameConfigs.instance.timeGameplay;
         timerDisplay.enabled = true;
+
+        audioSource.clip = gameplayMusic;
+        audioSource.Play();
     }
 
 
