@@ -22,7 +22,8 @@ public class TombstoneController : MonoBehaviour
     [SerializeField] private bool RedTombstone;
     [SerializeField] private AudioSource audioSource;
     public AudioClip playDoneClip;
-    
+
+    [SerializeField] private ResetTombstone resetTombstone;
     
     
 
@@ -155,9 +156,12 @@ public class TombstoneController : MonoBehaviour
     [PunRPC]
     public void MeditationCompleted()
     {
+
         audioSource.clip = playDoneClip;
         audioSource.Play();
+        resetTombstone.ResetingTombstone();
         this.gameObject.SetActive(false);
+
 
     }
 

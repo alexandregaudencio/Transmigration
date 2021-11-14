@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameConfigs : MonoBehaviour
 {
     public static GameConfigs instance;
-    public  byte maxRoomPlayers;
-    public  int menuSceneIndex;
-    public  int gameplaySceneIndex;
+    public byte maxRoomPlayers;
+    public int menuSceneIndex;
+    public int gameplaySceneIndex;
 
     //player
     public int HP;
@@ -15,19 +15,23 @@ public class GameConfigs : MonoBehaviour
 
     //gameplay
     public float timeGameplay;
-    public float timeStartup;
+    public float timestartup;
+
 
 
     public Color TeamAColor;
     public Color TeamBColor;
 
+    public float resetSentineltime;
+    public float resetTombstonetime;
+
 
     public KeyCode MeditateKey;
-    public Texture2D cursorTexture;
     private void Start()
     {
         instance = this;
-        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
+
+
 
 }

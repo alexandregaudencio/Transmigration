@@ -12,7 +12,7 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     Animator animator;
     [SerializeField] private AudioSource audioSource;
     public AudioClip deathClip;
-    
+    [SerializeField] private ResetSentinel resetSentinel;
 
     public float HP { get => hp; set => hp = value; }
     private float maxHP;
@@ -52,12 +52,15 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
         }
     }
 
-    [PunRPC]
+    //[PunRPC]
     public void DeathEvent()
     {
-        gameObject.SetActive(false);
         audioSource.clip = deathClip;
         audioSource.Play();
+        hp = maxHP;
+        resetSentinel.ResetingSentinel();
+        gameObject.SetActive(false);
+
     }
 
 

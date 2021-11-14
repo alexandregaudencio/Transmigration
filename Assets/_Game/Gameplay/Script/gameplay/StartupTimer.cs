@@ -24,7 +24,7 @@ public class StartupTimer : MonoBehaviour
     }
     private void OnEnable()
     {
-        timer.CurrentTime = GameConfigs.instance.timeStartup;
+        timer.CurrentTime = GameConfigs.instance.timestartup;
         audioSource.clip = startupMusic;
         audioSource.Play();
     }

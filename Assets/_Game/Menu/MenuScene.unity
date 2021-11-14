@@ -720,17 +720,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e81261cfc4ca4baccbb342fe32b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRoomPlayers: 4
+  maxRoomPlayers: 2
   menuSceneIndex: 0
   gameplaySceneIndex: 1
-  HP: 100
+  HP: 200
   timeToRespawn: 3
-  timeGameplay: 120
-  timeStartup: 10
+  timeGameplay: 180
+  timestartup: 10
   TeamAColor: {r: 0.63529414, g: 0.09019608, b: 0.0627451, a: 1}
   TeamBColor: {r: 0.36862746, g: 0.5294118, b: 0.92156863, a: 1}
+  resetSentineltime: 5
+  resetTombstonetime: 5
   MeditateKey: 113
-  cursorTexture: {fileID: 2800000, guid: 04267baa1fc576043a4d84bf7ceca907, type: 3}
 --- !u!82 &328987534
 AudioSource:
   m_ObjectHideFlags: 0
