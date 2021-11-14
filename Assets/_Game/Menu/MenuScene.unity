@@ -532,7 +532,7 @@ MonoBehaviour:
   TeamAColor: {r: 0.63529414, g: 0.09019608, b: 0.0627451, a: 1}
   TeamBColor: {r: 0.36862746, g: 0.5294118, b: 0.92156863, a: 1}
   MeditateKey: 113
-  cursorTexture: {fileID: 2800000, guid: c3b5f2af15be2434ba3f7b62146214d4, type: 3}
+  cursorTexture: {fileID: 2800000, guid: 04267baa1fc576043a4d84bf7ceca907, type: 3}
 --- !u!1 &340708449
 GameObject:
   m_ObjectHideFlags: 0
