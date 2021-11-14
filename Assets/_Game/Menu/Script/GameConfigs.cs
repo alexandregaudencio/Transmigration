@@ -22,9 +22,11 @@ public class GameConfigs : MonoBehaviour
 
 
     public KeyCode MeditateKey;
+    public Texture2D cursorTexture;
     private void Start()
     {
         instance = this;
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
 }
