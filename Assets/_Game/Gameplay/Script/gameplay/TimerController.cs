@@ -19,9 +19,10 @@ public class TimerController : MonoBehaviour
     }
 
 
-    private void Start()
+    private void OnEnable()
     {
         timer.CurrentTime = GameConfigs.instance.timeGameplay;
+        timerDisplay.enabled = true;
     }
 
 

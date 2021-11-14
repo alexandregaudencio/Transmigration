@@ -15,6 +15,7 @@ public class GameConfigs : MonoBehaviour
 
     //gameplay
     public float timeGameplay;
+    public float timeStartup;
 
 
     public Color TeamAColor;
