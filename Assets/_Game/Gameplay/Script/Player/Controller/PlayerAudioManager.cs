@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,12 @@ public class PlayerAudioManager : MonoBehaviour
     public AudioClip deathClip;
     public AudioClip meditationClip;
 
+    private PhotonView PV;
 
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-    
+        PV = GetComponent<PhotonView>();
     }
 
 
@@ -31,6 +33,8 @@ public class PlayerAudioManager : MonoBehaviour
     {
         audioSource.Stop();
     }
+
+
 
 
 }

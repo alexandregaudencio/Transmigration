@@ -13,13 +13,13 @@ public class StandardState : State
     public override void FixedUpdateState(PlayerController playerController, StateController stateController)
     {
 
-            HorizontalMove(playerController);
-            VerticalMove(playerController);
-            playerController.WeaponBase.ProcessWeaponActivation(playerController.AudioManager);
+        HorizontalMove(playerController);
+        VerticalMove(playerController);
+        playerController.WeaponBase.ProcessWeaponActivation(playerController.AudioManager);
 
-            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position;
-            bool flipState = (direction.x < 0.00f) ? true : false;
-            playerController.photonView.RPC("SetRendererFlipX", RpcTarget.All, flipState);
+        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position;
+        bool flipState = (direction.x < 0.00f) ? true : false;
+        playerController.photonView.RPC("SetRendererFlipX", RpcTarget.All, flipState);
 
 
         //}
