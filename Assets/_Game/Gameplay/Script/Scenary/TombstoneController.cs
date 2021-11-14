@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TombstoneController : MonoBehaviour
 {
@@ -24,8 +25,9 @@ public class TombstoneController : MonoBehaviour
     public AudioClip playDoneClip;
 
     [SerializeField] private ResetTombstone resetTombstone;
-    
-    
+
+
+    [SerializeField] private Image meditateBar; 
 
 
     public float meditatePercent => meditatingCount / maxMeditating;
@@ -47,7 +49,7 @@ public class TombstoneController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!IsDifferentLayer(collision.gameObject.layer) && collision.gameObject.CompareTag("character"))
+        if (/*!IsDifferentLayer(collision.gameObject.layer) && */collision.gameObject.CompareTag("character"))
         {
             
             Debug.Log("On Meditation.");
@@ -88,10 +90,15 @@ public class TombstoneController : MonoBehaviour
     {
         canMeditate = value;
         textObject.SetActive(value);
+        updateUImeditate();
 
 
     }
 
+    void updateUImeditate()
+    {
+        meditateBar.fillAmount = meditatePercent;
+    }
 
     public void Meditate()
     {
@@ -170,19 +177,19 @@ public class TombstoneController : MonoBehaviour
     private bool IsDifferentLayer(LayerMask layer)
     {
 
-        if (this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
-        {
-            return true;
-        }
-        else if (this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
+        //if (this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
+        //{
+        //    return true;
+        //}
+        //else if (this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
+        return true;
     }
 
 

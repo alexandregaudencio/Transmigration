@@ -118,7 +118,7 @@ public class SentinelController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (IsDifferentLayer(collision.gameObject.layer) && !collision.gameObject.CompareTag("bullet"))
+        if (/*IsDifferentLayer(collision.gameObject.layer) &&*/ !collision.gameObject.CompareTag("bullet"))
         {
             targetCharacters.Remove(collision.gameObject.transform);
             GetComponent<SpriteRenderer>().sprite = spriteStandard;
