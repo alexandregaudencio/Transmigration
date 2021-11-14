@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 {
     TimerController timerController;
 
+
     private void Start()
     {
         timerController = GetComponent<TimerController>();
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour
         PhotonNetwork.LoadLevel(GameConfigs.instance.menuSceneIndex);
 
     }
+
 
 
 

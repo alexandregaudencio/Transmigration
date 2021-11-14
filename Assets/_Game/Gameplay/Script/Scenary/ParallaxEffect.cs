@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Photon.Realtime;
 using Photon.Pun;
-
-[RequireComponent(typeof(Tilemap))]
-public class TilemapParallax : MonoBehaviour
+public class ParallaxEffect : MonoBehaviour
 {
     [SerializeField] [Range(-1,1)] private float xScroll;
     [SerializeField] [Range(-1,1)] private float yScroll;
@@ -27,6 +25,7 @@ public class TilemapParallax : MonoBehaviour
         if (target == null)
         {
             FindLocalCamera();
+            if (target == null) FindLocalCamera();
         }
 
     }
@@ -65,3 +64,6 @@ public class TilemapParallax : MonoBehaviour
 
 
 }
+
+
+
