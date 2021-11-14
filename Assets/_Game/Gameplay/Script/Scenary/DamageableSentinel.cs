@@ -13,7 +13,6 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
 
     public float HP { get => hp; set => hp = value; }
     private float maxHP;
-    bool isDead = false;
 
     private float hpPercent => hp / maxHP;
 
@@ -52,7 +51,6 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     [PunRPC]
     public void DeathEvent()
     {
-        isDead = true;
         gameObject.SetActive(false);
     }
 

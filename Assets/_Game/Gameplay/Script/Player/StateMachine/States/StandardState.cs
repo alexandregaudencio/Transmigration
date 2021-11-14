@@ -15,20 +15,7 @@ public class StandardState : State
 
             HorizontalMove(playerController);
             VerticalMove(playerController);
-
-            //text.text = Mathf.Round(playerRigidbody2D.velocity.y).ToString();
-
-            //FLIP
-            //if (direction.x < 0.0000f)
-            //{
-
-            //    transform.rotation = Quaternion.Euler(0, 180f, 0);
-            //}
-            //else
-            //{
-            //    transform.rotation = Quaternion.Euler(0, 0f, 0);
-
-            //}
+            playerController.WeaponBase.ProcessWeaponActivation();
 
             Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position;
             bool flipState = (direction.x < 0.00f) ? true : false;
@@ -67,36 +54,6 @@ public class StandardState : State
         {
             stateController.TransitionToState(stateController.ListedStates.meditateState);
         }
-
-
-        //if(Input.GetKeyDown(KeyCode.LeftArrow) ||
-        //    Input.GetKeyDown(KeyCode.LeftArrow) ||
-        //    Input.GetKeyDown(KeyCode.RightArrow) ||
-        //    Input.GetKeyDown(KeyCode.UpArrow) ||
-        //    Input.GetKeyDown(KeyCode.DownArrow) ||
-        //    Input.GetKeyDown(KeyCode.A) ||
-        //    Input.GetKeyDown(KeyCode.W) ||
-        //    Input.GetKeyDown(KeyCode.S) ||
-        //    Input.GetKeyDown(KeyCode.D)
-        //    )
-        //    {
-        //        playerController.Animator.Play("walk");
-        //    }
-
-        //if (Input.GetKeyUp(KeyCode.LeftArrow) ||
-        //    Input.GetKeyUp(KeyCode.LeftArrow) ||
-        //    Input.GetKeyUp(KeyCode.RightArrow) ||
-        //    Input.GetKeyUp(KeyCode.UpArrow) ||
-        //    Input.GetKeyUp(KeyCode.DownArrow) ||
-        //    Input.GetKeyUp(KeyCode.A) ||
-        //    Input.GetKeyUp(KeyCode.W) ||
-        //    Input.GetKeyUp(KeyCode.S) ||
-        //    Input.GetKeyUp(KeyCode.D)
-        //    )
-        //    {
-        //        playerController.Animator.Play("Idle_Gato");
-        //    }
-
 
 
     }
