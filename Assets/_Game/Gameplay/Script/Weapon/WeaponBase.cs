@@ -22,6 +22,27 @@ public class WeaponBase : MonoBehaviour
 
     void Update()
     {
+        //if (PV.IsMine)
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        PV.RPC("SwitchSpriteRender", RpcTarget.All, true);
+        //        //GetComponent<SpriteRenderer>().enabled = false;
+
+        //    }
+        //    if (Input.GetMouseButtonUp(0))
+        //    {
+        //        PV.RPC("SwitchSpriteRender", RpcTarget.All, false);
+        //        //GetComponent<SpriteRenderer>().enabled = false;
+        //        //TODO: ajustar o teamA 
+        //        PV.RPC("DefaultShoot", RpcTarget.All);
+        //    }
+        //}
+       
+    }
+
+    public void ProcessWeaponActivation()
+    {
         if (PV.IsMine)
         {
             if (Input.GetMouseButtonDown(0))
@@ -38,7 +59,7 @@ public class WeaponBase : MonoBehaviour
                 PV.RPC("DefaultShoot", RpcTarget.All);
             }
         }
-       
+
     }
 
     [PunRPC]
@@ -62,25 +83,17 @@ public class WeaponBase : MonoBehaviour
 
     }
 
-    //void SetBulletProps(GameObject bullet)
-    //{
-    //    //erro: dano não sendo aplicado
-    //    bullet.layer = GetComponentInParent<GameObject>().layer;
-
-    //}
-
-
     void FixedUpdate()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - GetComponentInParent<Transform>().position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         
-        if (PV.IsMine)
-        {
+        //if (PV.IsMine)
+        //{
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed * Time.fixedDeltaTime);
             GetComponent<SpriteRenderer>().flipY = (direction.x < 0.0000f);
-        }
+        //}
         
     }
 }

@@ -541,8 +541,8 @@ MonoBehaviour:
   speed: 300
   maxYVelocity: 7
   dashSpeed: 30
-  isGround: 0
-  PV: {fileID: 0}
+  weaponSpriteRenderer: {fileID: 3074866688810890590}
+  billboard: {fileID: 1078416516883609246}
 --- !u!114 &8197522545215113023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,25 +664,25 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: shoot
   - Type: 4
-    SynchronizeType: 0
-    Name: Hurt
-  - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: preWalking
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: walking
   - Type: 9
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: hurt
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: meditating
+  - Type: 4
+    SynchronizeType: 1
+    Name: dead
   m_SynchronizeLayers:
-  - SynchronizeType: 0
+  - SynchronizeType: 1
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1

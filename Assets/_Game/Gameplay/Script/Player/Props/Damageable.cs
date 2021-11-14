@@ -23,6 +23,7 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
     {
         playerProperty.HP = -damage;
         GetComponent<PlayerController>().Animator.SetTrigger("hurt");
+
         //int hp = (int)PV.Controller.CustomProperties["HP"];
         //HashProperty["HP"] = hp - damage;
         //PV.Controller.SetCustomProperties(HashProperty);
@@ -37,8 +38,15 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
             {
                 HashProperty["isDead"] = true;
                 PV.Controller.SetCustomProperties(HashProperty);
+                GetComponent<PlayerController>().GoToDeathState();
+
             }
         }
     }
+
+
+
+
+
 
 }

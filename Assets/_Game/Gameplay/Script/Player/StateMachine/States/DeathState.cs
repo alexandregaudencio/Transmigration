@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class DeathState : State
 {
-    bool state = false;
     public override void EnterState(PlayerController playerController, StateController stateController)
     {
-        state = true;
-        if(playerController.PV.IsMine && state) {
-            stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
-        }
-        
+        //if(playerController.PV.IsMine)
+        //{
+        //playerController.Animator.Play("death");
+        stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
+
+        //}
+
         //playerController.GetComponent<Collider2D>().enabled = false;
     }
 
@@ -35,19 +36,13 @@ public class DeathState : State
     private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
     {
         playerController.photonView.RPC("SwitchComponent", RpcTarget.All, false);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(GameConfigs.instance.timeToRespawn);
         playerController.photonView.RPC("SwitchComponent", RpcTarget.All, true);
-        state = false;
-        //playerController.SwitchComponent(false, UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
-        //yield return new WaitForSeconds(3);
-        //playerController.SwitchComponent(true, UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
-
-        //if(playerController.photonView.IsMine)
-        //{
-         playerController.PlayerProperty.ResetPlayerPrps(UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
-        //}
 
         stateController.TransitionToState(stateController.ListedStates.standardState);
+        playerController.PlayerProperty.ResetPlayerPrps(UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
+        
+
     }
 
 

@@ -18,22 +18,25 @@ public class PlayerController : MonoBehaviourPunCallbacks
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2D;
     Animator animator;
+    WeaponBase weaponBase;
 
     [SerializeField] private float speed;
     [SerializeField] private int maxYVelocity;
     [SerializeField] private float dashSpeed;
+    [SerializeField] private SpriteRenderer weaponSpriteRenderer;
+    [SerializeField] private GameObject billboard;
 
-    [Header("Jetpack Settings")]
+    //[Header("Jetpack Settings")]
     //[SerializeField] private int minFloatingToJatpack;
     //[SerializeField] private int jatpackImpulse;
     //[SerializeField] private KeyCode jetpackInput;
     //public Text text;
 
-    public bool isGround;
+    //public bool isGround;
     //public bool canJatpack;
 
-    public bool IsGround { get => isGround; set => isGround = value; }
-    public PhotonView PV;
+    //public bool IsGround { get => isGround; set => isGround = value; }
+    private PhotonView pV;
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
     public float Speed { get => speed; set => speed = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public BoxCollider2D BoxCollider2D { get => boxCollider2D; set => boxCollider2D = value; }
     public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
     public Animator Animator { get => animator; set => animator = value; }
+    public PhotonView PV { get => pV; set => pV = value; }
+    public WeaponBase WeaponBase { get => weaponBase; set => weaponBase = value; }
 
     //private new PhotonView photonView;
 
@@ -55,100 +60,38 @@ public class PlayerController : MonoBehaviourPunCallbacks
         SpriteRenderer = GetComponent<SpriteRenderer>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
+        weaponBase = GetComponentInChildren<WeaponBase>();
 
     }
 
-    //void ProcessJatpack()
-    //{
-
-    //    if (isGround)
-    //    {
-    //        if (Input.GetKeyDown(jetpackInput))
-    //        {
-    //            playerRigidbody2D.AddForce(new Vector2(playerRigidbody2D.velocity.x, impulse), ForceMode2D.Impulse);
-    //        }
-    //    } 
-
-
-
-    //    if(canJatpack)
-    //    {
-
-    //        if (Input.GetKey(jetpackInput) ) {
-    //            if(Mathf.Round(playerRigidbody2D.velocity.y) <= maxYVelocity)
-    //            {
-    //                playerRigidbody2D.AddForce(new Vector2(0, jatpackImpulse), ForceMode2D.Force);
-    //                GetComponent<SpriteRenderer>().color = Color.blue;
-    //            }
-
-    //        } else
-    //        {
-    //            GetComponent<SpriteRenderer>().color = Color.yellow;
-
-    //        }
-    //    }
-
-
-
-
-    //    if(!IsGround && Mathf.Round(playerRigidbody2D.velocity.y) < minFloatingToJatpack && !canJatpack)
-    //    {
-
-    //        canJatpack = true;
-    //        GetComponent<SpriteRenderer>().color = Color.yellow;
-
-    //    } 
-
-
-    //}
 
     [PunRPC]
     public void SetRendererFlipX( bool flipXState)
     {
         GetComponent<SpriteRenderer>().flipX = flipXState;
+        //weaponSpriteRenderer.flipX = flipXState;
     }
 
     [PunRPC]
     public void SwitchComponent(bool value/*, Vector3 spawnPosition, Player player*/)
     {
+        billboard.SetActive(value);
+        Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
-        //RigidBody2D.gravityScale = (value) ? gravitScale : 0;
-        GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.black;
-
+        //GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.gray;
     }
-
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.CompareTag("ground"))
-    //    {
-    //        isGround = true;
-    //        //canJatpack = false;
-    //        //GetComponent<SpriteRenderer>().color = Color.white;
-
-    //    }
-    //}
-
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("ground"))
-    //    {
-    //        isGround = false;
-    //    }
-    //}
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if (PV.Controller == targetPlayer && changedProps.ContainsKey("isDead"))
-            if ((bool)PV.Controller.CustomProperties["isDead"])
-            {
-                GoToDeathState();
-            }
-            else
-            {
-                GoToStandartState();
-            }
+        //if (PhotonNetwork.LocalPlayer == targetPlayer && changedProps.ContainsKey("isDead"))
+        //    if ((bool)PV.Controller.CustomProperties["isDead"])
+        //    {
+        //        GoToDeathState();
+        //    }
+        //    else
+        //    {
+        //        GoToStandartState();
+        //    }
 
     }
     
@@ -156,15 +99,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public void GoToDeathState()
     {
         StateController.TransitionToState(StateController.ListedStates.deathState);
-
     }
 
     public void GoToStandartState()
     {
         StateController.TransitionToState(StateController.ListedStates.deathState);
-
     }
-
 
     public void CanPlayWalkAnimation()
     {
