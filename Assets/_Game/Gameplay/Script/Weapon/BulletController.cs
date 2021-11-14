@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class BulletController : MonoBehaviour
 {
 
@@ -9,39 +10,30 @@ public class BulletController : MonoBehaviour
 
     public List<string> collisionTagsList;
 
-    private void Update()
+    AudioSource audioSource;
+    public AudioClip targetsAudioClip;
+    public AudioClip otherAudioClip;
+
+    private void Start()
     {
-        //destroir quando a distãncia for muito grande.
+        audioSource = GetComponent<AudioSource>();
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (gameObject.layer == collision.gameObject.layer) return;
-
-    //    if (collisionTagsList.Contains(collision.gameObject.tag)) {
-
-    //        BulletArrived();
-    //        
-    //    }
-
-    //    //trocar isso aqui para tag específicas
-        
-    //    //TODO: destroir o effeito ao final da animação do efeito.
-    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (gameObject.layer == collision.gameObject.layer) return;
 
         if (collisionTagsList.Contains(collision.gameObject.tag))
         {
 
             BulletArrived();
-        }
+        } 
+
     }
 
     void BulletArrived()
     {
+        audioSource.clip = targetsAudioClip;
+        audioSource.Play();
         GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         Destroy(effect, 3f);

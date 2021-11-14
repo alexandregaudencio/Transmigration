@@ -10,6 +10,9 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     [SerializeField] private Image lifeBarFill;
     PhotonView PV;
     Animator animator;
+    AudioSource audioSource;
+    public AudioClip deathClip;
+    
 
     public float HP { get => hp; set => hp = value; }
     private float maxHP;
@@ -20,6 +23,7 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     {
         PV = GetComponent<PhotonView>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -52,6 +56,8 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     public void DeathEvent()
     {
         gameObject.SetActive(false);
+        audioSource.clip = deathClip;
+        audioSource.Play();
     }
 
 

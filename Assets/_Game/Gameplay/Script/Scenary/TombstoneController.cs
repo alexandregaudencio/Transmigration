@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class OratoryController : MonoBehaviour
+public class TombstoneController : MonoBehaviour
 {
     PhotonView PV;
     [SerializeField] private GameObject textObject;
@@ -19,7 +19,10 @@ public class OratoryController : MonoBehaviour
     public float meditatingCount;
 
     private bool canMeditate = false;
-    public bool RedTombstone;
+    [SerializeField] private bool RedTombstone;
+    AudioSource audioSource;
+    public AudioClip playDoneClip;
+    
     
     
 
@@ -30,6 +33,7 @@ public class OratoryController : MonoBehaviour
     {
         particle = GetComponent<ParticleSystem>();
         PV = GetComponent<PhotonView>();
+        audioSource = GetComponent<AudioSource>();
         emissionModule = particle.emission;
         emissionModule.rateOverTime = 0;
 
@@ -45,6 +49,7 @@ public class OratoryController : MonoBehaviour
     {
         if (!IsDifferentLayer(collision.gameObject.layer) && collision.gameObject.CompareTag("character"))
         {
+            
             Debug.Log("On Meditation.");
             OnMeditationZone(true);
 
@@ -151,6 +156,8 @@ public class OratoryController : MonoBehaviour
     [PunRPC]
     public void MeditationCompleted()
     {
+        audioSource.clip = playDoneClip;
+        audioSource.Play();
         this.gameObject.SetActive(false);
 
     }

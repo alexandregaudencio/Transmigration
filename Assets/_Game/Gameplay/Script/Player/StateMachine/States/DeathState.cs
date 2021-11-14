@@ -10,7 +10,7 @@ public class DeathState : State
         //{
         //playerController.Animator.Play("death");
         stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
-
+        playerController.AudioManager.PlayAudio(playerController.AudioManager.deathClip, false);
         //}
 
         //playerController.GetComponent<Collider2D>().enabled = false;

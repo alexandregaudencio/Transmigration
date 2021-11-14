@@ -11,19 +11,21 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
     PlayerProperty playerProperty;
+    PlayerController playerController;
 
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
         playerProperty = GetComponent<PlayerProperty>();
+        playerController = GetComponent<PlayerController>();
     }
 
 
     public void TakeDamage(int damage)
     {
         playerProperty.HP = -damage;
-        GetComponent<PlayerController>().Animator.SetTrigger("hurt");
-
+        playerController.Animator.SetTrigger("hurt");
+        playerController.AudioManager.PlayAudio(playerController.AudioManager.hurtClip, false);
         //int hp = (int)PV.Controller.CustomProperties["HP"];
         //HashProperty["HP"] = hp - damage;
         //PV.Controller.SetCustomProperties(HashProperty);

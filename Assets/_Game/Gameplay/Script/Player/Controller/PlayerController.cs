@@ -19,12 +19,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     BoxCollider2D boxCollider2D;
     Animator animator;
     WeaponBase weaponBase;
+    PlayerAudioManager audioManager;
 
     [SerializeField] private float speed;
     [SerializeField] private int maxYVelocity;
     [SerializeField] private float dashSpeed;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject billboard;
+    
 
     //[Header("Jetpack Settings")]
     //[SerializeField] private int minFloatingToJatpack;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public Animator Animator { get => animator; set => animator = value; }
     public PhotonView PV { get => pV; set => pV = value; }
     public WeaponBase WeaponBase { get => weaponBase; set => weaponBase = value; }
+    public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
 
     //private new PhotonView photonView;
 
@@ -61,6 +64,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
         weaponBase = GetComponentInChildren<WeaponBase>();
+        audioManager = GetComponent<PlayerAudioManager>();
 
     }
 

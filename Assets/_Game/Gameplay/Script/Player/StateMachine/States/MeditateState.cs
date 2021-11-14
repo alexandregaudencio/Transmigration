@@ -7,7 +7,7 @@ public class MeditateState : State
     public override void EnterState(PlayerController playerController, StateController stateController)
     {
         playerController.Animator.SetBool("meditating", true);
-
+        playerController.AudioManager.PlayAudio(playerController.AudioManager.meditationClip, true);
         //playerController.Animator.Play("meditate");
         playerController.PlayerRigidbody2D.velocity = Vector2.zero;
 

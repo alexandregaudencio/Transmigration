@@ -15,6 +15,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
+    private void Start()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
 
 
     //AÇÃO BOTÃO Join Team

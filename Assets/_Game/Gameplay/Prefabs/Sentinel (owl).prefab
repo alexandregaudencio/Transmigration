@@ -475,6 +475,7 @@ MonoBehaviour:
   weaponBase: {fileID: 2996822177690539848}
   targetMass: {fileID: 2996822179512294839}
   targetCharacters: []
+  shootClip: {fileID: 8300000, guid: 731876d4061a1b14c8e0beec4ce97c6a, type: 3}
 --- !u!114 &2996822179400406804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 300
   lifeBarFill: {fileID: 2996822178348630632}
+  deathClip: {fileID: 8300000, guid: 291b559145fbe1e4e90730a4b0026f61, type: 3}
 --- !u!95 &619816246
 Animator:
   serializedVersion: 3

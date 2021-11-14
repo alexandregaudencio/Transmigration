@@ -41,7 +41,7 @@ public class WeaponBase : MonoBehaviour
        
     }
 
-    public void ProcessWeaponActivation()
+    public void ProcessWeaponActivation(PlayerAudioManager audioManager)
     {
         if (PV.IsMine)
         {
@@ -57,6 +57,7 @@ public class WeaponBase : MonoBehaviour
                 //GetComponent<SpriteRenderer>().enabled = false;
                 //TODO: ajustar o teamA 
                 PV.RPC("DefaultShoot", RpcTarget.All);
+                audioManager.PlayAudio(audioManager.shootClip, false);
             }
         }
 
