@@ -85,7 +85,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private void UpdatePlayercountText()
     {
-        playerCountText.text = PhotonNetwork.CurrentRoom.PlayerCount + " de " + PhotonNetwork.CurrentRoom.MaxPlayers;
+        playerCountText.text = PhotonNetwork.CurrentRoom.PlayerCount + " of " + PhotonNetwork.CurrentRoom.MaxPlayers;
     }
 
 
