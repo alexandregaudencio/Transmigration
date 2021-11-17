@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e81261cfc4ca4baccbb342fe32b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRoomPlayers: 2
+  maxRoomPlayers: 4
   menuSceneIndex: 0
   gameplaySceneIndex: 1
   HP: 200
