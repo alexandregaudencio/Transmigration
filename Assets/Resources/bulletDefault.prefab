@@ -56,6 +56,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -101,7 +102,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.004296899, y: 0.0038679838}
@@ -155,11 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
     type: 3}
-  collisionTagsList:
-  - ground
-  - sentinel
-  - character
-  - bullet
+  collisionTagsListIgnore:
+  - healing
+  - vision
+  - tomb
   targetsAudioClip: {fileID: 8300000, guid: ec5c479c59e386647b3752b802013e4f, type: 3}
   otherAudioClip: {fileID: 8300000, guid: 84538115acdf38c46a2a012cbc778979, type: 3}
 --- !u!114 &1518043120466416320
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   collisionTagsList:
-  - character
+  - 
 --- !u!95 &548612124
 Animator:
   serializedVersion: 3

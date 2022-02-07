@@ -9,6 +9,9 @@ TagManager:
   - character
   - object
   - bullet
+  - healing
+  - vision
+  - tomb
   layers:
   - Default
   - TransparentFX

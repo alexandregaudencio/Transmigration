@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour
 
     [SerializeField] private GameObject collisioneffect;
 
-    public List<string> collisionTagsList;
+    public List<string> collisionTagsListIgnore;
 
     AudioSource audioSource;
     public AudioClip targetsAudioClip;
@@ -19,25 +19,36 @@ public class BulletController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collisionTagsList.Contains(collision.gameObject.tag))
+        if(!collisionTagsListIgnore.Contains(collision.tag))
         {
+            OnBulletCollision();
 
-            BulletArrived();
-        } 
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!collisionTagsListIgnore.Contains(collision.tag))
+        {
+            OnBulletCollision();
+        }
 
     }
 
-    void BulletArrived()
+    void OnBulletCollision()
     {
-        audioSource.clip = targetsAudioClip;
+        GetComponent<SpriteRenderer>().enabled = false;
+        
+        //definir o clip de acordo com um targetTagList ou targetLayerList
+        audioSource.clip  = targetsAudioClip;
         audioSource.Play();
         GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        Destroy(effect, 3f);
+        Destroy(this.gameObject);
+        Destroy(effect, 2f);
     }
+
 
 
 }
