@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3228003306970093701}
   - component: {fileID: 3228003306970093700}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 3228003306970093754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.044, y: -0.115, z: 0}
-  m_LocalScale: {x: 7.19, y: 0.9, z: 1}
+  m_LocalScale: {x: 8.9875, y: 0.9, z: 1}
   m_Children:
   - {fileID: 3228003307698737786}
   m_Father: {fileID: 3228003307608905938}
@@ -268,13 +268,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3228003307608905938}
   - component: {fileID: 3228003307608905939}
-  - component: {fileID: 3228003307608905950}
-  - component: {fileID: 3228003307608905948}
   - component: {fileID: 3228003307608905951}
   - component: {fileID: 3228003307608905945}
+  - component: {fileID: 3228003307608905948}
   - component: {fileID: 385886812877187835}
   - component: {fileID: 3228003308201393638}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Sentinel - Centro (1)
   m_TagString: sentinel
   m_Icon: {fileID: 0}
@@ -289,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3228003307608905936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3228003306970093701}
@@ -339,7 +338,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7d3aebb2d66807544b8c512e5a303002, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -348,22 +347,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3228003307608905950
-CircleCollider2D:
+--- !u!114 &3228003307608905951
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3228003307608905936}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00020742416, y: 0.6884837}
-  serializedVersion: 2
-  m_Radius: 7.7084775
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6196c240fd0e53c45a989999ae1a0449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnInterval: 1.18
+  sentinelBullet: {fileID: 8390771117579472041, guid: dc0da414fd23eac46a78372e0e7cc669,
+    type: 3}
+  weaponBase: {fileID: 3228003306970093701}
+  spawnTransform: {fileID: 3228003307698737786}
+  spriteSleep: {fileID: 21300000, guid: 7d3aebb2d66807544b8c512e5a303002, type: 3}
+  spriteAttack: {fileID: 21300000, guid: 5553c58973d716c408b4af728dc8abf5, type: 3}
+  shootClip: {fileID: 8300000, guid: 731876d4061a1b14c8e0beec4ce97c6a, type: 3}
+  onVisionClip: {fileID: 0}
+  sentinelState: 0
+--- !u!114 &3228003307608905945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228003307608905936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67aec5edbf51e8e4c9d982dbc28df723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  lifeBarFill: {fileID: 3228003306513583525}
+  audioSource: {fileID: 3228003307929954979}
+  deathClip: {fileID: 8300000, guid: 291b559145fbe1e4e90730a4b0026f61, type: 3}
+  resetSentinel: {fileID: 3228003307929954989}
 --- !u!114 &3228003307608905948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,46 +408,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3228003307608905951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3228003307608905936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6196c240fd0e53c45a989999ae1a0449, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnInterval: 1.18
-  sentinelBullet: {fileID: 8390771117579472041, guid: e103fcd9b7efad94594458b8e2fe8fd2,
-    type: 3}
-  weaponBase: {fileID: 3228003306970093701}
-  targetMass: {fileID: 3228003307698737786}
-  targetCharacters: []
-  spriteStandard: {fileID: 21300000, guid: 7d3aebb2d66807544b8c512e5a303002, type: 3}
-  spriteAttack: {fileID: 21300000, guid: 5553c58973d716c408b4af728dc8abf5, type: 3}
-  audioSource: {fileID: 3228003307929954979}
-  shootClip: {fileID: 8300000, guid: 731876d4061a1b14c8e0beec4ce97c6a, type: 3}
-  onVisionClip: {fileID: 0}
---- !u!114 &3228003307608905945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3228003307608905936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67aec5edbf51e8e4c9d982dbc28df723, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 300
-  lifeBarFill: {fileID: 3228003306513583525}
-  audioSource: {fileID: 3228003307929954979}
-  deathClip: {fileID: 8300000, guid: 291b559145fbe1e4e90730a4b0026f61, type: 3}
-  resetSentinel: {fileID: 3228003307929954989}
 --- !u!95 &385886812877187835
 Animator:
   serializedVersion: 3
@@ -480,7 +462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3228003307698737786}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: cano
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -510,9 +492,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3228003307929954978}
-  - component: {fileID: 3228003307929954979}
   - component: {fileID: 3228003307929954989}
+  - component: {fileID: 4918062722434248907}
   - component: {fileID: 1590908135}
+  - component: {fileID: 3228003307929954979}
   m_Layer: 0
   m_Name: Sentinel OK
   m_TagString: vision
@@ -535,6 +518,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3228003307929954989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228003307929954976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d7ac583ac8cdf44bb7ce440e2669bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setinel: {fileID: 3228003307608905936}
+--- !u!114 &4918062722434248907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228003307929954976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfcc664cbbd46c49984e49039ad71de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCharacters: []
+--- !u!58 &1590908135
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228003307929954976}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00020742416, y: 0.6884837}
+  serializedVersion: 2
+  m_Radius: 7.7084775
 --- !u!82 &3228003307929954979
 AudioSource:
   m_ObjectHideFlags: 0
@@ -631,35 +656,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3228003307929954989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3228003307929954976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8d7ac583ac8cdf44bb7ce440e2669bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setinel: {fileID: 3228003307608905936}
---- !u!58 &1590908135
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3228003307929954976}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00020742416, y: 0.6884837}
-  serializedVersion: 2
-  m_Radius: 7.7084775
 --- !u!1 &3228003308271557374
 GameObject:
   m_ObjectHideFlags: 0

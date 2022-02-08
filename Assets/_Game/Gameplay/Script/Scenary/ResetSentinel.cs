@@ -23,4 +23,7 @@ public class ResetSentinel : MonoBehaviour
         setinel.SetActive(true);
     }
 
+
+
+
 }

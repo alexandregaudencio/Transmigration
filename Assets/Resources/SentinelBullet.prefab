@@ -55,6 +55,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -100,7 +101,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000857234, y: 0}
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3587eeb027e06f94db8088e295cd406b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 1.79
+  bulletSpeed: 0.7
 --- !u!114 &9115618354795775512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,9 +155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
     type: 3}
-  collisionTagsList:
-  - ground
-  - character
+  collisionTagsListIgnore:
+  - vision
+  - healing
+  - tomb
   - bullet
   targetsAudioClip: {fileID: 8300000, guid: ec5c479c59e386647b3752b802013e4f, type: 3}
   otherAudioClip: {fileID: 8300000, guid: 84538115acdf38c46a2a012cbc778979, type: 3}
@@ -229,8 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  collisionTagsList:
-  - character
 --- !u!82 &7728376216407411705
 AudioSource:
   m_ObjectHideFlags: 0

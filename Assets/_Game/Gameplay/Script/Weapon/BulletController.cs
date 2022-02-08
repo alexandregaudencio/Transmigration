@@ -2,49 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class BulletController : MonoBehaviour
 {
 
     [SerializeField] private GameObject collisioneffect;
 
     public List<string> collisionTagsListIgnore;
-
-    AudioSource audioSource;
-    public AudioClip targetsAudioClip;
-    public AudioClip otherAudioClip;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    [SerializeField] private List<string> organicObjectTagList;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collisionTagsListIgnore.Contains(collision.tag))
+        if(!collisionTagsListIgnore.Contains(collision.tag) && this.gameObject.layer != collision.gameObject.layer)
         {
-            OnBulletCollision();
+            OnBulletCollision(collision.gameObject.tag);
 
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!collisionTagsListIgnore.Contains(collision.tag))
+        if (!collisionTagsListIgnore.Contains(collision.tag) && this.gameObject.layer != collision.gameObject.layer)
         {
-            OnBulletCollision();
+            OnBulletCollision(collision.gameObject.tag);
         }
 
     }
 
-    void OnBulletCollision()
+    void OnBulletCollision(string targetTag)
     {
-        GetComponent<SpriteRenderer>().enabled = false;
-        
-        //definir o clip de acordo com um targetTagList ou targetLayerList
-        audioSource.clip  = targetsAudioClip;
-        audioSource.Play();
+
+
         GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
+        effect.GetComponent<EffectController>().PlayAudioClip(organicObjectTagList.Contains(targetTag));
+        
         Destroy(this.gameObject);
         Destroy(effect, 2f);
     }

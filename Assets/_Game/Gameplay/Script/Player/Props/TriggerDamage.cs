@@ -5,20 +5,17 @@ public class TriggerDamage : MonoBehaviour
 {
     [SerializeField] [Min(0)] private int damage = 10;
 
-    public List<string> collisionTagsList;
+    //public List<string> collisionTagsList;
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (gameObject.layer == collision.gameObject.layer) return;
-
-        //if (collisionTagsList.Contains(collision.gameObject.tag))
-        if(collision.gameObject != this.gameObject)   {
-            IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
-            damageable?.TakeDamage(damage);
-        }
+        
+        if(collision.gameObject.layer == this.gameObject.layer) return;
+        
+        IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+        damageable?.TakeDamage(damage);
     }
-
 
 
 }
