@@ -29,5 +29,8 @@ public class EffectController : MonoBehaviour
 
     }
 
-
+    public void DestroyOject()
+    {
+        Destroy(this.gameObject);
+    }
 }

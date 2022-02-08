@@ -36,7 +36,7 @@ public class BulletController : MonoBehaviour
         effect.GetComponent<EffectController>().PlayAudioClip(organicObjectTagList.Contains(targetTag));
         
         Destroy(this.gameObject);
-        Destroy(effect, 2f);
+        //Destroy(effect, 2f);
     }
 
 
