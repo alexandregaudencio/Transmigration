@@ -1,5 +1,4 @@
-﻿using Assets._Game.Gameplay.Script.NPC_sentinel;
-using Photon.Pun;
+﻿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +15,6 @@ public class SentinelController : MonoBehaviour
     [SerializeField] private Sprite spriteAttack;
 
     private TargetVision targetVision;
-    private SentinelStateController SentinelStateController;
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
     private PhotonView PV;
@@ -24,31 +22,26 @@ public class SentinelController : MonoBehaviour
     public AudioClip shootClip;
     public AudioClip onVisionClip;
 
-    public TargetVision TargetVision { get => targetVision; set => targetVision = value; }
-    public AudioSource AudioSource { get => audioSource; set => audioSource = value; }
-    public SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
-    public Transform WeaponBase { get => weaponBase; set => weaponBase = value; }
-    public Sprite SpriteSleep { get => spriteSleep; set => spriteSleep = value; }
-    public Sprite SpriteAttack { get => spriteAttack; set => spriteAttack = value; }
-    public GameObject SentinelBullet { get => sentinelBullet; set => sentinelBullet = value; }
-    public Transform SpawnTransform { get => spawnTransform; set => spawnTransform = value; }
+    //private void Awake()
+    //{
+    //    audioSource = GetComponent<AudioSource>();
+    //}
 
-    //private enum States
+    //public enum States
     //{
     //    SLEEP,
     //    ATTACK,
     //    DEAD
     //}
 
-    //private States sentinelState;
+    //private SentinelStates sentinelState;
 
 
     private void Awake()
     {
-        SentinelStateController = new SentinelStateController();
-        TargetVision = GetComponentInParent<TargetVision>();
-        AudioSource = GetComponentInParent<AudioSource>();
-        SpriteRenderer = GetComponent<SpriteRenderer>();
+        targetVision = GetComponentInParent<TargetVision>();
+        audioSource = GetComponentInParent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         PV = GetComponent<PhotonView>();
         
     }
@@ -57,66 +50,68 @@ public class SentinelController : MonoBehaviour
     void Start()
     {
         //sentinelState = States.SLEEP;
-        //StartCoroutine(WaitToShoot());
-        
+        StartCoroutine(WaitToShoot());
 
     }
 
-    private void Update()
-    {
-
-        ////if (sentinelState != States.DEAD)
-        ////{
-        //    if (targetVision.TargetOnVision)
-        //    {
-        //        sentinelState = States.ATTACK;
-        //    }
-        //    else
-        //    {
-        //        sentinelState = States.SLEEP;
-        //    }
-        //}
-
-        //if (sentinelState == States.SLEEP)
-        //{
-        //    spriteRenderer.sprite = spriteSleep;
-        //    //StopCoroutine(WaitToShoot());
-
-        //}
-
-        ////if (sentinelState == States.ATTACK)
-        ////{
-        //    weaponBase.rotation = targetVision.targetRotation;
-        //    spriteRenderer.sprite = spriteAttack;
-
-        ////}
-    }
-
-
-    //private IEnumerator WaitToShoot()
+    //private void Update()
     //{
-    //    while (TargetVision.TargetOnVision)
+
+
+
+    //    if (sentinelState != States.DEAD)
     //    {
-    //        Shoot();
-    //        yield return new WaitForSeconds(bulletSpawnInterval);
+    //        if(targetVision.TargetOnVision)
+    //        {
+    //            sentinelState = States.ATTACK;
+    //        } else
+    //        {
+    //            sentinelState = States.SLEEP;
+    //        }
     //    }
 
+    //    if(sentinelState == States.SLEEP)
+    //    {
+    //        spriteRenderer.sprite = spriteSleep;
+
+    //    }
+
+    //    if (sentinelState == States.ATTACK)
+    //    {
+    //        weaponBase.rotation = targetVision.targetRotation;
+    //        spriteRenderer.sprite = spriteAttack;
+
+    //    }
     //}
+
+
+    private IEnumerator WaitToShoot()
+    {
+        while (targetVision.TargetOnVision)
+        {
+            yield return new WaitForSeconds(bulletSpawnInterval);
+            Shoot();
+        }
+        
+
+
+    }
 
 
 
     private void Shoot()
     {
+
+  
         //atira
         GameObject bullet = Instantiate(sentinelBullet, spawnTransform.position, spawnTransform.rotation);
         bullet.layer = this.gameObject.layer;
 
 
-
         //PV.RPC("DefaultShoot", RpcTarget.All);
         //INSTANCIAR EFEITOS AQUI
-        AudioSource.clip = shootClip;
-        AudioSource.Play();
+        audioSource.clip = shootClip;
+        audioSource.Play();
 
         //}
 
