@@ -159,10 +159,10 @@ MonoBehaviour:
   - healing
   - vision
   - tomb
-  - bullet
   organicObjectTagList:
   - character
   - sentinel
+  - bullet
 --- !u!114 &1518043120466416320
 MonoBehaviour:
   m_ObjectHideFlags: 0
