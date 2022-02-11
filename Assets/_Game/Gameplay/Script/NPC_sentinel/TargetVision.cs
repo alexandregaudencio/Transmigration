@@ -5,12 +5,14 @@ using UnityEngine;
 public class TargetVision : MonoBehaviour
 {
 
-    public  List<Transform> targetCharacters;
+    [SerializeField] List<string> targetTagsToIgnore;
+
+    public  List<Transform> characterOnVision;
     public bool TargetOnVision
     {
         get
         {
-            return (targetCharacters?.Count > 0) ? true : false;
+            return (characterOnVision?.Count > 0) ? true : false;
         }
     }
 
@@ -20,7 +22,7 @@ public class TargetVision : MonoBehaviour
         {
             Vector2 vectorResult = Vector2.zero;
             float distanceResult = 0f;
-            foreach (Transform t in targetCharacters)
+            foreach (Transform t in characterOnVision)
             {
                 if (Vector3.Distance(t.position, transform.position) > distanceResult)
                 {
@@ -45,14 +47,19 @@ public class TargetVision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        targetCharacters.Add(collision.gameObject.transform);
-
+        if (!targetTagsToIgnore.Contains(collision.tag))
+        {
+            characterOnVision.Add(collision.gameObject.transform);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        targetCharacters.Remove(collision.gameObject.transform);
+        if(!targetTagsToIgnore.Contains(collision.tag))
+        {
+            characterOnVision.Remove(collision.gameObject.transform);
+
+        }
     }
 
 
