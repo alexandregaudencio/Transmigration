@@ -2,9 +2,8 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets._Game.Gameplay.Script.NPC_sentinel
-{
-    public abstract class SentinelState 
+
+    public abstract class SentinelState
     {
         public abstract void EnterState(SentinelController sentinelController);
 
@@ -14,12 +13,14 @@ namespace Assets._Game.Gameplay.Script.NPC_sentinel
         public abstract void OnTriggerExit2D(SentinelController sentinelController, Collider2D collision);
 
     }
- 
+
+
 
     public class SleepSentinelState : SentinelState
     {
         public override void EnterState(SentinelController sentinelController)
         {
+            sentinelController.testText.text = "state: SLEEP";
             sentinelController.SpriteRenderer.sprite = sentinelController.SpriteSleep;
 
         }
@@ -36,10 +37,74 @@ namespace Assets._Game.Gameplay.Script.NPC_sentinel
         {
         }
     }
-    public class StopSentinelState : SentinelState
+
+
+    public class AttackSentinelState : SentinelState
     {
         public override void EnterState(SentinelController sentinelController)
         {
+            sentinelController.testText.text = "state: ATTACK";
+            sentinelController.SpriteRenderer.sprite = sentinelController.SpriteAttack;
+        sentinelController.StartCoroutine(WaitToShoot(sentinelController));
+        }
+
+        public override void OnTriggerEnter2D(SentinelController sentinelController, Collider2D collision)
+        {
+
+        }
+
+        public override void OnTriggerExit2D(SentinelController sentinelController, Collider2D collision)
+        {
+        }
+
+        public override void UpdateState(SentinelController sentinelController)
+        {
+            sentinelController.WeaponBase.rotation = sentinelController.TargetVision.targetRotation;
+
+        }
+
+        private IEnumerator WaitToShoot(SentinelController sentinelController)
+        {
+            while (sentinelController.TargetVision.TargetOnVision)
+            {
+                sentinelController.Shoot();
+                //Shoot(sentinelController);
+                yield return new WaitForSeconds(sentinelController.BulletSpawnInterval);
+            }
+
+        }
+
+
+        //TODO: implemntar corretamente aqui.
+        private void Shoot(SentinelController sentinelController)
+        {
+
+        Debug.Log("ATIRAR");
+        //GameObject bullet =  sentinelController.Instantiate(sentinelController.SentinelBullet,
+        //    sentinelController.SpawnTransform.position,
+        //    sentinelController.SpawnTransform.rotation);
+
+        //bullet.layer = sentinelController.gameObject.layer;
+
+
+
+
+            //PV.RPC("DefaultShoot", RpcTarget.All);
+            //INSTANCIAR EFEITOS AQUI
+            //AudioSource.clip = shootClip;
+            //AudioSource.Play();
+
+            //}
+        }
+    }
+
+    public class StopSentinelState : SentinelState
+    {
+
+        public override void EnterState(SentinelController sentinelController)
+        {
+            sentinelController.testText.text = "state: STOP";
+
         }
 
         public override void OnTriggerEnter2D(SentinelController sentinelController, Collider2D collision)
@@ -54,6 +119,7 @@ namespace Assets._Game.Gameplay.Script.NPC_sentinel
         {
         }
     }
+
     public class ListedSentinelStates
     {
         public readonly StopSentinelState stopSentinelState;
@@ -70,4 +136,4 @@ namespace Assets._Game.Gameplay.Script.NPC_sentinel
 
     }
 
-}
+

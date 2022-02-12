@@ -1,8 +1,8 @@
-﻿using Assets._Game.Gameplay.Script.NPC_sentinel;
-using Photon.Pun;
+﻿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SentinelController : MonoBehaviour
 {
@@ -32,20 +32,13 @@ public class SentinelController : MonoBehaviour
     public Sprite SpriteAttack { get => spriteAttack; set => spriteAttack = value; }
     public GameObject SentinelBullet { get => sentinelBullet; set => sentinelBullet = value; }
     public Transform SpawnTransform { get => spawnTransform; set => spawnTransform = value; }
+    public float BulletSpawnInterval { get => bulletSpawnInterval; set => bulletSpawnInterval = value; }
 
-    //private enum States
-    //{
-    //    SLEEP,
-    //    ATTACK,
-    //    DEAD
-    //}
-
-    //private States sentinelState;
-
+    public Text testText;
 
     private void Awake()
     {
-        SentinelStateController = new SentinelStateController();
+        SentinelStateController = GetComponent<SentinelStateController>();
         TargetVision = GetComponentInParent<TargetVision>();
         AudioSource = GetComponentInParent<AudioSource>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -105,72 +98,71 @@ public class SentinelController : MonoBehaviour
 
 
 
-    private void Shoot()
+    public void Shoot()
     {
         //atira
         GameObject bullet = Instantiate(sentinelBullet, spawnTransform.position, spawnTransform.rotation);
         bullet.layer = this.gameObject.layer;
 
 
+        //    //PV.RPC("DefaultShoot", RpcTarget.All);
+        //    //INSTANCIAR EFEITOS AQUI
+        //    AudioSource.clip = shootClip;
+        //    AudioSource.Play();
 
-        //PV.RPC("DefaultShoot", RpcTarget.All);
-        //INSTANCIAR EFEITOS AQUI
-        AudioSource.clip = shootClip;
-        AudioSource.Play();
-
-        //}
+        //    //}
 
     }
 
-    //[PunRPC]
-    //public void DefaultShoot()
-    //{
-    //    GameObject bullet = Instantiate(sentinelBullet, spawnTransform.position, spawnTransform.rotation);
-    //    bullet.layer = this.gameObject.layer;
+        //[PunRPC]
+        //public void DefaultShoot()
+        //{
+        //    GameObject bullet = Instantiate(sentinelBullet, spawnTransform.position, spawnTransform.rotation);
+        //    bullet.layer = this.gameObject.layer;
 
-    //}
-
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (/*IsDifferentLayer(collision.gameObject.layer) && */!collision.gameObject.CompareTag("bullet"))
-    //    {
-    //        //audioSource.clip = onVisionClip;
-    //        //audioSource.Play();
-    //    }
-
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-
-    //    if (/*IsDifferentLayer(collision.gameObject.layer) &&*/ !collision.gameObject.CompareTag("bullet"))
-    //    {
-
-    //        GetComponent<SpriteRenderer>().sprite = spriteStandard;
-
-    //    }
-    //}
-
-    // private bool IsDifferentLayer(LayerMask layer)
-    // {
-
-    //     if(this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
-    //     {
-    //         return true;
-    //     }
-    //     else if(this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
-    //     {
-    //         return true;
-    //     }
-    //     else
-    //     {
-    //         return false;
-    //     }
-
-    //}
+        //}
 
 
+        //private void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    if (/*IsDifferentLayer(collision.gameObject.layer) && */!collision.gameObject.CompareTag("bullet"))
+        //    {
+        //        //audioSource.clip = onVisionClip;
+        //        //audioSource.Play();
+        //    }
+
+        //}
+
+        //private void OnTriggerExit2D(Collider2D collision)
+        //{
+
+        //    if (/*IsDifferentLayer(collision.gameObject.layer) &&*/ !collision.gameObject.CompareTag("bullet"))
+        //    {
+
+        //        GetComponent<SpriteRenderer>().sprite = spriteStandard;
+
+        //    }
+        //}
+
+        // private bool IsDifferentLayer(LayerMask layer)
+        // {
+
+        //     if(this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
+        //     {
+        //         return true;
+        //     }
+        //     else if(this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
+        //     {
+        //         return true;
+        //     }
+        //     else
+        //     {
+        //         return false;
+        //     }
+
+        //}
 
 
-}
+
+
+    }
