@@ -8,7 +8,14 @@ public class Timer : MonoBehaviour
 
     float currentTime;
     float baseTime;
+    float maxTime;
     float timePassed;
+
+    //Timer(float maxTime, float baseTime = 1.0000f)
+    //{
+    //    this.maxTime = maxTime;
+    //}
+
 
     public float CurrentTime { get => currentTime; set => currentTime = value; }
     public float BaseTime { get => baseTime; set => baseTime = value; }
@@ -32,4 +39,36 @@ public class Timer : MonoBehaviour
         if (CurrentTime >= 0) CurrentTime -= Time.fixedDeltaTime;
         if (BaseTime >= 0) BaseTime -= Time.fixedDeltaTime;
     }
+
+
+
+
+
+
+    //private void Start()
+    //{
+    //    StartCoroutine(TimerUpdate());
+    //}
+
+    //private void OnEnable()
+    //{
+        
+    //}
+    //private void OnDisable()
+    //{
+    //    StopCoroutine(TimerUpdate());
+    //}
+
+    //IEnumerator TimerUpdate()
+    //{
+    //    int timePassed = 0;
+    //    while(true)
+    //    {
+    //        yield return new WaitForSeconds(BaseTime);
+    //        timePassed++;
+    //        //currentTime++;
+            
+    //    }
+    //}
+
 }

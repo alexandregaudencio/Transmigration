@@ -6,8 +6,9 @@ public class TargetVision : MonoBehaviour
 {
 
     [SerializeField] List<string> targetTagsToIgnore;
-
     public  List<Transform> characterOnVision;
+
+
     public bool TargetOnVision
     {
         get
@@ -50,6 +51,9 @@ public class TargetVision : MonoBehaviour
         if (!targetTagsToIgnore.Contains(collision.tag))
         {
             characterOnVision.Add(collision.gameObject.transform);
+            ChangeState();
+
+
         }
     }
 
@@ -58,10 +62,25 @@ public class TargetVision : MonoBehaviour
         if(!targetTagsToIgnore.Contains(collision.tag))
         {
             characterOnVision.Remove(collision.gameObject.transform);
+            ChangeState();
 
         }
     }
 
+    
+    public void ChangeState()
+    {
+        SentinelStateController stateC = GetComponentInChildren<SentinelStateController>();
 
+        if (characterOnVision.Count > 0)
+        {
+            stateC.TransitionToState(stateC.listedStates.attackSentinelState);
+
+        } else
+        {
+            stateC.TransitionToState(stateC.listedStates.sleepSentinelState);
+
+        }
+    }
 
 }

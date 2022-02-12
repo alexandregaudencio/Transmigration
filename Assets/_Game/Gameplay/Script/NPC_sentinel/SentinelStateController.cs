@@ -1,4 +1,3 @@
-using Assets._Game.Gameplay.Script.NPC_sentinel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +7,7 @@ using UnityEngine;
 public class SentinelStateController : MonoBehaviour
 {
 
-   
-        private ListedSentinelStates listedStates;
+        public ListedSentinelStates listedStates;
         private SentinelState currentSentinelState;
         private SentinelController sentinelController;
 
