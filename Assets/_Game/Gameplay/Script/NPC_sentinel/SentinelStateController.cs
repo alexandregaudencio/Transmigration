@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SentinelController))]
-
 public class SentinelStateController : MonoBehaviour
 {
 
@@ -14,10 +12,11 @@ public class SentinelStateController : MonoBehaviour
         private void Awake()
         {
             listedStates = new ListedSentinelStates();
-            sentinelController = GetComponent<SentinelController>();
+            sentinelController = this.gameObject.GetComponent<SentinelController>();
         }
 
-        private void Start()
+        
+        private void OnEnable()
         {
             TransitionToState(listedStates.sleepSentinelState);
         }
@@ -25,28 +24,21 @@ public class SentinelStateController : MonoBehaviour
 
         public virtual void TransitionToState(SentinelState state)
         {
-            //if (PV.IsMine)
-            //{
+        //if (PV.IsMine)
+        //{
+            currentSentinelState.ExitState(sentinelController);
             currentSentinelState = state;
             currentSentinelState.EnterState(sentinelController);
             //}
 
         }
 
+
         private void Update()
         {
-            currentSentinelState.UpdateState(sentinelController);
+                currentSentinelState.UpdateState(sentinelController);
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            currentSentinelState.OnTriggerEnter2D(sentinelController, collision);
-        }
-
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            currentSentinelState.OnTriggerExit2D(sentinelController, collision);
-        }
 
     
 }

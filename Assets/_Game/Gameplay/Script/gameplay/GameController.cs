@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     TimerController timerController;
-
+    
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     private void Update()
     {
 
-        if (timerController.timer.IsCountdownOver())
+        if (timerController.Timer.IsCountdownOver())
         {
             EndGame();
         }

@@ -13,7 +13,7 @@ public class StartupTimer : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip startupMusic;
-
+    public Event  newevent;
 
     private void Awake()
     {
@@ -65,7 +65,8 @@ public class StartupTimer : MonoBehaviour
     void StartGameplay()
     {
         GetComponent<TimerController>().enabled = true;
-
+        GetComponent<ObjectHandle>().enabled = true;
+        
         foreach (GameObject objects in BlockZoneObjects)
         {
             objects.SetActive(false);

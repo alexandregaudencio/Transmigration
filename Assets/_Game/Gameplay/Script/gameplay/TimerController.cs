@@ -7,28 +7,26 @@ using UnityEngine;
 public class TimerController : MonoBehaviour
 {
     [SerializeField] private TMP_Text timerDisplay;
-    public Timer timer;
-    PhotonView PV;
+    private Timer timer;
+    private PhotonView PV;
 
 
-    AudioSource audioSource;
-    public AudioClip gameplayMusic;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip gameplayMusic;
 
-
-
-
+    public Timer Timer { get => timer; set => timer = value; }
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         PV = GetComponent<PhotonView>();
-        timer = GetComponent<Timer>();
+        Timer = GetComponent<Timer>();
     }
 
 
     private void OnEnable()
     {
-        timer.CurrentTime = GameConfigs.instance.timeGameplay;
+        Timer.CurrentTime = GameConfigs.instance.timeGameplay;
         timerDisplay.enabled = true;
 
         audioSource.clip = gameplayMusic;
@@ -48,11 +46,11 @@ public class TimerController : MonoBehaviour
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PV.RPC("SendTimer", RpcTarget.Others, timer.CurrentTime);
+            PV.RPC("SendTimer", RpcTarget.Others, Timer.CurrentTime);
         }
 
         //string tempTimer = string.Format("{0:00}", timer.CurrentTime);
-        timerDisplay.text = DisplayTime(timer.CurrentTime);
+        timerDisplay.text = DisplayTime(Timer.CurrentTime);
     }
 
 
@@ -61,7 +59,7 @@ public class TimerController : MonoBehaviour
     [PunRPC]
     private void SendTimer(float timeIn)
     {
-        timer.CurrentTime = timeIn;
+        Timer.CurrentTime = timeIn;
     }
 
 

@@ -9,8 +9,7 @@ using UnityEngine;
 
         public abstract void UpdateState(SentinelController sentinelController);
 
-        public abstract void OnTriggerEnter2D(SentinelController sentinelController, Collider2D collision);
-        public abstract void OnTriggerExit2D(SentinelController sentinelController, Collider2D collision);
+        public abstract void ExitState(SentinelController sentinelController);
 
     }
 
@@ -18,54 +17,75 @@ using UnityEngine;
 
     public class SleepSentinelState : SentinelState
     {
+        private SentinelController sentinelController; 
         public override void EnterState(SentinelController sentinelController)
         {
-            sentinelController.testText.text = "state: SLEEP";
+            this.sentinelController = sentinelController;
+            
             sentinelController.SpriteRenderer.sprite = sentinelController.SpriteSleep;
-
+            sentinelController.SentinelVision.UpdateTargetEvent += OnUpdateTargetEvent;
         }
 
-        public override void OnTriggerEnter2D(SentinelController sentinelController, Collider2D collision)
+        public override void ExitState(SentinelController sentinelController)
         {
-        }
+            sentinelController.SentinelVision.UpdateTargetEvent -= OnUpdateTargetEvent;
 
-        public override void OnTriggerExit2D(SentinelController sentinelController, Collider2D collision)
-        {
         }
 
         public override void UpdateState(SentinelController sentinelController)
         {
         }
+
+        //NÃO SERVE POIS PRECISA CONFERIR SE A LISTA DO VISION É MAIOR DO QUE 0
+        public void OnUpdateTargetEvent()
+        {
+        Debug.Log("TARGET atualizou e o SLEEP viu.");
+        if (sentinelController.SentinelVision.TargetOnVision)
+        {
+            sentinelController.SentinelStateController.TransitionToState(sentinelController.SentinelStateController.listedStates.attackSentinelState);
+        }
+
+    }
+
     }
 
 
     public class AttackSentinelState : SentinelState
     {
-        public override void EnterState(SentinelController sentinelController)
+    private SentinelController sentinelController;
+
+    public override void EnterState(SentinelController sentinelController)
         {
-            sentinelController.testText.text = "state: ATTACK";
+            this.sentinelController = sentinelController;
             sentinelController.SpriteRenderer.sprite = sentinelController.SpriteAttack;
-        sentinelController.StartCoroutine(WaitToShoot(sentinelController));
+            sentinelController.StartCoroutine(WaitToShoot(sentinelController));
         }
-
-        public override void OnTriggerEnter2D(SentinelController sentinelController, Collider2D collision)
+        public override void ExitState(SentinelController sentinelController)
         {
-
-        }
-
-        public override void OnTriggerExit2D(SentinelController sentinelController, Collider2D collision)
-        {
+        sentinelController.SentinelVision.UpdateTargetEvent -= OnUpdateTargetEvent;
+        sentinelController.StopCoroutine(WaitToShoot(sentinelController));
         }
 
         public override void UpdateState(SentinelController sentinelController)
         {
-            sentinelController.WeaponBase.rotation = sentinelController.TargetVision.targetRotation;
+        sentinelController.WeaponBase.rotation = sentinelController.SentinelVision.targetRotation;
 
+    }
+
+    public void OnUpdateTargetEvent()
+    {
+        Debug.Log("TARGET atualizou e o SLEEP viu.");
+
+        if (!sentinelController.SentinelVision.TargetOnVision)
+        {
+            sentinelController.SentinelStateController.TransitionToState(sentinelController.SentinelStateController.listedStates.attackSentinelState);
         }
 
-        private IEnumerator WaitToShoot(SentinelController sentinelController)
+    }
+
+    private IEnumerator WaitToShoot(SentinelController sentinelController)
         {
-            while (sentinelController.TargetVision.TargetOnVision)
+            while (sentinelController.SentinelVision.TargetOnVision)
             {
                 sentinelController.Shoot();
                 //Shoot(sentinelController);
@@ -96,40 +116,67 @@ using UnityEngine;
 
             //}
         }
+
+
     }
 
-    public class StopSentinelState : SentinelState
+    public class DeathStateSentinel : SentinelState
     {
 
         public override void EnterState(SentinelController sentinelController)
         {
-            sentinelController.testText.text = "state: STOP";
+            //sentinelController.SpriteRenderer.sprite = null;
+            //SwitchPropsOnDeath(sentinelController, false);
+            sentinelController.StartCoroutine(WaitingResetSentinel(sentinelController));
+            //SwitchPropsOnDeath(sentinelController, true);
 
         }
 
-        public override void OnTriggerEnter2D(SentinelController sentinelController, Collider2D collision)
+        public override void ExitState(SentinelController sentinelController)
         {
+            
         }
 
-        public override void OnTriggerExit2D(SentinelController sentinelController, Collider2D collision)
-        {
-        }
 
         public override void UpdateState(SentinelController sentinelController)
         {
+
         }
+
+        private IEnumerator WaitingResetSentinel(SentinelController sentinel)
+        {
+            
+            yield return new WaitForSeconds(sentinel.SecondsToResestSentinel);
+            
+            if(sentinel.SentinelVision.TargetOnVision)
+            {
+                sentinel.SentinelStateController.TransitionToState(sentinel.SentinelStateController.listedStates.attackSentinelState);
+
+            } else
+            {
+                sentinel.SentinelStateController.TransitionToState(sentinel.SentinelStateController.listedStates.sleepSentinelState);
+
+            }
+
+        }
+
+        //private void SwitchPropsOnDeath(SentinelController sentinel, bool value)
+        //{
+        //    sentinel.SentinelPrefab.SetActive(value);
+        //}
+
     }
 
     public class ListedSentinelStates
     {
-        public readonly StopSentinelState stopSentinelState;
+        public readonly DeathStateSentinel deathStateSentinel;
         public readonly AttackSentinelState attackSentinelState;
 
         public readonly SleepSentinelState sleepSentinelState;
 
         public ListedSentinelStates()
         {
-            stopSentinelState = new StopSentinelState();
+            deathStateSentinel = new DeathStateSentinel();
             attackSentinelState = new AttackSentinelState();
             sleepSentinelState = new SleepSentinelState();
         }

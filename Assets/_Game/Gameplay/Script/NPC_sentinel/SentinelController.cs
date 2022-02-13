@@ -6,25 +6,36 @@ using UnityEngine.UI;
 
 public class SentinelController : MonoBehaviour
 {
-    [SerializeField] [Range(0,5)] private float bulletSpawnInterval;
+    [Header("Generic Properties")]
+    [SerializeField] private AudioClip onVisionClip;
 
-    [SerializeField] private GameObject sentinelBullet;
-    [SerializeField] private Transform weaponBase;
-    [SerializeField] private Transform spawnTransform;
 
+    [Header("SLEEP State Properties")]
     [SerializeField] private Sprite spriteSleep;
-    [SerializeField] private Sprite spriteAttack;
 
-    private TargetVision targetVision;
-    private SentinelStateController SentinelStateController;
+
+    [Header("ATTACK State Properties")]
+    [SerializeField] private GameObject sentinelBullet;
+    [SerializeField] [Range(0, 5)] private float bulletSpawnInterval;
+    [SerializeField] private Transform spawnTransform;
+    [SerializeField] private Transform weaponBase;
+    [SerializeField] private Sprite spriteAttack;
+    [SerializeField] private AudioClip shootClip;
+
+
+    [Header("STOP State Properties")]
+    [SerializeField] [Min(0)] private int secondsToResestSentinel;
+    [SerializeField] private GameObject sentinelPrefab;
+
+
+    private SentinelVision sentinelVision;
+    private SentinelStateController sentinelStateController;
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
     private PhotonView PV;
 
-    public AudioClip shootClip;
-    public AudioClip onVisionClip;
 
-    public TargetVision TargetVision { get => targetVision; set => targetVision = value; }
+    public SentinelVision SentinelVision { get => sentinelVision; set => sentinelVision = value; }
     public AudioSource AudioSource { get => audioSource; set => audioSource = value; }
     public SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
     public Transform WeaponBase { get => weaponBase; set => weaponBase = value; }
@@ -33,70 +44,22 @@ public class SentinelController : MonoBehaviour
     public GameObject SentinelBullet { get => sentinelBullet; set => sentinelBullet = value; }
     public Transform SpawnTransform { get => spawnTransform; set => spawnTransform = value; }
     public float BulletSpawnInterval { get => bulletSpawnInterval; set => bulletSpawnInterval = value; }
+    public int SecondsToResestSentinel { get => secondsToResestSentinel; set => secondsToResestSentinel = value; }
+    public SentinelStateController SentinelStateController { get => sentinelStateController; set => sentinelStateController = value; }
+    public GameObject SentinelPrefab { get => sentinelPrefab; }
 
-    public Text testText;
+    //public static SentinelController instance;
 
     private void Awake()
     {
-        SentinelStateController = GetComponent<SentinelStateController>();
-        TargetVision = GetComponentInParent<TargetVision>();
+        //instance = this;
+        sentinelStateController = GetComponent<SentinelStateController>();
+        SentinelVision = GetComponentInParent<SentinelVision>();
         AudioSource = GetComponentInParent<AudioSource>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         PV = GetComponent<PhotonView>();
         
     }
-
-
-    void Start()
-    {
-        //sentinelState = States.SLEEP;
-        //StartCoroutine(WaitToShoot());
-        
-
-    }
-
-    private void Update()
-    {
-
-        ////if (sentinelState != States.DEAD)
-        ////{
-        //    if (targetVision.TargetOnVision)
-        //    {
-        //        sentinelState = States.ATTACK;
-        //    }
-        //    else
-        //    {
-        //        sentinelState = States.SLEEP;
-        //    }
-        //}
-
-        //if (sentinelState == States.SLEEP)
-        //{
-        //    spriteRenderer.sprite = spriteSleep;
-        //    //StopCoroutine(WaitToShoot());
-
-        //}
-
-        ////if (sentinelState == States.ATTACK)
-        ////{
-        //    weaponBase.rotation = targetVision.targetRotation;
-        //    spriteRenderer.sprite = spriteAttack;
-
-        ////}
-    }
-
-
-    //private IEnumerator WaitToShoot()
-    //{
-    //    while (TargetVision.TargetOnVision)
-    //    {
-    //        Shoot();
-    //        yield return new WaitForSeconds(bulletSpawnInterval);
-    //    }
-
-    //}
-
-
 
     public void Shoot()
     {
@@ -105,64 +68,7 @@ public class SentinelController : MonoBehaviour
         bullet.layer = this.gameObject.layer;
 
 
-        //    //PV.RPC("DefaultShoot", RpcTarget.All);
-        //    //INSTANCIAR EFEITOS AQUI
-        //    AudioSource.clip = shootClip;
-        //    AudioSource.Play();
-
-        //    //}
-
     }
-
-        //[PunRPC]
-        //public void DefaultShoot()
-        //{
-        //    GameObject bullet = Instantiate(sentinelBullet, spawnTransform.position, spawnTransform.rotation);
-        //    bullet.layer = this.gameObject.layer;
-
-        //}
-
-
-        //private void OnTriggerEnter2D(Collider2D collision)
-        //{
-        //    if (/*IsDifferentLayer(collision.gameObject.layer) && */!collision.gameObject.CompareTag("bullet"))
-        //    {
-        //        //audioSource.clip = onVisionClip;
-        //        //audioSource.Play();
-        //    }
-
-        //}
-
-        //private void OnTriggerExit2D(Collider2D collision)
-        //{
-
-        //    if (/*IsDifferentLayer(collision.gameObject.layer) &&*/ !collision.gameObject.CompareTag("bullet"))
-        //    {
-
-        //        GetComponent<SpriteRenderer>().sprite = spriteStandard;
-
-        //    }
-        //}
-
-        // private bool IsDifferentLayer(LayerMask layer)
-        // {
-
-        //     if(this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
-        //     {
-        //         return true;
-        //     }
-        //     else if(this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
-        //     {
-        //         return true;
-        //     }
-        //     else
-        //     {
-        //         return false;
-        //     }
-
-        //}
-
-
 
 
     }

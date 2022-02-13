@@ -1,11 +1,14 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Damageable : MonoBehaviourPunCallbacks, IDamageable
 {
+    public event Action DamageEvent;
+    public event Action DeathEvent;
 
     PhotonView PV;
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
@@ -29,6 +32,7 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
         //int hp = (int)PV.Controller.CustomProperties["HP"];
         //HashProperty["HP"] = hp - damage;
         //PV.Controller.SetCustomProperties(HashProperty);
+        DamageEvent.Invoke();
     }
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)

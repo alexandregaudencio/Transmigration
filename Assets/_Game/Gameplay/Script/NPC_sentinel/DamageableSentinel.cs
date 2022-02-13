@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,14 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     Animator animator;
     [SerializeField] private AudioSource audioSource;
     public AudioClip deathClip;
-    [SerializeField] private ResetSentinel resetSentinel;
+    //[SerializeField] private ResetSentinel resetSentinel;
+    
+    public event Action DamageEvent;
+    public event Action DeathEvent;
 
     public float HP { get => hp; set => hp = value; }
     private float maxHP;
+
 
     private float hpPercent => hp / maxHP;
 
@@ -30,6 +35,15 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     private void Start()
     {
         maxHP = HP;
+        DeathEvent += Death;
+        DamageEvent += OnDamage;
+
+    }
+
+    private void OnDestroy()
+    {
+        DeathEvent -= Death;
+        DamageEvent -= OnDamage;
     }
 
 
@@ -38,30 +52,30 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         hp -= damage;
-        lifeBarFill.fillAmount = hpPercent;
+        DamageEvent.Invoke();
         
-        CheckDeath();
+        if (hp <= 0) DeathEvent.Invoke();
     }
 
-    private void CheckDeath()
+
+    public void OnDamage()
     {
-        if(hp <= 0)
-        {
-           //PV.RPC("DeathEvent", RpcTarget.All );
-            DeathEvent();
-        }
+        lifeBarFill.fillAmount = hpPercent;
     }
 
     //[PunRPC]
-    public void DeathEvent()
+    public void Death()
     {
+
+        //GetComponent<SentinelStateController>().TransitionToState(GetComponent<SentinelStateController>().listedStates.deathStateSentinel);
         audioSource.clip = deathClip;
         audioSource.Play();
         hp = maxHP;
-        resetSentinel.ResetingSentinel();
-        gameObject.SetActive(false);
+        //resetSentinel.ResetingSentinel();
+        //gameObject.SetActive(false);
 
     }
+
 
 
 
