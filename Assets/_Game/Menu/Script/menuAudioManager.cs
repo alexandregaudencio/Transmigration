@@ -18,7 +18,7 @@ public class menuAudioManager : MonoBehaviour
     }
 
 
-    public void PlayAudio(AudioClip id)
+    public void PlayAudio(AudioClip id, bool isSync)
     {
         AudioSource.clip = id;
         //AudioSource.loop = onLoop;

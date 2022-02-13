@@ -11,16 +11,6 @@ public class SentinelVision : MonoBehaviour
 
     public event Action UpdateTargetEvent;
 
-    //private void Start()
-    //{
-    //    UpdateTargetEvent += OnUpdateTargetList;
-    //}
-
-    //private void OnDestroy()
-    //{
-    //    UpdateTargetEvent -= OnUpdateTargetList;
-    //}
-
     public bool TargetOnVision
     {
         get
@@ -50,6 +40,7 @@ public class SentinelVision : MonoBehaviour
     {
         get
         {
+
             Vector2 direction = targetDirection - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             return Quaternion.AngleAxis(angle, Vector3.forward);
@@ -62,7 +53,6 @@ public class SentinelVision : MonoBehaviour
         {
             characterOnVision.Add(collision.gameObject.transform);
             UpdateTargetEvent?.Invoke();
-            //ChangeState();
 
 
         }
@@ -74,34 +64,10 @@ public class SentinelVision : MonoBehaviour
         {
             characterOnVision.Remove(collision.gameObject.transform);
             UpdateTargetEvent?.Invoke();
-            //ChangeState();
 
         }
     }
 
 
-    ////TODO: cirar um evento para atualizar a lista de targets
-    //public void OnUpdateTargetList()
-    //{
-
-    //}
-
-
-    //TODO: passar isso para dentro da maquina de estados.
-    public void ChangeState()
-    {
-        SentinelStateController stateC = GetComponentInChildren<SentinelStateController>();
-
-        if (characterOnVision.Count > 0)
-        {
-            stateC.TransitionToState(stateC.listedStates.attackSentinelState);
-
-        }
-        else
-        {
-            stateC.TransitionToState(stateC.listedStates.sleepSentinelState);
-
-        }
-    }
 
 }

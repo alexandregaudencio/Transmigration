@@ -10,10 +10,7 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     [SerializeField] private float hp;
     [SerializeField] private Image lifeBarFill;
     PhotonView PV;
-    Animator animator;
-    [SerializeField] private AudioSource audioSource;
-    public AudioClip deathClip;
-    //[SerializeField] private ResetSentinel resetSentinel;
+    private SentinelStateController sentinelStateController;
     
     public event Action DamageEvent;
     public event Action DeathEvent;
@@ -27,22 +24,20 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
-        animator = GetComponent<Animator>();
-        //audioSource = GetComponent<AudioSource>();
-        
+        sentinelStateController = GetComponentInChildren<SentinelStateController>();
     }
 
     private void Start()
     {
         maxHP = HP;
-        DeathEvent += Death;
+        DeathEvent += OnDeath;
         DamageEvent += OnDamage;
 
     }
 
     private void OnDestroy()
     {
-        DeathEvent -= Death;
+        DeathEvent -= OnDeath;
         DamageEvent -= OnDamage;
     }
 
@@ -52,9 +47,9 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         hp -= damage;
-        DamageEvent.Invoke();
+        DamageEvent?.Invoke();
         
-        if (hp <= 0) DeathEvent.Invoke();
+        if (hp <= 0) DeathEvent?.Invoke();
     }
 
 
@@ -63,16 +58,17 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
         lifeBarFill.fillAmount = hpPercent;
     }
 
-    //[PunRPC]
-    public void Death()
+    public void ResetHP()
     {
-
-        //GetComponent<SentinelStateController>().TransitionToState(GetComponent<SentinelStateController>().listedStates.deathStateSentinel);
-        audioSource.clip = deathClip;
-        audioSource.Play();
         hp = maxHP;
-        //resetSentinel.ResetingSentinel();
-        //gameObject.SetActive(false);
+        lifeBarFill.fillAmount = hpPercent;
+
+    }
+
+    //[PunRPC]
+    public void OnDeath()
+    {
+        sentinelStateController.TransitionToState(sentinelStateController.listedStates.deathStateSentinel);
 
     }
 

@@ -12,11 +12,10 @@ public class SentinelStateController : MonoBehaviour
         private void Awake()
         {
             listedStates = new ListedSentinelStates();
-            sentinelController = this.gameObject.GetComponent<SentinelController>();
+            sentinelController = GetComponent<SentinelController>();
         }
-
-        
-        private void OnEnable()
+   
+        private void Start()
         {
             TransitionToState(listedStates.sleepSentinelState);
         }
@@ -26,7 +25,7 @@ public class SentinelStateController : MonoBehaviour
         {
         //if (PV.IsMine)
         //{
-            currentSentinelState.ExitState(sentinelController);
+            currentSentinelState?.ExitState(sentinelController);
             currentSentinelState = state;
             currentSentinelState.EnterState(sentinelController);
             //}
@@ -34,10 +33,10 @@ public class SentinelStateController : MonoBehaviour
         }
 
 
-        private void Update()
-        {
-                currentSentinelState.UpdateState(sentinelController);
-        }
+        //private void Update()
+        //{
+        //        currentSentinelState.UpdateState(sentinelController);
+        //}
 
 
     
