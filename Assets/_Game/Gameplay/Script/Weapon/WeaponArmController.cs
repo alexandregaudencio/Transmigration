@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class WeaponBase : MonoBehaviour
+public class WeaponArmController : MonoBehaviourPunCallbacks
 {
     public float rotateSpeed = 5f;
 
     PhotonView PV;
 
 
-    [SerializeField] private Transform firePoint;
+    [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private GameObject bulletPrefab;
 
     private void Awake()
@@ -20,27 +20,9 @@ public class WeaponBase : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        //if (PV.IsMine)
-        //{
-        //    if (Input.GetMouseButtonDown(0))
-        //    {
-        //        PV.RPC("SwitchSpriteRender", RpcTarget.All, true);
-        //        //GetComponent<SpriteRenderer>().enabled = false;
 
-        //    }
-        //    if (Input.GetMouseButtonUp(0))
-        //    {
-        //        PV.RPC("SwitchSpriteRender", RpcTarget.All, false);
-        //        //GetComponent<SpriteRenderer>().enabled = false;
-        //        //TODO: ajustar o teamA 
-        //        PV.RPC("DefaultShoot", RpcTarget.All);
-        //    }
-        //}
-       
-    }
 
+    //TODO: TROCAR POR MouseDownEvent
     public void ProcessWeaponActivation(PlayerAudioManager audioManager)
     {
         if (PV.IsMine)
@@ -77,15 +59,17 @@ public class WeaponBase : MonoBehaviour
     [PunRPC]
     public void DefaultShoot()
     {
-
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.layer = GetComponentInParent<PlayerProperty>().GetLayer;
-        //SetBulletProps(bullet);
-
+        if (PV.IsMine)
+        {
+            GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet.layer = GetComponentInParent<PlayerProperty>().GetLayer;
+        }
     }
+
 
     void FixedUpdate()
     {
+        //TODO: 
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - GetComponentInParent<Transform>().position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -97,4 +81,34 @@ public class WeaponBase : MonoBehaviour
         //}
         
     }
+
+    //private IEnumerator ArmRotationCoroutine(bool isClickDown)
+    //{
+    //    if (PV.IsMine)
+    //    {
+
+    //    }
+    //    //TODO: USAR iN
+
+
+    //    //if (PV.IsMine)
+    //    //{
+
+    //    //}
+
+    //    yield return new WaitForSeconds(0.1f);
+
+    //}
+
+    //private Quaternion ArmRotation()
+    //{
+    //    Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - GetComponentInParent<Transform>().position;
+    //    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    //    Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    //    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed * Time.fixedDeltaTime);
+    //    GetComponent<SpriteRenderer>().flipY = (direction.x < 0.0000f);
+
+    //    return new Quaternion { };
+    //}
+
 }

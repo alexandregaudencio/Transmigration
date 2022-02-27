@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2D;
     Animator animator;
-    WeaponBase weaponBase;
+    WeaponArmController weaponBase;
     PlayerAudioManager audioManager;
 
     [SerializeField] private float speed;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
     public Animator Animator { get => animator; set => animator = value; }
     public PhotonView PV { get => pV; set => pV = value; }
-    public WeaponBase WeaponBase { get => weaponBase; set => weaponBase = value; }
+    public WeaponArmController WeaponBase { get => weaponBase; set => weaponBase = value; }
     public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
 
     //private new PhotonView photonView;
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         SpriteRenderer = GetComponent<SpriteRenderer>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
-        weaponBase = GetComponentInChildren<WeaponBase>();
+        weaponBase = GetComponentInChildren<WeaponArmController>();
         audioManager = GetComponent<PlayerAudioManager>();
 
     }

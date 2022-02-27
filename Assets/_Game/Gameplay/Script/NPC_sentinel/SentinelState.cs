@@ -136,12 +136,9 @@ public class DeathStateSentinel : SentinelState
 
     public override void EnterState(SentinelController sentinelController)
     {
-        sentinelController.SentinelVision.characterOnVision.Clear();
-        sentinelController.SpriteRenderer.sprite = null;
-        sentinelController.AudioSource.clip = sentinelController.DeathClip;
-        sentinelController.AudioSource.Play();
-        SwitchPropsOnDeath(sentinelController, false);
-        sentinelController.StartCoroutine(WaitingResetSentinel(sentinelController));
+        
+        OnEnterDeath(sentinelController);
+
 
     }
 
@@ -167,6 +164,16 @@ public class DeathStateSentinel : SentinelState
 
     }
 
+    private void OnEnterDeath(SentinelController sentinelController)
+    {
+
+        sentinelController.SentinelVision.characterOnVision.Clear();
+        sentinelController.SpriteRenderer.sprite = null;
+        sentinelController.AudioSource.clip = sentinelController.DeathClip;
+        sentinelController.AudioSource.Play();
+        SwitchPropsOnDeath(sentinelController, false);
+        sentinelController.StartCoroutine(WaitingResetSentinel(sentinelController));
+    }
     private void SwitchPropsOnDeath(SentinelController sentinel, bool value)
     {
 

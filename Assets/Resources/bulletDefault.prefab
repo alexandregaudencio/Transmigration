@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1456553248793557661}
   - component: {fileID: 221710744437001099}
   - component: {fileID: 1917589463773469823}
-  - component: {fileID: 6202479881202935610}
-  - component: {fileID: 9115618354795775512}
   - component: {fileID: 1518043120466416320}
   - component: {fileID: -2896724483877126648}
   - component: {fileID: 5624844282928228417}
+  - component: {fileID: 6202479881202935610}
+  - component: {fileID: 9115618354795775512}
   - component: {fileID: 2913569363864969310}
   - component: {fileID: 548612124}
   m_Layer: 0
@@ -128,41 +128,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6202479881202935610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390771117579472041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3587eeb027e06f94db8088e295cd406b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 1.79
---- !u!114 &9115618354795775512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8390771117579472041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b862645af43743d4085f735bd1b17a36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
-    type: 3}
-  collisionTagsListIgnore:
-  - healing
-  - vision
-  - tomb
-  organicObjectTagList:
-  - character
-  - sentinel
-  - bullet
 --- !u!114 &1518043120466416320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
+  m_SynchronizeRotation: 0
   m_SynchronizeScale: 0
   m_UseLocal: 1
 --- !u!114 &5624844282928228417
@@ -219,6 +184,41 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &6202479881202935610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390771117579472041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3587eeb027e06f94db8088e295cd406b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 1.79
+--- !u!114 &9115618354795775512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390771117579472041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b862645af43743d4085f735bd1b17a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
+    type: 3}
+  collisionTagsListIgnore:
+  - healing
+  - vision
+  - tomb
+  organicObjectTagList:
+  - character
+  - sentinel
+  - bullet
 --- !u!114 &2913569363864969310
 MonoBehaviour:
   m_ObjectHideFlags: 0

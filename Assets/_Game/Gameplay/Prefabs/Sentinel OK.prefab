@@ -365,7 +365,7 @@ MonoBehaviour:
   spriteSleep: {fileID: 21300000, guid: 7d3aebb2d66807544b8c512e5a303002, type: 3}
   sentinelBullet: {fileID: 8390771117579472041, guid: dc0da414fd23eac46a78372e0e7cc669,
     type: 3}
-  bulletSpawnInterval: 1.51
+  bulletSpawnInterval: 2.01
   spawnTransform: {fileID: 3228003307698737786}
   weaponBase: {fileID: 3228003306970093701}
   spriteAttack: {fileID: 21300000, guid: 5553c58973d716c408b4af728dc8abf5, type: 3}
@@ -373,7 +373,6 @@ MonoBehaviour:
   secondsToResestSentinel: 5
   deathClip: {fileID: 8300000, guid: 291b559145fbe1e4e90730a4b0026f61, type: 3}
   canvasObj: {fileID: 3228003307013869027}
-  a: []
 --- !u!114 &3228003307608905945
 MonoBehaviour:
   m_ObjectHideFlags: 0

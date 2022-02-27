@@ -13,7 +13,7 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     private SentinelStateController sentinelStateController;
     
     public event Action DamageEvent;
-    public event Action DeathEvent;
+
 
     public float HP { get => hp; set => hp = value; }
     private float maxHP;
@@ -30,14 +30,14 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     private void Start()
     {
         maxHP = HP;
-        DeathEvent += OnDeath;
+        //DeathEvent += OnDeath;
         DamageEvent += OnDamage;
 
     }
 
     private void OnDestroy()
     {
-        DeathEvent -= OnDeath;
+        //DeathEvent -= OnDeath;
         DamageEvent -= OnDamage;
     }
 
@@ -49,7 +49,8 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
         hp -= damage;
         DamageEvent?.Invoke();
         
-        if (hp <= 0) DeathEvent?.Invoke();
+        //if (hp <= 0) DeathEvent?.Invoke();
+        if(hp <= 0) PV.RPC("SendDeathTransitionState", RpcTarget.All);
     }
 
 
@@ -65,8 +66,8 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
 
     }
 
-    //[PunRPC]
-    public void OnDeath()
+    [PunRPC]
+    public void SendDeathTransitionState()
     {
         sentinelStateController.TransitionToState(sentinelStateController.listedStates.deathStateSentinel);
 

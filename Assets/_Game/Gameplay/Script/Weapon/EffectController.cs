@@ -1,6 +1,5 @@
 ﻿
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -31,6 +30,7 @@ public class EffectController : MonoBehaviour
 
     public void DestroyOject()
     {
-        Destroy(this.gameObject);
+        if(GetComponent<PhotonView>().IsMine)
+            PhotonNetwork.Destroy(this.gameObject);
     }
 }

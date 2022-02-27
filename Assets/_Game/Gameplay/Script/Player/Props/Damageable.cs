@@ -26,13 +26,17 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
 
     public void TakeDamage(int damage)
     {
-        playerProperty.HP = -damage;
-        playerController.Animator.SetTrigger("hurt");
-        playerController.AudioManager.PlayAudio(playerController.AudioManager.hurtClip, false);
-        //int hp = (int)PV.Controller.CustomProperties["HP"];
-        //HashProperty["HP"] = hp - damage;
-        //PV.Controller.SetCustomProperties(HashProperty);
-        DamageEvent?.Invoke();
+        //if(PV.IsMine)
+        //{
+            playerProperty.HP = -damage;
+            playerController.Animator.SetTrigger("hurt");
+            playerController.AudioManager.PlayAudio(playerController.AudioManager.hurtClip, false);
+            //int hp = (int)PV.Controller.CustomProperties["HP"];
+            //HashProperty["HP"] = hp - damage;
+            //PV.Controller.SetCustomProperties(HashProperty);
+            DamageEvent?.Invoke();
+        //}
+
 
     }
 

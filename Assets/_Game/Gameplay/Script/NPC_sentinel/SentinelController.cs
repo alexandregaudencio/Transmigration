@@ -76,10 +76,11 @@ public class SentinelController : MonoBehaviour
 
     public void Shoot()
     {
+        if (PV.IsMine) {
+            GameObject bullet = Instantiate(sentinelBullet, spawnTransform.position, spawnTransform.rotation);
+            bullet.layer = this.gameObject.layer;
+        }
         //atira bala: PASSAR PARA OS STATES
-        GameObject bullet = Instantiate(sentinelBullet, spawnTransform.position, spawnTransform.rotation);
-        bullet.layer = this.gameObject.layer;
-
         audioSource.clip = AttackClip;
         audioSource.Play();
 

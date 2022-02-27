@@ -27,6 +27,8 @@ public class SetupGameplay : MonoBehaviour
 
     }
 
+   
+
     private void InstantiatingPlayersCharacter()
     {
         //int indexPlayer = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];

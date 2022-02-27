@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 8864583180818302528}
   - component: {fileID: 8864583180818302529}
   - component: {fileID: 8864583180818302558}
-  - component: {fileID: 5243688410696465913}
   - component: {fileID: 5594384601168221773}
+  - component: {fileID: 8837966362231216379}
+  - component: {fileID: -9188249230948439397}
+  - component: {fileID: 5243688410696465913}
   m_Layer: 0
   m_Name: bulletCollisionEffect
   m_TagString: Untagged
@@ -104,21 +106,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5243688410696465913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8864583180818302559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c148dee9b6488549b5c7289d3b07ade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioList:
-  - {fileID: 8300000, guid: ec5c479c59e386647b3752b802013e4f, type: 3}
-  - {fileID: 8300000, guid: 84538115acdf38c46a2a012cbc778979, type: 3}
 --- !u!82 &5594384601168221773
 AudioSource:
   m_ObjectHideFlags: 0
@@ -332,3 +319,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8837966362231216379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864583180818302559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -9188249230948439397}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &-9188249230948439397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864583180818302559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 0
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &5243688410696465913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8864583180818302559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c148dee9b6488549b5c7289d3b07ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioList:
+  - {fileID: 8300000, guid: ec5c479c59e386647b3752b802013e4f, type: 3}
+  - {fileID: 8300000, guid: 84538115acdf38c46a2a012cbc778979, type: 3}
