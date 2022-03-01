@@ -1,5 +1,6 @@
 ﻿using Photon.Pun;
 using Photon.Pun.UtilityScripts;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,12 +9,12 @@ public class SetupGameplay : MonoBehaviour
     private PhotonView PV;
 
     [SerializeField] private Transform[] spawnPointsBlue, spawnPointsRed;
-    public Text text;
+    [SerializeField] private GameObject[] charactersOrdered;
     int indexPlayer;
     string pTeam;
     public GameObject localCamera;
     public static SetupGameplay instance;
-
+    
     void Start()
     {
         instance = this;
@@ -33,15 +34,19 @@ public class SetupGameplay : MonoBehaviour
     {
         //int indexPlayer = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
         //string pTeam = PhotonNetwork.LocalPlayer.GetPhotonTeam().Name;
+
+        //TODO: trocar o index de charactersOrdered pelo personagem escolhido
         if (pTeam == "Blue")
         {
-            //PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsBlue[indexPlayer].position);
-         GameObject instantiate =    PhotonNetwork.Instantiate("PlayerA", spawnPointsBlue[indexPlayer].position, Quaternion.identity);
+            //PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.TagObject.ToString(), spawnPos, Quaternion.identity);
+
+            GameObject instantiate =  PhotonNetwork.Instantiate(charactersOrdered[0].name , spawnPointsBlue[indexPlayer].position, Quaternion.identity);
         }
         if (pTeam == "Red")
         {
-            //PV.RPC("RPCInstantiateCharacter", PhotonNetwork.LocalPlayer, spawnPointsRed[indexPlayer].position);
-         GameObject instantiate = PhotonNetwork.Instantiate("PlayerA", spawnPointsRed[indexPlayer].position, Quaternion.identity);
+            //PhotonNetwork.Instantiate(PhotonNetwork.LocalPlayer.TagObject.ToString(), spawnPos, Quaternion.identity);
+
+            GameObject instantiate = PhotonNetwork.Instantiate(charactersOrdered[0].name, spawnPointsRed[indexPlayer].position, Quaternion.identity);
         
         }
     }

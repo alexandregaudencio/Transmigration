@@ -1,26 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Photon.Pun;
 using UnityEngine;
 
-public class menuAudioManager : MonoBehaviour
+public class menuAudioManager : MonoBehaviourPunCallbacks
 {
 
-    [SerializeField] private AudioSource audioSource;
+    private AudioSource audioSource;
 
-    //public AudioClip[] Clips;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
 
     public AudioSource AudioSource { get => audioSource; set => audioSource = value; }
 
-    void Awake()
+    public void PlayAudio(AudioClip clip/*, bool isSync*/)
     {
+        AudioSource.clip = clip;
+        //AudioSource.loop = onLoop;
+        AudioSource.Play();
 
     }
 
 
-    public void PlayAudio(AudioClip id, bool isSync)
+    [PunRPC] 
+    private void PunPlayAudio(AudioClip clip)
     {
-        AudioSource.clip = id;
+
+        AudioSource.clip = clip;
         //AudioSource.loop = onLoop;
         AudioSource.Play();
 

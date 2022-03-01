@@ -22,21 +22,19 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
 
-    //AÇÃO BOTÃO Join Team
-    public void JoinTeam()
+    public void JoinRoom()
     {
         PhotonNetwork.JoinRandomRoom();
     }
 
-    ////AÇÃO BOTAO LeftTeam
-    //public void LeftTeam()
-    //{
-    //    PhotonNetwork.LeaveRoom();
-    //}
+    public void LeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        string roomName = "#"+Random.Range(100, 999).ToString();
+        string roomName = Random.Range(100, 999).ToString();
         RoomOptions roomOptions = new RoomOptions()
         {
             MaxPlayers = (byte)GameConfigs.instance.maxRoomPlayers,
@@ -64,11 +62,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //QUANDO ALGUÉM ENTRA NA SALA
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-
-
         UpdatePlayercountText();
-
-
     }
 
     //AÇÃO BOTÃO START

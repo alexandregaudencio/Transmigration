@@ -14,8 +14,6 @@ public abstract class SentinelState
     }
 
 
-
-
 public class SleepSentinelState : SentinelState
 {
     private SentinelController sentinelController;
@@ -50,7 +48,6 @@ public class SleepSentinelState : SentinelState
 
 }
 
-
 public class AttackSentinelState : SentinelState
 {
     private SentinelController sentinelController;
@@ -82,7 +79,8 @@ public class AttackSentinelState : SentinelState
     {
         if (!sentinelController.SentinelVision.TargetOnVision)
         {
-            sentinelController.SentinelStateController.TransitionToState(sentinelController.SentinelStateController.listedStates.sleepSentinelState);
+            sentinelController.SentinelStateController.TransitionToState(
+                sentinelController.SentinelStateController.listedStates.sleepSentinelState);
         }
 
     }
@@ -148,10 +146,18 @@ public class DeathStateSentinel : SentinelState
         sentinelController.Damageable.ResetHP();
     }
 
-    //public override void UpdateState(SentinelController sentinelController)
-    //{
 
-    //}
+
+    private void OnEnterDeath(SentinelController sentinelController)
+    {
+        sentinelController.StopAllCoroutines();
+        //sentinelController.SentinelVision.characterOnVision.Clear();
+        sentinelController.SpriteRenderer.sprite = null;
+        sentinelController.AudioSource.clip = sentinelController.DeathClip;
+        sentinelController.AudioSource.Play();
+        SwitchPropsOnDeath(sentinelController, false);
+        sentinelController.StartCoroutine(WaitingResetSentinel(sentinelController));
+    }
     private IEnumerator WaitingResetSentinel(SentinelController sentinel)
     {
 
@@ -160,20 +166,10 @@ public class DeathStateSentinel : SentinelState
         if (sentinel.SentinelVision.TargetOnVision)
             sentinel.SentinelStateController.TransitionToState(sentinel.SentinelStateController.listedStates.attackSentinelState);
         else
-             sentinel.SentinelStateController.TransitionToState(sentinel.SentinelStateController.listedStates.sleepSentinelState);
+            sentinel.SentinelStateController.TransitionToState(sentinel.SentinelStateController.listedStates.sleepSentinelState);
 
     }
 
-    private void OnEnterDeath(SentinelController sentinelController)
-    {
-
-        sentinelController.SentinelVision.characterOnVision.Clear();
-        sentinelController.SpriteRenderer.sprite = null;
-        sentinelController.AudioSource.clip = sentinelController.DeathClip;
-        sentinelController.AudioSource.Play();
-        SwitchPropsOnDeath(sentinelController, false);
-        sentinelController.StartCoroutine(WaitingResetSentinel(sentinelController));
-    }
     private void SwitchPropsOnDeath(SentinelController sentinel, bool value)
     {
 
@@ -186,9 +182,6 @@ public class DeathStateSentinel : SentinelState
     }
 
 }
-
-
-
 
 
 public class ListedSentinelStates

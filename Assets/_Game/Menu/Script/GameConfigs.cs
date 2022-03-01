@@ -22,8 +22,8 @@ public class GameConfigs : MonoBehaviour
     public Color TeamAColor;
     public Color TeamBColor;
 
-    public float resetSentineltime;
-    public float resetTombstonetime;
+    //public float resetSentineltime;
+    //public float resetTombstonetime;
 
 
     public KeyCode MeditateKey;

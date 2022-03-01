@@ -14,7 +14,7 @@ public class StartGame : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
 
-        /*GetComponentInChildren<ge>().gameObject.SetActive*/
+        //mostra o botão START GAME para o masterClient
         if(PhotonNetwork.IsMasterClient)
         {
             byte playerCount = PhotonNetwork.CurrentRoom.PlayerCount;

@@ -43,7 +43,7 @@ public class BulletController : MonoBehaviourPunCallbacks
     {
         GameObject effect = PhotonNetwork.Instantiate(collisioneffect.name, transform.position, Quaternion.identity);
         effect.GetComponent<EffectController>().PlayAudioClip(organicObjectTagList.Contains(targetTag));
-        PhotonNetwork.Destroy(this.gameObject);
+        if(PV.IsMine) PhotonNetwork.Destroy(this.gameObject);
         //PV.RPC("SendDestroy", RpcTarget.All);
     }
 

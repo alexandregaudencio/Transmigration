@@ -18,10 +18,7 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
     private void Start()
     {
         instance = this;
-        //PV = GetComponent<PhotonView>();
-
     }
-
 
     void SetPlayerprops()
     {
@@ -34,14 +31,19 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
         PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
     }
 
+    void SetPlayerCharacter()
+    {
+        int playerIndex = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
+        PhotonNetwork.LocalPlayer.TagObject = charactersPrefab[0].name;
+
+    }
 
     //[PunRPC]
     public void SetCharacterAndProps()
     {
         SetPlayerprops();
-
-        int playerIndex = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
-        PhotonNetwork.LocalPlayer.TagObject = charactersPrefab[0].name;
+        SetPlayerCharacter();
+        //aqui é definido a escolha do personagem do jogador.
     }
 
 
