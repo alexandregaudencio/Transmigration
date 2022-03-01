@@ -22,10 +22,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
 
-    public void JoinRoom()
-    {
-        PhotonNetwork.JoinRandomRoom();
-    }
+    //public void JoinRoom()
+    //{
+    //    PhotonNetwork.JoinRandomRoom();
+    //}
 
     public void LeaveRoom()
     {
@@ -38,7 +38,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
         RoomOptions roomOptions = new RoomOptions()
         {
             MaxPlayers = (byte)GameConfigs.instance.maxRoomPlayers,
-            IsOpen = true
+            IsOpen = true, 
+            IsVisible = true
+            
         };
         PhotonNetwork.CreateRoom(roomName, roomOptions);
         Debug.Log("criei a sala: " + roomName);
@@ -59,6 +61,17 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     }
 
+    public override void OnJoinedLobby()
+    {
+        Debug.Log("Joined LOBBY.");
+    }
+    public override void OnLeftLobby()
+    {
+        Debug.Log("Left LOBBY.");
+    }
+
+
+
     //QUANDO ALGUÉM ENTRA NA SALA
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
@@ -71,6 +84,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
+        Debug.Log("One Player Left ROOM.");
         UpdatePlayercountText();
     }
 
