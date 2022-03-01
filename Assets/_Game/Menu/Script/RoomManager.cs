@@ -29,22 +29,23 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public void LeaveRoom()
     {
-        PhotonNetwork.LeaveRoom();
+        //PhotonNetwork.LeaveRoom();
+        PhotonNetwork.LeaveRoom(true);
     }
 
-    public override void OnJoinRandomFailed(short returnCode, string message)
-    {
-        string roomName = Random.Range(100, 999).ToString();
-        RoomOptions roomOptions = new RoomOptions()
-        {
-            MaxPlayers = (byte)GameConfigs.instance.maxRoomPlayers,
-            IsOpen = true, 
-            IsVisible = true
-            
-        };
-        PhotonNetwork.CreateRoom(roomName, roomOptions);
-        Debug.Log("criei a sala: " + roomName);
-    }
+    //public override void OnJoinRandomFailed(short returnCode, string message)
+    //{
+    //    string roomName = Random.Range(100, 999).ToString();
+    //    RoomOptions roomOptions = new RoomOptions()
+    //    {
+    //        MaxPlayers = (byte)GameConfigs.instance.maxRoomPlayers,
+    //        IsOpen = true, 
+    //        IsVisible = true
+
+    //    };
+    //    PhotonNetwork.CreateRoom(roomName, roomOptions);
+    //    Debug.Log("criei a sala: " + roomName);
+    //}
 
 
     //QUANDO O LOCAL ENTRA NA SALA

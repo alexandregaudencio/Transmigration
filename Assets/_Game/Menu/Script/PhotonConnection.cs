@@ -38,6 +38,7 @@ public class PhotonConnection : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         //Debug.Log("cONECTADO AO MASTER sERVER.");
+        PhotonNetwork.JoinLobby();
         loadingCanvas.SetActive(false);
     }
 

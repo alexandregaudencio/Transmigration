@@ -7,9 +7,23 @@ using TMPro;
 
 public class JoinTeamManager : MonoBehaviourPunCallbacks
 {
-    //private Button buttonJoinTeam;
-    [SerializeField] private TMP_InputField inputFieldJoinTeam;
-    [SerializeField] private TMP_Dropdown dropdownJoinTeam;
+    private TMP_InputField inputFieldJoinTeam;
+    private TMP_Dropdown dropdownJoinTeam;
+    string dropdownTeamName
+    {
+        get
+        {
+           return  dropdownJoinTeam.options[dropdownJoinTeam.value].text;
+        }
+    }
+
+    string inputTeamName
+    {
+        get
+        {
+            return inputFieldJoinTeam.text;
+        }
+    }
 
     private enum  JoinState
     {
@@ -23,7 +37,8 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        //buttonJoinTeam = GetComponent<Button>();
+        inputFieldJoinTeam = GetComponentInChildren<TMP_InputField>();
+        dropdownJoinTeam = GetComponentInChildren<TMP_Dropdown>();
 
     }
 
@@ -35,7 +50,9 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
         inputFieldJoinTeam.onValueChanged.AddListener(delegate
         {
             OnInputFieldValueChanged();
+            
         });
+        
         dropdownJoinTeam.onValueChanged.AddListener(delegate
         {
             OnDropdownValueChanged();
@@ -47,7 +64,8 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
 
     private void OnInputFieldValueChanged()
     {
-        if(inputFieldJoinTeam != null  && inputFieldJoinTeam.text.Length == 3)
+        //Debug.Log("Value: " + inputFieldJoinTeam.text);
+        if(inputFieldJoinTeam.text != ""  /*&& inputFieldJoinTeam.text.Length == 3*/ )
         {
             state = JoinState.INPUTFIELD_fOCUS;
         }
@@ -67,27 +85,23 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
 
     
     //CLICK JOIN TEAM BUTTON
-    public void JoinRoom()
+    public void OnClick_JoinRoom()
     {
        
         if(state == JoinState.INPUTFIELD_fOCUS)
         {
-           
-        } else
-        {
-            if (state == JoinState.DROPDOWN_FOCUS)
-            {
-                string teamTarget = dropdownJoinTeam.options[dropdownJoinTeam.value].text;
-                PhotonNetwork.JoinRoom(teamTarget);
-            }
-            if (state == JoinState.RANDOM_FOCUS)
-            {
-                PhotonNetwork.JoinRandomRoom();
-
-            }
+            PhotonNetwork.JoinRoom(inputTeamName);
         }
+        if (state == JoinState.DROPDOWN_FOCUS)
+        {
+            PhotonNetwork.JoinRoom(dropdownTeamName);
+        }
+        if (state == JoinState.RANDOM_FOCUS)
+        {
+            PhotonNetwork.JoinRandomRoom();
 
-
+        }
+ 
     }
 
 
