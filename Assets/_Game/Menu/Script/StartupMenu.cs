@@ -2,25 +2,32 @@
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System.Collections.Generic;
 
 public class StartupMenu : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private GameObject CanvasLoadingConnection;
+    [SerializeField] private GameObject CanvasLoading;
 
     private void Awake()
     {
+        CanvasLoading.SetActive(true);
+
         PhotonNetwork.AutomaticallySyncScene = true;
-        CanvasLoadingConnection.SetActive(true);
     }
 
     void Start()
     {
+        if(!PhotonNetwork.IsConnected)
+        {
+            CanvasLoading.SetActive(false);
+        }
         PhotonNetwork.ConnectUsingSettings();
 
     }
 
     void Update()
     {
+
         if (!PhotonNetwork.IsConnected)
         {
             PhotonNetwork.ConnectUsingSettings();
@@ -29,13 +36,16 @@ public class StartupMenu : MonoBehaviourPunCallbacks
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        CanvasLoadingConnection.SetActive(true);
+
+        Debug.Log("FOI DESCONECTADO. Devido a: "+cause);
+        CanvasLoading.SetActive(true);
         base.OnDisconnected(cause);
     }
 
     public override void OnConnectedToMaster()
     {
-        CanvasLoadingConnection.SetActive(false);
+        Debug.Log("cONECTADO AO MASTER sERVER.");
+        CanvasLoading.SetActive(false);
         base.OnConnectedToMaster();
     }
 }

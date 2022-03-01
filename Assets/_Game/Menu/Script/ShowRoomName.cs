@@ -7,7 +7,12 @@ public class ShowRoomName : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        GetComponent<Text>().text = PhotonNetwork.CurrentRoom.Name;
+        GetComponent<Text>().text = "#"+PhotonNetwork.CurrentRoom.Name;
+        
     }
+
+
+
+
 
 }

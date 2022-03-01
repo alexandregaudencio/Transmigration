@@ -11,6 +11,8 @@ public class SentinelVision : MonoBehaviour
 
     public event Action UpdateTargetEvent;
 
+    
+
     public bool TargetOnVision
     {
         get
@@ -57,6 +59,7 @@ public class SentinelVision : MonoBehaviour
 
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
