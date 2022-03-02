@@ -8,10 +8,14 @@ public class TeamManager : PhotonTeamsManager
     private ExitGames.Client.Photon.Hashtable hasIndexPlayer = new ExitGames.Client.Photon.Hashtable();
     Player[] playersTeam;
 
+    private int FPS;
+
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
         Debug.Log("Start TEAMmANAGER SCRIPT");
+
+        InvokeRepeating("SetFPS", 1, 1);
 
     }
 
@@ -55,6 +59,15 @@ public class TeamManager : PhotonTeamsManager
 
         if (PhotonNetwork.IsMasterClient) GUI.Label(new Rect(10, 100, 300, 100), "Você é o Master.");
 
+        GUI.Label(new Rect(10, 10, 100, 100), "Ping: "+PhotonNetwork.GetPing());
+        //GUI.Label(new Rect(10, 20, 100, 100), "FPS: " + FPS);
+
     }
 
+    private void SetFPS()
+    { 
+      FPS =  (int)(1f / Time.unscaledDeltaTime);
+
+        
+    }
 }

@@ -13,8 +13,6 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
 
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
-
-
     private void Start()
     {
         instance = this;
@@ -29,21 +27,22 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
         HashProperty["timerRespawn"] = GameConfigs.instance.timeToRespawn ;
         HashProperty["isDead"] = false;
         PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
+
     }
 
     void SetPlayerCharacter()
     {
         int playerIndex = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
         PhotonNetwork.LocalPlayer.TagObject = charactersPrefab[0].name;
-
     }
 
     //[PunRPC]
     public void SetCharacterAndProps()
-    {
+    {        
+        //aqui é definido a escolha do personagem do jogador e as propriedades dele.
+
         SetPlayerprops();
         SetPlayerCharacter();
-        //aqui é definido a escolha do personagem do jogador.
     }
 
 

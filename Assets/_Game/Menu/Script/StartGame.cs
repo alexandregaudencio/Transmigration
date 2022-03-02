@@ -9,20 +9,19 @@ using UnityEngine.UI;
 public class StartGame : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject startButton;
-    [SerializeField] private PlayerPropertiesDefinition playerPropertiesDefinition;
+    //[SerializeField] private PlayerPropertiesDefinition playerPropertiesDefinition;
+
+    private void Start()
+    {
+        startButton.SetActive(false);
+    }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
 
-        //mostra o botão START GAME para o masterClient
-        if(PhotonNetwork.IsMasterClient)
-        {
-            byte playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
-            byte maxPlayers = PhotonNetwork.CurrentRoom.MaxPlayers;
-            startButton.SetActive(( playerCount == maxPlayers ) ? true : false);
-
-        } 
+        ActiveGameObjectAtRoomFull(startButton);
     }
+
 
 
     //quando o btão de start game é apertado
@@ -36,7 +35,7 @@ public class StartGame : MonoBehaviourPunCallbacks
 
     IEnumerator waitToStart()
     {
-        GetComponent<PhotonView>().RPC("SetProps", RpcTarget.All);
+        //GetComponent<PhotonView>().RPC("SetProps", RpcTarget.All);
 
         yield return new WaitForSeconds(1);
         PhotonNetwork.LoadLevel(GameConfigs.instance.gameplaySceneIndex);
@@ -45,10 +44,23 @@ public class StartGame : MonoBehaviourPunCallbacks
 
 
     //cada player deve definir suas propriedades, personagens e etc.
-    [PunRPC]
-    public void SetProps()
+    //[PunRPC]
+    //public void SetProps()
+    //{
+    //    playerPropertiesDefinition.SetCharacterAndProps();
+
+    //}
+
+
+    //mostra o botão START GAME para o masterClient
+    public void ActiveGameObjectAtRoomFull(GameObject gameObject)
     {
-        playerPropertiesDefinition.SetCharacterAndProps();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            byte playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
+            byte maxPlayers = PhotonNetwork.CurrentRoom.MaxPlayers;
+            startButton.SetActive((playerCount == maxPlayers) ? true : false);
+        }
 
     }
 }

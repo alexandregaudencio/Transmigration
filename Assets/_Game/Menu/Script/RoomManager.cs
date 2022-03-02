@@ -9,12 +9,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     [SerializeField] private TeamManager teamManager;
     [SerializeField] private Text playerCountText;
 
-    private void Awake()
-    {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.ConnectUsingSettings();
-    }
-
     private void Start()
     {
         GetComponent<AudioSource>().Play();

@@ -10,10 +10,14 @@ public class PhotonConnection : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.ConnectUsingSettings();
+
         loadingCanvas.SetActive(true);
 
-        PhotonNetwork.AutomaticallySyncScene = true;
     }
+
+
 
     void Start()
     {

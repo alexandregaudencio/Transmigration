@@ -35,13 +35,15 @@ public class PlayerTeamListManager : MonoBehaviourPunCallbacks
         UpdatePlayerList();
     }
 
-    private void UpdatePlayerList()
+    public void UpdatePlayerList()
     {
         text_PlayerTeamList.text = "";
-        foreach (Player player in PhotonNetwork.PlayerList)
+        foreach (KeyValuePair<int,Player> player in PhotonNetwork.CurrentRoom.Players)
         {
-            text_PlayerTeamList.text += player.NickName + "\n";
+            text_PlayerTeamList.text += player.Value.NickName + "\n";
         }
+
+        //text_PlayerTeamList.text += player.NickName + "\n";
 
     }
 

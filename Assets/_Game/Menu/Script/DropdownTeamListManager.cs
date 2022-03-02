@@ -1,7 +1,9 @@
+
 using Photon.Pun;
+using Photon.Realtime;
 using System.Collections.Generic;
 using TMPro;
-using Photon.Realtime;
+
 
 public class DropdownTeamListManager : MonoBehaviourPunCallbacks
 {
@@ -18,15 +20,6 @@ public class DropdownTeamListManager : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-
-        //Debug.Log("Lista Atualizada:");
-        //foreach (RoomInfo room in roomList)
-        //{
-        //    Debug.Log(room.Name);
-        //} 
-
-
-
         dropdown.ClearOptions();
         UpdateItemList(roomList);
         dropdown.AddOptions(dropdownItensList);
