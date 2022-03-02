@@ -28,6 +28,7 @@ public class StartGame : MonoBehaviourPunCallbacks
     //quando o btão de start game é apertado
     public void StartMatchmaking()
     {
+        //deve ser feito pelo MASTERCLIENT e quando ta lotado e quando não ta lotado.
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = false;
         StartCoroutine(waitToStart());
@@ -42,6 +43,8 @@ public class StartGame : MonoBehaviourPunCallbacks
 
     }
 
+
+    //cada player deve definir suas propriedades, personagens e etc.
     [PunRPC]
     public void SetProps()
     {

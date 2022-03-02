@@ -45,4 +45,9 @@ public class PlayerTeamListManager : MonoBehaviourPunCallbacks
 
     }
 
+    public override void OnLeftRoom()
+    {
+        text_PlayerTeamList.text = "";
+    }
+
 }

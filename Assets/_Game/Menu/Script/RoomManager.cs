@@ -31,6 +31,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         //PhotonNetwork.LeaveRoom();
         PhotonNetwork.LeaveRoom(true);
+        playerCountText.text = "...";
+
     }
 
     //public override void OnJoinRandomFailed(short returnCode, string message)
@@ -70,7 +72,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Left LOBBY.");
     }
-
 
 
     //QUANDO ALGUÉM ENTRA NA SALA

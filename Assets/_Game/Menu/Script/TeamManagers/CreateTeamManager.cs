@@ -53,8 +53,9 @@ public class CreateTeamManager : MonoBehaviourPunCallbacks
         
         if(inputFieldCreateTeam.text == "")
         {
-            PhotonNetwork.JoinRandomRoom();
-            Debug.Log("CAMPO VAZIO. ENTRADA AUTOMÁTIA EM UMA SALA.");
+            //PhotonNetwork.JoinRandomRoom();
+            PhotonNetwork.CreateRoom(randomTeamName, this.roomOptions);
+            Debug.Log("CAMPO VAZIO. SALA ALEATÓRIA GERADA.");
         } else
         {
             PhotonNetwork.JoinOrCreateRoom(teamName, this.roomOptions, TypedLobby.Default);

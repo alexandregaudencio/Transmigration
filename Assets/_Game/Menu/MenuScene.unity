@@ -1955,18 +1955,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 789131398}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &604548633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2181,7 +2169,6 @@ GameObject:
   m_Component:
   - component: {fileID: 789131399}
   - component: {fileID: 789131400}
-  - component: {fileID: 789131401}
   m_Layer: 5
   m_Name: Canvas OnRandomTeam
   m_TagString: Untagged
@@ -2225,28 +2212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 2041668019}
   playerPropertiesDefinition: {fileID: 328987531}
---- !u!114 &789131401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789131398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 1
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &812159945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,7 +3236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Team
+  m_Text: '#...'
 --- !u!222 &1163933520
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4507,13 +4472,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'New Text
+  m_text: '...........
 
-    New Player
+    ...........
 
-    New competidor
+    ...........
 
-    New Gamer'
+    ...........'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5502,7 +5467,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0.3999939, y: 55}
-  m_SizeDelta: {x: -7.2886353, y: 98.52905}
+  m_SizeDelta: {x: -7.2886, y: 98.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816157410
 MonoBehaviour:
@@ -5764,8 +5729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -125, y: 240}
-  m_SizeDelta: {x: 280.8601, y: 103.448944}
+  m_AnchoredPosition: {x: -132.72, y: 240}
+  m_SizeDelta: {x: 265.43, y: 103.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877064010
 MonoBehaviour:
@@ -5800,7 +5765,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game:'
+  m_Text: Team
 --- !u!222 &1877064011
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6671,19 +6636,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 328987535}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: PlayAudio
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -6813,8 +6766,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 219, y: -252}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 220.41, y: -252}
+  m_SizeDelta: {x: 297.18, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2041668021
 MonoBehaviour:
