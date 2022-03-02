@@ -1,8 +1,4 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class JoinTeamManager : MonoBehaviourPunCallbacks
@@ -16,7 +12,6 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
            return  dropdownJoinTeam.options[dropdownJoinTeam.value].text;
         }
     }
-
     string inputTeamName
     {
         get
@@ -24,86 +19,64 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
             return inputFieldJoinTeam.text;
         }
     }
-
-    private enum  JoinState
+    public enum  TeamNameTarget
     {
-        INPUTFIELD_fOCUS,
-        DROPDOWN_FOCUS,
-        RANDOM_FOCUS
+        INPUTFIELD,
+        DROPDOWN
+     
     }
-
-    private JoinState state;
-
+    private TeamNameTarget teamNameTarget;
 
     private void Awake()
     {
         inputFieldJoinTeam = GetComponentInChildren<TMP_InputField>();
         dropdownJoinTeam = GetComponentInChildren<TMP_Dropdown>();
-
     }
 
     private void Start()
     {
-        state = JoinState.RANDOM_FOCUS;
-
+        teamNameTarget = TeamNameTarget.DROPDOWN;
 
         inputFieldJoinTeam.onValueChanged.AddListener(delegate
         {
             OnInputFieldValueChanged();
             
         });
-        
-        dropdownJoinTeam.onValueChanged.AddListener(delegate
-        {
-            OnDropdownValueChanged();
-        });
 
-
+       
     }
-
 
     private void OnInputFieldValueChanged()
     {
         //Debug.Log("Value: " + inputFieldJoinTeam.text);
         if(inputFieldJoinTeam.text != ""  /*&& inputFieldJoinTeam.text.Length == 3*/ )
         {
-            state = JoinState.INPUTFIELD_fOCUS;
-        }
-    }
-
-    private void OnDropdownValueChanged()
-    {
-        if(dropdownJoinTeam.options.Count == 0)
-        {
-            state = JoinState.RANDOM_FOCUS;
+            teamNameTarget = TeamNameTarget.INPUTFIELD;
         } else
         {
-            state = JoinState.DROPDOWN_FOCUS;
+            teamNameTarget = TeamNameTarget.DROPDOWN;
 
         }
     }
 
-    
-    //CLICK JOIN TEAM BUTTON
     public void OnClick_JoinRoom()
     {
-       
-        if(state == JoinState.INPUTFIELD_fOCUS)
+        if (teamNameTarget == TeamNameTarget.INPUTFIELD)
         {
             PhotonNetwork.JoinRoom(inputTeamName);
         }
-        if (state == JoinState.DROPDOWN_FOCUS)
-        {
-            PhotonNetwork.JoinRoom(dropdownTeamName);
+        if (teamNameTarget == TeamNameTarget.DROPDOWN)
+        { 
+            if (dropdownJoinTeam.value == 0)
+            {
+                PhotonNetwork.JoinRandomRoom();
+            }
+            else
+            {
+                PhotonNetwork.JoinRoom(dropdownTeamName);
+            }
         }
-        if (state == JoinState.RANDOM_FOCUS)
-        {
-            PhotonNetwork.JoinRandomRoom();
-
-        }
- 
     }
-
 
 
 

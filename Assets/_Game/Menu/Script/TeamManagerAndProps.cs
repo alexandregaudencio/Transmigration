@@ -3,7 +3,7 @@ using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 using UnityEngine;
 
-public class TeamManager : PhotonTeamsManager
+public class TeamManagerAndProps : PhotonTeamsManager
 {
     private ExitGames.Client.Photon.Hashtable hasIndexPlayer = new ExitGames.Client.Photon.Hashtable();
     Player[] playersTeam;

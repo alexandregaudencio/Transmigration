@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+//Ajustar esta pasta
 public class StartGame : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject startButton;

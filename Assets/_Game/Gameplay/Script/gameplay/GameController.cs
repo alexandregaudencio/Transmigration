@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
         //GameObject teamManagerObject =  ;
         //Debug.Log(teamManagerObject.name);
         if(PhotonNetwork.IsMasterClient)
-        SceneManager.MoveGameObjectToScene(FindObjectOfType<TeamManager>()?.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(FindObjectOfType<TeamManagerAndProps>()?.gameObject, SceneManager.GetActiveScene());
 
     }
 

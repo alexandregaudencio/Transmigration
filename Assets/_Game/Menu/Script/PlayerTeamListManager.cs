@@ -12,7 +12,7 @@ public class PlayerTeamListManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        text_PlayerTeamList = GetComponentInChildren<TMP_Text>();
+        text_PlayerTeamList = GetComponent<TMP_Text>();
 
     }
 

@@ -1,10 +1,10 @@
-
 using Photon.Pun;
 using Photon.Realtime;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
-
+[RequireComponent(typeof(TMP_Dropdown))]
 public class DropdownTeamListManager : MonoBehaviourPunCallbacks
 {
     private TMP_Dropdown dropdown;
