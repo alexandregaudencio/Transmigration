@@ -974,13 +974,11 @@ GameObject:
   - component: {fileID: 328987529}
   - component: {fileID: 328987533}
   - component: {fileID: 328987532}
-  - component: {fileID: 328987530}
   - component: {fileID: 328987531}
   - component: {fileID: 328987536}
   - component: {fileID: 328987535}
   - component: {fileID: 328987534}
   - component: {fileID: 328987537}
-  - component: {fileID: 328987538}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1002,19 +1000,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &328987530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328987528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff27d75c69446a24cb14d0c2bec41e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teamManager: {fileID: 1858409290}
 --- !u!114 &328987531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,7 +1026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fa938fb37b05943b27674bc4ac5259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingCanvas: {fileID: 997930491}
 --- !u!114 &328987533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,31 +1200,6 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &328987538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328987528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f955b36967bd0b47b9d0261981258bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  areaList:
-  - unlocked: 0
-    levelList:
-    - state: 0
-      score: 0
-    - state: 0
-      score: 0
-  - unlocked: 0
-    levelList:
-    - state: 0
-      score: 0
-    - state: 0
-      score: 0
 --- !u!1 &340708449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,7 +1213,7 @@ GameObject:
   - component: {fileID: 340708451}
   - component: {fileID: 340708450}
   m_Layer: 5
-  m_Name: Canvas Group
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2261,6 +2220,7 @@ GameObject:
   - component: {fileID: 604548634}
   - component: {fileID: 604548633}
   - component: {fileID: 604548632}
+  - component: {fileID: 604548631}
   m_Layer: 5
   m_Name: Button_Leave
   m_TagString: Untagged
@@ -2288,6 +2248,18 @@ RectTransform:
   m_AnchoredPosition: {x: -229, y: -250.35997}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &604548631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604548629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3210928abe51a384aa889d482a8e6107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &604548632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,22 +2304,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 328987530}
-        m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
-        m_MethodName: LeaveRoom
+      - m_Target: {fileID: 604548631}
+        m_TargetAssemblyTypeName: LeaveRoom, Assembly-CSharp
+        m_MethodName: OnClick_LeaveRoom
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1998832882}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2610,7 +2570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56f5467d3ec5c449a693ce76345cfb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 970166924}
+  button_Start: {fileID: 970166924}
 --- !u!1 &812159945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,13 +3169,14 @@ GameObject:
   - component: {fileID: 970166928}
   - component: {fileID: 970166927}
   - component: {fileID: 970166926}
+  - component: {fileID: 970166930}
   m_Layer: 5
   m_Name: Button_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &970166925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3377,8 +3338,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 789131400}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: StartMatchmaking
+        m_TargetAssemblyTypeName: StartMatchmaking, Assembly-CSharp
+        m_MethodName: OnClick_StartMatchMaking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3438,6 +3399,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970166924}
   m_CullTransparentMesh: 1
+--- !u!114 &970166930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970166924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56f5467d3ec5c449a693ce76345cfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button_Start: {fileID: 0}
 --- !u!1 &976537366
 GameObject:
   m_ObjectHideFlags: 0

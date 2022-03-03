@@ -20,6 +20,12 @@ public class PlayerTeamListManager : MonoBehaviourPunCallbacks
     {
         text_PlayerTeamList.text = "";
     }
+
+    private void OnEnable()
+    {
+        UpdatePlayerList();
+    }
+
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         UpdatePlayerList();

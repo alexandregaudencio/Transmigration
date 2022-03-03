@@ -5,6 +5,7 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
 {
     private TMP_InputField inputFieldJoinTeam;
     private TMP_Dropdown dropdownJoinTeam;
+
     string dropdownTeamName
     {
         get
@@ -23,8 +24,8 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
     {
         INPUTFIELD,
         DROPDOWN
-     
     }
+    
     private TeamNameTarget teamNameTarget;
 
     private void Awake()
@@ -40,23 +41,14 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
         inputFieldJoinTeam.onValueChanged.AddListener(delegate
         {
             OnInputFieldValueChanged();
-            
         });
 
-       
     }
 
     private void OnInputFieldValueChanged()
     {
         //Debug.Log("Value: " + inputFieldJoinTeam.text);
-        if(inputFieldJoinTeam.text != ""  /*&& inputFieldJoinTeam.text.Length == 3*/ )
-        {
-            teamNameTarget = TeamNameTarget.INPUTFIELD;
-        } else
-        {
-            teamNameTarget = TeamNameTarget.DROPDOWN;
 
-        }
     }
 
     public void OnClick_JoinRoom()
@@ -66,7 +58,7 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
             PhotonNetwork.JoinRoom(inputTeamName);
         }
         if (teamNameTarget == TeamNameTarget.DROPDOWN)
-        { 
+        {
             if (dropdownJoinTeam.value == 0)
             {
                 PhotonNetwork.JoinRandomRoom();
@@ -79,5 +71,51 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
     }
 
 
-
 }
+
+
+
+
+////[System.Serializable]
+//public interface ITargetRoom
+//{
+//    public void IntializeRoom();
+//}
+
+//public class DropdowRoom : ITargetRoom
+//{
+//    string teamRoomName;
+//    TMP_Dropdown dropdown;
+//    public void IntializeRoom()
+//    {
+//        if (dropdown.value == 0)
+//        {
+//            PhotonNetwork.JoinRandomRoom();
+//        }
+//        else
+//        {
+//            PhotonNetwork.JoinRoom(teamRoomName);
+//        }
+//    }
+//}
+
+
+//public class InputfielRoom : ITargetRoom
+//{
+//    string teamRoomName;
+//    TMP_InputField inputfield;
+
+//    public void IntializeRoom()
+//    {
+//        if (inputfield.text != ""  /*&& inputFieldJoinTeam.text.Length == 3*/ )
+//        {
+//            PhotonNetwork.JoinRandomRoom();
+//        }
+//        else
+//        {
+//            PhotonNetwork.JoinRoom(teamRoomName);
+//        }
+//    }
+
+//}
+

@@ -6,15 +6,21 @@ public class TeamNameToText : MonoBehaviourPunCallbacks
 {
     private Text text_TeamName;
 
-
     private void Awake()
     {
         text_TeamName = GetComponent<Text>();
     }
     public override void OnJoinedRoom()
     {
-         text_TeamName.text  = "#"+PhotonNetwork.CurrentRoom.Name;
+        text_TeamName.text = "#" + PhotonNetwork.CurrentRoom.Name;
+
     }
+    public void OnEnable()
+    {
+        text_TeamName.text = "#" + PhotonNetwork.CurrentRoom.Name;
+
+    }
+
 
     public override void OnLeftRoom()
     {

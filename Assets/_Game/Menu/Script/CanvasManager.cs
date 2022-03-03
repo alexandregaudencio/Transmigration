@@ -13,7 +13,8 @@ public enum ConnectionState
 
 public class CanvasManager : MonoBehaviourPunCallbacks
 {
-    public List<MenuSate> menuState;
+   [SerializeField]
+    private List<MenuSate> menuState;
     //public ConnectionState connectionState;
 
 
@@ -28,6 +29,11 @@ public class CanvasManager : MonoBehaviourPunCallbacks
         SwitchCanvasActivity(ConnectionState.IN_LOBBY);
        
     }
+    //public override void OnLeftLobby()
+    //{
+    //    SwitchCanvasActivity(ConnectionState.DICONNECTED);
+
+    //}
 
     public override void OnJoinedRoom()
     {
@@ -37,25 +43,29 @@ public class CanvasManager : MonoBehaviourPunCallbacks
 
     private void SwitchCanvasActivity(ConnectionState actualState)
     {
+        Debug.Log(actualState);
         foreach(MenuSate menu in menuState)
         {
-            menu.canvastarget.SetActive(menu.state == actualState);
-            
+            menu.Canvastarget.SetActive(menu.State == actualState);   
         }
     }
-
 
 }
 
 [Serializable]
 public class MenuSate
 {
-    public ConnectionState state;
-    public GameObject canvastarget;
+    [SerializeField]
+    private ConnectionState state;
+    [SerializeField]
+    private GameObject canvastarget;
 
     public MenuSate(ConnectionState state, GameObject canvastarget)
     {
-        this.state = state;
-        this.canvastarget = canvastarget;
+        this.State = state;
+        this.Canvastarget = canvastarget;
     }
+
+    public ConnectionState State { get => state; set => state = value; }
+    public GameObject Canvastarget { get => canvastarget; set => canvastarget = value; }
 }

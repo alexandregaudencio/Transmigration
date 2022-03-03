@@ -15,12 +15,15 @@ public class TeamPlayersCountToText : MonoBehaviourPunCallbacks
         text_teamPlayersCount = GetComponent<Text>();
     }
 
+    private void OnEnable()
+    {
+        UpdateTeamPlayersCountText();
+    }
     public void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom(true);
         text_teamPlayersCount.text = "...";
     }
-
 
     public override void OnJoinedRoom()
     {
