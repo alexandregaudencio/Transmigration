@@ -5,7 +5,14 @@ using UnityEngine;
 public class GameConfigs : MonoBehaviour
 {
     public static GameConfigs instance;
-    public byte maxRoomPlayers;
+    public byte maxTeamPlayers;
+    private int maxRoomPlayers
+    {
+        get => maxTeamPlayers*2;
+        
+    }
+    public int MaxBattlePlayers  { get => maxRoomPlayers;
+    }
     public int menuSceneIndex;
     public int gameplaySceneIndex;
 

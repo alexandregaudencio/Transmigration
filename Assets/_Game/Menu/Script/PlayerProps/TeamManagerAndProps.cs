@@ -13,8 +13,6 @@ public class TeamManagerAndProps : PhotonTeamsManager
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        Debug.Log("Start TEAMmANAGER SCRIPT");
-
         InvokeRepeating("SetFPS", 1, 1);
 
     }
@@ -48,18 +46,12 @@ public class TeamManagerAndProps : PhotonTeamsManager
 
     private void OnGUI()
     {
+        GUI.Label(new Rect(10, 10, 100, 100), "Ping: " + PhotonNetwork.GetPing());
 
-        //string[] members;
-        ////TryeGetTeammenbers(1, Player
-         GUI.Label(new Rect(10, 30, 300, 100), "Players: "+PhotonNetwork.CurrentRoom?.PlayerCount);
-
+        GUI.Label(new Rect(10, 30, 300, 100), "Players: "+PhotonNetwork.CurrentRoom?.PlayerCount);
         GUI.Label(new Rect(10, 40, 300, 100), "TeamA: "+GetTeamMembersCount(1).ToString());
         GUI.Label(new Rect(10, 50, 300, 100), "TeamB: " + GetTeamMembersCount(2).ToString());
         GUI.Label(new Rect(10, 70, 300, 100), "Room: " + PhotonNetwork.CurrentRoom?.Name);
-
-        if (PhotonNetwork.IsMasterClient) GUI.Label(new Rect(10, 100, 300, 100), "Você é o Master.");
-
-        GUI.Label(new Rect(10, 10, 100, 100), "Ping: "+PhotonNetwork.GetPing());
         //GUI.Label(new Rect(10, 20, 100, 100), "FPS: " + FPS);
 
     }
@@ -67,7 +59,8 @@ public class TeamManagerAndProps : PhotonTeamsManager
     private void SetFPS()
     { 
       FPS =  (int)(1f / Time.unscaledDeltaTime);
-
-        
     }
+
+
+
 }

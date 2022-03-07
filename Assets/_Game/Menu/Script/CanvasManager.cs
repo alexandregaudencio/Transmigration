@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Photon.Realtime;
 
 public enum ConnectionState
 {
@@ -24,6 +25,11 @@ public class CanvasManager : MonoBehaviourPunCallbacks
 
     }
 
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        SwitchCanvasActivity(ConnectionState.DICONNECTED);
+    }
+
     public override void OnJoinedLobby()
     {
         SwitchCanvasActivity(ConnectionState.IN_LOBBY);
@@ -37,16 +43,29 @@ public class CanvasManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        SwitchCanvasActivity(ConnectionState.IN_TEAMROOM);
+        if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.maxTeamPlayers)
+        {
+            SwitchCanvasActivity(ConnectionState.IN_TEAMROOM);
+        } 
+        else if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.maxTeamPlayers*2)
+        {
+            SwitchCanvasActivity(ConnectionState.IN_BATTLEROOM);
+        }
+        else
+        {
+            Debug.Log("ROOM ERRO!");
+        }
 
     }
+
+
 
     private void SwitchCanvasActivity(ConnectionState actualState)
     {
         Debug.Log(actualState);
         foreach(MenuSate menu in menuState)
         {
-            menu.Canvastarget.SetActive(menu.State == actualState);   
+            menu.Canvastarget?.SetActive(menu.State == actualState);   
         }
     }
 

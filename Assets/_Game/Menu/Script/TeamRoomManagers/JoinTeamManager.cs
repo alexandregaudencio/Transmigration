@@ -76,7 +76,7 @@ public class JoinTeamManager : MonoBehaviourPunCallbacks
 
 
 
-////[System.Serializable]
+//[System.Serializable]
 //public interface ITargetRoom
 //{
 //    public void IntializeRoom();

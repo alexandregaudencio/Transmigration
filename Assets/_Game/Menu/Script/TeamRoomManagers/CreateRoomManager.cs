@@ -6,10 +6,25 @@ using TMPro;
 using Photon.Realtime;
 using UnityEngine.UI;
 
-public class CreateTeamManager : MonoBehaviourPunCallbacks
+public class CreateRoomManager : MonoBehaviourPunCallbacks
 {
     private TMP_InputField inputFieldCreateTeam;
     private Toggle toggleTeam;
+
+    private RoomOptions roomOptions
+    {
+        get
+        {
+            return new RoomOptions
+            {
+                MaxPlayers = (byte)GameConfigs.instance.maxTeamPlayers,
+                PublishUserId = true,
+                IsOpen = true,
+                IsVisible = !toggleTeam.isOn
+            };
+        }
+    }
+
 
     string randomTeamName
     {
@@ -27,18 +42,7 @@ public class CreateTeamManager : MonoBehaviourPunCallbacks
         }
     }
 
-    private RoomOptions roomOptions
-    {
-        get
-        {
-            return new RoomOptions
-            {
-                MaxPlayers = (byte)GameConfigs.instance.maxRoomPlayers,
-                IsOpen = true,
-                IsVisible = !toggleTeam.isOn
-            };
-        }
-    }
+
 
 
     private void Awake()
@@ -50,33 +54,25 @@ public class CreateTeamManager : MonoBehaviourPunCallbacks
 
     public void OnClick_CreateRoom()
     {
-        
         if(inputFieldCreateTeam.text == "")
         {
-            //PhotonNetwork.JoinRandomRoom();
             PhotonNetwork.CreateRoom(randomTeamName, this.roomOptions);
-            Debug.Log("CAMPO VAZIO. SALA ALEATÓRIA GERADA.");
         } else
         {
             PhotonNetwork.JoinOrCreateRoom(teamName, this.roomOptions, TypedLobby.Default);
-            Debug.Log("sala criada: " + teamName);
         }
     }
 
-    public override void OnCreateRoomFailed(short returnCode, string message)
-    {
 
-        ///TODO: Mensagem de falha;
-        ///
-
-        //PhotonNetwork.CreateRoom(randomTeamName, this.roomOptions);
-    }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
 
         PhotonNetwork.CreateRoom(randomTeamName, this.roomOptions);
-        Debug.Log("sala criada: " + randomTeamName);
     }
+
+
+
+
 
 }
