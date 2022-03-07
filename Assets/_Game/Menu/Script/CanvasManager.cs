@@ -8,8 +8,8 @@ public enum ConnectionState
 {
    DICONNECTED,
    IN_LOBBY,
-   IN_TEAMROOM,
-   IN_BATTLEROOM
+   IN_BATTLEROOM,
+   //IN_BATTLEROOM
 }
 
 public class CanvasManager : MonoBehaviourPunCallbacks
@@ -43,11 +43,12 @@ public class CanvasManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.maxTeamPlayers)
-        {
-            SwitchCanvasActivity(ConnectionState.IN_TEAMROOM);
-        } 
-        else if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.maxTeamPlayers*2)
+        //if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.maxTeamPlayers)
+        //{
+        //    SwitchCanvasActivity(ConnectionState.IN_TEAMROOM);
+        //} 
+        //else
+        if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.MaxBattlePlayers)
         {
             SwitchCanvasActivity(ConnectionState.IN_BATTLEROOM);
         }

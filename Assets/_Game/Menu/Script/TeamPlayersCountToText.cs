@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GroupManager : MonoBehaviour
+public class TeamPlayersCountToText : MonoBehaviour
 {
     [SerializeField] private TMP_Text text_teamPlayersCount;
     [SerializeField] private PlayerUserIDConteiner playerUserIDConteiner;

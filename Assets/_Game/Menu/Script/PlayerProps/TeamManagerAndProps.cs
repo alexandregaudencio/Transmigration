@@ -51,7 +51,8 @@ public class TeamManagerAndProps : PhotonTeamsManager
         GUI.Label(new Rect(10, 30, 300, 100), "Players: "+PhotonNetwork.CurrentRoom?.PlayerCount);
         GUI.Label(new Rect(10, 40, 300, 100), "TeamA: "+GetTeamMembersCount(1).ToString());
         GUI.Label(new Rect(10, 50, 300, 100), "TeamB: " + GetTeamMembersCount(2).ToString());
-        GUI.Label(new Rect(10, 70, 300, 100), "Room: " + PhotonNetwork.CurrentRoom?.Name);
+        GUI.Label(new Rect(10, 70, 300, 100), "Region: " + PhotonNetwork.CloudRegion);
+
         //GUI.Label(new Rect(10, 20, 100, 100), "FPS: " + FPS);
 
     }

@@ -10,10 +10,11 @@ public class FindBattleJoinRoom : MonoBehaviourPunCallbacks
     [SerializeField] private PlayerUserIDConteiner playerUserIDConteiner;
     [SerializeField] private PlayerUserIDConteiner userIDConteiner;
 
-    public string leadUserId
-    {
-        get => PhotonNetwork.AuthValues.UserId;
-    }
+    //public string leadUserId
+    //{
+    //    get => PhotonNetwork.AuthValues.UserId;
+    //}
+    
 
     public string[] UsersArray
     {
@@ -33,8 +34,6 @@ public class FindBattleJoinRoom : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinRandomRoom();
     }
-
-
 
     private RoomOptions roomOptions
     {
@@ -61,7 +60,8 @@ public class FindBattleJoinRoom : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        PhotonNetwork.JoinOrCreateRoom(randomRoomName, roomOptions, TypedLobby.Default, UsersArray);
+        PhotonNetwork.JoinOrCreateRoom(randomRoomName, roomOptions, TypedLobby.Default, UsersArray
+            );
     }
 
 }

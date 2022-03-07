@@ -65,6 +65,21 @@ public class PlayerUserIDConteiner : MonoBehaviourPunCallbacks
 
     }
 
+    public new void OnDisable()
+    {
+        ResetConteiner();
+    }
+
+    private void ResetConteiner()
+    {
+        userIDManagerListing.Clear();
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            Destroy(gameObject.transform.GetChild(i).gameObject);
+
+        }
+    }
+
 
 
 }

@@ -18,6 +18,9 @@ public class ShowPlayerName : MonoBehaviourPunCallbacks
     private new void OnEnable()
     {
 
+    }
+    private void Update()
+    {
         text_NickName.text = "Bem-vindo, \n" + PhotonNetwork.AuthValues.UserId;
 
     }
