@@ -9706,6 +9706,7 @@ MonoBehaviour:
     Code: 1
   - Name: Red
     Code: 2
+  targetFrameRate: 60
 --- !u!4 &1858409291
 Transform:
   m_ObjectHideFlags: 0
@@ -10813,7 +10814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.072651565, y: 0.2053556}
   m_AnchorMax: {x: 0.897, y: 0.64535564}
-  m_AnchoredPosition: {x: 11.104401, y: -212.75151}
+  m_AnchoredPosition: {x: 11.104401, y: -212.75146}
   m_SizeDelta: {x: 129.20996, y: 270.51007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048584339
