@@ -8,56 +8,36 @@ using UnityEngine;
 
 public class LoadingConnection : MonoBehaviourPunCallbacks
 {
-    private TMP_InputField inputfield_NickName;
     private string username;
 
     private void Awake()
     {
-        inputfield_NickName = GetComponentInChildren<TMP_InputField>();
-        //PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     void Start()
     {
-
-        inputfield_NickName.onValueChanged.AddListener(delegate
-        {
-            OnInputfieldValueChanged();
-        });
-    }
-
-
-    public void OnClick_JoinLobby()
-    {
-        SetPlayerUsername();
         PhotonNetwork.ConnectUsingSettings();
 
-
     }
 
-
-    private void SetPlayerUsername()
+    private new void OnEnable()
     {
-        PhotonNetwork.AuthValues = new AuthenticationValues(username);
-        PhotonNetwork.NickName = username;
-        Debug.Log("Userid: "+PhotonNetwork.AuthValues.UserId);
+        PhotonNetwork.ConnectUsingSettings();
     }
-
-
-    private void OnInputfieldValueChanged()
+    private new void OnDisable()
     {
-        username = inputfield_NickName.text;
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        Debug.Log("DISCONNECTED");
+        //PhotonNetwork.JoinLobby();
+        Debug.Log("PQ DISCONNECTED");
     }
 
-    public override void OnConnected()
+    public override void OnJoinedLobby()
     {
-        Debug.Log("CONNECTED");
-
+        Debug.Log("joined_Looby");
     }
 
     public override void OnConnectedToMaster()
@@ -66,6 +46,13 @@ public class LoadingConnection : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
 
     }
+
+
+    //private IEnumerator ConnectionCoroutine()
+    //{
+    //    if (!PhotonNetwork.IsConnected) PhotonNetwork.ConnectUsingSettings();
+    //    yield return new WaitForSeconds(0.5f);
+    //}
 
 
 }

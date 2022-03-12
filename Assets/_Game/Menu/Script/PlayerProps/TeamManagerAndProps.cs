@@ -68,8 +68,8 @@ public class TeamManagerAndProps : PhotonTeamsManager
         GUI.Label(new Rect(10, 25, 100, 100), "FPS: " + fps);
 
         GUI.Label(new Rect(10, 50, 300, 100), "Players: "+PhotonNetwork.CurrentRoom?.PlayerCount);
-        GUI.Label(new Rect(10, 60, 300, 100), "TeamA: "+GetTeamMembersCount(1).ToString());
-        GUI.Label(new Rect(10, 70, 300, 100), "TeamB: " + GetTeamMembersCount(2).ToString());
+        GUI.Label(new Rect(10, 60, 300, 100), "Blue: "+GetTeamMembersCount(1).ToString());
+        GUI.Label(new Rect(10, 70, 300, 100), "Red: " + GetTeamMembersCount(2).ToString());
 
         //GUI.Label(new Rect(10, 20, 100, 100), "FPS: " + FPS);
 

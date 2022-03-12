@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(TMP_InputField))]
-public class InputFieldAutocomplete : MonoBehaviour
+public class SetNickName : MonoBehaviour
 {
     private TMP_InputField InputField_username;
     
@@ -42,7 +42,10 @@ public class InputFieldAutocomplete : MonoBehaviour
 
     public void OnInputfieldValueChanged()
     {
-        PlayerPrefs.SetString("username", InputField_username.text);
+        string usernameText = InputField_username.text;
+        PlayerPrefs.SetString("username", usernameText);
+        PhotonNetwork.NickName = usernameText;
+        Debug.Log("Nick " + PhotonNetwork.NickName);
     }
 
 

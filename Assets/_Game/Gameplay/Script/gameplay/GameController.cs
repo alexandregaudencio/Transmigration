@@ -57,6 +57,7 @@ public class GameController : MonoBehaviour
 
        PhotonTeamExtensions.LeaveCurrentTeam(PhotonNetwork.LocalPlayer);
         PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Disconnect();
         //PhotonNetwork.Disconnect();
         //Destroy(FindObjectOfType<TeamManager>().gameObject);
         //FindObjectOfType<TeamManager>().LeaveTeamLocalPlayer();

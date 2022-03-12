@@ -11,44 +11,44 @@ using UnityEngine.UI;
 public class PlayerUserIDManager : MonoBehaviour
 {
 
-    public  string playerUserID;
-    private TMP_Text text_playerUserID;
-    [SerializeField] private GameObject button_playerUserIDRemove;
+    //public  string playerUserID;
+    //private TMP_Text text_playerUserID;
+    //[SerializeField] private GameObject button_playerUserIDRemove;
 
-    public string PlayerUserID { get => playerUserID; set => playerUserID = value; }
+    //public string PlayerUserID { get => playerUserID; set => playerUserID = value; }
 
-    private void Awake()
-    {
-        text_playerUserID = GetComponentInChildren<TMP_Text>();
-        //button_playerUserIDRemove.SetActive(false);
-    }
+    //private void Awake()
+    //{
+    //    text_playerUserID = GetComponentInChildren<TMP_Text>();
+    //    //button_playerUserIDRemove.SetActive(false);
+    //}
 
-    private void OnEnable()
-    {
-        button_playerUserIDRemove.GetComponent<Button>().onClick.AddListener(delegate
-        {
-            //RemovePlayer da lista
-            RemoveUserID();
-        });
-    }
+    //private void OnEnable()
+    //{
+    //    button_playerUserIDRemove.GetComponent<Button>().onClick.AddListener(delegate
+    //    {
+    //        //RemovePlayer da lista
+    //        RemoveUserID();
+    //    });
+    //}
 
-    public void SetPlayerInfo(string userID)
-    {
-        this.playerUserID = userID;
-        text_playerUserID.text = userID;
-        button_playerUserIDRemove.SetActive(IsNotLocalUserID(userID)); 
-    }
+    //public void SetPlayerInfo(string userID)
+    //{
+    //    this.playerUserID = userID;
+    //    text_playerUserID.text = userID;
+    //    button_playerUserIDRemove.SetActive(IsNotLocalUserID(userID)); 
+    //}
 
-    private void RemoveUserID()
-    {
-        PlayerUserIDConteiner conteiner = GetComponentInParent<PlayerUserIDConteiner>();
-        conteiner.RemovePlayerAtList(this);
-        Destroy(gameObject);
-    }
+    //private void RemoveUserID()
+    //{
+    //    PlayerUserIDConteiner conteiner = GetComponentInParent<PlayerUserIDConteiner>();
+    //    conteiner.RemovePlayerAtList(this);
+    //    Destroy(gameObject);
+    //}
 
-    private bool IsNotLocalUserID(string userID)
-    {
-        return (userID != PhotonNetwork.LocalPlayer.UserId);
-    }
+    //private bool IsNotLocalUserID(string userID)
+    //{
+    //    return (userID != PhotonNetwork.LocalPlayer.UserId);
+    //}
 
 }

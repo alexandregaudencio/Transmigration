@@ -17,11 +17,8 @@ public class ShowPlayerName : MonoBehaviourPunCallbacks
 
     private new void OnEnable()
     {
-
-    }
-    private void Update()
-    {
-        text_NickName.text = "Bem-vindo, \n" + PhotonNetwork.AuthValues.UserId;
+        //text_NickName.text = "Bem-vindo, \n" + PhotonNetwork.NickName;
+        StartCoroutine(ChangeNickText());
 
     }
 
@@ -29,6 +26,11 @@ public class ShowPlayerName : MonoBehaviourPunCallbacks
     {
         text_NickName.text = "...";
     }
-    
 
+    private IEnumerator ChangeNickText()
+    {
+        yield return new WaitForSeconds(0.2f);
+        text_NickName.text = "Bem-vindo, \n" + PhotonNetwork.NickName;
+
+    }
 }

@@ -9,76 +9,76 @@ using UnityEngine;
 //[RequireComponent(typeof(TMP_Text))]
 public class PlayerUserIDConteiner : MonoBehaviourPunCallbacks
 {
-    //private TMP_Text text_PlayerTeamList;
-    [SerializeField] private GameObject content_playerUserID;
-    public List<PlayerUserIDManager> userIDManagerListing = new List<PlayerUserIDManager>();
+    ////private TMP_Text text_PlayerTeamList;
+    //[SerializeField] private GameObject content_playerUserID;
+    //public List<PlayerUserIDManager> userIDManagerListing = new List<PlayerUserIDManager>();
 
-    public event Action OnUsersIDconteinerListChanged;
+    //public event Action OnUsersIDconteinerListChanged;
 
-    public List<PlayerUserIDManager> UserIDManagerListing { get => userIDManagerListing; set => userIDManagerListing = value; }
+    //public List<PlayerUserIDManager> UserIDManagerListing { get => userIDManagerListing; set => userIDManagerListing = value; }
 
-    public void InitializeNewPlayer(string userID)
-    {
-        if(TeamUserIDListContain(userID)) return;
-        if (userID == "") return;
-        //Instanciando o bloco do Novo uerID
-        GameObject newPlayerContent = Instantiate(content_playerUserID, transform);
-        //Define o userID
-        PlayerUserIDManager newPlayerUserID = newPlayerContent.GetComponent<PlayerUserIDManager>();
-        newPlayerUserID.SetPlayerInfo(userID);
-        //Armazena o playerUserIDManager na lista
-        AddPlayerToList(newPlayerUserID);
+    //public void InitializeNewPlayer(string userID)
+    //{
+    //    if(TeamUserIDListContain(userID)) return;
+    //    if (userID == "") return;
+    //    //Instanciando o bloco do Novo uerID
+    //    GameObject newPlayerContent = Instantiate(content_playerUserID, transform);
+    //    //Define o userID
+    //    PlayerUserIDManager newPlayerUserID = newPlayerContent.GetComponent<PlayerUserIDManager>();
+    //    newPlayerUserID.SetPlayerInfo(userID);
+    //    //Armazena o playerUserIDManager na lista
+    //    AddPlayerToList(newPlayerUserID);
 
-    }
+    //}
 
-    public void AddPlayerToList(PlayerUserIDManager playerManager)
-    {
-        userIDManagerListing.Add(playerManager);
-        OnUsersIDconteinerListChanged?.Invoke();
+    //public void AddPlayerToList(PlayerUserIDManager playerManager)
+    //{
+    //    userIDManagerListing.Add(playerManager);
+    //    OnUsersIDconteinerListChanged?.Invoke();
 
-    }
-    public void RemovePlayerAtList(PlayerUserIDManager playerManager)
-    {
-        userIDManagerListing.Remove(playerManager);
-        OnUsersIDconteinerListChanged?.Invoke();
+    //}
+    //public void RemovePlayerAtList(PlayerUserIDManager playerManager)
+    //{
+    //    userIDManagerListing.Remove(playerManager);
+    //    OnUsersIDconteinerListChanged?.Invoke();
 
-    }
+    //}
 
-    public bool TeamUserIDListContain(string userID)
-    {
-        foreach (PlayerUserIDManager userIDManager in userIDManagerListing)
-        {
-            if (userIDManager.PlayerUserID == userID)
-            {
-                return true;
-            }
-        }
-        return false;
+    //public bool TeamUserIDListContain(string userID)
+    //{
+    //    foreach (PlayerUserIDManager userIDManager in userIDManagerListing)
+    //    {
+    //        if (userIDManager.PlayerUserID == userID)
+    //        {
+    //            return true;
+    //        }
+    //    }
+    //    return false;
 
 
-    }
+    //}
 
-    public new void OnEnable()
-    {
-        if(PhotonNetwork.LocalPlayer.UserId != "")
-        InitializeNewPlayer(PhotonNetwork.AuthValues.UserId);
+    //public new void OnEnable()
+    //{
+    //    if(PhotonNetwork.LocalPlayer.UserId != "")
+    //    InitializeNewPlayer(PhotonNetwork.AuthValues.UserId);
 
-    }
+    //}
 
-    public new void OnDisable()
-    {
-        ResetConteiner();
-    }
+    //public new void OnDisable()
+    //{
+    //    ResetConteiner();
+    //}
 
-    private void ResetConteiner()
-    {
-        userIDManagerListing.Clear();
-        for (int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            Destroy(gameObject.transform.GetChild(i).gameObject);
+    //private void ResetConteiner()
+    //{
+    //    userIDManagerListing.Clear();
+    //    for (int i = 0; i < gameObject.transform.childCount; i++)
+    //    {
+    //        Destroy(gameObject.transform.GetChild(i).gameObject);
 
-        }
-    }
+    //    }
+    //}
 
 
 

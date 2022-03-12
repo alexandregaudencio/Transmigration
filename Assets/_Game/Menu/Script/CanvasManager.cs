@@ -6,59 +6,44 @@ using Photon.Realtime;
 
 public enum ConnectionState
 {
-   DICONNECTED,
+   //DICONNECTED,
    IN_LOBBY,
-   IN_BATTLEROOM,
-   //IN_BATTLEROOM
+   IN_ROOM,
 }
 
 public class CanvasManager : MonoBehaviourPunCallbacks
 {
    [SerializeField]
     private List<MenuSate> menuState;
-    //public ConnectionState connectionState;
 
 
     private void Start()
     {
-        SwitchCanvasActivity(ConnectionState.DICONNECTED);
+        SwitchCanvasActivity(ConnectionState.IN_LOBBY);
 
     }
 
-    public override void OnDisconnected(DisconnectCause cause)
-    {
-        SwitchCanvasActivity(ConnectionState.DICONNECTED);
-    }
+    //public override void OnDisconnected(DisconnectCause cause)
+    //{
+    //    SwitchCanvasActivity(ConnectionState.IN_LOBBY);
+    //}
 
     public override void OnJoinedLobby()
     {
         SwitchCanvasActivity(ConnectionState.IN_LOBBY);
        
     }
-    //public override void OnLeftLobby()
-    //{
-    //    SwitchCanvasActivity(ConnectionState.DICONNECTED);
 
-    //}
-
+    
     public override void OnJoinedRoom()
+    {  
+        SwitchCanvasActivity(ConnectionState.IN_ROOM);
+    }
+    public override void OnLeftRoom()
     {
-        //if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.maxTeamPlayers)
-        //{
-        //    SwitchCanvasActivity(ConnectionState.IN_TEAMROOM);
-        //} 
-        //else
-        if (PhotonNetwork.CurrentRoom.MaxPlayers == GameConfigs.instance.MaxBattlePlayers)
-        {
-            SwitchCanvasActivity(ConnectionState.IN_BATTLEROOM);
-        }
-        else
-        {
-            Debug.Log("ROOM ERRO!");
-        }
+        SwitchCanvasActivity(ConnectionState.IN_LOBBY);
 
     }
-
 
 
     private void SwitchCanvasActivity(ConnectionState actualState)
@@ -66,7 +51,7 @@ public class CanvasManager : MonoBehaviourPunCallbacks
         Debug.Log(actualState);
         foreach(MenuSate menu in menuState)
         {
-            menu.Canvastarget?.SetActive(menu.State == actualState);   
+            menu.Canvastarget.SetActive(menu.State == actualState);   
         }
     }
 

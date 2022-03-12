@@ -9,59 +9,56 @@ public class FindBattleJoinRoom : MonoBehaviourPunCallbacks
 
     [SerializeField] private PlayerUserIDConteiner playerUserIDConteiner;
     [SerializeField] private PlayerUserIDConteiner userIDConteiner;
-
     //public string leadUserId
     //{
     //    get => PhotonNetwork.AuthValues.UserId;
     //}
-    
+    //public string[] UsersArray
+    //{
+    //    get
+    //    {
+    //        List<string> users = new List<string>();
 
-    public string[] UsersArray
-    {
-        get
-        {
-            List<string> users = new List<string>();
+    //        foreach (PlayerUserIDManager idManager in userIDConteiner.UserIDManagerListing)
+    //        {
+    //            users.Add(idManager?.PlayerUserID);
+    //        }
+    //        return users.ToArray();
+    //    }
+    //}
 
-            foreach (PlayerUserIDManager idManager in userIDConteiner.UserIDManagerListing)
-            {
-                users.Add(idManager?.PlayerUserID);
-            }
-            return users.ToArray();
-        }
-    }
+    //public void OnClick_FindBattle()
+    //{
+    //    PhotonNetwork.JoinRandomRoom();
+    //}
 
-    public void OnClick_FindBattle()
-    {
-        PhotonNetwork.JoinRandomRoom();
-    }
-
-    private RoomOptions roomOptions
-    {
-        get
-        {
-            return new RoomOptions
-            {
-                MaxPlayers = (byte)GameConfigs.instance.MaxBattlePlayers,
-                PublishUserId = true,
-                IsOpen = true
-                //IsVisible = !toggleTeam.isOn
-            };
-        }
-    }
+    //private RoomOptions roomOptions
+    //{
+    //    get
+    //    {
+    //        return new RoomOptions
+    //        {
+    //            MaxPlayers = (byte)GameConfigs.instance.MaxBattlePlayers,
+    //            PublishUserId = true,
+    //            IsOpen = true
+    //            //IsVisible = !toggleTeam.isOn
+    //        };
+    //    }
+    //}
 
 
-    string randomRoomName
-    {
-        get
-        {
-            return Random.Range(100, 999).ToString();
-        }
-    }
+    //string randomRoomName
+    //{
+    //    get
+    //    {
+    //        return Random.Range(100, 999).ToString();
+    //    }
+    //}
 
-    public override void OnJoinRandomFailed(short returnCode, string message)
-    {
-        PhotonNetwork.JoinOrCreateRoom(randomRoomName, roomOptions, TypedLobby.Default, UsersArray
-            );
-    }
+    //public override void OnJoinRandomFailed(short returnCode, string message)
+    //{
+    //    PhotonNetwork.JoinOrCreateRoom(randomRoomName, roomOptions, TypedLobby.Default, UsersArray
+    //        );
+    //}
 
 }
