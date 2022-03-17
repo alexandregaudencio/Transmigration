@@ -8,6 +8,8 @@ public class LeaveRoom : MonoBehaviourPunCallbacks
     
     public void OnClick_LeaveRoom()
     {
+
+        //TODO: incluir desconexão
         PhotonNetwork.LeaveRoom(true);
     }
 }

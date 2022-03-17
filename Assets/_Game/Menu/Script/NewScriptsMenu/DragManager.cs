@@ -1,7 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragManager : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHandler
 {
@@ -17,7 +19,11 @@ public class DragManager : MonoBehaviour, IEndDragHandler, IBeginDragHandler, ID
         //canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+
     }
+
+    
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (canvas == null)
@@ -41,8 +47,6 @@ public class DragManager : MonoBehaviour, IEndDragHandler, IBeginDragHandler, ID
         canvasGroup.blocksRaycasts = true;
 
     }
-
-
 
 
 

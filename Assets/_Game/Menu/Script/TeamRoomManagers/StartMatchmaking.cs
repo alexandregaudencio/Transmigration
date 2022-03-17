@@ -11,43 +11,43 @@ public class StartMatchmaking : MonoBehaviourPunCallbacks
 {
 
 
-    //TODO: Só funciona InLobby
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    {
-        foreach (RoomInfo item in roomList)
-        {
-            if (item.MaxPlayers == GameConfigs.instance.MaxBattlePlayers)
-            {
-                Debug.Log("RoomBattlhe: " + item.Name);
-            }
+    ////TODO: Só funciona InLobby
+    //public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    //{
+    //    foreach (RoomInfo item in roomList)
+    //    {
+    //        if (item.MaxPlayers == GameConfigs.instance.MaxBattlePlayers)
+    //        {
+    //            Debug.Log("RoomBattlhe: " + item.Name);
+    //        }
 
-        }
-    }
+    //    }
+    //}
 
 
-    //quando o btão de start game é apertado
-    public void OnClick_StartMatchMaking()
-    {
-        //deve ser feito pelo MASTERCLIENT e quando ta lotado e quando não ta lotado.
-        PhotonNetwork.CurrentRoom.IsOpen = false;
-        PhotonNetwork.CurrentRoom.IsVisible = false;
-        //StartCoroutine(waitToStart());
-        teamMembersUserId = TeamMenbersUserID();
-        //leadUserId =  LeadUserID();
-        PhotonNetwork.LeaveRoom(true);
-        //CreateBattleRoom();
-    }
+    ////quando o btão de start game é apertado
+    //public void OnClick_StartMatchMaking()
+    //{
+    //    //deve ser feito pelo MASTERCLIENT e quando ta lotado e quando não ta lotado.
+    //    PhotonNetwork.CurrentRoom.IsOpen = false;
+    //    PhotonNetwork.CurrentRoom.IsVisible = false;
+    //    //StartCoroutine(waitToStart());
+    //    teamMembersUserId = TeamMenbersUserID();
+    //    //leadUserId =  LeadUserID();
+    //    PhotonNetwork.LeaveRoom(true);
+    //    //CreateBattleRoom();
+    //}
 
  
-    private string[] TeamMenbersUserID()
-    {
-        List<string> playersUsersID = new List<string>();
-        foreach (Player player in PhotonNetwork.CurrentRoom.Players.Values)
-        {
-            playersUsersID.Add(player.UserId);
-        }
-        return playersUsersID.ToArray();
-    }
+    //private string[] TeamMenbersUserID()
+    //{
+    //    List<string> playersUsersID = new List<string>();
+    //    foreach (Player player in PhotonNetwork.CurrentRoom.Players.Values)
+    //    {
+    //        playersUsersID.Add(player.UserId);
+    //    }
+    //    return playersUsersID.ToArray();
+    //}
 
     //IEnumerator waitToStart()
     //{
@@ -55,12 +55,12 @@ public class StartMatchmaking : MonoBehaviourPunCallbacks
     //    PhotonNetwork.LoadLevel(GameConfigs.instance.gameplaySceneIndex);
 
     //}
-    private string leadUserId;
+    //private string leadUserId;
 
-    string[] teamMembersUserId;
-    public string[] TeamMembersUserId { get => teamMembersUserId; set => teamMembersUserId = value; }
+    //string[] teamMembersUserId;
+    //public string[] TeamMembersUserId { get => teamMembersUserId; set => teamMembersUserId = value; }
 
-    LoadBalancingClient loadBalancingClient = new LoadBalancingClient();
+    //LoadBalancingClient loadBalancingClient = new LoadBalancingClient();
 
 
     //RoomOptions battleRoomOptions = new RoomOptions()

@@ -38,8 +38,4 @@ public class FindRoom : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinOrCreateRoom(randomRoom, roomOptions, TypedLobby.Default);
     }
 
-    public override void OnJoinedRoom()
-    {
-        Debug.Log("Room: "+PhotonNetwork.CurrentRoom.Name);
-    }
 }

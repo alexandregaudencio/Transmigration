@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
+public enum TeamName
+{
+    Blue,
+    Red
+}
 
 public class DropManager : MonoBehaviour, IDropHandler
 {
 
-    public enum TeamName
-    {
-        Blue,
-        Red
-    }
+
 
     [SerializeField] private TeamName team;
 
@@ -22,7 +22,7 @@ public class DropManager : MonoBehaviour, IDropHandler
 
         GameObject objectEventData = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
         objectEventData.transform.SetParent(transform);
-        objectEventData?.GetComponent<SetPlayerTeam>().SwitchTeam(team.ToString());
+        objectEventData?.GetComponent<PlayerTeam>().SwitchTeam(team.ToString());
 
 
     }
