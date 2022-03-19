@@ -4,6 +4,9 @@ using Photon.Pun.UtilityScripts;
 using CharacterNamespace;
 using System.Collections.Generic;
 
+
+
+
 [RequireComponent(typeof(PhotonView))]
 public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
 {
@@ -15,6 +18,10 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
     PhotonTeam localPlayerTeam => PhotonTeamExtensions.GetPhotonTeam(PhotonNetwork.LocalPlayer);
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
+    //public struct palavras
+    //{
+    //    public string soulsFreed = "SoulsFreed";
+    //}
 
     public static PlayerPropertiesDefinition instance;
     private void Start()
@@ -30,7 +37,7 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
         {
             List<GameObject> targetCharacters = (localPlayerTeam.Code == 1) ?
                 blueCharactersPrefabs : redCharacterPrefabs;
-            return blueCharactersPrefabs[Random.Range(0, targetCharacters.Count)];
+            return targetCharacters[Random.Range(0, targetCharacters.Count)];
         }
     }
 
@@ -43,11 +50,11 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
     {
         HashProperty["killCount"] = 0;
         HashProperty["deathCount"] = 0;
-        HashProperty["DamageAmount"] = 0;
-
+        HashProperty["DamageTotal"] = 0;
+        HashProperty["SoulsFreed"] = 0; //Quantos pontos estão sendo segurados para marcar? pontuação coletada pelo personagem antes de pontuar. Como no Pocketmon Unite
+        HashProperty["SoulCollect"] = 0; //Quantos pontos foram concretizados pelo Player?
         HashProperty["HP"] = character.HP;
         HashProperty["maxHP"] = character.HP;
-
         HashProperty["timerRespawn"] = GameConfigs.instance.TimeToRespawn ;
         HashProperty["isDead"] = false;
         PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
