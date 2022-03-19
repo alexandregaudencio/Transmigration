@@ -50,13 +50,10 @@ public class TeamPlayerListing : MonoBehaviourPunCallbacks
 
     private void InitalizeAllPlayersContent()
     {
-        Debug.Log("Chamaei no INITIALIZEALLPLAYERS");
-        Debug.Log("count: " + players.Length); //0
         photonTeamsManager.TryGetTeamMembers(teamTarget.ToString(), out players);
         
         foreach(Player player in players)
         {
-            Debug.Log(player.NickName);
             InstantiateContent(player);
         }
     }

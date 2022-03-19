@@ -463,7 +463,6 @@ GameObject:
   m_Component:
   - component: {fileID: 328987529}
   - component: {fileID: 328987537}
-  - component: {fileID: 328987533}
   - component: {fileID: 328987536}
   - component: {fileID: 328987535}
   - component: {fileID: 328987530}
@@ -488,7 +487,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &328987530
 MonoBehaviour:
@@ -518,31 +517,6 @@ MonoBehaviour:
   - {fileID: 3074866688293795986, guid: 36bc9181f7209eb48b03e7deca7f67e3, type: 3}
   redCharacterPrefabs:
   - {fileID: 3074866688293795986, guid: 30678b50cfb022a4db472b5a6f19d73c, type: 3}
---- !u!114 &328987533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328987528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf7e81261cfc4ca4baccbb342fe32b93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTeamPlayers: 1
-  menuSceneIndex: 0
-  gameplaySceneIndex: 1
-  timeToRespawn: 5
-  timeGameplay: 600
-  timestartup: 3
-  TeamAColor: {r: 0.63529414, g: 0.09019608, b: 0.0627451, a: 1}
-  TeamBColor: {r: 0.36862746, g: 0.5294118, b: 0.92156863, a: 1}
-  characterSpeedScale: 6
-  bulletSpeedScale: 1
-  bulletDamageScale: 1
-  hPScale: 1
-  MeditateKey: 113
 --- !u!82 &328987534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -786,7 +760,7 @@ RectTransform:
   - {fileID: 2115023927}
   - {fileID: 997930492}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1009,7 +983,7 @@ Transform:
   m_Children:
   - {fileID: 1348548959}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &398552728
 Animator:
@@ -1580,6 +1554,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &853887110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853887112}
+  - component: {fileID: 853887111}
+  m_Layer: 0
+  m_Name: GameConfigs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &853887111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853887110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7e81261cfc4ca4baccbb342fe32b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTeamPlayers: 1
+  menuSceneIndex: 0
+  gameplaySceneIndex: 1
+  timeToRespawn: 5
+  timeGameplay: 600
+  timestartup: 3
+  TeamAColor: {r: 0.63529414, g: 0.09019608, b: 0.0627451, a: 1}
+  TeamBColor: {r: 0.36862746, g: 0.5294118, b: 0.92156863, a: 1}
+  characterSpeedScale: 6
+  bulletSpeedScale: 1
+  bulletDamageScale: 1
+  hPScale: 1
+  MeditateKey: 113
+--- !u!4 &853887112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853887110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -33.618988, y: -10.919224, z: -1.1039128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &906800354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,7 +2843,7 @@ Transform:
   - {fileID: 545412520}
   - {fileID: 13578504}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1548674128
 GameObject:
@@ -2879,7 +2909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1568165370
 GameObject:
@@ -3063,7 +3093,7 @@ Transform:
   m_LocalScale: {x: 1.3204983, y: 1.3204983, z: 1.3204983}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1801270067
 GameObject:
@@ -3734,7 +3764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963430071
 GameObject:

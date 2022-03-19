@@ -45,7 +45,6 @@ public class SetNickName : MonoBehaviour
         string usernameText = InputField_username.text;
         PlayerPrefs.SetString("username", usernameText);
         PhotonNetwork.NickName = usernameText;
-        Debug.Log("Nick " + PhotonNetwork.NickName);
     }
 
 

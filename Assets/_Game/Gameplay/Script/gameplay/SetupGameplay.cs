@@ -42,8 +42,8 @@ public class SetupGameplay : MonoBehaviour
 
             PhotonNetwork.Instantiate(
                 PhotonNetwork.LocalPlayer.TagObject.ToString(),
-                LocalPlayerSpawnPoint, 
-                Quaternion.identity);
+                    LocalPlayerSpawnPoint, 
+                    Quaternion.identity);
             return;
         }
         

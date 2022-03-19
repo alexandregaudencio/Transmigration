@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameConfigs : MonoBehaviour
 {
-    public static GameConfigs instance;
     [SerializeField] private byte maxTeamPlayers;
 
 
@@ -28,8 +27,8 @@ public class GameConfigs : MonoBehaviour
     //public float resetSentineltime;
     //public float resetTombstonetime;
 
-    [SerializeField] private int characterSpeedScale = 1;
-    [SerializeField] private int bulletSpeedScale = 1;
+    [SerializeField] private float characterSpeedScale = 1;
+    [SerializeField] private float bulletSpeedScale = 1;
     [SerializeField] private int bulletDamageScale = 1;
     [SerializeField] private int hPScale = 1;
 
@@ -40,16 +39,13 @@ public class GameConfigs : MonoBehaviour
 
     public KeyCode MeditateKey;
 
-    private void Start()
-    {
-        instance = this;
-    }
+
 
     public int MaxBattlePlayers
     {
         get => maxRoomPlayers;
     }
-    public int BulletSpeedScale { get => bulletSpeedScale;}
+    public float BulletSpeedScale { get => bulletSpeedScale;}
     public int BulletDamageScale { get => bulletDamageScale; }
     public Color TeamAColor1 { get => TeamAColor; }
     public Color TeamBColor1 { get => TeamBColor;}
@@ -60,6 +56,15 @@ public class GameConfigs : MonoBehaviour
     public float Timestartup { get => timestartup; }
     public int MaxTeamPlayers { get => maxTeamPlayers; }
     public int maxRoomPlayers { get => maxTeamPlayers * 2; }
-    public int CharacterSpeedScale { get => characterSpeedScale; set => characterSpeedScale = value; }
-    public int HPScale { get => hPScale; set => hPScale = value; }
+    public float CharacterSpeedScale { get => characterSpeedScale;}
+    public int HPScale { get => hPScale; }
+
+    public static GameConfigs instance;
+
+    private void Start()
+    {
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
+    }
 }

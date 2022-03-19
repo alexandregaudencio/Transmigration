@@ -15,7 +15,7 @@ MonoBehaviour:
   speed: 300
   defense: 50
   dashSpeed: 20
-  hp: 50
+  hp: 200
   DashStamin: 50
   mana: 50
   weapon: {fileID: 11400000, guid: 280fcf30f03769945a57148551d6160e, type: 2}

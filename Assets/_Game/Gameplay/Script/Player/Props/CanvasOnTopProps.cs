@@ -1,8 +1,6 @@
 ﻿using Photon.Pun;
 using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,29 +14,31 @@ public class CanvasOnTopProps : MonoBehaviourPunCallbacks
     PhotonView PV;
 
 
-    public Color GetColor => (team == "Blue") ? GameConfigs.instance.TeamBColor1 : GameConfigs.instance.TeamAColor1;
+    public Color GetColor => (team == "Blue") ? 
+        GameConfigs.instance.TeamBColor1 : GameConfigs.instance.TeamAColor1;
 
-    public float HPpercent
-    {
-        get
-        {
-            int hp = (int)PV.Controller.CustomProperties["HP"];
-            int maxHP = (int)PV.Controller.CustomProperties["maxHP"];
-            //float result = (float)hp / maxHP;
-            return (float)hp / maxHP;
-        }
-    }
 
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
     }
 
+    public float HPpercentage
+    {
+        get
+        {
+            int hp = (int)PV.Controller.CustomProperties["HP"];
+            int maxHP = (int)PV.Controller.CustomProperties["maxHP"];
+            return (float)hp / maxHP;
+        }
+    }
+
+
     private void Start()
     {
         nickText.text = PV.Controller.NickName;
         fillLifeBarImage.color = GetColor;
-        fillLifeBarImage.fillAmount = HPpercent;
+        fillLifeBarImage.fillAmount = HPpercentage;
 
     }
 
@@ -46,10 +46,9 @@ public class CanvasOnTopProps : MonoBehaviourPunCallbacks
 
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-
         if (PV.Controller == targetPlayer && changedProps.ContainsKey("HP"))
         {
-            fillLifeBarImage.fillAmount = HPpercent;
+            fillLifeBarImage.fillAmount = HPpercentage;
         }
     }
 

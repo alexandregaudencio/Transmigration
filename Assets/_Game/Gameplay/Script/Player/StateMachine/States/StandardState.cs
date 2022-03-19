@@ -13,8 +13,8 @@ public class StandardState : State
     public override void FixedUpdateState(PlayerController playerController, StateController stateController)
     {
 
-        HorizontalMove(playerController);
-        VerticalMove(playerController);
+        Movement(playerController);
+        //VerticalMove(playerController);
         playerController.WeaponBase.ProcessWeaponActivation(playerController.AudioManager);
 
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position;
@@ -24,6 +24,7 @@ public class StandardState : State
 
         //}
     }
+
 
     public override void OnCollisionEnter(PlayerController playerController, Collision2D collision, StateController stateController)
     {
@@ -61,19 +62,20 @@ public class StandardState : State
 
 
 
-    private void HorizontalMove(PlayerController playerController)
+    private void Movement(PlayerController playerController)
     {
 
         float speed = playerController.CharacterProperty.Speed;
 
-        playerController.PlayerRigidbody2D.velocity = 
-            new Vector2(Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed, 
-            playerController.PlayerRigidbody2D.velocity.y);
+        playerController.PlayerRigidbody2D.velocity = direction*speed*Time.fixedDeltaTime;
     }
 
-    void VerticalMove(PlayerController playerController)
+    private Vector2 direction
     {
-        playerController.PlayerRigidbody2D.velocity = new Vector2(playerController.PlayerRigidbody2D.velocity.x, Input.GetAxis("Vertical") *playerController.CharacterProperty.Speed * Time.fixedDeltaTime);
+        get
+        {
+           return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        }
     }
 
 }

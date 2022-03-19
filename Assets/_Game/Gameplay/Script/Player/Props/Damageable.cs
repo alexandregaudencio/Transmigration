@@ -13,13 +13,13 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
     PhotonView PV;
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
-    PhotonPlayerProperty playerProperty;
+    //PhotonPlayerProperty playerProperty;
     PlayerController playerController;
 
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
-        playerProperty = GetComponent<PhotonPlayerProperty>();
+        //playerProperty = GetComponent<PhotonPlayerProperty>();
         playerController = GetComponent<PlayerController>();
     }
 
@@ -28,12 +28,13 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
     {
         //if(PV.IsMine)
         //{
-            playerProperty.HP = -damage;
+            //playerProperty.HP -= damage;
             playerController.Animator.SetTrigger("hurt");
             playerController.AudioManager.PlayAudio(playerController.AudioManager.hurtClip, false);
-            //int hp = (int)PV.Controller.CustomProperties["HP"];
-            //HashProperty["HP"] = hp - damage;
-            //PV.Controller.SetCustomProperties(HashProperty);
+            
+            int hp = (int)PV.Controller.CustomProperties["HP"];
+            HashProperty["HP"] = hp - damage;
+            PV.Controller.SetCustomProperties(HashProperty);
             DamageEvent?.Invoke();
         //}
 

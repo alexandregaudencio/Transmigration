@@ -35,11 +35,10 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
-        //if (!PhotonNetwork.IsMasterClient) return;
-        ResetGameConfig();
+        PhotonNetwork.LocalPlayer.LeaveCurrentTeam();
+        PhotonNetwork.LeaveRoom(true);
         SceneManager.LoadScene(GameConfigs.instance.MenuSceneIndex);
-
-        //PhotonNetwork.LoadLevel(GameConfigs.instance.menuSceneIndex);
+        PhotonNetwork.Disconnect();
 
     }
 
@@ -55,9 +54,6 @@ public class GameController : MonoBehaviour
     {
         //GameObject g =  FindObjectOfType<TeamManager>().gameObject; 
 
-       PhotonTeamExtensions.LeaveCurrentTeam(PhotonNetwork.LocalPlayer);
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.Disconnect();
         //PhotonNetwork.Disconnect();
         //Destroy(FindObjectOfType<TeamManager>().gameObject);
         //FindObjectOfType<TeamManager>().LeaveTeamLocalPlayer();
