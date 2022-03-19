@@ -13,7 +13,7 @@ public class StandardState : State
     public override void FixedUpdateState(PlayerController playerController, StateController stateController)
     {
 
-        Movement(playerController);
+        HorizontalMove(playerController);
         //VerticalMove(playerController);
         playerController.WeaponBase.ProcessWeaponActivation(playerController.AudioManager);
 
@@ -24,7 +24,6 @@ public class StandardState : State
 
         //}
     }
-
 
     public override void OnCollisionEnter(PlayerController playerController, Collision2D collision, StateController stateController)
     {
@@ -62,20 +61,34 @@ public class StandardState : State
 
 
 
-    private void Movement(PlayerController playerController)
+    private void HorizontalMove(PlayerController playerController)
     {
 
         float speed = playerController.CharacterProperty.Speed;
-
-        playerController.PlayerRigidbody2D.velocity = direction*speed*Time.fixedDeltaTime;
+        Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 direction = Vector2.ClampMagnitude(inputDirection, 1) ;
+        playerController.PlayerRigidbody2D.velocity = direction*Time.fixedDeltaTime * speed;
     }
 
-    private Vector2 direction
+    void VerticalMove(PlayerController playerController)
     {
-        get
-        {
-           return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        }
+        playerController.PlayerRigidbody2D.velocity = new Vector2(playerController.PlayerRigidbody2D.velocity.x, Input.GetAxis("Vertical") *playerController.CharacterProperty.Speed * Time.fixedDeltaTime);
     }
+
+    //private void Movement(PlayerController playerController)
+    //{
+
+    //    float speed = playerController.CharacterProperty.Speed;
+
+    //    playerController.PlayerRigidbody2D.velocity = direction * speed * Time.fixedDeltaTime;
+    //}
+
+    //private Vector2 direction
+    //{
+    //    get
+    //    {
+    //        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+    //    }
+    //}
 
 }
