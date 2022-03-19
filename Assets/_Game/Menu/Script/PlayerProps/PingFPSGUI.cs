@@ -4,14 +4,14 @@ using Photon.Realtime;
 using System.Collections;
 using UnityEngine;
 
-public class TeamManagerAndProps : PhotonTeamsManager
+public class PingFPSGUI : PhotonTeamsManager
 {
     private ExitGames.Client.Photon.Hashtable hasIndexPlayer = new ExitGames.Client.Photon.Hashtable();
     Player[] playersTeam;
 
     private int ping;
     private float fps;
-    private float dt = 0.00f;
+    //private float dt = 0.00f;
     [SerializeField] private int targetFrameRate;
 
     private void Start()
@@ -36,31 +36,31 @@ public class TeamManagerAndProps : PhotonTeamsManager
     //}
 
     //define time e index do player
-    public void SetTeam(Player newPlayer)
-    {
-        int roomPlayerCount = PhotonNetwork.CurrentRoom.PlayerCount;
-        Debug.Log("current room count: "+roomPlayerCount);
-        if (roomPlayerCount % 2 == 1)
-        {
-            newPlayer.JoinTeam(2);
-            TryGetTeamMembers(2, out playersTeam);
-            SetIndexPlayer(newPlayer, playersTeam.Length);
-        }
-        else
-        {
-            newPlayer.JoinTeam(1);
-            TryGetTeamMembers(1, out playersTeam);
-            SetIndexPlayer(newPlayer, playersTeam.Length);
-        }
+    //public void SetTeam(Player newPlayer)
+    //{
+    //    int roomPlayerCount = PhotonNetwork.CurrentRoom.PlayerCount;
+    //    Debug.Log("current room count: "+roomPlayerCount);
+    //    if (roomPlayerCount % 2 == 1)
+    //    {
+    //        newPlayer.JoinTeam(2);
+    //        TryGetTeamMembers(2, out playersTeam);
+    //        SetIndexPlayer(newPlayer, playersTeam.Length);
+    //    }
+    //    else
+    //    {
+    //        newPlayer.JoinTeam(1);
+    //        TryGetTeamMembers(1, out playersTeam);
+    //        SetIndexPlayer(newPlayer, playersTeam.Length);
+    //    }
 
-    }
+    //}
 
     //TODO: FAZER EM RELAÇÃO AO TIME    
-    public void SetIndexPlayer(Player newPlayer, int index)
-    {
-        hasIndexPlayer["indexPlayer"] = index;
-        newPlayer.SetCustomProperties(hasIndexPlayer);   
-    }
+    //public void SetIndexPlayer(Player newPlayer, int index)
+    //{
+    //    hasIndexPlayer["indexPlayer"] = index;
+    //    newPlayer.SetCustomProperties(hasIndexPlayer);   
+    //}
 
     private void OnGUI()
     {

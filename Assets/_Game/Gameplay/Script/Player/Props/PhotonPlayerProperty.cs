@@ -3,11 +3,11 @@ using UnityEngine;
 using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 
-public class PlayerProperty : MonoBehaviourPunCallbacks
+public class PhotonPlayerProperty : MonoBehaviourPunCallbacks
 {
     PhotonView photonview;
 
-    public static PlayerProperty instance;
+    public static PhotonPlayerProperty instance;
     public string Team { get =>  photonview.Controller.GetPhotonTeam().Name; }
     public int maxHP =>  (int)photonview.Controller.CustomProperties["maxHP"];
        
@@ -19,8 +19,8 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
         }
         set
         {
-            int hp = (int)PV.Controller.CustomProperties["HP"];
-            HashProperty["HP"] = hp + value;
+            //int hp = (int)PV.Controller.CustomProperties["HP"];
+            HashProperty["HP"] = value;
             PV.Controller.SetCustomProperties(HashProperty);
         }
     }
@@ -28,7 +28,15 @@ public class PlayerProperty : MonoBehaviourPunCallbacks
     {
         if(HP <= maxHP)
         {
-            HP = value;
+            HP += value;
+
+        }
+    }
+    public void DecreaseHP(int value)
+    {
+        if (HP <= maxHP)
+        {
+            HP -= value;
 
         }
     }

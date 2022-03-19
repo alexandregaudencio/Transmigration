@@ -16,7 +16,7 @@ public class CanvasOnTopProps : MonoBehaviourPunCallbacks
     PhotonView PV;
 
 
-    public Color GetColor => (team == "Blue") ? GameConfigs.instance.TeamBColor : GameConfigs.instance.TeamAColor;
+    public Color GetColor => (team == "Blue") ? GameConfigs.instance.TeamBColor1 : GameConfigs.instance.TeamAColor1;
 
     public float HPpercent
     {

@@ -380,9 +380,9 @@ GameObject:
   - component: {fileID: 3074866688293795985}
   - component: {fileID: 3074866688293795982}
   - component: {fileID: -6512562405357214024}
-  - component: {fileID: 3074866688293795984}
-  - component: {fileID: 8197522545215113023}
   - component: {fileID: 4761629302037567128}
+  - component: {fileID: 3074866688293795984}
+  - component: {fileID: 4523441865620438531}
   - component: {fileID: 1256625376}
   - component: {fileID: 1256625375}
   - component: {fileID: 4381876487728630972}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 3104569666897470248}
   - component: {fileID: 221426466214061600}
   m_Layer: 0
-  m_Name: CharacterA
+  m_Name: CharacterA-Dragoon RED
   m_TagString: character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,7 +502,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14c0018303584774fa99117707ffc6b9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8679245, g: 0.20797431, b: 0.20797431, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -531,35 +531,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3074866688293795984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074866688293795986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d82b19c813b0e424a8f36a39679edd04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 300
-  maxYVelocity: 7
-  dashSpeed: 30
-  weaponSpriteRenderer: {fileID: 3074866688810890590}
-  billboard: {fileID: 1078416516883609246}
---- !u!114 &8197522545215113023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074866688293795986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a3f97185951c14c862f4a24d76707a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4761629302037567128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -585,6 +556,33 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &3074866688293795984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82b19c813b0e424a8f36a39679edd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterProperty: {fileID: 11400000, guid: 28708f98adcdd2741881f6eff1b17fd3, type: 2}
+  weaponSpriteRenderer: {fileID: 3074866688810890590}
+  billboard: {fileID: 1078416516883609246}
+--- !u!114 &4523441865620438531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff69f47ecdb14540a0258cbbf3f1532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1256625376
 MonoBehaviour:
   m_ObjectHideFlags: 0

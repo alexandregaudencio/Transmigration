@@ -33,7 +33,7 @@ public class MasterDefineTeam : MonoBehaviourPunCallbacks
     public void VerifyTeamSlot(/*Player player, PhotonTeam pt*/)
     {
         int teamCount = PhotonTeamsManager.Instance.GetTeamMembersCount(1);
-        if (teamCount < GameConfigs.instance.maxTeamPlayers)
+        if (teamCount < GameConfigs.instance.MaxTeamPlayers)
         {
             PhotonNetwork.LocalPlayer.JoinTeam(1);
             return;

@@ -1,29 +1,32 @@
-﻿using Photon.Pun;
+﻿using CharacterNamespace;
+using Photon.Pun;
 using Photon.Realtime;
 
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(StateController))]
-[RequireComponent(typeof(PlayerProperty))]
+[RequireComponent(typeof(PhotonPlayerProperty))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Animator))]
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
-    Rigidbody2D RigidBody2D;
-    StateController stateController;
-    PlayerProperty playerProperty;
-    SpriteRenderer spriteRenderer;
-    BoxCollider2D boxCollider2D;
-    Animator animator;
-    WeaponArmController weaponBase;
-    PlayerAudioManager audioManager;
+    private Rigidbody2D RigidBody2D;
+    private StateController stateController;
+    private PhotonPlayerProperty playerProperty;
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider2D;
+    private Animator animator;
+    private WeaponArmController weaponBase;
+    private PlayerAudioManager audioManager;
 
-    [SerializeField] private float speed;
-    [SerializeField] private int maxYVelocity;
-    [SerializeField] private float dashSpeed;
+
+    [SerializeField] private CharacterProperty characterProperty;
+    //[SerializeField] private float speed;
+    //[SerializeField] private int maxYVelocity;
+    //[SerializeField] private float dashSpeed;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject billboard;
     
@@ -40,16 +43,17 @@ public class PlayerController : MonoBehaviourPunCallbacks
     //public bool IsGround { get => isGround; set => isGround = value; }
     private PhotonView pV;
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
-    public float Speed { get => speed; set => speed = value; }
+    //public float Speed { get => speed; set => speed = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
-    public PlayerProperty PlayerProperty { get => playerProperty; set => playerProperty = value; }
+    public PhotonPlayerProperty PlayerProperty { get => playerProperty; set => playerProperty = value; }
     public SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
     public BoxCollider2D BoxCollider2D { get => boxCollider2D; set => boxCollider2D = value; }
-    public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
+    //public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
     public Animator Animator { get => animator; set => animator = value; }
     public PhotonView PV { get => pV; set => pV = value; }
     public WeaponArmController WeaponBase { get => weaponBase; set => weaponBase = value; }
     public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
+    public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
 
     //private new PhotonView photonView;
 
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         PV = GetComponent<PhotonView>();
         PlayerRigidbody2D = GetComponent<Rigidbody2D>();
         StateController = GetComponent<StateController>();
-        PlayerProperty = GetComponent<PlayerProperty>();
+        PlayerProperty = GetComponent<PhotonPlayerProperty>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();

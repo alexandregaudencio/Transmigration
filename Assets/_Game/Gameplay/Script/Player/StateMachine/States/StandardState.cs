@@ -64,12 +64,16 @@ public class StandardState : State
     private void HorizontalMove(PlayerController playerController)
     {
 
-        playerController.PlayerRigidbody2D.velocity = new Vector2(Input.GetAxis("Horizontal") * Time.fixedDeltaTime * playerController.Speed, playerController.PlayerRigidbody2D.velocity.y);
+        float speed = playerController.CharacterProperty.Speed;
+
+        playerController.PlayerRigidbody2D.velocity = 
+            new Vector2(Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed, 
+            playerController.PlayerRigidbody2D.velocity.y);
     }
 
     void VerticalMove(PlayerController playerController)
     {
-        playerController.PlayerRigidbody2D.velocity = new Vector2(playerController.PlayerRigidbody2D.velocity.x, Input.GetAxis("Vertical") *playerController.Speed * Time.fixedDeltaTime);
+        playerController.PlayerRigidbody2D.velocity = new Vector2(playerController.PlayerRigidbody2D.velocity.x, Input.GetAxis("Vertical") *playerController.CharacterProperty.Speed * Time.fixedDeltaTime);
     }
 
 }

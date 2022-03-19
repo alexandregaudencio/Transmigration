@@ -462,12 +462,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328987529}
+  - component: {fileID: 328987537}
   - component: {fileID: 328987533}
-  - component: {fileID: 328987531}
   - component: {fileID: 328987536}
   - component: {fileID: 328987535}
   - component: {fileID: 328987530}
-  - component: {fileID: 328987537}
+  - component: {fileID: 328987532}
   - component: {fileID: 328987534}
   m_Layer: 0
   m_Name: GameManager
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d74266f796178946a102daa2a1b308a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &328987531
+--- !u!114 &328987532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -514,8 +514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b0c1db8d91a4a44824ff46fb007992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charactersPrefab:
+  blueCharactersPrefabs:
   - {fileID: 3074866688293795986, guid: 36bc9181f7209eb48b03e7deca7f67e3, type: 3}
+  redCharacterPrefabs:
+  - {fileID: 3074866688293795986, guid: 30678b50cfb022a4db472b5a6f19d73c, type: 3}
 --- !u!114 &328987533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,15 +530,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e81261cfc4ca4baccbb342fe32b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTeamPlayers: 2
+  maxTeamPlayers: 1
   menuSceneIndex: 0
   gameplaySceneIndex: 1
-  HP: 200
   timeToRespawn: 5
   timeGameplay: 600
   timestartup: 3
   TeamAColor: {r: 0.63529414, g: 0.09019608, b: 0.0627451, a: 1}
   TeamBColor: {r: 0.36862746, g: 0.5294118, b: 0.92156863, a: 1}
+  characterSpeedScale: 6
+  bulletSpeedScale: 1
+  bulletDamageScale: 1
+  hPScale: 1
   MeditateKey: 113
 --- !u!82 &328987534
 AudioSource:
@@ -3341,7 +3346,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1847067007}
         m_TargetAssemblyTypeName: DefineTeamPlayers, Assembly-CSharp
-        m_MethodName: OnClick_DefineTeamPlayers
+        m_MethodName: OnClick_LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 328987532}
+        m_TargetAssemblyTypeName: PlayerPropertiesDefinition, Assembly-CSharp
+        m_MethodName: OnClick_PVInitializePlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

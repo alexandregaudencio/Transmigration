@@ -1,50 +1,78 @@
 ﻿using Photon.Pun;
-using Photon.Realtime;
 using UnityEngine;
+using Photon.Pun.UtilityScripts;
+using CharacterNamespace;
+using System.Collections.Generic;
 
+[RequireComponent(typeof(PhotonView))]
 public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
 {
 
-    [SerializeField] private GameObject[] charactersPrefab;
+    [SerializeField] private List<GameObject> blueCharactersPrefabs;
+    [SerializeField] private List<GameObject> redCharacterPrefabs;
+    private PhotonView PV;
 
-    //PhotonView PV;
-
-    public static PlayerPropertiesDefinition instance;
-
+    PhotonTeam localPlayerTeam => PhotonTeamExtensions.GetPhotonTeam(PhotonNetwork.LocalPlayer);
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
+
+    public static PlayerPropertiesDefinition instance;
     private void Start()
     {
+
         instance = this;
+        PV = GetComponent<PhotonView>();
     }
 
-    void SetPlayerprops()
+    private GameObject GetRandomCharacterPrefab
     {
-        HashProperty["HP"] = GameConfigs.instance.HP;
-        HashProperty["maxHP"] = GameConfigs.instance.HP;
+        get
+        {
+            List<GameObject> targetCharacters = (localPlayerTeam.Code == 1) ?
+                blueCharactersPrefabs : redCharacterPrefabs;
+            return blueCharactersPrefabs[Random.Range(0, targetCharacters.Count)];
+        }
+    }
+
+    private CharacterProperty GetCharacterProperty(GameObject prefab)
+    {
+        return prefab.GetComponent<PlayerController>().CharacterProperty;
+    }
+
+    private void SetPlayerprops(CharacterProperty character)
+    {
         HashProperty["killCount"] = 0;
         HashProperty["deathCount"] = 0;
-        HashProperty["timerRespawn"] = GameConfigs.instance.timeToRespawn ;
+        HashProperty["DamageAmount"] = 0;
+
+        HashProperty["HP"] = character.HP;
+        HashProperty["maxHP"] = character.HP;
+
+        HashProperty["timerRespawn"] = GameConfigs.instance.TimeToRespawn ;
         HashProperty["isDead"] = false;
         PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
 
     }
 
-    void SetPlayerCharacter()
+    private void SetPlayerTagObjct(GameObject characterPrefab)
     {
-        int playerIndex = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
-        PhotonNetwork.LocalPlayer.TagObject = charactersPrefab[0].name;
+        //int playerIndex = (int)PhotonNetwork.LocalPlayer.CustomProperties["indexPlayer"];
+        PhotonNetwork.LocalPlayer.TagObject = characterPrefab.name;
     }
 
-    //[PunRPC]
-    public void SetCharacterAndProps()
-    {        
-        //aqui é definido a escolha do personagem do jogador e as propriedades dele.
-
-        SetPlayerprops();
-        SetPlayerCharacter();
+    [PunRPC]
+    public void InitializePlayer()
+    {
+        //aqui é definido: propriedades globais e o personagem por cada jogador.
+        GameObject character = GetRandomCharacterPrefab;
+        SetPlayerprops(GetCharacterProperty(character));
+        SetPlayerTagObjct(character);
     }
 
+    public void OnClick_PVInitializePlayer()
+    {
+        PV.RPC("InitializePlayer", RpcTarget.All);
+    }
 
 
 }

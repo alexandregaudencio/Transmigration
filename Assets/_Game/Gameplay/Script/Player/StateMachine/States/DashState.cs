@@ -6,7 +6,7 @@ public class DashState : State
 {
     public override void EnterState(PlayerController playerController, StateController stateController)
     {
-         playerController.PlayerRigidbody2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerController.DashSpeed, playerController.PlayerRigidbody2D.velocity.y);
+         playerController.PlayerRigidbody2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerController.CharacterProperty.DashSpeed, playerController.PlayerRigidbody2D.velocity.y);
         playerController.StartCoroutine(GoToStaminaState(stateController));
     }
 

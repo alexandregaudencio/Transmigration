@@ -39,8 +39,8 @@ public class CameraController : MonoBehaviour
 
     private void DefineLocalPlayerObject()
     {
-        PlayerProperty[] p = FindObjectsOfType<PlayerProperty>();
-        foreach(PlayerProperty playerProp in p)
+        PhotonPlayerProperty[] p = FindObjectsOfType<PhotonPlayerProperty>();
+        foreach(PhotonPlayerProperty playerProp in p)
         {
             if(playerProp.PV.Controller == PhotonNetwork.LocalPlayer)
             {

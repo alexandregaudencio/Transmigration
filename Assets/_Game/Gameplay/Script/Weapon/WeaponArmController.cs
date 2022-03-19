@@ -62,7 +62,7 @@ public class WeaponArmController : MonoBehaviourPunCallbacks
         if (PV.IsMine)
         {
             GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet.layer = GetComponentInParent<PlayerProperty>().GetLayer;
+            bullet.layer = GetComponentInParent<PhotonPlayerProperty>().GetLayer;
         }
     }
 

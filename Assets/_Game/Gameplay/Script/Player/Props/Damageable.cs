@@ -13,13 +13,13 @@ public class Damageable : MonoBehaviourPunCallbacks, IDamageable
     PhotonView PV;
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
 
-    PlayerProperty playerProperty;
+    PhotonPlayerProperty playerProperty;
     PlayerController playerController;
 
     private void Awake()
     {
         PV = GetComponent<PhotonView>();
-        playerProperty = GetComponent<PlayerProperty>();
+        playerProperty = GetComponent<PhotonPlayerProperty>();
         playerController = GetComponent<PlayerController>();
     }
 

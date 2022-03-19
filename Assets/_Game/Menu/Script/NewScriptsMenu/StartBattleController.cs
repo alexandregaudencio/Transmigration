@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DefineTeamPlayers : MonoBehaviourPunCallbacks
+public class StartBattleController : MonoBehaviourPunCallbacks
 {
     private Button button_DefineTeam;
     private TMP_Text text_buttonMessage;
@@ -18,6 +18,7 @@ public class DefineTeamPlayers : MonoBehaviourPunCallbacks
         text_buttonMessage = GetComponentInChildren<TMP_Text>();
 
     }
+   
 
     public override void OnEnable()
     {
@@ -26,19 +27,16 @@ public class DefineTeamPlayers : MonoBehaviourPunCallbacks
     public override void OnDisable()
     {
         PhotonTeamsManager.PlayerJoinedTeam += ActiveButtonInteractable;
+        StopCoroutine("WaitToStart");
     }
 
-    public void OnClick_DefineTeamPlayers()
-    {
-        PhotonNetwork.LoadLevel(GameConfigs.instance.gameplaySceneIndex);
-    }
 
     public void ActiveButtonInteractable(Player player, PhotonTeam pt)
     {
         PhotonTeam[] photonTeam = PhotonTeamsManager.Instance.GetAvailableTeams();
         for (int i = 0; i < photonTeam.Length; i++)
         {
-            if(PhotonTeamsManager.Instance.GetTeamMembersCount(photonTeam[i].Code) < GameConfigs.instance.maxTeamPlayers)
+            if(PhotonTeamsManager.Instance.GetTeamMembersCount(photonTeam[i].Code) < GameConfigs.instance.MaxTeamPlayers)
             {
                 button_DefineTeam.interactable = false;
                 text_buttonMessage.SetText("Aguardando...");
@@ -51,5 +49,37 @@ public class DefineTeamPlayers : MonoBehaviourPunCallbacks
         
         }
     }
+
+
+    public void OnClick_LoadLevel()
+    {
+        StartCoroutine(WaitToStart(2));
+    }
+
+    private IEnumerator WaitToStart(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        PhotonNetwork.LoadLevel(GameConfigs.instance.GameplaySceneIndex);
+
+    }
+
+    //private IEnumerator  CheckPlayersTagObject()
+    //{
+    //    Player[] player = 
+    //    while (isplayersTagObjectNull) { 
+    //        foreach (Player player in PhotonNetwork.PlayerList)
+    //        {
+    //            if (player.TagObject == null)
+    //            {
+    //                isplayersTagObjectNull = true;
+    //                break;
+    //            }
+    //        }
+
+
+
+    //    }
+
+    //}
 
 }

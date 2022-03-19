@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
         //GameObject teamManagerObject =  ;
         //Debug.Log(teamManagerObject.name);
         if(PhotonNetwork.IsMasterClient)
-        SceneManager.MoveGameObjectToScene(FindObjectOfType<TeamManagerAndProps>()?.gameObject, SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(FindObjectOfType<PingFPSGUI>()?.gameObject, SceneManager.GetActiveScene());
 
     }
 
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     {
         //if (!PhotonNetwork.IsMasterClient) return;
         ResetGameConfig();
-        SceneManager.LoadScene(GameConfigs.instance.menuSceneIndex);
+        SceneManager.LoadScene(GameConfigs.instance.MenuSceneIndex);
 
         //PhotonNetwork.LoadLevel(GameConfigs.instance.menuSceneIndex);
 

@@ -26,7 +26,7 @@ public class TimerController : MonoBehaviour
 
     private void OnEnable()
     {
-        Timer.CurrentTime = GameConfigs.instance.timeGameplay;
+        Timer.CurrentTime = GameConfigs.instance.TimeGameplay;
         timerDisplay.enabled = true;
 
         audioSource.clip = gameplayMusic;

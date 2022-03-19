@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
     }
     public bool IsCountdownStart()
     {
-        timePassed = GameConfigs.instance.timeGameplay - CurrentTime;
+        timePassed = GameConfigs.instance.TimeGameplay - CurrentTime;
         return (timePassed < 5) ? false : true;
     }
 
