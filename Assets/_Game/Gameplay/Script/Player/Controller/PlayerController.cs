@@ -1,7 +1,6 @@
 ﻿using CharacterNamespace;
 using Photon.Pun;
 using Photon.Realtime;
-
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -21,14 +20,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Animator animator;
     private WeaponArmController weaponBase;
     private PlayerAudioManager audioManager;
-
+    //private PlayerEvents playerEvents;
 
     [SerializeField] private CharacterProperty characterProperty;
     //[SerializeField] private float speed;
     //[SerializeField] private int maxYVelocity;
     //[SerializeField] private float dashSpeed;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
-    [SerializeField] private GameObject billboard;
+    [SerializeField] private GameObject canvasOverPlayer;
     
 
     //[Header("Jetpack Settings")]
@@ -83,7 +82,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void SwitchComponent(bool value/*, Vector3 spawnPosition, Player player*/)
     {
-        billboard.SetActive(value);
+        canvasOverPlayer.SetActive(value);
         Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
         //GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.gray;

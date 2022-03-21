@@ -456,8 +456,8 @@ GameObject:
   - component: {fileID: 3074866688293795982}
   - component: {fileID: -6512562405357214024}
   - component: {fileID: 4761629302037567128}
-  - component: {fileID: 3074866688293795984}
   - component: {fileID: 4523441865620438531}
+  - component: {fileID: 3074866688293795984}
   - component: {fileID: 1256625376}
   - component: {fileID: 1256625375}
   - component: {fileID: 4381876487728630972}
@@ -631,6 +631,18 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &4523441865620438531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff69f47ecdb14540a0258cbbf3f1532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3074866688293795984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,18 +658,6 @@ MonoBehaviour:
   characterProperty: {fileID: 11400000, guid: 28708f98adcdd2741881f6eff1b17fd3, type: 2}
   weaponSpriteRenderer: {fileID: 3074866688810890590}
   billboard: {fileID: 1078416516883609246}
---- !u!114 &4523441865620438531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074866688293795986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff69f47ecdb14540a0258cbbf3f1532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1256625376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,8 +1422,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.111199975, y: 0.14196001}
-  m_SizeDelta: {x: 17.096947, y: 2.3341846}
+  m_AnchoredPosition: {x: 0.167, y: 0.14196001}
+  m_SizeDelta: {x: 15.9811, y: 2.3342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7738434039570677957
 CanvasRenderer:
