@@ -12,17 +12,7 @@ namespace CanvasOverPlayerNamespace
     {
         [SerializeField] private Image image_hpFill;
         private PhotonView PV;
-
-        public float HPfraction
-        {
-            get
-            {
-                int hp = (int)PV.Controller.CustomProperties["HP"];
-                int maxHP = (int)PV.Controller.CustomProperties["maxHP"];
-                return (float)hp / maxHP;
-            }
-        }
-
+        [SerializeField] private HPManager hpManager;
 
         private void Awake()
         {
@@ -32,7 +22,7 @@ namespace CanvasOverPlayerNamespace
 
         private void Start()
         {
-            image_hpFill.fillAmount = HPfraction;
+            image_hpFill.fillAmount = hpManager. HPfraction;
         }
 
 
@@ -40,7 +30,7 @@ namespace CanvasOverPlayerNamespace
         {
             if (PV.Controller == targetPlayer && changedProps.ContainsKey("HP"))
             {
-                image_hpFill.fillAmount = HPfraction;
+                image_hpFill.fillAmount = hpManager.HPfraction;
             }
         }
 

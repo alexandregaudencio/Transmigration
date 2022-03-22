@@ -23,12 +23,11 @@ public class WeaponArmRotation : MonoBehaviour
 
     private void OnMouseMoved()
     {
-
         transform.rotation = Quaternion.Slerp(transform.rotation, mouseRotation, rotateSpeed * Time.fixedDeltaTime);
         //FLIP DO SPRITE DO BRACINHO
     }
 
-    private Vector3 mousePosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    public Vector3 mousePosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
     private Quaternion mouseRotation
     {

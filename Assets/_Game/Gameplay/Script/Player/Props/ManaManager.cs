@@ -13,9 +13,16 @@ namespace CharacterNamespace
         public float Mana { get => mana; }
         public float MaxMana { get => maxMana; }
         public float ManaFraction => mana / maxMana;
+        public float manaRecoveryInSeconds => characterProperty.Weapon.ManaRecoveryPercentagePerSecond;
         
         public event Action manaChangesAction;
 
+        private void Awake()
+        {
+            WeaponArmShooter = GetComponentInChildren<WeaponArmShooter>();
+            characterProperty = GetComponent<PlayerController>().CharacterProperty;
+
+        }
         private void Start()
         {
             mana = characterProperty.Mana;
@@ -47,12 +54,17 @@ namespace CharacterNamespace
         {
             if (mana <= MaxMana)
             {
-                float manaToIncrease = ((float)characterProperty.Weapon.ManaRecoveryPercentagePerSecond / 100);
+
+                float manaToIncrease = (manaRecoveryInSeconds / 100);
                 float newManaAmough = mana + MaxMana * manaToIncrease;
                 mana = Mathf.Lerp(mana, newManaAmough, Time.fixedDeltaTime);
+                //mana += manaToIncrease;
                 manaChangesAction?.Invoke();
             }
         }
+
+
+
     }
 }
 

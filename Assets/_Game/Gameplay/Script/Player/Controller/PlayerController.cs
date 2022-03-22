@@ -1,5 +1,6 @@
 ﻿using CharacterNamespace;
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 using UnityEngine;
 
@@ -16,49 +17,36 @@ public class PlayerController : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D RigidBody2D;
     private StateController stateController;
-    private HPManager playerProperty;
+    private HPManager hpManager;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
     private Animator animator;
-    private WeaponArmController weaponBase;
+    private WeaponArmController weaponArmController;
     private PlayerAudioManager audioManager;
     private DashManager dashManager;
-    //private PlayerEvents playerEvents;
 
     [SerializeField] private CharacterProperty characterProperty;
-    //[SerializeField] private float speed;
-    //[SerializeField] private int maxYVelocity;
-    //[SerializeField] private float dashSpeed;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject canvasOverPlayer;
     
-
-    //[Header("Jetpack Settings")]
-    //[SerializeField] private int minFloatingToJatpack;
-    //[SerializeField] private int jatpackImpulse;
-    //[SerializeField] private KeyCode jetpackInput;
-    //public Text text;
-
-    //public bool isGround;
-    //public bool canJatpack;
-
-    //public bool IsGround { get => isGround; set => isGround = value; }
     private PhotonView pV;
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
     //public float Speed { get => speed; set => speed = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
-    public HPManager PlayerProperty { get => playerProperty; set => playerProperty = value; }
+    public HPManager HPManager { get => hpManager; set => hpManager = value; }
     public SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
     public BoxCollider2D BoxCollider2D { get => boxCollider2D; set => boxCollider2D = value; }
     //public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
     public Animator Animator { get => animator; set => animator = value; }
     public PhotonView PV { get => pV; set => pV = value; }
-    public WeaponArmController WeaponBase { get => weaponBase; set => weaponBase = value; }
+    public WeaponArmController WeaponArmController { get => weaponArmController; set => weaponArmController = value; }
     public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
     public DashManager DahsManager { get => dashManager; set => dashManager = value; }
 
-    //private new PhotonView photonView;
+    public string Team { get => PV.Controller.GetPhotonTeam().Name; }
+    public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
+
 
     void Awake()
     {
@@ -66,16 +54,20 @@ public class PlayerController : MonoBehaviourPunCallbacks
         PV = GetComponent<PhotonView>();
         PlayerRigidbody2D = GetComponent<Rigidbody2D>();
         StateController = GetComponent<StateController>();
-        PlayerProperty = GetComponent<HPManager>();
+        HPManager = GetComponent<HPManager>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
-        weaponBase = GetComponentInChildren<WeaponArmController>();
+        weaponArmController = GetComponentInChildren<WeaponArmController>();
         audioManager = GetComponent<PlayerAudioManager>();
         dashManager = GetComponent<DashManager>();
 
     }
 
+    void Start()
+    {
+        gameObject.layer = GetLayer;
+    }
 
     [PunRPC]
     public void SetRendererFlipX( bool flipXState)
@@ -85,28 +77,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void SwitchComponent(bool value/*, Vector3 spawnPosition, Player player*/)
+    public void SwitchComponent(bool value)
     {
         canvasOverPlayer.SetActive(value);
         Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
-        //GetComponent<SpriteRenderer>().color = (value) ? Color.white : Color.gray;
     }
-
-    public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
-    {
-        //if (PhotonNetwork.LocalPlayer == targetPlayer && changedProps.ContainsKey("isDead"))
-        //    if ((bool)PV.Controller.CustomProperties["isDead"])
-        //    {
-        //        GoToDeathState();
-        //    }
-        //    else
-        //    {
-        //        GoToStandartState();
-        //    }
-
-    }
-    
 
     public void GoToDeathState()
     {

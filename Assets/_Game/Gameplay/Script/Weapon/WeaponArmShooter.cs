@@ -17,7 +17,7 @@ public class WeaponArmShooter : MonoBehaviour
     public event Action shootAction;
 
     bool isManaEnough => (manaManager.Mana >= characterProperty.Weapon.Bullet.ManaCost);
-
+    bool canShoot = true;
 
     private void Awake()
     {
@@ -28,55 +28,54 @@ public class WeaponArmShooter : MonoBehaviour
 
     private void OnEnable()
     {
-        shootAction += DefaultShoot;
+        //shootAction += DefaultShoot;
+        L_MouseButtonDownActiveAction += DefaultShoot;
     }
     private void OnDisable()
     {
-        shootAction -= DefaultShoot;
+        //shootAction -= DefaultShoot;
+        L_MouseButtonDownActiveAction += DefaultShoot;
+
     }
-    public void ProcessWeaponShot(PlayerAudioManager audioManager)
+
+
+    public void ProcessWeaponShoot(PlayerAudioManager audioManager)
     {
-        
-        if (PV.IsMine)
+        if(PV.IsMine)
+            L_MouseButtonDownActiveAction?.Invoke(Input.GetMouseButton(0));
+    }
+
+
+    //[PunRPC]
+    public void DefaultShoot(bool mouseButtonDown)
+    {
+        if(isManaEnough && canShoot && mouseButtonDown)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                StartCoroutine(OnShootCoroutine());
-                L_MouseButtonDownActiveAction?.Invoke(true);
-            }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                StopAllCoroutines();
-                L_MouseButtonDownActiveAction?.Invoke(false);
-            }
-            //if (Input.GetMouseButtonUp(0))
-            //{
-            //    DefaultShoot();
-            //    //PV.RPC("DefaultShoot", RpcTarget.All);
-            //    audioManager.PlayAudio(audioManager.shootClip, false);
-            //}
-        }
-    }
-
-
-    [PunRPC]
-    public void DefaultShoot()
-    {
-        GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        bullet.layer = GetComponentInParent<HPManager>().GetLayer;
-
-    }
-
-    private IEnumerator OnShootCoroutine()
-    {
-        while (isManaEnough)
-        {
+            GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet.layer = GetComponentInParent<PlayerController>().GetLayer;
+            canShoot = false;
+            StartCoroutine(Cooldown());
             shootAction?.Invoke();
-            //DefaultShoot();
-            yield return new WaitForSeconds(characterProperty.Weapon.CooldownInSeconds);
+
         }
+
     }
+
+    //private IEnumerator Cooldown()
+    //{
+    //    while (isManaEnough && canShoot)
+    //    {
+    //        //DefaultShoot();
+    //        yield return new WaitForSeconds(characterProperty.Weapon.CooldownInSeconds);
+    //    }
+    //}
+
+    private IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(characterProperty.Weapon.CooldownInSeconds);
+        canShoot = true;
+    }
+
 
 
 }

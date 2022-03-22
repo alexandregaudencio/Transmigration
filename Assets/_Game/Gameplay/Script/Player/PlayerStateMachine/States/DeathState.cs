@@ -43,7 +43,7 @@ namespace PlayerStateMachine
             playerController.photonView.RPC("SwitchComponent", RpcTarget.All, true);
 
             stateController.TransitionToState(stateController.ListedStates.standardState);
-            playerController.PlayerProperty.ResetPlayerPrps(UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
+            playerController.HPManager.ResetPlayerPrps(UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
 
 
         }

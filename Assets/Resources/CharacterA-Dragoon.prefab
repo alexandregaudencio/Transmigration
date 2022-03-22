@@ -94,8 +94,6 @@ GameObject:
   - component: {fileID: 364574312430979678}
   - component: {fileID: 6886791179620368637}
   - component: {fileID: 8300168656917911528}
-  - component: {fileID: 3508445802544119611}
-  - component: {fileID: 3321295466990630794}
   - component: {fileID: 3321295466990630793}
   m_Layer: 0
   m_Name: CanvasOverPlayer
@@ -188,30 +186,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3508445802544119611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078416516883609246}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1549a0578da5e654ca9a50c6d37e6125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3321295466990630794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078416516883609246}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d7a7d84f725a074c9bf2ecca9072299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3321295466990630793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image_hpFill: {fileID: 3230051639065574515}
+  hpManager: {fileID: 1732692209985234881}
 --- !u!1 &2366404898022427351
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 0
+  ShowLayerWeightsInspector: 1
   ShowParameterInspector: 0
   m_SynchronizeParameters:
   - Type: 9

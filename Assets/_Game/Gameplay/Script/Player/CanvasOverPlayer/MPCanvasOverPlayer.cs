@@ -9,13 +9,12 @@ namespace CanvasOverPlayerNamespace {
     public class MPCanvasOverPlayer : MonoBehaviour
     {
         [SerializeField] private Image image_MPFill;
-        private PhotonView PV;
 
         [SerializeField] private ManaManager manaManager;
 
         private void Awake()
         {
-            PV = GetComponentInParent<PhotonView>();
+            //PV = GetComponentInParent<PhotonView>();
         }
 
         private void OnEnable()

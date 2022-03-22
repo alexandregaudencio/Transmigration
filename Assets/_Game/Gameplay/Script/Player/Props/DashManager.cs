@@ -12,7 +12,7 @@ namespace CharacterNamespace
         [Min(0)] private float maxDashStamin;
         private CharacterProperty characterProperty;
         public event Action staminChangesAction;
-
+        private float dashStaminRecoveryInseconds => characterProperty.DashStaminRecoveryPercentagemInSeconds;
         private void Awake()
         {
             characterProperty = GetComponent<PlayerController>().CharacterProperty;
@@ -26,7 +26,7 @@ namespace CharacterNamespace
         public float MaxDashStamin { get => maxDashStamin; }
         public float DashStamin { get => dashStamin; }
         public bool CanDash => (dashStamin >= characterProperty.DashStaminCost);
-
+        
         public void spentStamin()
         {
             dashStamin -= characterProperty.DashStaminCost;
@@ -43,10 +43,10 @@ namespace CharacterNamespace
         {
             if (DashStamin <= maxDashStamin)
             {
-                float dashToIncrease = (maxDashStamin * 0.3f / 100);
-                float newStaminAmough = dashStamin + maxDashStamin * dashToIncrease;
-                dashStamin = Mathf.Lerp(dashStamin, newStaminAmough, Time.fixedDeltaTime);
-                //dashStamin += dashToIncrease;
+                float dashToIncrease = (dashStaminRecoveryInseconds/ 100);
+                //float newStaminAmough = dashStamin + maxDashStamin * dashToIncrease;
+                //dashStamin = Mathf.Lerp(dashStamin, newStaminAmough, Time.fixedDeltaTime);
+                dashStamin += dashToIncrease;
                 staminChangesAction?.Invoke();
             }
 

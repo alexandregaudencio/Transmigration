@@ -10,16 +10,11 @@ namespace WeaponNamespace
     public class Weapon : ScriptableObject
     {
 
-        [SerializeField] [Min(0)] private float damage;
         [SerializeField] [Min(0)] private float cooldownInSeconds;
         [SerializeField] [Range(0,100)] private int manaRecoveryPercentagePerSecond;
         [SerializeField] private Bullet bullet;
 
 
-        public float Damage { 
-            get => damage*GameConfigs.instance.BulletDamageScale; 
-            set => damage = value; 
-        }
         public float CooldownInSeconds { get => cooldownInSeconds; set => cooldownInSeconds = value; }
         public int ManaRecoveryPercentagePerSecond { get => manaRecoveryPercentagePerSecond; set => manaRecoveryPercentagePerSecond = value; }
         public Bullet Bullet { get => bullet;}

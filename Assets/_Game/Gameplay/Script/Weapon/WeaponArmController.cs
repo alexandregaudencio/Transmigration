@@ -54,7 +54,7 @@ public class WeaponArmController : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<SpriteRenderer>().flipY = (WeaponArmRotation.MouseRotation.x < 0.00f);
+        GetComponent<SpriteRenderer>().flipY = (WeaponArmRotation.mousePosition.x < transform.position.x);
 
     }
 }
