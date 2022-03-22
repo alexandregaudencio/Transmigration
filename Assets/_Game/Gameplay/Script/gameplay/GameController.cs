@@ -37,8 +37,10 @@ public class GameController : MonoBehaviour
     {
         //PhotonNetwork.LocalPlayer.LeaveCurrentTeam();
         PhotonNetwork.LeaveRoom(true);
-        SceneManager.LoadScene(GameConfigs.instance.MenuSceneIndex);
+        //SceneManager.LoadScene(GameConfigs.instance.MenuSceneIndex);
         PhotonNetwork.Disconnect();
+        //TODO: Ajustar depois
+        Application.LoadLevel(0);
 
     }
 

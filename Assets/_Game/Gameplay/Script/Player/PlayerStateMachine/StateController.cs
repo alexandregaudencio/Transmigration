@@ -26,7 +26,7 @@ public class StateController : MonoBehaviourPunCallbacks
 
     public virtual void TransitionToState(State state)
     {
-        if(playerController.PV.IsMine)
+        if (playerController.PV.IsMine)
         {
             currentState = state;
             currentState.EnterState(playerController, this);

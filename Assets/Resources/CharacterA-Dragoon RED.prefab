@@ -210,8 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7a7d84f725a074c9bf2ecca9072299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nickText: {fileID: 6259006498247961434}
-  fillLifeBarImage: {fileID: 3230051639065574515}
 --- !u!114 &3321295466990630793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterProperty: {fileID: 11400000, guid: 28708f98adcdd2741881f6eff1b17fd3, type: 2}
   weaponSpriteRenderer: {fileID: 3074866688810890590}
-  billboard: {fileID: 1078416516883609246}
+  canvasOverPlayer: {fileID: 0}
 --- !u!114 &4523441865620438531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,10 +887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fb1894cdf63eb4988537f4701dce82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 1000
-  bulletSpawnPoint: {fileID: 3074866689179198483}
-  bulletPrefab: {fileID: 8390771117579472041, guid: dc0da414fd23eac46a78372e0e7cc669,
-    type: 3}
 --- !u!114 &1987291622775110104
 MonoBehaviour:
   m_ObjectHideFlags: 0

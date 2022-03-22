@@ -7,9 +7,11 @@ namespace PlayerStateMachine
     {
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
-            playerController.PlayerRigidbody2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerController.CharacterProperty.DashSpeed, playerController.PlayerRigidbody2D.velocity.y);
+            playerController.DahsManager.spentStamin();
+            playerController.PlayerRigidbody2D.velocity = clampedDirection * playerController.CharacterProperty.DashSpeed;
             playerController.StartCoroutine(GoToStaminaState(stateController));
         }
+
 
         public override void FixedUpdateState(PlayerController playerController, StateController stateController)
         {
@@ -31,12 +33,21 @@ namespace PlayerStateMachine
 
         IEnumerator GoToStaminaState(StateController stateController)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.3f);
             stateController.TransitionToState(stateController.ListedStates.standardState);
 
 
         }
 
+        private Vector2 clampedDirection
+        {
+            get
+            {
+                Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+                return Vector2.ClampMagnitude(inputDirection, 1);
+
+            }
+        }
     }
 
 }

@@ -10,8 +10,9 @@ namespace CanvasOverPlayerNamespace
 
     public class HPCanvasOverPlayer : MonoBehaviourPunCallbacks
     {
-        private Image image_hpFill;
+        [SerializeField] private Image image_hpFill;
         private PhotonView PV;
+
         public float HPfraction
         {
             get
@@ -32,7 +33,6 @@ namespace CanvasOverPlayerNamespace
         private void Start()
         {
             image_hpFill.fillAmount = HPfraction;
-
         }
 
 

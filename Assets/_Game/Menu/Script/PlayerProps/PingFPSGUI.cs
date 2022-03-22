@@ -12,13 +12,13 @@ public class PingFPSGUI : PhotonTeamsManager
     private int ping;
     private float fps;
     //private float dt = 0.00f;
-    [SerializeField] private int targetFrameRate;
+    //[SerializeField] private int targetFrameRate;
 
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
         StartCoroutine(SetFpsAndPing());
-        Application.targetFrameRate = targetFrameRate;
+        //Application.targetFrameRate = targetFrameRate;
 
 
     }

@@ -1,4 +1,5 @@
 using BulletNamespace;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,17 +11,21 @@ namespace WeaponNamespace
     {
 
         [SerializeField] [Min(0)] private float damage;
-        [SerializeField] [Min(0)] private float cooldownMs;
-        [SerializeField] [Range(0,100)] private int manaRecoveryPercentage;
+        [SerializeField] [Min(0)] private float cooldownInSeconds;
+        [SerializeField] [Range(0,100)] private int manaRecoveryPercentagePerSecond;
         [SerializeField] private Bullet bullet;
+
 
         public float Damage { 
             get => damage*GameConfigs.instance.BulletDamageScale; 
             set => damage = value; 
         }
-        public float CooldownMs { get => cooldownMs; set => cooldownMs = value; }
-        public int ManaRecoveryPercentage { get => manaRecoveryPercentage; set => manaRecoveryPercentage = value; }
+        public float CooldownInSeconds { get => cooldownInSeconds; set => cooldownInSeconds = value; }
+        public int ManaRecoveryPercentagePerSecond { get => manaRecoveryPercentagePerSecond; set => manaRecoveryPercentagePerSecond = value; }
         public Bullet Bullet { get => bullet;}
+
+
+
     }
 
 }

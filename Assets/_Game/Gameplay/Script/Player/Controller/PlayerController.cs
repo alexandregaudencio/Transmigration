@@ -5,21 +5,24 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(StateController))]
-[RequireComponent(typeof(PhotonPlayerProperty))]
+[RequireComponent(typeof(HPManager))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(DashManager))]
+[RequireComponent(typeof(ManaManager))]
 
 public class PlayerController : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D RigidBody2D;
     private StateController stateController;
-    private PhotonPlayerProperty playerProperty;
+    private HPManager playerProperty;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
     private Animator animator;
     private WeaponArmController weaponBase;
     private PlayerAudioManager audioManager;
+    private DashManager dashManager;
     //private PlayerEvents playerEvents;
 
     [SerializeField] private CharacterProperty characterProperty;
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
     //public float Speed { get => speed; set => speed = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
-    public PhotonPlayerProperty PlayerProperty { get => playerProperty; set => playerProperty = value; }
+    public HPManager PlayerProperty { get => playerProperty; set => playerProperty = value; }
     public SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
     public BoxCollider2D BoxCollider2D { get => boxCollider2D; set => boxCollider2D = value; }
     //public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
@@ -53,6 +56,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public WeaponArmController WeaponBase { get => weaponBase; set => weaponBase = value; }
     public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
+    public DashManager DahsManager { get => dashManager; set => dashManager = value; }
 
     //private new PhotonView photonView;
 
@@ -62,12 +66,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
         PV = GetComponent<PhotonView>();
         PlayerRigidbody2D = GetComponent<Rigidbody2D>();
         StateController = GetComponent<StateController>();
-        PlayerProperty = GetComponent<PhotonPlayerProperty>();
+        PlayerProperty = GetComponent<HPManager>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         BoxCollider2D = GetComponent<BoxCollider2D>();
         Animator = GetComponent<Animator>();
         weaponBase = GetComponentInChildren<WeaponArmController>();
         audioManager = GetComponent<PlayerAudioManager>();
+        dashManager = GetComponent<DashManager>();
 
     }
 

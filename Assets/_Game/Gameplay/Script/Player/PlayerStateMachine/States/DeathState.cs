@@ -18,6 +18,7 @@ namespace PlayerStateMachine
             //playerController.GetComponent<Collider2D>().enabled = false;
         }
 
+
         public override void FixedUpdateState(PlayerController playerController, StateController stateController)
         {
 

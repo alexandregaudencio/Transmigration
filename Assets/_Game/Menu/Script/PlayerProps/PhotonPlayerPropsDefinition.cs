@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 
 [RequireComponent(typeof(PhotonView))]
-public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
+public class PhotonPlayerPropsDefinition : MonoBehaviourPunCallbacks
 {
 
     [SerializeField] private List<GameObject> blueCharactersPrefabs;
@@ -23,7 +23,7 @@ public class PlayerPropertiesDefinition : MonoBehaviourPunCallbacks
     //    public string soulsFreed = "SoulsFreed";
     //}
 
-    public static PlayerPropertiesDefinition instance;
+    public static PhotonPlayerPropsDefinition instance;
     private void Start()
     {
 

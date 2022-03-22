@@ -6,21 +6,22 @@ namespace PlayerStateMachine
 {
     public class StandardState : State
     {
-        //private event Action OnMousePointerMove;
-        
-
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
             playerController.Animator.Play("Idle_Gato");
 
         }
-
+        //public override void ExitState(PlayerController playerController)
+        //{
+        //    Debug.Log("ExitState: standard");
+        //}
         public override void FixedUpdateState(PlayerController playerController, StateController stateController)
         {
-
+            
             Movement(playerController);
-            playerController.WeaponBase.ProcessWeaponActivation(playerController.AudioManager);
-
+            
+            playerController.WeaponBase.WeaponArmShooter.ProcessWeaponShot(playerController.AudioManager);
+            //playerController.WeaponBase.WeaponSpriteActivation();
             Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position;
             bool flipState = (direction.x < 0.00f) ? true : false;
             playerController.photonView.RPC("SetRendererFlipX", RpcTarget.All, flipState);
@@ -45,25 +46,22 @@ namespace PlayerStateMachine
             if (!Waking) playerController.Animator.SetBool("walking", false);
 
 
-            ProcessDashInput(stateController);
+            ProcessDashInput(playerController, stateController);
             ProcessPrayInput(stateController);
 
         }
 
-        private void ProcessDashInput(StateController stateController)
+        private void ProcessDashInput(PlayerController playerController ,StateController stateController)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                stateController.TransitionToState(stateController.ListedStates.dashState);
-            }
+            if (Input.GetKeyDown(KeyCode.Space) )
+                if(playerController.DahsManager.CanDash)
+                    stateController.TransitionToState(stateController.ListedStates.dashState); 
         }
 
         private void ProcessPrayInput(StateController stateController)
         {
             if (Input.GetKeyDown(KeyCode.Q))
-            {
-                stateController.TransitionToState(stateController.ListedStates.meditateState);
-            }
+                stateController.TransitionToState(stateController.ListedStates.meditateState);  
         }
 
 
@@ -72,11 +70,17 @@ namespace PlayerStateMachine
         {
 
             float speed = playerController.CharacterProperty.Speed;
-            Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            Vector2 direction = Vector2.ClampMagnitude(inputDirection, 1);
-            playerController.PlayerRigidbody2D.velocity = direction * Time.fixedDeltaTime * speed;
+            playerController.PlayerRigidbody2D.velocity = clampedDirection * Time.fixedDeltaTime * speed;
         }
+        private Vector2 clampedDirection
+        {
+            get
+            {
+                Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+                return  Vector2.ClampMagnitude(inputDirection, 1);
 
+            }
+        }
         //void VerticalMove(PlayerController playerController)
         //{
         //    playerController.PlayerRigidbody2D.velocity = new Vector2(playerController.PlayerRigidbody2D.velocity.x, Input.GetAxis("Vertical") *playerController.CharacterProperty.Speed * Time.fixedDeltaTime);

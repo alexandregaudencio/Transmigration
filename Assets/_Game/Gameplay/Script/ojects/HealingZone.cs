@@ -48,7 +48,7 @@ public class HealingZone : MonoBehaviour
     private IEnumerator Healing(GameObject target)
     {
         //PlayerProperty targetProperty = target.GetComponent<PlayerProperty>();
-        target.GetComponent<PhotonPlayerProperty>()?.IncreaseHP(healingAmount);
+        target.GetComponent<HPManager>()?.IncreaseHP(healingAmount);
         //targetProperty?.IncreaseHP(healingAmount);
 
         yield return new WaitForSeconds(healingRateInSeconds);

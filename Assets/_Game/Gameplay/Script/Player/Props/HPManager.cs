@@ -3,11 +3,9 @@ using UnityEngine;
 using Photon.Pun.UtilityScripts;
 using Photon.Realtime;
 
-public class PhotonPlayerProperty : MonoBehaviourPunCallbacks
+public class HPManager : MonoBehaviourPunCallbacks
 {
     PhotonView photonview;
-
-    public static PhotonPlayerProperty instance;
     public string Team { get =>  photonview.Controller.GetPhotonTeam().Name; }
     public int maxHP =>  (int)photonview.Controller.CustomProperties["maxHP"];
        
@@ -37,7 +35,6 @@ public class PhotonPlayerProperty : MonoBehaviourPunCallbacks
         if (HP <= maxHP)
         {
             HP -= value;
-
         }
     }
 
@@ -52,7 +49,6 @@ public class PhotonPlayerProperty : MonoBehaviourPunCallbacks
     {
         gameObject.layer = GetLayer;
         //GetComponent<SpriteRenderer>().color = GetColor;
-        instance = this;
     }
 
     //public Color GetColor => (Team == "Blue") ? GameConfigs.instance.TeamBColor : GameConfigs.instance.TeamAColor;

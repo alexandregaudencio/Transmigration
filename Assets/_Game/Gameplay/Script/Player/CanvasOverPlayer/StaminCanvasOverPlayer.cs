@@ -1,6 +1,5 @@
+using CharacterNamespace;
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,30 +7,27 @@ namespace CanvasOverPlayerNamespace
 {
     public class StaminCanvasOverPlayer : MonoBehaviour
     {
-        private Image image_MPFill;
+         [SerializeField] private Image image_StaminFill;
         private PhotonView PV;
 
-        public float MPFraction
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        [SerializeField] private DashManager dashManager;
 
         private void OnEnable()
         {
-
+            dashManager.staminChangesAction += UpdateStaminCanvasOverPlayer;
         }
         private void OnDisable()
         {
-            
+            dashManager.staminChangesAction -= UpdateStaminCanvasOverPlayer;
+
         }
 
         private void Awake()
         {
             //if (!PV.IsMine) gameObject.SetActive(false);
             PV = GetComponentInParent<PhotonView>();
+            //image_StaminFill = GetComponentInChildren<Image>();
+
         }
 
         private void Start()
@@ -41,7 +37,7 @@ namespace CanvasOverPlayerNamespace
 
         private void UpdateStaminCanvasOverPlayer()
         {
-            image_MPFill.fillAmount = MPFraction;
+            image_StaminFill.fillAmount = dashManager.DashStaminFraction;
 
         }
 

@@ -16,6 +16,8 @@ MonoBehaviour:
   defense: 50
   dashSpeed: 20
   hp: 200
-  DashStamin: 50
+  dashStaminCost: 20
+  dashStamin: 50
+  dashStaminRecoveryPercentagemInSeconds: 25
   mana: 50
   weapon: {fileID: 11400000, guid: 280fcf30f03769945a57148551d6160e, type: 2}
