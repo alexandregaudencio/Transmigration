@@ -5,16 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class HealingZone : MonoBehaviour
 {
-    CircleCollider2D circleCollider2D;
+    //CircleCollider2D circleCollider2D;
     [SerializeField] private int healingAmount;
     [SerializeField] [Min(0)] private float healingRateInSeconds;
-    [SerializeField]  private LayerMask layerTarget;
+    //[SerializeField]  private LayerMask layerTarget;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        circleCollider2D = GetComponent<CircleCollider2D>();
-    }
+    //void Start()
+    //{
+    //    circleCollider2D = GetComponent<CircleCollider2D>();
+    //}
 
 
     private void OnTriggerStay2D(Collider2D collision)

@@ -74,13 +74,14 @@ public class SentinelController : MonoBehaviour
         
     }
 
+    //TODO: atira bala: PASSAR PARA OS STATES
+
     public void Shoot()
     {
         if (PV.IsMine) {
             GameObject bullet = PhotonNetwork.InstantiateRoomObject(sentinelBullet.name, spawnTransform.position, spawnTransform.rotation);
-            bullet.layer = this.gameObject.layer;
+            bullet.layer = gameObject.layer;
         }
-        //atira bala: PASSAR PARA OS STATES
         audioSource.clip = AttackClip;
         audioSource.Play();
 

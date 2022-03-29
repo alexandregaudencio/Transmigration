@@ -27,7 +27,10 @@ public class WeaponArmRotation : MonoBehaviour
         //FLIP DO SPRITE DO BRACINHO
     }
 
+
+    //enviar para os colegas
     public Vector3 mousePosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
 
     private Quaternion mouseRotation
     {

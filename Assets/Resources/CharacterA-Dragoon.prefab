@@ -374,6 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image_hpFill: {fileID: 3230051639065574515}
   hpManager: {fileID: 1732692209985234881}
+  damageable: {fileID: 4381876487728630972}
 --- !u!1 &2366404898022427351
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +449,6 @@ GameObject:
   - component: {fileID: 3074866688293795984}
   - component: {fileID: 1256625376}
   - component: {fileID: 1256625375}
-  - component: {fileID: 4381876487728630972}
   - component: {fileID: 2525927732141932734}
   - component: {fileID: 1789463040483444686}
   - component: {fileID: 3104569666897470248}
@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 1732692209985234881}
   - component: {fileID: 4589656653546172724}
   - component: {fileID: 972323354663826225}
+  - component: {fileID: 4381876487728630972}
   m_Layer: 0
   m_Name: CharacterA-Dragoon
   m_TagString: character
@@ -669,18 +670,6 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &4381876487728630972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074866688293795986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0be9f45850a9b5046a9c20ad43494cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2525927732141932734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,6 +868,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16886a6883c42184ab25bc2e037387a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4381876487728630972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074866688293795986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be9f45850a9b5046a9c20ad43494cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3074866688810890528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bebcca27737d2a4e8c8308afe1c65ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 10
+  rotateSpeed: 15
 --- !u!114 &3195722723639824221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,8 +1047,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 3074866689179198483}
-  bulletPrefab: {fileID: 8390771117579472041, guid: dc0da414fd23eac46a78372e0e7cc669,
-    type: 3}
 --- !u!1 &3074866689179198482
 GameObject:
   m_ObjectHideFlags: 0

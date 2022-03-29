@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8704401629257312741}
   - component: {fileID: 8704401629257312738}
   - component: {fileID: 8704401629257312739}
-  - component: {fileID: 8704401629257312736}
   - component: {fileID: 8704401628830862355}
+  - component: {fileID: 8704401629257312736}
   m_Layer: 0
   m_Name: HealingZone
   m_TagString: healing
@@ -101,23 +101,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.0034689903}
   serializedVersion: 2
   m_Radius: 1.9643855
---- !u!114 &8704401629257312736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8704401629257312737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919bc26b3ee44c1448c87cbbf31650ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healingAmount: 2
-  healingRateInSeconds: 0.2
-  layerTarget:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!95 &8704401628830862355
 Animator:
   serializedVersion: 3
@@ -137,3 +120,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8704401629257312736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704401629257312737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919bc26b3ee44c1448c87cbbf31650ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healingAmount: 1
+  healingRateInSeconds: 0.3
+  layerTarget:
+    serializedVersion: 2
+    m_Bits: 512

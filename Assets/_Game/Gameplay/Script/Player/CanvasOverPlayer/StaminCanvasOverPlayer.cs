@@ -7,10 +7,9 @@ namespace CanvasOverPlayerNamespace
 {
     public class StaminCanvasOverPlayer : MonoBehaviour
     {
-         [SerializeField] private Image image_StaminFill;
-        private PhotonView PV;
-
+        [SerializeField] private Image image_StaminFill;
         [SerializeField] private DashManager dashManager;
+        private PhotonView PV;
 
         private void OnEnable()
         {
@@ -24,14 +23,13 @@ namespace CanvasOverPlayerNamespace
 
         private void Awake()
         {
-            //if (!PV.IsMine) gameObject.SetActive(false);
             PV = GetComponentInParent<PhotonView>();
-            //image_StaminFill = GetComponentInChildren<Image>();
 
         }
 
         private void Start()
         {
+            if (!PV.IsMine) gameObject.SetActive(false);
             UpdateStaminCanvasOverPlayer();
         }
 

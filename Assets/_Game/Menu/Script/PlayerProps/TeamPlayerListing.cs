@@ -4,6 +4,7 @@ using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TeamPlayerListing : MonoBehaviourPunCallbacks
@@ -13,19 +14,11 @@ public class TeamPlayerListing : MonoBehaviourPunCallbacks
     [SerializeField] private TeamName teamTarget;
     
     private Player[] players;
-
-    //public override void OnJoinedRoom()
-    //{
-    //    PhotonTeamsManager.Instance.TryGetTeamMembers(teamTarget.ToString(), out players);
-    //    InitalizeAllPlayers();
-
-    //}
-
-
+    public List<Player> playersListing => players.ToList();
     private new void OnEnable()
     {
         PhotonTeamsManager.PlayerJoinedTeam += VerifyTeamToInstantiate;
-
+        //InitalizeAllPlayersContent();
     }
 
 
@@ -37,22 +30,30 @@ public class TeamPlayerListing : MonoBehaviourPunCallbacks
 
     public void VerifyTeamToInstantiate(Player player, PhotonTeam photonTeam)
     {
-        if (photonTeam.Name == teamTarget.ToString() && players != null)
-            InstantiateContent(player);
+        //newPlayer Add
+        
 
-        if (player == PhotonNetwork.LocalPlayer && players == null)
-        {
-            photonTeamsManager.TryGetTeamMembers(teamTarget.ToString(), out players);
+
+        //Local e first
+        if (player == PhotonNetwork.LocalPlayer)
             InitalizeAllPlayersContent();
-        }
+         else
+            if (photonTeam.Name == teamTarget.ToString() && !playersListing.Contains(player))
+                InstantiateContent(player);
+        
 
     }
 
     private void InitalizeAllPlayersContent()
     {
-        photonTeamsManager.TryGetTeamMembers(teamTarget.ToString(), out players);
+        Debug.Log("Initializing players content");
+        //Array.Clear(players, 0, players.Length);
+        if (photonTeamsManager.TryGetTeamMembers(teamTarget.ToString(), out players))
+            Debug.Log("Deu bom ");
+        else
+            Debug.Log("Deu ruim.");
         
-        foreach(Player player in players)
+        foreach (Player player in players)
         {
             InstantiateContent(player);
         }
@@ -65,16 +66,4 @@ public class TeamPlayerListing : MonoBehaviourPunCallbacks
         instantiateContent.transform.localScale = new Vector3(1, 1, 1);
         instantiateContent.GetComponent<PlayerTeam>().InitializeContent(player/*, teamName*/);
     }
-
-    
-    //private void DestoyChilds()
-    //{
-    //    for (int i = 0; i < transform.childCount; i++)
-    //    {
-    //        Debug.Log("Destroi child: " + i);
-    //        Destroy(transform.GetChild(i).gameObject);
-    //    }
-    //}
-
-
 }

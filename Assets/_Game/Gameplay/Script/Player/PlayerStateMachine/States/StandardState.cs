@@ -22,6 +22,7 @@ namespace PlayerStateMachine
             
             playerController.WeaponArmController.WeaponArmShooter.ProcessWeaponShoot(playerController.AudioManager);
             //playerController.WeaponBase.WeaponSpriteActivation();
+            
             Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position;
             bool flipState = (direction.x < 0.00f) ? true : false;
             playerController.photonView.RPC("SetRendererFlipX", RpcTarget.All, flipState);

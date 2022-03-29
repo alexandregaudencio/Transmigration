@@ -11,7 +11,8 @@ public class WeaponArmShooter : MonoBehaviour
     private ManaManager manaManager;
     private CharacterProperty characterProperty;
     [SerializeField] private Transform bulletSpawnPoint;
-    [SerializeField] private GameObject bulletPrefab;
+    /*[SerializeField]*/
+    private GameObject bulletPrefab => characterProperty.Weapon.Bullet.BulletPrefab;
 
     public event Action<bool> L_MouseButtonDownActiveAction;
     public event Action shootAction;
@@ -23,7 +24,9 @@ public class WeaponArmShooter : MonoBehaviour
     {
         PV = GetComponent<PhotonView>();
         characterProperty = GetComponentInParent<PlayerController>().CharacterProperty;
+
         manaManager = GetComponentInParent<ManaManager>();
+
     }
 
     private void OnEnable()
@@ -45,8 +48,6 @@ public class WeaponArmShooter : MonoBehaviour
             L_MouseButtonDownActiveAction?.Invoke(Input.GetMouseButton(0));
     }
 
-
-    //[PunRPC]
     public void DefaultShoot(bool mouseButtonDown)
     {
         if(isManaEnough && canShoot && mouseButtonDown)

@@ -5,9 +5,5 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    void TakeDamage(int damage);
-
-    event Action DamageEvent;
-
-
+    void TakeDamage(float damage);
 }

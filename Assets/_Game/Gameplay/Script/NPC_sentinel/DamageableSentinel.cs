@@ -12,14 +12,14 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
     PhotonView PV;
     private SentinelStateController sentinelStateController;
     
-    public event Action DamageEvent;
+    public event Action<float> DamageEvent;
 
 
     public float HP { get => hp; set => hp = value; }
     private float maxHP;
 
 
-    private float hpPercent => hp / maxHP;
+    private float hpFraction => hp / maxHP;
 
     private void Awake()
     {
@@ -44,25 +44,27 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
 
 
     [PunRPC]
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        hp -= damage;
-        DamageEvent?.Invoke();
-        
-        //if (hp <= 0) DeathEvent?.Invoke();
-        if(hp <= 0) PV.RPC("SendDeathTransitionState", RpcTarget.All);
+        if(PV.IsMine)
+        {
+            hp -= damage;
+            DamageEvent?.Invoke(damage);
+            if (hp <= 0) PV.RPC("SendDeathTransitionState", RpcTarget.All);
+        }
+
     }
 
 
-    public void OnDamage()
+    public void OnDamage(float damage = 0)
     {
-        lifeBarFill.fillAmount = hpPercent;
+        lifeBarFill.fillAmount = hpFraction;
     }
 
     public void ResetHP()
     {
         hp = maxHP;
-        lifeBarFill.fillAmount = hpPercent;
+        lifeBarFill.fillAmount = hpFraction;
 
     }
 

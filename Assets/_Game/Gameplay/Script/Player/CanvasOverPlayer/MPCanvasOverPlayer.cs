@@ -11,10 +11,10 @@ namespace CanvasOverPlayerNamespace {
         [SerializeField] private Image image_MPFill;
 
         [SerializeField] private ManaManager manaManager;
-
+        private PhotonView PV;
         private void Awake()
         {
-            //PV = GetComponentInParent<PhotonView>();
+            PV = GetComponentInParent<PhotonView>();
         }
 
         private void OnEnable()
@@ -29,7 +29,7 @@ namespace CanvasOverPlayerNamespace {
 
         private void Start()
         {
-            //if (!PV.IsMine) gameObject.SetActive(false);
+            if (!PV.IsMine) gameObject.SetActive(false);
             UpdateMPCanvasOverPlayer();
         }
 

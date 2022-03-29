@@ -8,7 +8,7 @@ public class PingFPSGUI : PhotonTeamsManager
 {
     private ExitGames.Client.Photon.Hashtable hasIndexPlayer = new ExitGames.Client.Photon.Hashtable();
     Player[] playersTeam;
-
+    PhotonView PV;
     private int ping;
     private float fps;
     //private float dt = 0.00f;
@@ -19,7 +19,7 @@ public class PingFPSGUI : PhotonTeamsManager
         DontDestroyOnLoad(this.gameObject);
         StartCoroutine(SetFpsAndPing());
         //Application.targetFrameRate = targetFrameRate;
-
+        PV = GetComponent<PhotonView>();
 
     }
     private void OnDestroy()
@@ -67,9 +67,13 @@ public class PingFPSGUI : PhotonTeamsManager
         GUI.Label(new Rect(10, 10, 100, 100), "Ping: " + ping);
         GUI.Label(new Rect(10, 25, 100, 100), "FPS: " + fps);
 
-        GUI.Label(new Rect(10, 50, 300, 100), "Players: "+PhotonNetwork.CurrentRoom?.PlayerCount);
-        GUI.Label(new Rect(10, 60, 300, 100), "Blue: "+GetTeamMembersCount(1).ToString());
-        GUI.Label(new Rect(10, 70, 300, 100), "Red: " + GetTeamMembersCount(2).ToString());
+        GUI.Label(new Rect(10, 50, 300, 100), "Players: " + PhotonNetwork.CurrentRoom?.PlayerCount);
+        GUI.Label(new Rect(10, 60, 300, 100), "Blue: " + PhotonTeamsManager.Instance.GetTeamMembersCount(1).ToString());
+        GUI.Label(new Rect(10, 70, 300, 100), "Red: " + PhotonTeamsManager.Instance.GetTeamMembersCount(2).ToString());
+        
+        GUI.Label(new Rect(10, 90, 300, 100), "HP: " + PhotonNetwork.LocalPlayer.CustomProperties["HP"].ToString());
+        GUI.Label(new Rect(10, 100, 300, 100), "HP: " + PhotonNetwork.LocalPlayer.CustomProperties["isDead"].ToString());
+        GUI.Label(new Rect(10, 110, 300, 100), "HP: " + PhotonNetwork.LocalPlayer.CustomProperties["damageTotal"].ToString());
 
         //GUI.Label(new Rect(10, 20, 100, 100), "FPS: " + FPS);
 

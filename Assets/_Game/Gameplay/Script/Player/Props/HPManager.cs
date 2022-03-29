@@ -1,61 +1,63 @@
 ﻿using Photon.Pun;
+using System;
 using UnityEngine;
 
 public class HPManager : MonoBehaviour
 {
-    PhotonView photonview;
+    public event Action<float> changeHPEvent;
+    private PhotonView photonview;
     private ExitGames.Client.Photon.Hashtable HashProperty = new ExitGames.Client.Photon.Hashtable();
-    private int maxHP =>  (int)photonview.Controller.CustomProperties["maxHP"];
-    private int hp => (int)photonview.Controller.CustomProperties["HP"];
-
-    public int HP
-    {
-        get
-        {
-            return hp;
-        }
-        set
-        {
-            HashProperty["HP"] = value;
-            PV.Controller.SetCustomProperties(HashProperty);
-        }
-    }
-    public void IncreaseHP(int value)
-    {
-        if(HP <= maxHP)
-        {
-            HP += value;
-        }
-    }
-    public void DecreaseHP(int value)
-    {
-        if (HP <= maxHP)
-        {
-            HP -= value;
-        }
-    }
+    public float MaxHP =>  (float)photonview.Controller.CustomProperties["maxHP"];
+    public float HP => (float)photonview.Controller.CustomProperties["HP"];
+    public PhotonView PV => photonview;
 
     public float HPfraction
     {
         get
         {
-            return (float)hp / maxHP;
+            return (float)HP / MaxHP;
         }
     }
-
 
     private void Awake()
     {
         photonview = GetComponent<PhotonView>();
     }
 
+    public void IncreaseHP(float value)
+    {
+        if(PV.IsMine)
+        {
+            if (HP <= MaxHP)
+            {
+                HashProperty["HP"] = HP + value;
+                PV.Controller.SetCustomProperties(HashProperty);
+                changeHPEvent?.Invoke(value);
 
-    public PhotonView PV { get => photonview; set => photonview = value; }
+            }
+        }
+ 
+    }
+    public void DecreaseHP(float value)
+    {
+        if(PV.IsMine)
+        {
+            if (HP <= MaxHP)
+            {
+                HashProperty["HP"] = HP - value;
+                PV.Controller.SetCustomProperties(HashProperty);
+                changeHPEvent?.Invoke(value);
+            }
+        }
+
+
+    }
+
 
     public void ResetPlayerPrps(Vector3 spawnPosition)
     {
         //TODO: not working great.
-        HashProperty["HP"] = (int)PhotonNetwork.LocalPlayer.CustomProperties["maxHP"];
+        HashProperty["HP"] = (float)PhotonNetwork.LocalPlayer.CustomProperties["maxHP"];
         HashProperty["isDead"] = false;
         PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
         GetComponent<SpriteRenderer>().enabled = true;

@@ -13,8 +13,6 @@ public enum TeamName
 public class DropManager : MonoBehaviour, IDropHandler
 {
 
-
-
     [SerializeField] private TeamName team;
 
     public void OnDrop(PointerEventData eventData)

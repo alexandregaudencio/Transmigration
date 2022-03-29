@@ -9,20 +9,18 @@ namespace CharacterNamespace
         [Min(0)] private float maxMana;
         private CharacterProperty characterProperty;
         private WeaponArmShooter WeaponArmShooter;
-
         public float Mana { get => mana; }
         public float MaxMana { get => maxMana; }
         public float ManaFraction => mana / maxMana;
         public float manaRecoveryInSeconds => characterProperty.Weapon.ManaRecoveryPercentagePerSecond;
-        
         public event Action manaChangesAction;
 
         private void Awake()
         {
             WeaponArmShooter = GetComponentInChildren<WeaponArmShooter>();
             characterProperty = GetComponent<PlayerController>().CharacterProperty;
-
         }
+
         private void Start()
         {
             mana = characterProperty.Mana;

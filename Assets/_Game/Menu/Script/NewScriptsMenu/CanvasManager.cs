@@ -6,7 +6,7 @@ using Photon.Realtime;
 
 public enum ConnectionState
 {
-   //DICONNECTED,
+   DICONNECTED,
    IN_LOBBY,
    IN_ROOM,
 }
@@ -19,28 +19,42 @@ public class CanvasManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        SwitchCanvasActivity(ConnectionState.IN_LOBBY);
+        SwitchCanvasActivity(ConnectionState.DICONNECTED);
 
     }
 
-    //public override void OnDisconnected(DisconnectCause cause)
-    //{
-    //    SwitchCanvasActivity(ConnectionState.IN_LOBBY);
-    //}
+    public override void OnConnected()
+    {
+        Debug.Log("OnConnected");
+        SwitchCanvasActivity(ConnectionState.DICONNECTED);
+    }
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log("OnConnectedToMaster");
+        PhotonNetwork.JoinLobby();
+
+    }
 
     public override void OnJoinedLobby()
     {
+        Debug.Log("OnJOinedLobby");
+
         SwitchCanvasActivity(ConnectionState.IN_LOBBY);
        
     }
 
+
     
     public override void OnJoinedRoom()
-    {  
+    {
+        Debug.Log("OnJoinedRoom");
+
         SwitchCanvasActivity(ConnectionState.IN_ROOM);
     }
     public override void OnLeftRoom()
     {
+        Debug.Log("OnLeftRoom");
+
         SwitchCanvasActivity(ConnectionState.IN_LOBBY);
 
     }

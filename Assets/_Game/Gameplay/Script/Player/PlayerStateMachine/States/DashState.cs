@@ -7,6 +7,7 @@ namespace PlayerStateMachine
     {
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
+            //StopAllCoroutines();
             playerController.DahsManager.spentStamin();
             playerController.PlayerRigidbody2D.velocity = clampedDirection * playerController.CharacterProperty.DashSpeed;
             playerController.StartCoroutine(GoToStaminaState(stateController));
@@ -43,7 +44,7 @@ namespace PlayerStateMachine
         {
             get
             {
-                Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+                Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 return Vector2.ClampMagnitude(inputDirection, 1);
 
             }

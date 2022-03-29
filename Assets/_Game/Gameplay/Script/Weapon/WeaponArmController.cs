@@ -35,25 +35,16 @@ public class WeaponArmController : MonoBehaviour
 
     }
 
+    //eviar apra os colegas
     [PunRPC]
     public void SpriterenderActive(bool value)
     {
         spriteRenderer.enabled = value;
     }
 
-    //public void WeaponSpriteActivation()
-    //{
-    //    if (PV.IsMine)
-    //    {
-    //        if (Input.GetMouseButtonDown(0))
-    //            PV.RPC("SpriterenderActive", RpcTarget.All, true);
-    //        if (Input.GetMouseButtonUp(0))
-    //            PV.RPC("SpriterenderActive", RpcTarget.All, false);
-    //    }
-    //}
-
     private void Update()
     {
+        
         GetComponent<SpriteRenderer>().flipY = (WeaponArmRotation.mousePosition.x < transform.position.x);
 
     }
