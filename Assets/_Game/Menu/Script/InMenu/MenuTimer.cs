@@ -19,25 +19,35 @@ namespace Managers
 
         public bool IsTimeOver => (CurrentTime > 0.00f) ? false : true;
 
+        public void ResetTime() => currentTime = maxTimeInSeconds + 1;
+
 
         public void StartTime()
         {
+
             timeInitalize?.Invoke();
+        }
+        public void StopTime()
+        {
+            StopCoroutine(TimerCountdown());
+            ResetTime();
         }
 
         private void OnEnable()
         {
+            ResetTime();
             timeInitalize += OnTimeInitialize;
         }
 
         private void OnDisable()
         {
-           timeInitalize += OnTimeInitialize;
+            timeInitalize -= OnTimeInitialize;
+            StopTime();
 
         }
         public void OnTimeInitialize()
         {
-            currentTime = maxTimeInSeconds+1;
+            currentTime = maxTimeInSeconds+1; //correção
             StartCoroutine(TimerCountdown());
         }
 
