@@ -18,14 +18,12 @@ namespace Managers
         private void OnEnable()
         {
             menuTimer.timerChange += UpdateTimerText;
+            menuTimer.StartTime();
+
         }
         private void OnDisable()
         {
             menuTimer.timerChange -= UpdateTimerText;
-        }
-        private void Start()
-        {
-            menuTimer.StartTime();
         }
 
         public  void UpdateTimerText(int time)

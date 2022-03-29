@@ -455,10 +455,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 176770887}
-        m_TargetAssemblyTypeName: LeaveRoom, Assembly-CSharp
-        m_MethodName: OnClick_LeaveRoom
-        m_Mode: 1
+      - m_Target: {fileID: 328987530}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: OnClick_SwitchState
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -655,6 +655,7 @@ GameObject:
   - component: {fileID: 328987535}
   - component: {fileID: 328987537}
   - component: {fileID: 328987534}
+  - component: {fileID: 328987530}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -676,6 +677,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328987530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328987528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea1d66b55201b8409046aca8e57b2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuState:
+  - state: 0
+    canvastarget: {fileID: 489256151}
+  - state: 1
+    canvastarget: {fileID: 2115023926}
 --- !u!82 &328987534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2370,9 +2388,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 328987530}
           m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
-          m_MethodName: OnClick_SetCanvas
+          m_MethodName: OnClick_SwitchState
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

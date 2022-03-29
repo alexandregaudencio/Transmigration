@@ -1,17 +1,15 @@
 ﻿using Photon.Pun;
 using UnityEngine;
 
-[RequireComponent(typeof(PhotonView))]
 public class menuAudioManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private AudioClip menuMusic;
 
     private AudioSource audioSource;
-    PhotonView PV;
+
 
     private void Awake()
     {
-        PV = GetComponent<PhotonView>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -31,21 +29,6 @@ public class menuAudioManager : MonoBehaviourPunCallbacks
 
     }
 
-    public void PlaySyncAudio(AudioSource audioSource, AudioClip clip, RpcTarget targets, bool isLoop) 
-    {
-        PV.RPC("PunPlayAudio", targets, audioSource, isLoop);
-    }
 
-
-    [PunRPC] 
-    private void PunPlayAudio(AudioSource audioSource, AudioClip clip, bool isLoop)
-    {
-
-        audioSource.loop = isLoop;
-        audioSource.clip = clip;
-        //AudioSource.loop = onLoop;
-        audioSource.Play();
-
-    }
 
 }
