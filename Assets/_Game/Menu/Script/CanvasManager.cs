@@ -14,7 +14,7 @@ public enum MenuStates
 public class CanvasManager : MonoBehaviour
 {
     [SerializeField]
-    private List<MenuSate> menuState;
+    private List<MenuSate> menuStateList;
 
     bool inMenu = false;
 
@@ -48,7 +48,7 @@ public class CanvasManager : MonoBehaviour
     private void SwitchCanvasActivity(MenuStates actualState)
     {
         //Debug.Log(actualState);
-        foreach(MenuSate menu in menuState)
+        foreach(MenuSate menu in menuStateList)
         {
             menu.Canvastarget.SetActive(menu.State == actualState);   
         }
