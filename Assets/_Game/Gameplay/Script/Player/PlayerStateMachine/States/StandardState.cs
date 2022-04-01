@@ -11,21 +11,21 @@ namespace PlayerStateMachine
             playerController.Animator.Play("Idle_Gato");
 
         }
-        //public override void ExitState(PlayerController playerController)
-        //{
-        //    Debug.Log("ExitState: standard");
-        //}
+
         public override void FixedUpdateState(PlayerController playerController, StateController stateController)
         {
             
             Movement(playerController);
             
-            playerController.WeaponArmController.WeaponArmShooter.ProcessWeaponShoot(playerController.AudioManager);
-            //playerController.WeaponBase.WeaponSpriteActivation();
+
+            playerController.WeaponArmController.WeaponArmShooter.ProcessRAxisInput();
+            playerController.WeaponArmController.WeaponArmShooter.ProcessShootInput();
+
+            Vector2 direction =  playerController.InputJoystick.RAxis;
+
             
-            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - playerController.transform.position;
-            bool flipState = (direction.x < 0.00f) ? true : false;
-            playerController.photonView.RPC("SetRendererFlipX", RpcTarget.All, flipState);
+            bool isFlipX = (direction.x < 0.00f) ? true : false;
+            if( playerController.InputJoystick.GetRAxisKey) playerController.SpriteRenderer.flipX = isFlipX;
 
         }
 
@@ -35,17 +35,11 @@ namespace PlayerStateMachine
 
         public override void UpdateState(PlayerController playerController, StateController stateController)
         {
-            //playerController.Animator.SetFloat("Horizontal", playerController.PlayerRigidbody2D.velocity.x);
-            //playerController.Animator.SetFloat("Vertical", playerController.PlayerRigidbody2D.velocity.y);
-            //playerController.Animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-            //playerController.Animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
 
-
-            bool Waking = Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f;
+            bool Waking = playerController.InputJoystick.LHorizontalAxis != 0.0f || playerController.InputJoystick.LVerticalAxis != 0.0f;
             playerController.Animator.SetBool("preWalking", Waking);
 
             if (!Waking) playerController.Animator.SetBool("walking", false);
-
 
             ProcessDashInput(playerController, stateController);
             ProcessPrayInput(stateController);
@@ -54,7 +48,7 @@ namespace PlayerStateMachine
 
         private void ProcessDashInput(PlayerController playerController ,StateController stateController)
         {
-            if (Input.GetKeyDown(KeyCode.Space) )
+            if (playerController.InputJoystick.dashInputDown)
                 if(playerController.DahsManager.CanDash)
                     stateController.TransitionToState(stateController.ListedStates.dashState); 
         }
@@ -71,37 +65,8 @@ namespace PlayerStateMachine
         {
 
             float speed = playerController.CharacterProperty.Speed;
-            playerController.PlayerRigidbody2D.velocity = clampedDirection * Time.fixedDeltaTime * speed;
+            playerController.PlayerRigidbody2D.velocity = playerController.InputJoystick.LAxis * Time.fixedDeltaTime * speed;
         }
-        private Vector2 clampedDirection
-        {
-            get
-            {
-                Vector2 inputDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-                return  Vector2.ClampMagnitude(inputDirection, 1);
-
-            }
-        }
-        //void VerticalMove(PlayerController playerController)
-        //{
-        //    playerController.PlayerRigidbody2D.velocity = new Vector2(playerController.PlayerRigidbody2D.velocity.x, Input.GetAxis("Vertical") *playerController.CharacterProperty.Speed * Time.fixedDeltaTime);
-        //}
-
-        //private void Movement(PlayerController playerController)
-        //{
-
-        //    float speed = playerController.CharacterProperty.Speed;
-
-        //    playerController.PlayerRigidbody2D.velocity = direction * speed * Time.fixedDeltaTime;
-        //}
-
-        //private Vector2 direction
-        //{
-        //    get
-        //    {
-        //        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        //    }
-        //}
 
     }
 

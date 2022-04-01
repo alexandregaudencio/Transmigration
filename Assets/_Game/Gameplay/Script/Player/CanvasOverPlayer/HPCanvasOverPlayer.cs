@@ -8,40 +8,34 @@ namespace CanvasOverPlayerNamespace
     public class HPCanvasOverPlayer : MonoBehaviourPunCallbacks
     {
         [SerializeField] private Image image_hpFill;
-        private PhotonView PV;
         [SerializeField] private HPManager hpManager;
         [SerializeField] private Damageable damageable;
 
-        private void Awake()
+        private new void OnEnable()
         {
-            PV = GetComponentInParent<PhotonView>(); 
+            hpManager.changeHPEvent += UpdateHPCanvasOverPlayer;
         }
-
-        //private new void OnEnable()
+        private new void OnDisable()
+        {
+            hpManager.changeHPEvent -= UpdateHPCanvasOverPlayer;
+        }
+        //private void Start()
         //{
-        //    hpManager.changeHPEvent += UpdateHPCanvasOverPlayer;
+        //    UpdateHPCanvasOverPlayer();  
         //}
-        //private new void OnDisable()
+
+        //public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
         //{
-        //    hpManager.changeHPEvent -= UpdateHPCanvasOverPlayer;
+        //    if (PV.Controller == targetPlayer && changedProps.ContainsKey("HP"))
+        //    {
+        //        UpdateHPCanvasOverPlayer();
+        //    }
         //}
-        private void Start()
-        {
-            UpdateHPCanvasOverPlayer();  
-        }
 
-        public override void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
-        {
-            if (PV.Controller == targetPlayer && changedProps.ContainsKey("HP"))
-            {
-                UpdateHPCanvasOverPlayer();
-            }
-        }
-
-        public void UpdateHPCanvasOverPlayer( float damage = 0)
+        public void UpdateHPCanvasOverPlayer(float hp)
         {
             image_hpFill.fillAmount = hpManager.HPfraction ;
-            Debug.Log("HP in Manager: " + hpManager.HP);
+            //Debug.Log("HP in Manager: " + hpManager.HP);
 
         }
 

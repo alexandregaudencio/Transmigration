@@ -5,32 +5,29 @@ namespace CharacterNamespace
 {
     public class ManaManager : MonoBehaviour
     {
-        [Min(0)] private float mana;
-        [Min(0)] private float maxMana;
+        private float mana;
         private CharacterProperty characterProperty;
         private WeaponArmShooter WeaponArmShooter;
-        public float Mana { get => mana; }
-        public float MaxMana { get => maxMana; }
-        public float ManaFraction => mana / maxMana;
+        public float Mana { get => mana; set => mana = value; }
+        public float MaxMana { get => characterProperty.MaxMana; }
+        public float ManaFraction => Mana / MaxMana;
         public float manaRecoveryInSeconds => characterProperty.Weapon.ManaRecoveryPercentagePerSecond;
-        public event Action manaChangesAction;
+        public event Action manaChange;
 
         private void Awake()
         {
             WeaponArmShooter = GetComponentInChildren<WeaponArmShooter>();
             characterProperty = GetComponent<PlayerController>().CharacterProperty;
         }
-
         private void Start()
         {
             mana = characterProperty.Mana;
-            maxMana = characterProperty.MaxMana;
         }
 
         public void SpentMana()
         {
-            mana -= characterProperty.Weapon.Bullet.ManaCost;
-            manaChangesAction?.Invoke();
+            Mana -= characterProperty.Weapon.Bullet.ManaCost;
+            manaChange?.Invoke();
         }
 
         private void OnEnable()
@@ -50,14 +47,14 @@ namespace CharacterNamespace
 
         public void ManaRecovery()
         {
-            if (mana <= MaxMana)
+            if (Mana <= MaxMana)
             {
 
                 float manaToIncrease = (manaRecoveryInSeconds / 100);
-                float newManaAmough = mana + MaxMana * manaToIncrease;
-                mana = Mathf.Lerp(mana, newManaAmough, Time.fixedDeltaTime);
+                float newManaAmough = Mana + MaxMana * manaToIncrease;
+                Mana = Mathf.Lerp(Mana, newManaAmough, Time.fixedDeltaTime);
                 //mana += manaToIncrease;
-                manaChangesAction?.Invoke();
+                manaChange?.Invoke();
             }
         }
 

@@ -29,7 +29,7 @@ namespace CanvasOverPlayerNamespace
 
         private void Start()
         {
-            if (!PV.IsMine) gameObject.SetActive(false);
+            //if (!PV.IsMine) gameObject.SetActive(false);
             UpdateStaminCanvasOverPlayer();
         }
 

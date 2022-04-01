@@ -1,7 +1,7 @@
 ﻿using CharacterNamespace;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using Photon.Realtime;
+using PlayerData;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,7 +12,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(DashManager))]
 [RequireComponent(typeof(ManaManager))]
-
+[RequireComponent(typeof(InputJoystick))]
 public class PlayerController : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D RigidBody2D;
@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private WeaponArmController weaponArmController;
     private PlayerAudioManager audioManager;
     private DashManager dashManager;
+    private InputJoystick inputJoystick;
 
     [SerializeField] private CharacterProperty characterProperty;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
@@ -43,9 +44,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
     public DashManager DahsManager { get => dashManager; set => dashManager = value; }
+    public InputJoystick InputJoystick { get => inputJoystick; set => inputJoystick = value; }
 
-    public string Team { get => PV.Controller.GetPhotonTeam().Name; }
-    public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
+    //public string Team { get => PV.Controller.GetPhotonTeam().Name; }
+    //public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
 
 
     void Awake()
@@ -61,12 +63,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
         weaponArmController = GetComponentInChildren<WeaponArmController>();
         audioManager = GetComponent<PlayerAudioManager>();
         dashManager = GetComponent<DashManager>();
+        inputJoystick = GetComponent<InputJoystick>();
 
     }
 
     void Start()
     {
-        gameObject.layer = GetLayer;
+
+        //gameObject.layer = GetLayer;
     }
 
     [PunRPC]

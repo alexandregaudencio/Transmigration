@@ -39,16 +39,16 @@ public class CameraController : MonoBehaviour
 
     private void DefineLocalPlayerObject()
     {
-        HPManager[] p = FindObjectsOfType<HPManager>();
-        foreach(HPManager playerProp in p)
-        {
-            if(playerProp.PV.Controller == PhotonNetwork.LocalPlayer)
-            {
-                targetobject = playerProp.gameObject;
-                targetPlayer = playerProp.PV.Controller;
-                break;
-            }
-        }
+        //HPManager[] p = FindObjectsOfType<HPManager>();
+        //foreach(HPManager playerProp in p)
+        //{
+        //    if(playerProp.PV.Controller == PhotonNetwork.LocalPlayer)
+        //    {
+        //        targetobject = playerProp.gameObject;
+        //        targetPlayer = playerProp.PV.Controller;
+        //        break;
+        //    }
+        //}
 
     }
 

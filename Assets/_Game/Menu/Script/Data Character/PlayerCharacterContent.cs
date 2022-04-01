@@ -1,4 +1,5 @@
 using CharacterNamespace;
+using PlayerData;
 using System;
 using TMPro;
 using UnityEngine;
@@ -9,16 +10,19 @@ namespace CharacterSelection
     public class PlayerCharacterContent : MonoBehaviour
     {
         //[SerializeField] private int playerIndex;
-        [SerializeField] [Min(0)] private int characterIndex;
+        [SerializeField]  private int playerIndex;
         [SerializeField] private RawImage rawImage_Character;
         [SerializeField] private TMP_Text text_CharacterName;
         [SerializeField] private TMP_Text text_CharacterClass;
         private Characters characters;
         private CharacterProperty targetCharacter;
+        private InputJoystick inputJoystick;
+
         public event Action<CharacterProperty> characterContentUpdateEvent;
 
         private void Awake()
         {
+            inputJoystick = GetComponent<InputJoystick>();
             characters = GetComponentInParent<Characters>();
         }
 
@@ -33,25 +37,26 @@ namespace CharacterSelection
 
         private void Start()
         {
-            characterContentUpdateEvent?.Invoke(characters.CharacterTarget(characterIndex));
+            characterContentUpdateEvent?.Invoke(characters.CharacterTarget(playerIndex));
 
 
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+
+            if (inputJoystick.IsRigthButtonDown )
             {
-                if (characterIndex > 0) characterIndex--;
-                else characterIndex = (characters.CharactersList.Count-1);
-                characterContentUpdateEvent?.Invoke(characters.CharacterTarget(characterIndex));
+                if (playerIndex > 0) playerIndex--;
+                else playerIndex = (characters.CharactersList.Count - 1);
+                characterContentUpdateEvent?.Invoke(characters.CharacterTarget(playerIndex));
 
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (inputJoystick.IsLeftButtonDown)
             {
-                if (characterIndex+1 < characters.CharactersList.Count) characterIndex++;
-                else characterIndex = 0;
-                characterContentUpdateEvent?.Invoke(characters.CharacterTarget(characterIndex));
+                if (playerIndex + 1 < characters.CharactersList.Count) playerIndex++;
+                else playerIndex = 0;
+                characterContentUpdateEvent?.Invoke(characters.CharacterTarget(playerIndex));
             }
         }
 

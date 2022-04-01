@@ -34,11 +34,11 @@ namespace PlayerData
         public float RHorizontalAxis => Input.GetAxis(RHorizontal);
         public float RVerticalAxis => Input.GetAxis(RVertical);
         public bool dashInputDown => Input.GetKeyDown(dashInput);
-        public bool ShootInputDown => Input.GetKeyDown(shootInput);
+        public bool getShootInput => Input.GetKey(shootInput);
         public bool StartInputDown => Input.GetKeyDown(startInput);
-
         public Vector2 LAxis => Vector2.ClampMagnitude(new Vector2( Input.GetAxis(LHorizontal), Input.GetAxis(LVertical)), 1);
         public Vector2 RAxis => Vector2.ClampMagnitude(new Vector2( Input.GetAxis(RHorizontal), Input.GetAxis(RVertical)), 1);
+        
 
         public enum DPadButton
         {
@@ -75,8 +75,8 @@ namespace PlayerData
                 return inputValue;
             }
         }
-        public bool IsRAxisDown => RAxis != Vector2.zero;
-        public bool IsLAxisDown => LAxis != Vector2.zero;
+        public bool GetRAxisKey => RAxis != Vector2.zero;
+        public bool GetLAxisKey => LAxis != Vector2.zero;
 
     }
 }

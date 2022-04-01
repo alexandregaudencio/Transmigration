@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using PlayerData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,9 +13,12 @@ public class WeaponArmController : MonoBehaviour
     private WeaponArmRotation weaponArmRotation;
     private WeaponArmShooter weaponArmShooter;
     private SpriteRenderer spriteRenderer;
+    private InputJoystick inputJoystick;
     public WeaponArmRotation WeaponArmRotation { get => weaponArmRotation;}
     public WeaponArmShooter WeaponArmShooter { get => weaponArmShooter; }
-    
+   
+    [SerializeField] private SpriteRenderer DirectionalArrow;
+
 
     private void Awake()
     {
@@ -22,30 +26,37 @@ public class WeaponArmController : MonoBehaviour
         weaponArmShooter = GetComponent<WeaponArmShooter>();
         weaponArmRotation = GetComponent<WeaponArmRotation>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        inputJoystick = GetComponentInParent<InputJoystick>();
     }
 
     private void OnEnable()
     {
-        weaponArmShooter.L_MouseButtonDownActiveAction += SpriterenderActive;
+        weaponArmShooter.L_MouseButtonDownAction += SpriterenderActive;
     }
 
     private void OnDisable()
     {
-        weaponArmShooter.L_MouseButtonDownActiveAction -= SpriterenderActive;
+        weaponArmShooter.L_MouseButtonDownAction -= SpriterenderActive;
 
     }
 
     //eviar apra os colegas
-    [PunRPC]
+
     public void SpriterenderActive(bool value)
     {
         spriteRenderer.enabled = value;
+        DirectionalArrow.enabled = value;
+
+        if (value) FlipYHandWeapon();
     }
 
-    private void Update()
+    private void FlipYHandWeapon()
     {
-        
-        GetComponent<SpriteRenderer>().flipY = (WeaponArmRotation.mousePosition.x < transform.position.x);
+        if(inputJoystick.GetRAxisKey)
+        {
+            spriteRenderer.flipY = (inputJoystick.RAxis.x < 0);
 
+        }
     }
+
 }

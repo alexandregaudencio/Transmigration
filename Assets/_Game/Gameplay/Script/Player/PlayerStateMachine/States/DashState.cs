@@ -9,7 +9,7 @@ namespace PlayerStateMachine
         {
             //StopAllCoroutines();
             playerController.DahsManager.spentStamin();
-            playerController.PlayerRigidbody2D.velocity = clampedDirection * playerController.CharacterProperty.DashSpeed;
+            playerController.PlayerRigidbody2D.velocity = playerController.InputJoystick.LAxis * playerController.CharacterProperty.DashSpeed;
             playerController.StartCoroutine(GoToStaminaState(stateController));
         }
 
@@ -40,15 +40,8 @@ namespace PlayerStateMachine
 
         }
 
-        private Vector2 clampedDirection
-        {
-            get
-            {
-                Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-                return Vector2.ClampMagnitude(inputDirection, 1);
+     
 
-            }
-        }
     }
 
 }

@@ -19,17 +19,16 @@ namespace CanvasOverPlayerNamespace {
 
         private void OnEnable()
         {
-            manaManager.manaChangesAction += UpdateMPCanvasOverPlayer;
+            manaManager.manaChange += UpdateMPCanvasOverPlayer;
         }
 
         private void OnDisable()
         {
-            manaManager.manaChangesAction -= UpdateMPCanvasOverPlayer;
+            manaManager.manaChange -= UpdateMPCanvasOverPlayer;
         }
 
         private void Start()
         {
-            if (!PV.IsMine) gameObject.SetActive(false);
             UpdateMPCanvasOverPlayer();
         }
 

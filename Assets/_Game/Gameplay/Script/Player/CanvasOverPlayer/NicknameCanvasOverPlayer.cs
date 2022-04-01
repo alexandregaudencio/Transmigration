@@ -19,7 +19,7 @@ namespace CanvasOverPlayerNamespace
 
         private void Start()
         {
-            text_nickname.SetText(PV.Controller.NickName);
+            //text_nickname.SetText(PV.Controller.NickName);
         }
     }
 

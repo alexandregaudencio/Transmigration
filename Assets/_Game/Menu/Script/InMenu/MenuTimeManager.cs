@@ -18,7 +18,6 @@ namespace Managers
         private void OnEnable()
         {
             menuTimer.timerChange += UpdateTimerText;
-            Debug.Log("Enable timeManager object");
             menuTimer.StartTime();
 
         }

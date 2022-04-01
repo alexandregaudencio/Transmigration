@@ -1,4 +1,5 @@
 using Photon.Pun;
+using PlayerData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,57 +8,36 @@ using UnityEngine;
 public class WeaponArmRotation : MonoBehaviour
 {
     public float rotateSpeed = 10f;
-
-    private PhotonView PV;
-    private Transform parentTransform;
-
+    private InputJoystick inputJoystick;
     private event Action weaponRotationEvent;
     public event Action mouseMoveEvent;
 
     private void Awake()
     {
-        PV = GetComponent<PhotonView>();
-        parentTransform = GetComponentInParent<Transform>();
+        inputJoystick = GetComponentInParent<InputJoystick>();
     }
 
 
-    private void OnMouseMoved()
+    private void WeaponRotation()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, mouseRotation, rotateSpeed * Time.fixedDeltaTime);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, WeaponInputRotation, rotateSpeed * Time.fixedDeltaTime);
         //FLIP DO SPRITE DO BRACINHO
     }
 
-
-    //enviar para os colegas
-    public Vector3 mousePosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-
-    private Quaternion mouseRotation
+    public Quaternion WeaponInputRotation
     {
         get
         {
-            float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(inputJoystick.RVerticalAxis, inputJoystick.RHorizontalAxis) * Mathf.Rad2Deg;
             return Quaternion.AngleAxis(angle, Vector3.forward);
-
-        }
-    }
-
-    private Vector2 mouseDirection
-    {
-        get
-        {
-            return mousePosition - parentTransform.position;
-
         }
 
     }
-
-    public Quaternion MouseRotation => mouseRotation;
-
 
     void FixedUpdate()
     {
-        OnMouseMoved();
+        if(inputJoystick.GetRAxisKey) WeaponRotation();
     }
 
 

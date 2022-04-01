@@ -1,5 +1,6 @@
 using CharacterNamespace;
 using Photon.Pun;
+using PlayerData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,73 +11,72 @@ public class WeaponArmShooter : MonoBehaviour
     private PhotonView PV;
     private ManaManager manaManager;
     private CharacterProperty characterProperty;
+    private InputJoystick inputJoystick;
     [SerializeField] private Transform bulletSpawnPoint;
+
     /*[SerializeField]*/
     private GameObject bulletPrefab => characterProperty.Weapon.Bullet.BulletPrefab;
 
-    public event Action<bool> L_MouseButtonDownActiveAction;
+    public event Action<bool> L_MouseButtonDownAction;
     public event Action shootAction;
 
-    bool isManaEnough => (manaManager.Mana >= characterProperty.Weapon.Bullet.ManaCost);
-    bool canShoot = true;
-
+    private bool isManaEnough => (manaManager.Mana >= characterProperty.Weapon.Bullet.ManaCost);
+    private bool cooldownRelease = true;
+    private bool weaponArmActive => inputJoystick.GetRAxisKey;
+    private LayerMask ShooterLayer => gameObject.transform.parent.gameObject.layer;
     private void Awake()
     {
-        PV = GetComponent<PhotonView>();
+        //PV = GetComponent<PhotonView>();
         characterProperty = GetComponentInParent<PlayerController>().CharacterProperty;
-
+        inputJoystick = GetComponentInParent<InputJoystick>();
         manaManager = GetComponentInParent<ManaManager>();
 
     }
 
     private void OnEnable()
     {
-        //shootAction += DefaultShoot;
-        L_MouseButtonDownActiveAction += DefaultShoot;
+        shootAction += OnShoot;
+
     }
     private void OnDisable()
     {
-        //shootAction -= DefaultShoot;
-        L_MouseButtonDownActiveAction += DefaultShoot;
+        shootAction -= OnShoot;
 
     }
-
-
-    public void ProcessWeaponShoot(PlayerAudioManager audioManager)
+    public void ProcessShootInput()
     {
-        if(PV.IsMine)
-            L_MouseButtonDownActiveAction?.Invoke(Input.GetMouseButton(0));
+        if (inputJoystick.getShootInput) DefaultShoot();
     }
 
-    public void DefaultShoot(bool mouseButtonDown)
+    public void ProcessRAxisInput()
     {
-        if(isManaEnough && canShoot && mouseButtonDown)
+            L_MouseButtonDownAction?.Invoke(inputJoystick.GetRAxisKey);
+    }
+
+    public void DefaultShoot()
+    {
+        if(isManaEnough && cooldownRelease && weaponArmActive)
         {
-            GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            bullet.layer = GetComponentInParent<PlayerController>().GetLayer;
-            canShoot = false;
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            bullet.layer = ShooterLayer;
+            cooldownRelease = false;
             StartCoroutine(Cooldown());
             shootAction?.Invoke();
-
         }
 
     }
 
-    //private IEnumerator Cooldown()
-    //{
-    //    while (isManaEnough && canShoot)
-    //    {
-    //        //DefaultShoot();
-    //        yield return new WaitForSeconds(characterProperty.Weapon.CooldownInSeconds);
-    //    }
-    //}
 
     private IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(characterProperty.Weapon.CooldownInSeconds);
-        canShoot = true;
+        cooldownRelease = true;
     }
 
+    public void OnShoot()
+    {
+        //animations, audios, effeccts...
+    }
 
 
 }

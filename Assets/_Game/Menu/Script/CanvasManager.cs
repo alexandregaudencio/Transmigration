@@ -16,15 +16,33 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]
     private List<MenuSate> menuState;
 
+    bool inMenu = false;
+
 
     private void Start()
     {
         SwitchCanvasActivity(MenuStates.PRE_MENU);
+
     }
+    private void Update()
+    {
+        if(Input.anyKeyDown && !inMenu)
+        {
+            OnClick_SwitchState(1);
+        }
+        //if (Input.GetButton("Joy1LHorizontal"))
+        //{
+
+        //    Debug.Log("Joysstick press!");
+        //}
+    }
+    
 
     public void OnClick_SwitchState(int indexState)
     {
         SwitchCanvasActivity((MenuStates)indexState);
+        inMenu = (((MenuStates)indexState) == MenuStates.IN_MENU) ? 
+            true : false;
     }
 
     private void SwitchCanvasActivity(MenuStates actualState)
