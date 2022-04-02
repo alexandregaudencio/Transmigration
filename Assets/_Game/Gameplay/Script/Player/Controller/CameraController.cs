@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     void FixedUpdate()
     {
 
-        TargetPositionUpdate();
+        //TargetPositionUpdate();
 
     }
 
@@ -52,19 +52,19 @@ public class CameraController : MonoBehaviour
 
     }
 
-    void TargetPositionUpdate()
-    {
-        //alvo = posição alvo + um deslocamento em relação ao eixo x do alvo * ajuste manual;
-        float targetX = TargetObject.transform.position.x + targetPositionOffSet.x * TargetObject.transform.up.x;
+    //void TargetPositionUpdate()
+    //{
+    //    //alvo = posição alvo + um deslocamento em relação ao eixo x do alvo * ajuste manual;
+    //    float targetX = TargetObject.transform.position.x + targetPositionOffSet.x * TargetObject.transform.up.x;
         
-        float targetY = TargetObject.transform.position.y + targetPositionOffSet.y * TargetObject.transform.up.y;
-        float targetZ = TargetObject.transform.position.z - 10f;
+    //    float targetY = TargetObject.transform.position.y + targetPositionOffSet.y * TargetObject.transform.up.y;
+    //    float targetZ = TargetObject.transform.position.z - 10f;
 
-        Vector3 targetPosition = new Vector3(targetX, targetY, targetZ);
+    //    Vector3 targetPosition = new Vector3(targetX, targetY, targetZ);
 
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime * smoothPositionSpeed);
-        transform.position = smoothPosition;
-    }
+    //    Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, Time.fixedDeltaTime * smoothPositionSpeed);
+    //    transform.position = smoothPosition;
+    //}
 
     //void TargetPositionUpdate()
     //{
