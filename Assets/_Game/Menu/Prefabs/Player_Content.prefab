@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 795821341166916025}
   - component: {fileID: 795821341166916023}
   - component: {fileID: 795821341166916022}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Panel Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0900116, y: -0.001045227}
+  m_AnchoredPosition: {x: -1.0900116, y: -0.0010375977}
   m_SizeDelta: {x: 3.119995, y: -0.5299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &795821341166916023
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 795821341294307482}
   - component: {fileID: 795821341294307480}
   - component: {fileID: 795821341294307483}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_CharacterClass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,8 @@ GameObject:
   - component: {fileID: 795821342046786807}
   - component: {fileID: 7484754488587059824}
   - component: {fileID: 798047771}
-  m_Layer: 5
+  - component: {fileID: 572335770}
+  m_Layer: 8
   m_Name: Player_Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,10 +262,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b36d66281a49ed499f62b46d41fe59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIndex: 0
+  characterIndex: 0
   rawImage_Character: {fileID: 795821342634445469}
   text_CharacterName: {fileID: 795821342884973780}
   text_CharacterClass: {fileID: 795821341294307483}
+  timer: {fileID: 0}
+  characters: {fileID: 11400000, guid: b64a194351499a14fa71374766e8cf2f, type: 2}
 --- !u!114 &7484754488587059824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +298,18 @@ MonoBehaviour:
     objectTarget: {fileID: 3017701508073616235}
   - state: 1
     objectTarget: {fileID: 4982809619058790081}
+--- !u!114 &572335770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795821342046786809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b784256b48caa3469db1759b0f2bb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &795821342634445471
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +321,7 @@ GameObject:
   - component: {fileID: 795821342634445468}
   - component: {fileID: 795821342634445466}
   - component: {fileID: 795821342634445469}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Icon_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +393,7 @@ GameObject:
   - component: {fileID: 795821342884973783}
   - component: {fileID: 795821342884973781}
   - component: {fileID: 795821342884973780}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text_CharacterName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +527,7 @@ GameObject:
   - component: {fileID: 3004023513025898846}
   - component: {fileID: 5417863952160669424}
   - component: {fileID: 2274138154055518380}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0027618408, y: -0.00047302246}
+  m_AnchoredPosition: {x: -0.0027618408, y: -0.0010375977}
   m_SizeDelta: {x: 0.005493164, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5417863952160669424
@@ -559,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+  m_Color: {r: 0.6924528, g: 0.9636287, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -586,7 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4889658331220060670}
   - component: {fileID: 1310410626392029123}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Player Off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1266916126436926441}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Player On
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +692,7 @@ GameObject:
   - component: {fileID: 6263083172463850512}
   - component: {fileID: 8136594615404911226}
   - component: {fileID: 8501944379781909573}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Press Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,8 +826,8 @@ GameObject:
   - component: {fileID: 190142022242161771}
   - component: {fileID: 8107315813956190764}
   - component: {fileID: 6543815265710466925}
-  m_Layer: 5
-  m_Name: Player 1
+  m_Layer: 8
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

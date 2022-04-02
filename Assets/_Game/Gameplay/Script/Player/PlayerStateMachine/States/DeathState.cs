@@ -38,12 +38,11 @@ namespace PlayerStateMachine
 
         private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
         {
-            playerController.photonView.RPC("SwitchComponent", RpcTarget.All, false);
+            //Desabilita tudo;
             yield return new WaitForSeconds(GameConfigs.instance.TimeToRespawn);
-            playerController.photonView.RPC("SwitchComponent", RpcTarget.All, true);
-
+            //habilita tudo;
             stateController.TransitionToState(stateController.ListedStates.standardState);
-            playerController.HPManager.ResetPlayerPrps(UnityEngine.Object.FindObjectOfType<SetupGameplay>().LocalPlayerSpawnPoint);
+            //playerController.HPManager.ResetPlayerPrps();
 
 
         }

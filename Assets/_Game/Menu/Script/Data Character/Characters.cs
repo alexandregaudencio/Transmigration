@@ -5,50 +5,20 @@ using UnityEngine;
 
 namespace CharacterSelection
 {
-    public class Characters : MonoBehaviour
+    [CreateAssetMenu(fileName ="characters",menuName ="characterList")]
+    public class Characters : ScriptableObject
     {
-        [SerializeField] private List<CharacterProperty> charactersList;
-        public List<CharacterProperty> CharactersList { get => charactersList; set => charactersList = value; }
+        [SerializeField] private List<CharacterProperty> charactersTeamA;
+        [SerializeField] private List<CharacterProperty> charactersTeamB;
 
-        public CharacterProperty CharacterTarget(int index)
+        public List<CharacterProperty> CharactersTeamA { get => charactersTeamA; set => charactersTeamA = value; }
+        public List<CharacterProperty> CharactersTeamB { get => charactersTeamB; set => charactersTeamB = value; }
+
+        public CharacterProperty GetCharacterInList(LayerMask layer, int index)
         {
-            return charactersList[index];
+            return (layer == LayerMask.NameToLayer("TeamA")) ? charactersTeamA[index] : charactersTeamB[index];
         }
-        //public void RemoveCharacterInList(int index)
-        //{
-        //    charactersList.Remove(CharacterTarget(index));
-        //}
 
-        //public void InserCharacterInList(CharacterProperty character)
-        //{
-        //    charactersList.Add(character);
-        //}
-
-        //public CharacterProperty NextCharacter(int indexActual)
-        //{
-        //    if (indexActual < charactersList.Count)
-        //    {
-        //        return CharacterTarget(indexActual + 1);
-        //    }
-        //    else
-        //    {
-        //        return CharacterTarget(0);
-
-        //    }
-
-        //}
-        //public CharacterProperty BeforeCharacter(int indexActual)
-        //{
-        //    if (indexActual > 0)
-        //    {
-        //        return CharacterTarget(indexActual - 1);
-        //    }else
-        //    {
-        //        return CharacterTarget(charactersList.Count);
-
-        //    }
-
-        //}
 
     }
 

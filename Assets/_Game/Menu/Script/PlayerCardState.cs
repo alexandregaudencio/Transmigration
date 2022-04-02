@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerContentInputJoystickController : MonoBehaviour
+public class PlayerCardState : MonoBehaviour
 {
 
     [SerializeField]

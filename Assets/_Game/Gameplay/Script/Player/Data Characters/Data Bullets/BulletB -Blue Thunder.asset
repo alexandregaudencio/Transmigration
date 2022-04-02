@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610c5050c94043a489c1149b6f982a8e, type: 3}
   m_Name: BulletB -Blue Thunder
   m_EditorClassIdentifier: 
-  damage: 10
-  speed: 2
-  manaCost: 3.3
+  damage: 40
+  speed: 3
+  manaCost: 3
+  bulletPrefab: {fileID: 3603589608992736418, guid: a45d6fba39724594fb288b144a1fe066,
+    type: 3}

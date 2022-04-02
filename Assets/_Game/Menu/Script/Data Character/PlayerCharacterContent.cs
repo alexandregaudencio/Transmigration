@@ -1,4 +1,5 @@
 using CharacterNamespace;
+using Managers;
 using PlayerData;
 using System;
 using TMPro;
@@ -10,68 +11,79 @@ namespace CharacterSelection
     public class PlayerCharacterContent : MonoBehaviour
     {
         //[SerializeField] private int playerIndex;
-        [SerializeField]  private int playerIndex;
-        [SerializeField] private RawImage rawImage_Character;
-        [SerializeField] private TMP_Text text_CharacterName;
-        [SerializeField] private TMP_Text text_CharacterClass;
-        private Characters characters;
-        private CharacterProperty targetCharacter;
+        [SerializeField]  private int characterIndex;
+        //[SerializeField] private RawImage rawImage_Character;
+        //[SerializeField] private TMP_Text text_CharacterName;
+        //[SerializeField] private TMP_Text text_CharacterClass;
+        [SerializeField] private Timer timer;
+        [SerializeField] private Characters characters;
+        private Animator animator;
         private InputJoystick inputJoystick;
-
-        public event Action<CharacterProperty> characterContentUpdateEvent;
-
+        public CharacterProperty targetCharacter => characters.GetCharacterInList(gameObject.layer, characterIndex);
+        public event Action<CharacterProperty> characterContentUpdate;
+        public event Action<int> choseCharacter;
         private void Awake()
         {
-            inputJoystick = GetComponent<InputJoystick>();
-            characters = GetComponentInParent<Characters>();
+            animator = GetComponentInChildren<Animator>();
+            inputJoystick = GetComponent<InputJoystick>();       
+            
         }
 
         private void OnEnable()
         {
-            characterContentUpdateEvent += UpdateCharacterContent;
+            characterContentUpdate += UpdateCharacterContent;
+            timer.timeOver += choseCharacterOntimerOver;
+
         }
         private void OnDisable()
         {
-            characterContentUpdateEvent -= UpdateCharacterContent;
+            characterContentUpdate -= UpdateCharacterContent;
+            timer.timeOver -= choseCharacterOntimerOver;
+
         }
 
         private void Start()
         {
-            characterContentUpdateEvent?.Invoke(characters.CharacterTarget(playerIndex));
-
-
+            //gameObject.layer = GetComponentInParent<GameObject>().layer;
+            characterContentUpdate?.Invoke(characters.GetCharacterInList(gameObject.layer,characterIndex));
         }
 
         private void Update()
         {
 
-            if (inputJoystick.IsRigthButtonDown )
-            {
-                if (playerIndex > 0) playerIndex--;
-                else playerIndex = (characters.CharactersList.Count - 1);
-                characterContentUpdateEvent?.Invoke(characters.CharacterTarget(playerIndex));
-
-            }
-            if (inputJoystick.IsLeftButtonDown)
-            {
-                if (playerIndex + 1 < characters.CharactersList.Count) playerIndex++;
-                else playerIndex = 0;
-                characterContentUpdateEvent?.Invoke(characters.CharacterTarget(playerIndex));
-            }
+            if (inputJoystick.IsRigthButtonDown) GetRightCharacterInList();
+            if (inputJoystick.IsLeftButtonDown)  GetLeftCharacterInList();
+            if (inputJoystick.StartInputDown) choseCharacter?.Invoke(characterIndex);
         }
 
-        //public void ChooseCharacter(CharacterProperty character)
-        //{
-        //    targetCharacter = characters.CharactersList[characterIndex];
-        //    characterContentUpdateEvent?.Invoke(character);
-        //}
-
-        public void UpdateCharacterContent(CharacterProperty character)
+        private void UpdateCharacterContent(CharacterProperty character)
         {
-            rawImage_Character.texture = character.SpriteIcon.texture;
-            text_CharacterName.SetText(character.CharacterName);
-            text_CharacterClass.SetText(character.CharacterClass);
+            //rawImage_Character.texture = character.SpriteIcon.texture;
+            //text_CharacterName.SetText(character.CharacterName);
+            //text_CharacterClass.SetText(character.CharacterClass);
+            animator.Play(character.AnimationClip.name);
 
+        }
+
+        private void GetLeftCharacterInList()
+        {
+            if (characterIndex + 1 < characters.CharactersTeamA.Count) characterIndex++;
+            else characterIndex = 0;
+            characterContentUpdate?.Invoke(characters.GetCharacterInList(gameObject.layer, characterIndex));
+
+        }
+
+        private void GetRightCharacterInList()
+        {
+            if (characterIndex > 0) characterIndex--;
+            else characterIndex = (characters.CharactersTeamA.Count - 1);
+            characterContentUpdate?.Invoke(characters.GetCharacterInList(gameObject.layer, characterIndex));
+        }
+
+
+        private void choseCharacterOntimerOver()
+        {
+            choseCharacter?.Invoke(characterIndex);
         }
 
     }
