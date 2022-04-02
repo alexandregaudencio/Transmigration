@@ -4,27 +4,27 @@ using UnityEngine;
 
 namespace Managers
 {
-    [RequireComponent(typeof(MenuTimer))]
-    public class MenuTimeManager : MonoBehaviour
+    [RequireComponent(typeof(Timer))]
+    public class TimerManager : MonoBehaviour
     {
         private TMP_Text text_Time;
-        private MenuTimer menuTimer;
+        private Timer timer;
         private void Awake()
         {
-            menuTimer = GetComponent<MenuTimer>();
+            timer = GetComponent<Timer>();
             text_Time = GetComponentInChildren<TMP_Text>();
         }
 
         private void OnEnable()
         {
-            menuTimer.timerChange += UpdateTimerText;
-            menuTimer.StartTime();
+            timer.timerChange += UpdateTimerText;
+            timer.StartTime();
 
         }
         private void OnDisable()
         {
-            menuTimer.timerChange -= UpdateTimerText;
-            menuTimer.StopTime();
+            timer.timerChange -= UpdateTimerText;
+            timer.StopTime();
         }
 
         public  void UpdateTimerText(int time)

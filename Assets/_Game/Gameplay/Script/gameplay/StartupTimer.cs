@@ -1,4 +1,6 @@
-﻿using Photon.Pun;
+﻿using Managers;
+using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,71 +8,35 @@ using UnityEngine;
 
 public class StartupTimer : MonoBehaviour
 {
-    [SerializeField] private TMP_Text timerDisplay;
-    Timer timer;
-    PhotonView PV;
-    [SerializeField] private List<GameObject> BlockZoneObjects;
-
-    AudioSource audioSource;
-    public AudioClip startupMusic;
-    public Event  newevent;
-
+    public event Action startupTimeOver;
+    private TMP_Text text_Time;
+    private Timer timer;
     private void Awake()
     {
-        PV = GetComponent<PhotonView>();
         timer = GetComponent<Timer>();
-        audioSource = GetComponent<AudioSource>();
-
+        text_Time = GetComponentInChildren<TMP_Text>();
     }
+
     private void OnEnable()
     {
-        timer.CurrentTime = GameConfigs.instance.Timestartup;
-        audioSource.clip = startupMusic;
-        audioSource.Play();
+        timer.timerChange += UpdateTimerText;
+
     }
 
-    private void FixedUpdate()
+    private void OnDisable()
     {
-        UIUpdate();
-
-        if(timer.CurrentTime <= 0)
-        {
-            StartGameplay();
-        }
-        
+        timer.timerChange -= UpdateTimerText;
+        timer.StopTime();
     }
 
-    private void UIUpdate()
+    private void Start()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            PV.RPC("SendStartUpTime", RpcTarget.Others, timer.CurrentTime);
-          
-        }
-
-        //string tempTimer = string.Format("{0:00}", timer.CurrentTime);
-        int formated = (int)timer.CurrentTime;
-        timerDisplay.text = formated.ToString();
+        timer.StartTime();
     }
 
-
-
-    [PunRPC]
-    private void SendStartUpTime(float timeIn)
+    public void UpdateTimerText(int time)
     {
-        timer.CurrentTime = timeIn;
-    }
-
-
-    void StartGameplay()
-    {
-        GetComponent<TimerController>().enabled = true;
-        GetComponent<ObjectHandle>().enabled = true;
-        
-        foreach (GameObject objects in BlockZoneObjects)
-        {
-            objects.SetActive(false);
-        }
+        text_Time.SetText(time.ToString());
     }
 
 

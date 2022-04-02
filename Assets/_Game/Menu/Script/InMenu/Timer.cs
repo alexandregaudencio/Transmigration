@@ -7,13 +7,14 @@ using UnityEngine.Events;
 namespace Managers
 {
 
-    public class MenuTimer : MonoBehaviour
+    public class Timer : MonoBehaviour
     {
         [SerializeField] private int maxTimeInSeconds;
         public Action  timeOver;
         public  Action timeInitalize;
         public Action<int> timerChange;
         private int currentTime;
+
         public int timePassed => (maxTimeInSeconds - currentTime);
         public int CurrentTime { get => currentTime; }
 
@@ -24,7 +25,6 @@ namespace Managers
 
         public void StartTime()
         {
-
             timeInitalize?.Invoke();
         }
         public void StopTime()
@@ -43,7 +43,6 @@ namespace Managers
         {
             timeInitalize -= OnTimeInitialize;
             StopTime();
-
         }
         public void OnTimeInitialize()
         {
@@ -64,7 +63,24 @@ namespace Managers
             }
 
         }
-             
+
+        private string StringTimeFormated()
+        {
+            if (currentTime < 0)
+            {
+                currentTime = 0;
+            }
+            else if (currentTime > 0)
+            {
+                currentTime += 1;
+            }
+
+            float minutes = Mathf.FloorToInt(currentTime / 60);
+            float seconds = Mathf.FloorToInt(currentTime % 60);
+
+            return string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
 
     }
 
