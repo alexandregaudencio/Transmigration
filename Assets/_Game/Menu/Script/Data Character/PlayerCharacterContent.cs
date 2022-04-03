@@ -19,7 +19,7 @@ namespace CharacterSelection
         [SerializeField] private Characters characters;
         [SerializeField] private PlayerDataStorage playerDataStorage;
         [SerializeField] private LayerMask layer;
-        private Animator animator;
+        /*[SerializeField] */private Animator animator;
         private InputJoystick inputJoystick;
         public CharacterProperty targetCharacter => characters.GetCharacterInList(Layer, characterIndex);
 
@@ -67,7 +67,7 @@ namespace CharacterSelection
             //rawImage_Character.texture = character.SpriteIcon.texture;
             //text_CharacterName.SetText(character.CharacterName);
             //text_CharacterClass.SetText(character.CharacterClass);
-            animator.Play(character.AnimationClip.name);
+            animator?.Play(character.AnimationClip.name);
 
         }
 

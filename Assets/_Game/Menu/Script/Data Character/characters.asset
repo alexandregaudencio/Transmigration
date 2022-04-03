@@ -15,6 +15,10 @@ MonoBehaviour:
   charactersTeamA:
   - {fileID: 11400000, guid: 28708f98adcdd2741881f6eff1b17fd3, type: 2}
   - {fileID: 11400000, guid: 1cae9dd7ebf5aa547ba8c458aa252465, type: 2}
+  - {fileID: 11400000, guid: e848503aeec485e4095b1d413ea822b8, type: 2}
+  - {fileID: 11400000, guid: c61548b35d1c5e841a6ff1abae0cec96, type: 2}
   charactersTeamB:
-  - {fileID: 11400000, guid: 28708f98adcdd2741881f6eff1b17fd3, type: 2}
-  - {fileID: 11400000, guid: 1cae9dd7ebf5aa547ba8c458aa252465, type: 2}
+  - {fileID: 11400000, guid: 2f3e6f6a2e4cb5045b8f0ad592ebf8df, type: 2}
+  - {fileID: 11400000, guid: c3da65fb669e87c47a5b1b465325a8e1, type: 2}
+  - {fileID: 11400000, guid: 007e9dd673bbffb489287a1dc7d138fc, type: 2}
+  - {fileID: 11400000, guid: 33ead3c1baade814e8521c271dc4b11a, type: 2}

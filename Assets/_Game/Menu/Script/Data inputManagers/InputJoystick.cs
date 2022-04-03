@@ -25,14 +25,13 @@ namespace PlayerDataNamespace
         private string LVertical => "Joy" + GetJoystick + "LVertical";
         private string RHorizontal => "Joy" + GetJoystick + "RHorizontal";
         private string RVertical => "Joy" + GetJoystick + "RVertical";
-        private string dashInput => "joystick " + GetJoystick + " button 4";
-        private string shootInput => "joystick " + GetJoystick + " button 5";
-        private string startInput => "joystick " + GetJoystick + " button 9";
+        public string dashInput => "joystick " + GetJoystick + " button 4";
+        public string shootInput => "joystick " + GetJoystick + " button 5";
+        public string startInput => "joystick " + GetJoystick + " button 9";
         public string TriangleInput => "joystick " + GetJoystick + " button 0";
 
         public Joystick Joystick { set => joystick = value; get => joystick; }
 
-        //TODO: Clamp to include
         public float LHorizontalAxis => Input.GetAxis(LHorizontal);
         public float LVerticalAxis => Input.GetAxis(LVertical);
         public float RHorizontalAxis => Input.GetAxis(RHorizontal);

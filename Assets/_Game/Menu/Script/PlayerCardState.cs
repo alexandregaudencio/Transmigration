@@ -1,3 +1,4 @@
+using CharacterSelection;
 using PlayerDataNamespace;
 using System;
 using System.Collections;
@@ -31,6 +32,7 @@ public class PlayerCardState : MonoBehaviour
 
     private void SwitchCardActivity(CardState state)
     {
+        //if (state == CardState.ON) GetComponent<PlayerCharacterContent>().enabled = true;
         foreach (PlayerEnterState es in EnterStateList)
         {
             es.ObjectTarget.SetActive(es.State == state);
