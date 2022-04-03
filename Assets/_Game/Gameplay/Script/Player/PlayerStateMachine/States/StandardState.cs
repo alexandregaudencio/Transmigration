@@ -42,7 +42,7 @@ namespace PlayerStateMachine
             if (!Waking) playerController.Animator.SetBool("walking", false);
 
             ProcessDashInput(playerController, stateController);
-            ProcessPrayInput(stateController);
+            ProcessPrayInput(playerController, stateController);
 
         }
 
@@ -53,9 +53,9 @@ namespace PlayerStateMachine
                     stateController.TransitionToState(stateController.ListedStates.dashState); 
         }
 
-        private void ProcessPrayInput(StateController stateController)
+        private void ProcessPrayInput(PlayerController playerController, StateController stateController)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(playerController.InputJoystick.TriangleInput))
                 stateController.TransitionToState(stateController.ListedStates.meditateState);  
         }
 

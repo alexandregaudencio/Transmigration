@@ -28,6 +28,8 @@ namespace PlayerDataNamespace
         private string dashInput => "joystick " + GetJoystick + " button 4";
         private string shootInput => "joystick " + GetJoystick + " button 5";
         private string startInput => "joystick " + GetJoystick + " button 9";
+        public string TriangleInput => "joystick " + GetJoystick + " button 0";
+
         public Joystick Joystick { set => joystick = value; get => joystick; }
 
         //TODO: Clamp to include

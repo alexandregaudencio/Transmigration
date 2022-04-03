@@ -1,16 +1,10 @@
-﻿using Photon.Pun;
-using Photon.Pun.UtilityScripts;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class TombstoneController : MonoBehaviour
 {
-    PhotonView PV;
     [SerializeField] private GameObject textObject;
-   /* [SerializeField] */private ParticleSystem particle;
+    private ParticleSystem particle;
     [SerializeField] private KeyCode key;
     [SerializeField] private string targetTeam;
     [SerializeField] private float emissionRate = 20;
@@ -27,15 +21,14 @@ public class TombstoneController : MonoBehaviour
     [SerializeField] private ResetTombstone resetTombstone;
 
 
-    [SerializeField] private Image meditateBar; 
+    [SerializeField] private Image image_meditateBar; 
 
 
-    public float meditatePercent => meditatingCount / maxMeditating;
+    public float meditateBarFraction => meditatingCount / maxMeditating;
 
     private void Start()
     {
         particle = GetComponent<ParticleSystem>();
-        PV = GetComponent<PhotonView>();
         emissionModule = particle.emission;
         emissionModule.rateOverTime = 0;
 
@@ -50,11 +43,9 @@ public class TombstoneController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (/*!IsDifferentLayer(collision.gameObject.layer) && */collision.gameObject.CompareTag("character"))
-        {
-            
+        {     
             Debug.Log("On Meditation.");
             OnMeditationZone(true);
-
         }
 
 
@@ -81,91 +72,64 @@ public class TombstoneController : MonoBehaviour
 
     void updateUImeditate()
     {
-        meditateBar.fillAmount = meditatePercent;
+        image_meditateBar.fillAmount = meditateBarFraction;
     }
 
     public void Meditate()
     {
-        //if (PV.IsMine == RedTombstone)
-        //{
-            if (Input.GetKey(GameConfigs.instance.MeditateKey) )
-            {
-                PV.RPC("UpdateMeditateCount", RpcTarget.All);
-            }
+
+        if (Input.GetKey(key))
+        {
+            UpdateMeditateCount();
+        }
 
 
-            if (Input.GetKeyDown(GameConfigs.instance.MeditateKey))
-            {
+        if (Input.GetKeyDown(key))
+        {
+            OnMeditate(emissionRate);
 
-                //PhotonNetwork.LocalPlayer.GetPhotonTeam().Name == "TeamB";
-                PV.RPC("OnMeditate", RpcTarget.All, emissionRate);
-                //OnMeditate(emissionRate);
+        }
 
-            }
-
-            if(Input.GetKeyUp(GameConfigs.instance.MeditateKey))
-            {
-                PV.RPC("OnMeditate", RpcTarget.All, 0f);
-            //OnMeditate(0);
-            }
-
-
-
-        //}
-
+        if(Input.GetKeyUp(key))
+        {
+            OnMeditate(0);
+        }
 
         if (meditatingCount >= maxMeditating)
         {
             //PONTUAÇÃO
-            PV.RPC("MeditationCompleted", RpcTarget.All);
+            MeditationCompleted();
         }
 
 
     }
 
-    //public void MeditateEvent(bool isMaditating)
-    //{
-    //    emissionModule.rateOverTime = isMaditating ? emissionRate : 0;
-
-    //}
-
-
-    [PunRPC]
     public void OnMeditate(float isMeditating)
     {
         emissionModule.rateOverTime = isMeditating;
-
     }
 
-    [PunRPC]
     public void UpdateMeditateCount()
     {
         meditatingCount += Time.fixedDeltaTime;
-
     }
 
-    [PunRPC]
     public void MeditationCompleted()
     {
-
         audioSource.clip = playDoneClip;
         audioSource.Play();
         resetTombstone.ResetingTombstone();
-        this.gameObject.SetActive(false);
-
-
+        gameObject.SetActive(false);
     }
-
-
 
     private bool IsDifferentLayer(LayerMask layer)
     {
 
-        if (this.gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
+        if (gameObject.layer == LayerMask.NameToLayer("TeamA") && layer.value == LayerMask.NameToLayer("TeamB"))
         {
             return true;
         }
-        else if (this.gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
+        else if (gameObject.layer == LayerMask.NameToLayer("TeamB") && layer.value == LayerMask.NameToLayer("TeamA"))
         {
             return true;
         }

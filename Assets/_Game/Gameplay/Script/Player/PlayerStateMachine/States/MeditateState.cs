@@ -29,7 +29,7 @@ namespace PlayerStateMachine
 
         public override void UpdateState(PlayerController playerController, StateController stateController)
         {
-            if (Input.GetKeyUp(KeyCode.Q))
+            if (Input.GetKeyUp(playerController.InputJoystick.TriangleInput))
             {
                 playerController.AudioManager.StopAudio();
                 playerController.Animator.SetBool("meditating", false);
