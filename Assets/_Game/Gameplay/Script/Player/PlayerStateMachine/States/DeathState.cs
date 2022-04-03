@@ -35,11 +35,12 @@ namespace PlayerStateMachine
         private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
         {
             //Desabilita tudo;
-            playerController.SwitchComponent(false);
+            playerController.SwitchPlayerActivityComponent(false);
             yield return new WaitForSeconds(3/*GameConfigs.instance.TimeToRespawn*/);
             //habilita tudo;
-            playerController.SwitchComponent(true);
+            playerController.SwitchPlayerActivityComponent(true);
             playerController.HPManager.ResetHP();
+            playerController.ResetPlayerPosition();
             stateController.TransitionToState(stateController.ListedStates.standardState);
 
 

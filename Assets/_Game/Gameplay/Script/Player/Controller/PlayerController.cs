@@ -45,8 +45,11 @@ public class PlayerController : MonoBehaviour
     //public string Team { get => PV.Controller.GetPhotonTeam().Name; }
     //public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
 
+    private Vector3 spawnPosition = new Vector2(0, -3);
+    public Vector3 SpawnPosition { get => spawnPosition; set => spawnPosition = value; }
 
-    void Awake()
+
+    private void Awake()
     {
 
         PlayerRigidbody2D = GetComponent<Rigidbody2D>();
@@ -77,7 +80,7 @@ public class PlayerController : MonoBehaviour
         //weaponSpriteRenderer.flipX = flipXState;
     }
 
-    public void SwitchComponent(bool value)
+    public void SwitchPlayerActivityComponent(bool value)
     {
         canvasOverPlayer.SetActive(value);
         spriteRenderer.enabled = value;
@@ -91,5 +94,10 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("walking", true);
     }
 
+    public void ResetPlayerPosition()
+    {
+        transform.position = SpawnPosition;
+    }
+    
 }
 

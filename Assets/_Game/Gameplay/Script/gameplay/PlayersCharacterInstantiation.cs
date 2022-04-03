@@ -19,21 +19,7 @@ namespace Gameplay
         private void Start()
         {
             CharacterInstantiation();
-            //if (IsATeamALayer)
-            //{
-            //    CharacterInstantiation(characters.CharactersTeamA);
-            //    Debug.Log("Tem alguem do time A");
-            //}
-            //else
-            //{
-            //    Debug.Log("Tem alguem do time B");
-
-            //    CharacterInstantiation(characters.CharactersTeamB);
-            //}
         }
-
-
-
 
         private void CharacterInstantiation()
         {
@@ -42,20 +28,26 @@ namespace Gameplay
                 if (playerData.TeamLayer == layerTarget)
                 {
                     int indexPosition = (int)playerData.Joystick + spawPositionAdjustForTeamB;
-                    GameObject character = Instantiate(playerData.Character.CharacterPrefab,
-                        spawnPositions[indexPosition].position, 
+                    Vector3 spawnPosition = spawnPositions[indexPosition].position;
+                    GameObject characterObject = Instantiate(playerData.Character.CharacterPrefab,
+                        spawnPosition, 
                         Quaternion.identity);
-                    SetCharacterJoystick(character, playerData.Joystick);
+                    SetCharacterJoystick(characterObject, playerData.Joystick);
+                    SetSpawnPosition(characterObject, spawnPosition);
                 }
             }
 
         }
-
-
-        private void SetCharacterJoystick(GameObject character,Joystick joystick)
+        private void SetCharacterJoystick(GameObject characterObject,Joystick joystick)
         {
-            InputJoystick inputJoystick = character.GetComponent<InputJoystick>();
+            InputJoystick inputJoystick = characterObject.GetComponent<InputJoystick>();
             inputJoystick.Joystick = joystick;
+        }
+
+        private void SetSpawnPosition(GameObject characterObject, Vector3 spawnPosition )
+        {
+            PlayerController playerController = characterObject.GetComponent<PlayerController>();
+            playerController.SpawnPosition = spawnPosition;
         }
 
 
