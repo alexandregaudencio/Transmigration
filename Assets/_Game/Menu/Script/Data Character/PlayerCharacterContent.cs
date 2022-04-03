@@ -1,6 +1,6 @@
 using CharacterNamespace;
 using Managers;
-using PlayerData;
+using PlayerDataNamespace;
 using System;
 using TMPro;
 using UnityEngine;
@@ -10,18 +10,24 @@ namespace CharacterSelection
 {
     public class PlayerCharacterContent : MonoBehaviour
     {
-        //[SerializeField] private int playerIndex;
-        [SerializeField]  private int characterIndex;
+        /*[SerializeField] */private int characterIndex = 0; // index do characterProperty no characters
         //[SerializeField] private RawImage rawImage_Character;
         //[SerializeField] private TMP_Text text_CharacterName;
         //[SerializeField] private TMP_Text text_CharacterClass;
+
         [SerializeField] private Timer timer;
         [SerializeField] private Characters characters;
+        [SerializeField] private PlayerDataStorage playerDataStorage;
+        [SerializeField] private LayerMask layer;
         private Animator animator;
         private InputJoystick inputJoystick;
-        public CharacterProperty targetCharacter => characters.GetCharacterInList(gameObject.layer, characterIndex);
+        public CharacterProperty targetCharacter => characters.GetCharacterInList(Layer, characterIndex);
+
+        public PlayerDataStorage PlayerDataStorage { get => playerDataStorage; set => playerDataStorage = value; }
+        public LayerMask Layer { get => layer; set => layer = value; }
+
         public event Action<CharacterProperty> characterContentUpdate;
-        public event Action<int> choseCharacter;
+        public event Action<CharacterProperty> choseCharacter;
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
@@ -33,7 +39,6 @@ namespace CharacterSelection
         {
             characterContentUpdate += UpdateCharacterContent;
             timer.timeOver += choseCharacterOntimerOver;
-
         }
         private void OnDisable()
         {
@@ -44,8 +49,9 @@ namespace CharacterSelection
 
         private void Start()
         {
-            //gameObject.layer = GetComponentInParent<GameObject>().layer;
-            characterContentUpdate?.Invoke(characters.GetCharacterInList(gameObject.layer,characterIndex));
+            //APENAS para facilitar o desenvolvimento:
+            playerDataStorage.ClearPlayerList();
+            characterContentUpdate?.Invoke(targetCharacter);
         }
 
         private void Update()
@@ -53,9 +59,9 @@ namespace CharacterSelection
 
             if (inputJoystick.IsRigthButtonDown) GetRightCharacterInList();
             if (inputJoystick.IsLeftButtonDown)  GetLeftCharacterInList();
-            if (inputJoystick.StartInputDown) choseCharacter?.Invoke(characterIndex);
+            if (inputJoystick.StartInputDown) choseCharacter?.Invoke(targetCharacter);
         }
-
+        
         private void UpdateCharacterContent(CharacterProperty character)
         {
             //rawImage_Character.texture = character.SpriteIcon.texture;
@@ -69,7 +75,7 @@ namespace CharacterSelection
         {
             if (characterIndex + 1 < characters.CharactersTeamA.Count) characterIndex++;
             else characterIndex = 0;
-            characterContentUpdate?.Invoke(characters.GetCharacterInList(gameObject.layer, characterIndex));
+            characterContentUpdate?.Invoke(targetCharacter);
 
         }
 
@@ -83,7 +89,7 @@ namespace CharacterSelection
 
         private void choseCharacterOntimerOver()
         {
-            choseCharacter?.Invoke(characterIndex);
+            choseCharacter?.Invoke(targetCharacter);
         }
 
     }

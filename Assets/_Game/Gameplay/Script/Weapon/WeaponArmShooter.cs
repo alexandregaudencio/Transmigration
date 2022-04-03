@@ -1,6 +1,6 @@
 using CharacterNamespace;
 using Photon.Pun;
-using PlayerData;
+using PlayerDataNamespace;
 using System;
 using System.Collections;
 using System.Collections.Generic;

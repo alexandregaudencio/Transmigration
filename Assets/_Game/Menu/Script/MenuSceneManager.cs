@@ -20,7 +20,6 @@ public class MenuSceneManager : MonoBehaviour
 
     public  void GoToGameplayScene()
     {
-        Debug.Log("Timer over!");
         SceneManager.LoadScene(GameConfigs.instance.GameplaySceneIndex);
     }
 

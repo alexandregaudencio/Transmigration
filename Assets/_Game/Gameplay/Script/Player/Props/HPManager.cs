@@ -21,7 +21,6 @@ public class HPManager : MonoBehaviour
     private void Start()
     {
         ResetHP();
-        Debug.Log(Hp);
     }
     public void IncreaseHP(float value)
     {

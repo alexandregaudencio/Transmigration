@@ -8,7 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    
+    private void Awake()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
 
     private void Start()
     {

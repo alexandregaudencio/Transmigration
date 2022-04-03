@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41296cca045f454692aab4c51c3c9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 20
+  maxTimeInSeconds: 18
 --- !u!1 &812159945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,6 +3551,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2072150264}
     m_Modifications:
+    - target: {fileID: 798047771, guid: 0587103c10713ec44b5466f8d595a21a, type: 3}
+      propertyPath: EnterStateList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 795821341294307485, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
       propertyPath: m_IsActive
@@ -3666,6 +3670,17 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 761657668}
+    - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: layer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: playerDataStorage
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a36f80409a858340a320ff3bb15a959,
+        type: 2}
     - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
       propertyPath: m_Name
@@ -3711,5 +3726,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7484754488587059824, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: joystick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484754488587059824, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: joystickActiveHadler
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a36f80409a858340a320ff3bb15a959,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0587103c10713ec44b5466f8d595a21a, type: 3}

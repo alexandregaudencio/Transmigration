@@ -1,7 +1,7 @@
 ﻿using CharacterNamespace;
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using PlayerData;
+using PlayerDataNamespace;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]

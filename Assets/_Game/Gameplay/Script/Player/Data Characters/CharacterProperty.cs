@@ -25,7 +25,7 @@ namespace CharacterNamespace
         [SerializeField] private string characterClass;
         [SerializeField] private Sprite spriteIcon;
         [SerializeField] private AnimationClip animationClip;
-
+        [SerializeField] private GameObject characterPrefab;
 
         public float Speed { get => speed; set => speed = value; }
         public float Defense { get => defense; set => defense = value; }
@@ -43,6 +43,7 @@ namespace CharacterNamespace
         public string CharacterClass { get => characterClass; set => characterClass = value; }
         public Sprite SpriteIcon { get => spriteIcon; set => spriteIcon = value; }
         public AnimationClip AnimationClip { get => animationClip; set => animationClip = value; }
+        public GameObject CharacterPrefab { get => characterPrefab; set => characterPrefab = value; }
 
         private void OnEnable()
         {

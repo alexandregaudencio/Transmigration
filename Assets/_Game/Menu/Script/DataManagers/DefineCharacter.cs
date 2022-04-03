@@ -1,16 +1,18 @@
 using CharacterNamespace;
 using CharacterSelection;
 using Managers;
-using PlayerData;
+using PlayerDataNamespace;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace CharacterSelection
 {
+    [RequireComponent(typeof(PlayerCharacterContent))]
+    [RequireComponent(typeof(InputJoystick))]
+
     public class DefineCharacter : MonoBehaviour
     {
-
         private PlayerCharacterContent playerCharacterContent;
         private InputJoystick inputJoystick;
 
@@ -22,19 +24,23 @@ namespace CharacterSelection
 
         private void OnEnable()
         {
-            playerCharacterContent.choseCharacter += SetCharacterPref;
+            playerCharacterContent.choseCharacter += SetPlayerData;
         }
 
         private void OnDisable()
         {
-            playerCharacterContent.choseCharacter -= SetCharacterPref;
+            playerCharacterContent.choseCharacter -= SetPlayerData;
 
         }
 
-        private void SetCharacterPref(int characterIndex)
+        private void SetPlayerData(CharacterProperty character)
         {
-            PlayerPrefs.SetInt("Player"+inputJoystick.Joystick, characterIndex);
-            Debug.Log(PlayerPrefs.GetInt("Player" + inputJoystick.Joystick));
+            PlayerData playerData = new PlayerData(
+                inputJoystick.Joystick,
+                playerCharacterContent.Layer,
+                character);
+            playerCharacterContent.PlayerDataStorage.AddPlayerToList(playerData);
+
         }
 
 

@@ -5,33 +5,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SetupGameplay : MonoBehaviour
+namespace Gameplay
 {
-    [SerializeField]  private Timer timer;
-    [SerializeField] private List<GameObject> GameObjectsToDisable;
-    [SerializeField] private List<GameObject> GameObjectsToEnable;
-
-
-    private void OnEnable()
+    public class SetupGameplay : MonoBehaviour
     {
-        timer.timeOver += InitializeGameplay;
-    }
+        [SerializeField] private Timer timer;
+        [SerializeField] private List<GameObject> GameObjectsToDisable;
+        [SerializeField] private List<GameObject> GameObjectsToEnable;
 
-    private void OnDisable()
-    {
-        timer.timeOver -= InitializeGameplay;
-    }
 
-    private void InitializeGameplay()
-    {
-        foreach (GameObject objects in GameObjectsToDisable)
+        private void OnEnable()
         {
-            objects.SetActive(false);
+            timer.timeOver += InitializeGameplay;
         }
-        foreach (GameObject objects in GameObjectsToEnable)
+
+        private void OnDisable()
         {
-            objects.SetActive(true);
+            timer.timeOver -= InitializeGameplay;
         }
-        this.enabled = false;
+
+        private void InitializeGameplay()
+        {
+            foreach (GameObject objects in GameObjectsToDisable)
+            {
+                objects.SetActive(false);
+            }
+            foreach (GameObject objects in GameObjectsToEnable)
+            {
+                objects.SetActive(true);
+            }
+            this.enabled = false;
+        }
     }
+
 }
