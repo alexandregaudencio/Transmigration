@@ -8,19 +8,12 @@ public class BulletController : MonoBehaviourPunCallbacks
 
     [SerializeField] private GameObject collisioneffect;
 
-    public List<string> collisionTagsListIgnore;
-    [SerializeField] private List<string> organicObjectTagList;
-
-    private PhotonView PV;
-
-    private void Start()
-    {
-        PV = GetComponent<PhotonView>();
-    }
+    [SerializeField] private List<string> collisionTagsToIgnore;
+    [SerializeField] private List<string> collisionTagsToDetect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collisionTagsListIgnore.Contains(collision.tag) && this.gameObject.layer != collision.gameObject.layer)
+        if(!collisionTagsToIgnore.Contains(collision.tag) && gameObject.layer != collision.gameObject.layer)
         {
             OnBulletCollision(collision.gameObject.tag);
 
@@ -41,10 +34,16 @@ public class BulletController : MonoBehaviourPunCallbacks
 
     void OnBulletCollision(string targetTag)
     {
+        bool isDamageable = collisionTagsToDetect.Contains(targetTag);
         GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
-        effect.GetComponent<EffectController>().PlayAudioClip(organicObjectTagList.Contains(targetTag));
-        PhotonNetwork.Destroy(this.gameObject);
+        effect.GetComponent<EffectController>().PlayAudioClip(isDamageable);
+        DestroyBullet();
     }
 
+    private void DestroyBullet()
+    {
+        Destroy(gameObject);
+
+    }
 
 }

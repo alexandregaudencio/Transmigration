@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2913569363864969310}
   - component: {fileID: 9115618354795775512}
   - component: {fileID: 548612124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bulletA - Dragoon
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3587eeb027e06f94db8088e295cd406b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletProperty: {fileID: 11400000, guid: 7d8670fdf58a1344ca8ad0e19528c051, type: 2}
 --- !u!114 &2913569363864969310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889f0af944046054788148591273856b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletProperty: {fileID: 11400000, guid: 7d8670fdf58a1344ca8ad0e19528c051, type: 2}
 --- !u!114 &9115618354795775512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,14 +177,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
     type: 3}
-  collisionTagsListIgnore:
-  - healing
+  collisionTagsToIgnore:
   - vision
+  - healing
   - tomb
-  organicObjectTagList:
-  - character
-  - sentinel
+  collisionTagsToDetect:
   - bullet
+  - sentinel
+  - ground
 --- !u!95 &548612124
 Animator:
   serializedVersion: 3

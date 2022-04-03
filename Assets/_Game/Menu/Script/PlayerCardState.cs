@@ -18,18 +18,18 @@ public class PlayerCardState : MonoBehaviour
     }
     private void Start()
     {
-        SwitchObjectActivity(EnterState.OFF);
+        SwitchCardActivity(CardState.OFF);
     }
 
     private void Update()
     {
         if(inputJoystick.StartInputDown)
         {
-            SwitchObjectActivity(EnterState.ON);
+            SwitchCardActivity(CardState.ON);
         }
     }
 
-    private void SwitchObjectActivity(EnterState state)
+    private void SwitchCardActivity(CardState state)
     {
         foreach (PlayerEnterState es in EnterStateList)
         {
@@ -38,7 +38,7 @@ public class PlayerCardState : MonoBehaviour
     }
 }
 
-public enum EnterState
+public enum CardState
 {
     OFF,
     ON
@@ -48,16 +48,16 @@ public enum EnterState
 public class PlayerEnterState
 {
     [SerializeField]
-    private EnterState state;
+    private CardState state;
     [SerializeField]
-    private GameObject objectTarget;
+private GameObject objectTarget;
 
-    public PlayerEnterState(EnterState state, GameObject objectTarget)
+    public PlayerEnterState(CardState state, GameObject objectTarget)
     {
         this.State = state;
         this.ObjectTarget = objectTarget;
     }
 
-    public EnterState State { get => state; set => state = value; }
+    public CardState State { get => state; set => state = value; }
     public GameObject ObjectTarget { get => objectTarget; set => objectTarget = value; }
 }

@@ -14,9 +14,9 @@ public class EffectController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayAudioClip(bool isOrganicTarget)
+    public void PlayAudioClip(bool isTargetDamageable)
     {
-        if(isOrganicTarget)
+        if(isTargetDamageable)
         {
             audioSource.clip = (AudioClip)audioList.GetValue(0);
             audioSource.Play();
@@ -28,9 +28,8 @@ public class EffectController : MonoBehaviour
 
     }
 
-    public void DestroyOject()
+    public void DestroyEffect()
     {
-        if(GetComponent<PhotonView>().IsMine)
-            PhotonNetwork.Destroy(this.gameObject);
+            Destroy(gameObject);
     }
 }
