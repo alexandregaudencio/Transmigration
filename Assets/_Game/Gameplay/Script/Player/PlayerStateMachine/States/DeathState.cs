@@ -1,5 +1,4 @@
-﻿using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace PlayerStateMachine
@@ -8,14 +7,11 @@ namespace PlayerStateMachine
     {
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
-            //if(playerController.PV.IsMine)
-            //{
+            //Debug.Log("DeathState Enter");
             //playerController.Animator.Play("death");
-            stateController.StartCoroutine(ReturnToNormalState(stateController, playerController));
+            playerController.StartCoroutine(ReturnToNormalState(stateController, playerController));
             playerController.AudioManager.PlayAudio(playerController.AudioManager.deathClip, false);
-            //}
 
-            //playerController.GetComponent<Collider2D>().enabled = false;
         }
 
 
@@ -39,10 +35,12 @@ namespace PlayerStateMachine
         private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
         {
             //Desabilita tudo;
-            yield return new WaitForSeconds(GameConfigs.instance.TimeToRespawn);
+            playerController.SwitchComponent(false);
+            yield return new WaitForSeconds(3/*GameConfigs.instance.TimeToRespawn*/);
             //habilita tudo;
+            playerController.SwitchComponent(true);
+            playerController.HPManager.ResetHP();
             stateController.TransitionToState(stateController.ListedStates.standardState);
-            //playerController.HPManager.ResetPlayerPrps();
 
 
         }

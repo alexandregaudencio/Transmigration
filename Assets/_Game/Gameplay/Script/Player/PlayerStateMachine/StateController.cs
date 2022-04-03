@@ -1,58 +1,66 @@
-﻿using Photon.Pun;
-using PlayerStateMachine;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public class StateController : MonoBehaviourPunCallbacks
+namespace PlayerStateMachine
 {
-    private State currentState;
-    private PlayerController playerController;
-    private ListedStates listedStates;
-
-    public ListedStates ListedStates { get => listedStates; set => listedStates = value; }
-
-    private void Awake()
+    public class StateController : MonoBehaviour
     {
-        playerController = GetComponent<PlayerController>();
-        ListedStates = new ListedStates();
-    }
+        private State currentState;
+        private PlayerController playerController;
+        private ListedStates listedStates;
 
-    private void Start()
-    {
+        public ListedStates ListedStates { get => listedStates; set => listedStates = value; }
 
-        TransitionToState(ListedStates.standardState);
-    }
+        private void Awake()
+        {
+            playerController = GetComponent<PlayerController>();
+            ListedStates = new ListedStates();
+        }
+
+        private void Start()
+        {
+
+            TransitionToState(ListedStates.standardState);
+        }
 
 
-    public virtual void TransitionToState(State state)
-    {
-
+        public virtual void TransitionToState(State state)
+        {
             currentState = state;
             currentState.EnterState(playerController, this);
 
-    }
+        }
 
-    void Update()
-    {
+        private void Update()
+        {
 
             currentState.UpdateState(playerController, this);
 
 
+        }
+
+        private void FixedUpdate()
+        {
+            currentState.FixedUpdateState(playerController, this);
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            currentState.OnCollisionEnter(playerController, collision, this);
+        }
+
+        public void GoDeathState()
+        {
+            TransitionToState(listedStates.deathState);
+        }
+
+        public void GoStandardState()
+        {
+            TransitionToState(listedStates.standardState);
+        }
+
+
+
     }
-
-    protected void FixedUpdate()
-    {
-        currentState.FixedUpdateState(playerController, this);  
-    }
-
-    protected void OnCollisionEnter2D(Collision2D collision)
-    {
-        currentState.OnCollisionEnter(playerController, collision, this);
-
-    }
-
-
-
-
 
 }
+

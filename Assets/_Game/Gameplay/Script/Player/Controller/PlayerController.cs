@@ -1,7 +1,6 @@
 ﻿using CharacterNamespace;
-using Photon.Pun;
-using Photon.Pun.UtilityScripts;
 using PlayerDataNamespace;
+using PlayerStateMachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -9,11 +8,12 @@ using UnityEngine;
 [RequireComponent(typeof(HPManager))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
+
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(DashManager))]
 [RequireComponent(typeof(ManaManager))]
 [RequireComponent(typeof(InputJoystick))]
-public class PlayerController : MonoBehaviourPunCallbacks
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D RigidBody2D;
     private StateController stateController;
@@ -30,16 +30,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject canvasOverPlayer;
     
-    private PhotonView pV;
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
-    //public float Speed { get => speed; set => speed = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
     public HPManager HPManager { get => hpManager; set => hpManager = value; }
     public SpriteRenderer SpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
     public BoxCollider2D BoxCollider2D { get => boxCollider2D; set => boxCollider2D = value; }
-    //public float DashSpeed { get => dashSpeed; set => dashSpeed = value; }
     public Animator Animator { get => animator; set => animator = value; }
-    public PhotonView PV { get => pV; set => pV = value; }
     public WeaponArmController WeaponArmController { get => weaponArmController; set => weaponArmController = value; }
     public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
@@ -53,7 +49,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
     void Awake()
     {
 
-        PV = GetComponent<PhotonView>();
         PlayerRigidbody2D = GetComponent<Rigidbody2D>();
         StateController = GetComponent<StateController>();
         HPManager = GetComponent<HPManager>();
@@ -67,42 +62,34 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     }
 
-    void Start()
+    private void OnEnable()
     {
-
-        //gameObject.layer = GetLayer;
+        hpManager.hpEmpty += stateController.GoDeathState;
     }
+    private void OnDisable()
+    {
+        hpManager.hpEmpty -= stateController.GoDeathState;
 
-    [PunRPC]
+    }
     public void SetRendererFlipX( bool flipXState)
     {
-        GetComponent<SpriteRenderer>().flipX = flipXState;
+        SpriteRenderer.flipX = flipXState;
         //weaponSpriteRenderer.flipX = flipXState;
     }
 
-    [PunRPC]
     public void SwitchComponent(bool value)
     {
         canvasOverPlayer.SetActive(value);
+        spriteRenderer.enabled = value;
+        weaponArmController.enabled = value;
         Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
-    }
-
-    public void GoToDeathState()
-    {
-        StateController.TransitionToState(StateController.ListedStates.deathState);
-    }
-
-    public void GoToStandartState()
-    {
-        StateController.TransitionToState(StateController.ListedStates.deathState);
     }
 
     public void CanPlayWalkAnimation()
     {
         animator.SetBool("walking", true);
     }
-
 
 }
 

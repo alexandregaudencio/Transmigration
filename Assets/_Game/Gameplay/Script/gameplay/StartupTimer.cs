@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class StartupTimer : MonoBehaviour
 {
-    public event Action startupTimeOver;
     private TMP_Text text_Time;
     private Timer timer;
     private void Awake()

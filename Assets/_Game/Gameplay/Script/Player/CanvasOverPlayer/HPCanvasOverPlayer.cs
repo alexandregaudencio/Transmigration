@@ -13,11 +13,11 @@ namespace CanvasOverPlayerNamespace
 
         private new void OnEnable()
         {
-            hpManager.changeHPEvent += UpdateHPCanvasOverPlayer;
+            hpManager.changeHP += UpdateHPCanvasOverPlayer;
         }
         private new void OnDisable()
         {
-            hpManager.changeHPEvent -= UpdateHPCanvasOverPlayer;
+            hpManager.changeHP -= UpdateHPCanvasOverPlayer;
         }
         //private void Start()
         //{

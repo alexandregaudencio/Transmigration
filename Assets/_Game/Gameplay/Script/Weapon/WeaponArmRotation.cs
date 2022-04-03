@@ -9,8 +9,8 @@ public class WeaponArmRotation : MonoBehaviour
 {
     public float rotateSpeed = 10f;
     private InputJoystick inputJoystick;
-    private event Action weaponRotationEvent;
-    public event Action mouseMoveEvent;
+    //private event Action weaponRotationEvent;
+    //public event Action mouseMoveEvent;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class WeaponArmRotation : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if(inputJoystick.GetRAxisKey) WeaponRotation();
     }

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class HPManager : MonoBehaviour
 {
-    public event Action<float> changeHPEvent;
+    public event Action<float> changeHP;
+    public event Action hpEmpty;
     private CharacterProperty characterProperty;
     private float hp;
     public float MaxHP => characterProperty.HP;
@@ -17,26 +18,36 @@ public class HPManager : MonoBehaviour
     {
         characterProperty = GetComponent<PlayerController>().CharacterProperty;
     }
+    private void OnEnable()
+    {
+        changeHP += CheckHPIsEmpty;
+    }
+
+    private void OnDisable()
+    {
+        changeHP -= CheckHPIsEmpty;
+    }
 
     private void Start()
     {
         ResetHP();
     }
+
     public void IncreaseHP(float value)
     {
             Hp =  (Hp + value <= MaxHP) ? (Hp+value) : MaxHP;
-            changeHPEvent?.Invoke(Hp);
+            changeHP?.Invoke(Hp);
     }
     
 
     public void DecreaseHP(float value)
     {
             Hp = (Hp - value >= 0) ? (Hp-value) : 0;
-            changeHPEvent?.Invoke(Hp);
+            changeHP?.Invoke(Hp);
     }
     public void ResetHP() { 
         Hp = MaxHP;
-        changeHPEvent?.Invoke(Hp);
+        changeHP?.Invoke(Hp);
     }
 
     public void ResetPlayerPrps(Vector3 spawnPosition)
@@ -50,4 +61,13 @@ public class HPManager : MonoBehaviour
 
 
     }
+
+    public void CheckHPIsEmpty(float HP)
+    {
+        if (HP <= 0)
+        {
+            hpEmpty?.Invoke();
+        }
+    }
+
 }

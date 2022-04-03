@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 4589656653546172724}
   - component: {fileID: 972323354663826225}
   - component: {fileID: 4381876487728630972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CharacterA-Gato
   m_TagString: character
   m_Icon: {fileID: 0}
