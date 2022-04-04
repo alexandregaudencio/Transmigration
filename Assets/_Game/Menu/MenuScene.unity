@@ -366,6 +366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
+      propertyPath: layer
+      value: TeamB
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 761657668}
@@ -388,6 +393,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player2_Card (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
@@ -787,6 +797,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player3_Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
@@ -1817,6 +1832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
+      propertyPath: layer
+      value: TeamB
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 761657668}
@@ -1839,6 +1859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player2_Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
@@ -3498,6 +3523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -4215,6 +4245,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
+      propertyPath: layer
+      value: TeamB
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 761657668}
@@ -4237,6 +4272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player2_Card (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
@@ -4596,6 +4636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}
+      propertyPath: layer
+      value: TeamA
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786807, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 761657668}
@@ -4613,6 +4658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player1_Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 795821342046786809, guid: 0587103c10713ec44b5466f8d595a21a,
         type: 3}

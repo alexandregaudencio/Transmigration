@@ -37,7 +37,7 @@ namespace CharacterSelection
         {
             PlayerData playerData = new PlayerData(
                 inputJoystick.Joystick,
-                playerCharacterContent.Layer,
+               LayerMask.NameToLayer(playerCharacterContent.Layer),
                 character);
             playerCharacterContent.PlayerDataStorage.AddPlayerToList(playerData);
 
