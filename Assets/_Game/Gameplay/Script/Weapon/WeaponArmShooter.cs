@@ -1,5 +1,7 @@
 using CharacterNamespace;
+using DamageableNamespace;
 using Photon.Pun;
+using Player.Data.Score;
 using PlayerDataNamespace;
 using System;
 using System.Collections;
@@ -8,16 +10,18 @@ using UnityEngine;
 
 public class WeaponArmShooter : MonoBehaviour
 {
-    private PhotonView PV;
     private ManaManager manaManager;
     private CharacterProperty characterProperty;
     private InputJoystick inputJoystick;
     [SerializeField] private Transform bulletSpawnPoint;
+    /*[SerializeField] */private ScoreManager scoreManager;
 
     /*[SerializeField]*/
     private GameObject bulletPrefab => characterProperty.Weapon.Bullet.BulletPrefab;
 
-    public event Action<bool> L_MouseButtonDownAction;
+    public event Action<bool> R_UseButtonDownAction;
+    public event Action<bool> L_UseButtonDownAction;
+
     public event Action shootAction;
 
     private bool isManaEnough => (manaManager.Mana >= characterProperty.Weapon.Bullet.ManaCost);
@@ -30,6 +34,7 @@ public class WeaponArmShooter : MonoBehaviour
         characterProperty = GetComponentInParent<PlayerController>().CharacterProperty;
         inputJoystick = GetComponentInParent<InputJoystick>();
         manaManager = GetComponentInParent<ManaManager>();
+        scoreManager = GetComponentInParent<ScoreManager>();
 
     }
 
@@ -47,12 +52,15 @@ public class WeaponArmShooter : MonoBehaviour
     {
         if (inputJoystick.getShootInput) DefaultShoot();
     }
-
     public void ProcessRAxisInput()
     {
-            L_MouseButtonDownAction?.Invoke(inputJoystick.GetRAxisKey);
+            R_UseButtonDownAction?.Invoke(inputJoystick.GetRAxisKey);
     }
+    public void ProcessLAxisInput()
+    {
+        L_UseButtonDownAction?.Invoke(inputJoystick.GetLAxisKey);
 
+    }
     public void DefaultShoot()
     {
         if(isManaEnough && cooldownRelease && weaponArmActive)
@@ -62,6 +70,8 @@ public class WeaponArmShooter : MonoBehaviour
             cooldownRelease = false;
             StartCoroutine(Cooldown());
             shootAction?.Invoke();
+            bullet.GetComponent<TriggerDamage>().PlayerScore = scoreManager.PlayerScore;
+
         }
 
     }

@@ -31,12 +31,12 @@ public class WeaponArmController : MonoBehaviour
 
     private void OnEnable()
     {
-        weaponArmShooter.L_MouseButtonDownAction += SpriterenderActive;
+        weaponArmShooter.R_UseButtonDownAction += SpriterenderActive;
     }
 
     private void OnDisable()
     {
-        weaponArmShooter.L_MouseButtonDownAction -= SpriterenderActive;
+        weaponArmShooter.R_UseButtonDownAction -= SpriterenderActive;
 
     }
 
@@ -44,11 +44,13 @@ public class WeaponArmController : MonoBehaviour
 
     public void SpriterenderActive(bool value)
     {
+
         spriteRenderer.enabled = value;
         DirectionalArrow.enabled = value;
-
+ 
         if (value) FlipYHandWeapon();
     }
+
 
     private void FlipYHandWeapon()
     {

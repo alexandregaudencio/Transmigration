@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 sizeCamRestriction;
 
     public GameObject TargetObject { get => targetobject ;}
-    public Player targetPlayer;
+    //public Player targetPlayer;
 
     void FixedUpdate()
     {

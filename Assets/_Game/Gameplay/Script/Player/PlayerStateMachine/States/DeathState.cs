@@ -7,8 +7,9 @@ namespace PlayerStateMachine
     {
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
-            //Debug.Log("DeathState Enter");
-            //playerController.Animator.Play("death");
+            playerController.LastToDamage.IncreaseKillCount();
+            playerController.playerScore.IncreaseDeathCount();
+            playerController.Animator.SetTrigger("dead");
             playerController.StartCoroutine(ReturnToNormalState(stateController, playerController));
             playerController.AudioManager.PlayAudio(playerController.AudioManager.deathClip, false);
 

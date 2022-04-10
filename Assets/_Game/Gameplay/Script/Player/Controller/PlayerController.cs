@@ -1,4 +1,5 @@
 ﻿using CharacterNamespace;
+using Player.Data.Score;
 using PlayerDataNamespace;
 using PlayerStateMachine;
 using UnityEngine;
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAudioManager audioManager;
     private DashManager dashManager;
     private InputJoystick inputJoystick;
-
+    private PlayerScore lastToDamage;
     [SerializeField] private CharacterProperty characterProperty;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject canvasOverPlayer;
@@ -41,13 +42,14 @@ public class PlayerController : MonoBehaviour
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
     public DashManager DahsManager { get => dashManager; set => dashManager = value; }
     public InputJoystick InputJoystick { get => inputJoystick; set => inputJoystick = value; }
+    public PlayerScore playerScore;
 
     //public string Team { get => PV.Controller.GetPhotonTeam().Name; }
     //public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
 
     private Vector3 spawnPosition = new Vector2(0, -3);
     public Vector3 SpawnPosition { get => spawnPosition; set => spawnPosition = value; }
-
+    public PlayerScore LastToDamage { get => lastToDamage; set => lastToDamage = value; }
 
     private void Awake()
     {
@@ -62,30 +64,36 @@ public class PlayerController : MonoBehaviour
         audioManager = GetComponent<PlayerAudioManager>();
         dashManager = GetComponent<DashManager>();
         inputJoystick = GetComponent<InputJoystick>();
-
+        playerScore = GetComponent<ScoreManager>().PlayerScore;
     }
 
     private void OnEnable()
     {
         hpManager.hpEmpty += stateController.GoDeathState;
+        weaponArmController.WeaponArmShooter.R_UseButtonDownAction += IdleAttackAnimationTransition;
     }
     private void OnDisable()
     {
         hpManager.hpEmpty -= stateController.GoDeathState;
+        weaponArmController.WeaponArmShooter.R_UseButtonDownAction -= IdleAttackAnimationTransition;
+
 
     }
-    public void SetRendererFlipX( bool flipXState)
+    public void SetCharacterRendererFlipX( bool flipXState)
     {
-        SpriteRenderer.flipX = flipXState;
+        if (inputJoystick.LAxis == Vector2.zero)
+        {
+            SpriteRenderer.flipX = flipXState;
+        }
         //weaponSpriteRenderer.flipX = flipXState;
     }
 
     public void SwitchPlayerActivityComponent(bool value)
     {
         canvasOverPlayer.SetActive(value);
-        spriteRenderer.enabled = value;
+        //spriteRenderer.enabled = value;
         weaponArmController.enabled = value;
-        Animator.SetBool("dead", !value);
+        //Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
     }
 
@@ -98,6 +106,11 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = SpawnPosition;
     }
-    
+
+    public void IdleAttackAnimationTransition(bool value)
+    {
+        animator.SetBool("idle-atk", value);
+    }
+
 }
 

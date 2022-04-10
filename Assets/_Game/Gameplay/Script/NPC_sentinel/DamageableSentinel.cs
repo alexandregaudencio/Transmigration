@@ -43,14 +43,13 @@ public class DamageableSentinel : MonoBehaviour, IDamageable
 
 
 
-    [PunRPC]
     public void TakeDamage(float damage)
     {
         if(PV.IsMine)
         {
             hp -= damage;
             DamageEvent?.Invoke(damage);
-            if (hp <= 0) PV.RPC("SendDeathTransitionState", RpcTarget.All);
+            //if (hp <= 0) PV.RPC("SendDeathTransitionState", RpcTarget.All);
         }
 
     }

@@ -8,6 +8,12 @@ namespace PlayerStateMachine
         private PlayerController playerController;
         private ListedStates listedStates;
 
+        //private void OnGUI()
+        //{
+
+        //    float time = Time.fixedTime;
+        //    GUI.Label(new Rect(10, 25, 500, 100), "sin: " + Mathf.Sin(time));
+        //}
         public ListedStates ListedStates { get => listedStates; set => listedStates = value; }
 
         private void Awake()

@@ -50,18 +50,6 @@ public class HPManager : MonoBehaviour
         changeHP?.Invoke(Hp);
     }
 
-    public void ResetPlayerPrps(Vector3 spawnPosition)
-    {
-        ////TODO: not working great.
-        //HashProperty["HP"] = (float)PhotonNetwork.LocalPlayer.CustomProperties["maxHP"];
-        //HashProperty["isDead"] = false;
-        //PhotonNetwork.LocalPlayer.SetCustomProperties(HashProperty);
-        //GetComponent<SpriteRenderer>().enabled = true;
-        //transform.position = spawnPosition;
-
-
-    }
-
     public void CheckHPIsEmpty(float HP)
     {
         if (HP <= 0)

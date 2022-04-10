@@ -6,26 +6,63 @@ namespace PlayerStateMachine
 {
     public class StandardState : State
     {
+        //float period = 0;
+        //float frequency = 0;
+        //float angularFrequency = 0;
+        //float elapsedTime = 0;
+        //float amplitude = 0;
+        //float phase = 0;
+
+        float time = 0;
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
-            playerController.Animator.Play("Idle_Gato");
+            playerController.Animator.Play("idle");
 
         }
 
         public override void FixedUpdateState(PlayerController playerController, StateController stateController)
         {
+            bool walking = playerController.InputJoystick.LAxis != Vector2.zero;
+            playerController.Animator.SetBool("preWalking", walking);
+
+            if (walking)
+            {
+                Movement(playerController);
+            }
+            else
+            {
+                playerController.Animator.SetBool("walking", false);
+                ProcessFloatingMovement(playerController);
+            }
+
+
             
-            Movement(playerController);
             
 
             playerController.WeaponArmController.WeaponArmShooter.ProcessRAxisInput();
+            playerController.WeaponArmController.WeaponArmShooter.ProcessLAxisInput();
+
             playerController.WeaponArmController.WeaponArmShooter.ProcessShootInput();
 
-            Vector2 direction =  playerController.InputJoystick.RAxis;
 
-            
-            bool isFlipX = (direction.x < 0.00f) ? true : false;
-            if( playerController.InputJoystick.GetRAxisKey) playerController.SpriteRenderer.flipX = isFlipX;
+
+            playerController.SpriteRenderer.flipX = ProcessInputsToFlipRenderer(playerController);
+
+        }
+
+        public bool ProcessInputsToFlipRenderer(PlayerController playerController)
+        {
+            Vector2 Rdirection = playerController.InputJoystick.RAxis;
+            Vector2 Ldirection = playerController.InputJoystick.LAxis;
+            if(Rdirection != Vector2.zero)
+            {
+                bool isRAxisFlipX = (Rdirection.x < 0.00f) ? true : false;
+                return isRAxisFlipX;
+            } else
+            {
+                bool isLAxisFlipX = (Ldirection.x < 0.00f) ? true : false;
+                return isLAxisFlipX;
+            }
 
         }
 
@@ -35,15 +72,8 @@ namespace PlayerStateMachine
 
         public override void UpdateState(PlayerController playerController, StateController stateController)
         {
-
-            bool Waking = playerController.InputJoystick.LHorizontalAxis != 0.0f || playerController.InputJoystick.LVerticalAxis != 0.0f;
-            playerController.Animator.SetBool("preWalking", Waking);
-
-            if (!Waking) playerController.Animator.SetBool("walking", false);
-
             ProcessDashInput(playerController, stateController);
             ProcessPrayInput(playerController, stateController);
-
         }
 
         private void ProcessDashInput(PlayerController playerController ,StateController stateController)
@@ -57,6 +87,12 @@ namespace PlayerStateMachine
         {
             if (Input.GetKeyDown(playerController.InputJoystick.TriangleInput))
                 stateController.TransitionToState(stateController.ListedStates.meditateState);  
+        }
+
+        private void ProcessFloatingMovement(PlayerController playerController)
+        {
+            time += Time.fixedDeltaTime;
+            playerController.PlayerRigidbody2D.velocity = new Vector2(0, Mathf.Sin(2 * time));
         }
 
 

@@ -8,6 +8,7 @@ namespace PlayerStateMachine
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
             //StopAllCoroutines();
+            playerController.Animator.Play("dash");
             playerController.DahsManager.spentStamin();
             playerController.PlayerRigidbody2D.velocity = playerController.InputJoystick.LAxis * playerController.CharacterProperty.DashSpeed;
             playerController.StartCoroutine(GoToStaminaState(stateController));
@@ -34,7 +35,7 @@ namespace PlayerStateMachine
 
         IEnumerator GoToStaminaState(StateController stateController)
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.5f);
             stateController.TransitionToState(stateController.ListedStates.standardState);
 
 
