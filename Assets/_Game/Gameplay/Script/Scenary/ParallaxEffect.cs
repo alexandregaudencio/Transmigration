@@ -53,11 +53,11 @@ public class ParallaxEffect : MonoBehaviour
         CameraController[] cameraController = FindObjectsOfType<CameraController>();
         foreach(CameraController camera in cameraController)
         {
-            if(camera.targetPlayer == PhotonNetwork.LocalPlayer)
-            {
-                target = camera.gameObject;
-                break;
-            }
+            //if(camera.targetPlayer == PhotonNetwork.LocalPlayer)
+            //{
+            //    target = camera.gameObject;
+            //    break;
+            //}
         }
 
     }
