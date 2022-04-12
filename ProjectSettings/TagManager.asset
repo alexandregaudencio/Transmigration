@@ -12,6 +12,7 @@ TagManager:
   - healing
   - vision
   - tomb
+  - shield
   layers:
   - Default
   - TransparentFX

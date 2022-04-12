@@ -185,6 +185,7 @@ MonoBehaviour:
   - bullet
   - sentinel
   - ground
+  - shield
 --- !u!95 &548612124
 Animator:
   serializedVersion: 3
