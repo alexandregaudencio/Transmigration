@@ -1,9 +1,5 @@
 using CharacterNamespace;
-using CharacterSelection;
-using Managers;
 using PlayerDataNamespace;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CharacterSelection
@@ -26,7 +22,7 @@ namespace CharacterSelection
         {
             playerCharacterContent.choseCharacter += SetPlayerData;
         }
-
+        
         private void OnDisable()
         {
             playerCharacterContent.choseCharacter -= SetPlayerData;
@@ -43,8 +39,9 @@ namespace CharacterSelection
 
         }
 
-
     }
 
-}
 
+
+
+}

@@ -10,7 +10,8 @@ namespace PlayerStateMachine
             //StopAllCoroutines();
             playerController.Animator.Play("dash");
             playerController.DahsManager.spentStamin();
-            playerController.PlayerRigidbody2D.velocity = playerController.InputJoystick.LAxis * playerController.CharacterProperty.DashSpeed;
+            playerController.PlayerRigidbody2D.velocity = playerController.InputJoystick.LAxis*playerController.CharacterProperty.DashSpeed;
+
             playerController.StartCoroutine(GoToStaminaState(stateController));
         }
 

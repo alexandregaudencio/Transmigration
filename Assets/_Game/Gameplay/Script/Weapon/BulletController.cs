@@ -35,8 +35,12 @@ public class BulletController : MonoBehaviourPunCallbacks
     void OnBulletCollision(string targetTag)
     {
         bool isDamageable = collisionTagsToDetect.Contains(targetTag);
-        GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
-        effect.GetComponent<EffectController>().PlayAudioClip(isDamageable);
+        if(collisioneffect != null)
+        {
+            GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
+            effect.GetComponent<EffectController>().PlayAudioClip(isDamageable);
+        }
+
         DestroyBullet();
     }
 

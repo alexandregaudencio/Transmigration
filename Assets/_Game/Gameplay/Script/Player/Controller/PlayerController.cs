@@ -16,6 +16,7 @@ using UnityEngine;
 [RequireComponent(typeof(InputJoystick))]
 public class PlayerController : MonoBehaviour
 {
+    public GameObject shield;
     private Rigidbody2D RigidBody2D;
     private StateController stateController;
     private HPManager hpManager;
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CharacterProperty characterProperty;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject canvasOverPlayer;
-    
+    private PlayerScore playerScore;
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
     public HPManager HPManager { get => hpManager; set => hpManager = value; }
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
     public DashManager DahsManager { get => dashManager; set => dashManager = value; }
     public InputJoystick InputJoystick { get => inputJoystick; set => inputJoystick = value; }
-    public PlayerScore playerScore;
+    public PlayerScore PlayerScore => playerScore;
 
     //public string Team { get => PV.Controller.GetPhotonTeam().Name; }
     //public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
         audioManager = GetComponent<PlayerAudioManager>();
         dashManager = GetComponent<DashManager>();
         inputJoystick = GetComponent<InputJoystick>();
-        playerScore = GetComponent<ScoreManager>().PlayerScore;
+        playerScore = GetComponent<PlayerScoreManager>().PlayerScore;
     }
 
     private void OnEnable()
@@ -112,5 +113,12 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("idle-atk", value);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            shield.SetActive(true);
+        }
+    }
 }
 

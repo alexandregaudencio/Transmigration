@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a451a1ab9e88b34990b221c521908d2, type: 3}
   m_Name: CharacterA1 (Gato)
   m_EditorClassIdentifier: 
-  speed: 350
+  speed: 400
   defense: 50
-  dashSpeed: 40
+  dashSpeed: 30
   hp: 50
   dashStaminCost: 20
   dashStamin: 50

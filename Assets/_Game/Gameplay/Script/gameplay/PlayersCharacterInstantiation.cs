@@ -16,6 +16,7 @@ namespace Gameplay
         public string LayerName => LayerMask.LayerToName(layerTarget);
         public bool IsTeamA => (LayerName == "TeamA") ? true : false;
         public int spawPositionAdjustForTeamB => !IsTeamA ? 0 : -3;
+        
         private void Start()
         {
             CharacterInstantiation();
@@ -23,21 +24,27 @@ namespace Gameplay
 
         private void CharacterInstantiation()
         {
-            foreach(PlayerData playerData in playerDataStorage.PlayerList1)
+            foreach(PlayerData playerData in playerDataStorage.PlayerList)
             {
                 if (playerData.TeamLayer == layerTarget)
                 {
                     int indexPosition = (int)playerData.Joystick + spawPositionAdjustForTeamB;
                     Vector3 spawnPosition = spawnPositions[indexPosition].position;
+                    
                     GameObject characterObject = Instantiate(playerData.Character.CharacterPrefab,
                         spawnPosition, 
                         Quaternion.identity);
+                    Debug.Log(characterObject.name + " instanciated");
+
                     SetCharacterJoystick(characterObject, playerData.Joystick);
                     SetSpawnPosition(characterObject, spawnPosition);
+                    return;
                 }
             }
 
         }
+        
+
         private void SetCharacterJoystick(GameObject characterObject,Joystick joystick)
         {
             InputJoystick inputJoystick = characterObject.GetComponent<InputJoystick>();

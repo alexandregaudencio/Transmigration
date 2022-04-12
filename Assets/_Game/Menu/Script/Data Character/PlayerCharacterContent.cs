@@ -3,9 +3,7 @@ using Managers;
 using PlayerDataNamespace;
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CharacterSelection
 {
@@ -28,20 +26,10 @@ namespace CharacterSelection
 
         public PlayerDataStorage PlayerDataStorage { get => playerDataStorage; set => playerDataStorage = value; }
         public string Layer { get => layer; set => layer = value; }
-        public List<CharacterProperty> targetCharacterList
-        {
-            get
-            {
-                if (layer == "TeamA")
-                {
-                    return characters.CharactersTeamA;
-                }
-                else
-                {
-                    return characters.CharactersTeamB;
-                }
-            }
-        }
+        public List<CharacterProperty> targetCharacterList => (layer == "TeamA") ? 
+            characters.CharactersTeamA : characters.CharactersTeamB;
+
+        
         public event Action<CharacterProperty> characterContentUpdate;
         public event Action<CharacterProperty> choseCharacter;
         private void Awake()
@@ -54,13 +42,12 @@ namespace CharacterSelection
         private void OnEnable()
         {
             characterContentUpdate += UpdateCharacterContent;
-            timer.timeOver += choseCharacterOntimerOver;
-            //characterContentUpdate?.Invoke(targetCharacter);
+            //timer.timeOver += choseCharacterOntimerOver;
         }
         private void OnDisable()
         {
             characterContentUpdate -= UpdateCharacterContent;
-            timer.timeOver -= choseCharacterOntimerOver;
+            //timer.timeOver -= choseCharacterOntimerOver;
 
         }
 
@@ -106,10 +93,11 @@ namespace CharacterSelection
         }
 
 
-        private void choseCharacterOntimerOver()
-        {
-            choseCharacter?.Invoke(targetCharacter);
-        }
+        //private void choseCharacterOntimerOver()
+        //{
+        //    if(inputJoystick.enabled)
+        //        choseCharacter?.Invoke(targetCharacter);
+        //}
 
     }
 }

@@ -21,7 +21,7 @@ public class menuAudioManager : MonoBehaviourPunCallbacks
 
     public AudioSource AudioSource { get => audioSource; set => audioSource = value; }
 
-    public void PlayAudio(AudioClip clip/*, bool isSync*/)
+    public void PlayAudio(AudioClip clip)
     {
         AudioSource.clip = clip;
         //AudioSource.loop = onLoop;

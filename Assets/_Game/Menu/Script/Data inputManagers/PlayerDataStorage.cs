@@ -6,13 +6,13 @@ namespace PlayerDataNamespace
     [CreateAssetMenu(fileName = "PlayerDataStorage", menuName = "PlayerDataStorage")]
     public class PlayerDataStorage : ScriptableObject
     {
-        [SerializeField] private List<PlayerData> PlayerList;
+        [SerializeField] private List<PlayerData> playerList;
 
-        public List<PlayerData> PlayerList1 { get => PlayerList; set => PlayerList = value; }
+        public List<PlayerData> PlayerList { get => playerList; set => playerList = value; }
 
         public void AddPlayerToList(PlayerData newPlayerData)
         {
-            foreach(PlayerData p in PlayerList)
+            foreach(PlayerData p in playerList)
             {
                 if(p.Joystick == newPlayerData.Joystick)
                 {
@@ -22,14 +22,15 @@ namespace PlayerDataNamespace
                     return;
                 }
             }
-            PlayerList.Add(newPlayerData);
+            playerList.Add(newPlayerData);
             Debug.Log("new PlayerData " + newPlayerData.Joystick);
+            Debug.Log("new CharacterProperty " + newPlayerData.Character.name);
 
         }
 
         public void ClearPlayerList()
         {
-            PlayerList.Clear();
+            playerList.Clear();
         }
     }
 }

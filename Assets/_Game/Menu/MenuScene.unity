@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41296cca045f454692aab4c51c3c9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 18
+  maxTimeInSeconds: 5
 --- !u!1 &767734941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3017701508073616235, guid: 0587103c10713ec44b5466f8d595a21a,

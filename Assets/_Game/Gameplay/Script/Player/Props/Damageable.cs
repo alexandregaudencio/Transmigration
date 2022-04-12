@@ -21,7 +21,7 @@ namespace DamageableNamespace
         public void TakeDamage(float damage)
         {
             playerController.Animator.SetTrigger("hurt");
-            playerController.AudioManager.PlayAudio(playerController.AudioManager.hurtClip, false);
+            playerController.AudioManager.PlayAudio(playerController.AudioManager.HurtClip, false);
             hpManager.DecreaseHP(damage);
             TakingDamage?.Invoke(damage);
 

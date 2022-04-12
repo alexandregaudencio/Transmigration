@@ -1,26 +1,23 @@
-﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class PlayerAudioManager : MonoBehaviour
 {
-    AudioSource audioSource;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip shootClip;
+    [SerializeField] private AudioClip hurtClip;
+    [SerializeField] private AudioClip deathClip;
+    [SerializeField] private AudioClip meditationClip;
 
-    public AudioClip shootClip;
-    public AudioClip hurtClip;
-    public AudioClip deathClip;
-    public AudioClip meditationClip;
-
-    private PhotonView PV;
+    public AudioClip ShootClip { get => shootClip; set => shootClip = value; }
+    public AudioClip HurtClip { get => hurtClip; set => hurtClip = value; }
+    public AudioClip DeathClip { get => deathClip; set => deathClip = value; }
+    public AudioClip MeditationClip { get => meditationClip; set => meditationClip = value; }
 
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        PV = GetComponent<PhotonView>();
     }
-
 
     public void PlayAudio(AudioClip audio, bool onLoop)
     {

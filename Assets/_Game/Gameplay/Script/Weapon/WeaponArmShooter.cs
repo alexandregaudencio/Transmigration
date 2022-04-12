@@ -14,7 +14,7 @@ public class WeaponArmShooter : MonoBehaviour
     private CharacterProperty characterProperty;
     private InputJoystick inputJoystick;
     [SerializeField] private Transform bulletSpawnPoint;
-    /*[SerializeField] */private ScoreManager scoreManager;
+    /*[SerializeField] */private PlayerScoreManager scoreManager;
 
     /*[SerializeField]*/
     private GameObject bulletPrefab => characterProperty.Weapon.Bullet.BulletPrefab;
@@ -34,7 +34,7 @@ public class WeaponArmShooter : MonoBehaviour
         characterProperty = GetComponentInParent<PlayerController>().CharacterProperty;
         inputJoystick = GetComponentInParent<InputJoystick>();
         manaManager = GetComponentInParent<ManaManager>();
-        scoreManager = GetComponentInParent<ScoreManager>();
+        scoreManager = GetComponentInParent<PlayerScoreManager>();
 
     }
 
