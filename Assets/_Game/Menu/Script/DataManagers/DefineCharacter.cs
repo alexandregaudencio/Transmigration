@@ -31,12 +31,15 @@ namespace CharacterSelection
 
         private void SetPlayerData(CharacterProperty character)
         {
-            PlayerData playerData = new PlayerData(
-                inputJoystick.Joystick,
-               LayerMask.NameToLayer(playerCharacterContent.Layer),
-                character);
-            playerCharacterContent.PlayerDataStorage.AddPlayerToList(playerData);
-
+            int joystickIndex = -1;
+            if (inputJoystick.JoystickTeamIndex.TryGetValue(inputJoystick.Joystick, out joystickIndex)) { 
+                PlayerData playerData = new PlayerData( 
+                    joystickIndex,
+                    inputJoystick.Joystick,
+                    LayerMask.NameToLayer(playerCharacterContent.Layer),
+                    character);
+                playerCharacterContent.PlayerDataStorage.AddPlayerToList(playerData);
+            }
         }
 
     }

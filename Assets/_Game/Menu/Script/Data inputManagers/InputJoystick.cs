@@ -14,9 +14,14 @@ namespace PlayerDataNamespace
         Joystick6
     }
 
+
+
+
+
     public class InputJoystick : MonoBehaviour
     {
         [SerializeField] private Joystick joystick;
+        private Dictionary<Joystick, int> joystickTeamIndex = new Dictionary<Joystick, int>();
 
         public int GetJoystick => ((int)joystick + 1);
 
@@ -82,10 +87,27 @@ namespace PlayerDataNamespace
         public bool GetRAxisKey => RAxis != Vector2.zero;
         public bool GetLAxisKey => LAxis != Vector2.zero;
 
+        public Dictionary<Joystick, int> JoystickTeamIndex { get => joystickTeamIndex; set => joystickTeamIndex = value; }
+
         //private void Update()
         //{
         //    if (StartInputDown) joystickActiveHadler.UpdateDictionaryValue(GetJoystick, true);
         //}
+
+        private void Start()
+        {
+            SetAllJoystickTeamIndex();
+        }
+
+        private void SetAllJoystickTeamIndex()
+        {
+            joystickTeamIndex.Add(Joystick.Joystick1, 0);
+            joystickTeamIndex.Add(Joystick.Joystick2, 0);
+            joystickTeamIndex.Add(Joystick.Joystick3, 1);
+            joystickTeamIndex.Add(Joystick.Joystick4, 1);
+            joystickTeamIndex.Add(Joystick.Joystick5, 2);
+            joystickTeamIndex.Add(Joystick.Joystick6, 2);
+        }
 
 
     }

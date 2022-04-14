@@ -12,11 +12,9 @@ namespace Gameplay
         [SerializeField] private Characters characters;
         [SerializeField] private PlayerDataStorage playerDataStorage;
         [SerializeField] private List<Transform> spawnPositions;
-        [SerializeField] private LayerMask layerTarget;
-        public string LayerName => LayerMask.LayerToName(layerTarget);
-        public bool IsTeamA => (LayerName == "TeamA") ? true : false;
-        public int spawPositionAdjustForTeamB => !IsTeamA ? 0 : -3;
-        
+        [SerializeField] private string layerNameTarget;
+        public bool IsTeamA => (layerNameTarget == "TeamA") ? true : false;
+
         private void Start()
         {
             CharacterInstantiation();
@@ -26,19 +24,21 @@ namespace Gameplay
         {
             foreach(PlayerData playerData in playerDataStorage.PlayerList)
             {
-                if (playerData.TeamLayer == layerTarget)
+                //Debug.Log(playerData.TeamLayer);
+                if (LayerMask.LayerToName(playerData.TeamLayer) == layerNameTarget)
                 {
-                    int indexPosition = (int)playerData.Joystick + spawPositionAdjustForTeamB;
+                    Debug.Log(playerData.JoystickTeamIndex + " instantiated");
+
+                    int indexPosition = playerData.JoystickTeamIndex ;
                     Vector3 spawnPosition = spawnPositions[indexPosition].position;
                     
                     GameObject characterObject = Instantiate(playerData.Character.CharacterPrefab,
                         spawnPosition, 
                         Quaternion.identity);
-                    Debug.Log(characterObject.name + " instanciated");
 
                     SetCharacterJoystick(characterObject, playerData.Joystick);
                     SetSpawnPosition(characterObject, spawnPosition);
-                    return;
+                    //return;
                 }
             }
 
