@@ -31,7 +31,7 @@ namespace CharacterSelection
 
         private void SetPlayerData(CharacterProperty character)
         {
-            int joystickIndex = -1;
+            int joystickIndex;
             if (inputJoystick.JoystickTeamIndex.TryGetValue(inputJoystick.Joystick, out joystickIndex)) { 
                 PlayerData playerData = new PlayerData( 
                     joystickIndex,

@@ -71,13 +71,12 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         hpManager.hpEmpty += stateController.GoDeathState;
-        weaponArmController.WeaponArmShooter.R_UseButtonDownAction += IdleAttackAnimationTransition;
+        weaponArmController.WeaponArmShooter.R_AxisButtonDown += IdleAttackAnimationTransition;
     }
     private void OnDisable()
     {
         hpManager.hpEmpty -= stateController.GoDeathState;
-        weaponArmController.WeaponArmShooter.R_UseButtonDownAction -= IdleAttackAnimationTransition;
-
+        weaponArmController.WeaponArmShooter.R_AxisButtonDown -= IdleAttackAnimationTransition;
 
     }
     public void SetCharacterRendererFlipX( bool flipXState)

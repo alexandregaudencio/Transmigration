@@ -31,12 +31,12 @@ public class WeaponArmController : MonoBehaviour
 
     private void OnEnable()
     {
-        weaponArmShooter.R_UseButtonDownAction += SpriterenderActive;
+        weaponArmShooter.R_AxisButtonDown += SpriterenderActive;
     }
 
     private void OnDisable()
     {
-        weaponArmShooter.R_UseButtonDownAction -= SpriterenderActive;
+        weaponArmShooter.R_AxisButtonDown -= SpriterenderActive;
 
     }
 

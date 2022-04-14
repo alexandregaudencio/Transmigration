@@ -27,7 +27,7 @@ namespace Gameplay
                 //Debug.Log(playerData.TeamLayer);
                 if (LayerMask.LayerToName(playerData.TeamLayer) == layerNameTarget)
                 {
-                    Debug.Log(playerData.JoystickTeamIndex + " instantiated");
+                    //Debug.Log(playerData.JoystickTeamIndex + " instantiated");
 
                     int indexPosition = playerData.JoystickTeamIndex ;
                     Vector3 spawnPosition = spawnPositions[indexPosition].position;

@@ -14,17 +14,22 @@ namespace PlayerDataNamespace
         {
             foreach(PlayerData p in playerList)
             {
-                if(p.JoystickTeamIndex == newPlayerData.JoystickTeamIndex)
+                if(p.Joystick == newPlayerData.Joystick)
                 {
-                    Debug.Log("Update PlayerData " + p.JoystickTeamIndex);
+                    //Debug.Log("Update PlayerData " + p.JoystickTeamIndex);
+                    p.JoystickTeamIndex = newPlayerData.JoystickTeamIndex;
                     p.Character = newPlayerData.Character;
                     p.TeamLayer = newPlayerData.TeamLayer;
+                    Debug.Log("update: " + newPlayerData.Joystick);
+
                     return;
                 }
             }
             playerList.Add(newPlayerData);
-            Debug.Log("new PlayerData " + newPlayerData.JoystickTeamIndex);
-            Debug.Log("new CharacterProperty " + newPlayerData.Character.name);
+            Debug.Log("Storage: " + newPlayerData.Joystick);
+
+            //Debug.Log("new PlayerData " + newPlayerData.JoystickTeamIndex);
+            //Debug.Log("new CharacterProperty " + newPlayerData.Character.name);
 
         }
 

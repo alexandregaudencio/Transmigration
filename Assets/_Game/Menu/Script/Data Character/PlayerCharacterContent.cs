@@ -63,7 +63,11 @@ namespace CharacterSelection
 
             if (inputJoystick.IsRigthButtonDown) GetRightCharacterInList();
             if (inputJoystick.IsLeftButtonDown)  GetLeftCharacterInList();
-            if (inputJoystick.StartInputDown) choseCharacter?.Invoke(targetCharacter);
+            if (inputJoystick.StartInputDown)
+            {
+                Debug.Log(inputJoystick.Joystick + " Escolheu:" + targetCharacter);
+                choseCharacter?.Invoke(targetCharacter);
+            }
         }
         
         private void UpdateCharacterContent(CharacterProperty character)

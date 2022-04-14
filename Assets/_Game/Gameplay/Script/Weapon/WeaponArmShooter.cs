@@ -19,8 +19,8 @@ public class WeaponArmShooter : MonoBehaviour
     /*[SerializeField]*/
     private GameObject bulletPrefab => characterProperty.Weapon.Bullet.BulletPrefab;
 
-    public event Action<bool> R_UseButtonDownAction;
-    public event Action<bool> L_UseButtonDownAction;
+    public event Action<bool> R_AxisButtonDown;
+    public event Action<bool> L_AxisButtonDown;
 
     public event Action shootAction;
 
@@ -54,11 +54,11 @@ public class WeaponArmShooter : MonoBehaviour
     }
     public void ProcessRAxisInput()
     {
-            R_UseButtonDownAction?.Invoke(inputJoystick.GetRAxisKey);
+            R_AxisButtonDown?.Invoke(inputJoystick.GetRAxisKey);
     }
     public void ProcessLAxisInput()
     {
-        L_UseButtonDownAction?.Invoke(inputJoystick.GetLAxisKey);
+        L_AxisButtonDown?.Invoke(inputJoystick.GetLAxisKey);
 
     }
     public void DefaultShoot()
