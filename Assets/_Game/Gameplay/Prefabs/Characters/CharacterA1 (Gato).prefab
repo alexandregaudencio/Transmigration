@@ -1382,7 +1382,7 @@ GameObject:
   - component: {fileID: 4674063481908880532}
   - component: {fileID: 8827753751178021172}
   m_Layer: 8
-  m_Name: Circle
+  m_Name: Shield
   m_TagString: shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
