@@ -24,27 +24,27 @@ namespace Player.Data.Score
         private CharacterProperty characterProperty;
 
 
-        private void OnEnable()
+        private void Start()
         {
             playerScore.damageUpdate += UpdateTextDamageUI;
             playerScore.increaseKill += UpdateTextKillUI;
             playerScore.increaseDeath += UpdateTextDeathUI;
             playerScore.scoreUpdated += UpdateTextScoreUI;
+
+            UIManagerActive();
+            iamge_characterIcon.sprite = characterProperty.SpriteIcon;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             playerScore.damageUpdate -= UpdateTextDamageUI;
             playerScore.increaseKill -= UpdateTextKillUI;
             playerScore.increaseDeath -= UpdateTextDeathUI;
             playerScore.scoreUpdated -= UpdateTextScoreUI;
-        }
-        private void Start()
-        {
-            UIManagerActive();
-            iamge_characterIcon.sprite = characterProperty.SpriteIcon;
+
 
         }
+
 
         private void UIManagerActive()
         {

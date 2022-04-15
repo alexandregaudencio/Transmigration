@@ -1,27 +1,48 @@
-﻿using Photon.Pun;
-using Photon.Pun.UtilityScripts;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-
-public class GameController : MonoBehaviour
+namespace Gameplay
 {
-    private void Awake()
+    public enum GameStates
     {
-        PlayerPrefs.DeleteAll();
+        NULL,
+        START,
+        BATTLE,
+        FINISH
     }
 
-
-    private void Start()
+    public class GameController : MonoBehaviour
     {
-        //SceneManager.MoveGameObjectToScene(FindObjectOfType<PingFPSGUI>()?.gameObject, SceneManager.GetActiveScene());
+        [SerializeField]
+        private List<GameplayStateClassHandler> gameStateList;
+
+        //[SerializeField]
+        private GameStates actualGameState = GameStates.NULL;
+        public GameStates ActualGameState { get => actualGameState; set => actualGameState = value; }
+
+        public event Action<GameStates> gameStateChange;
+        private void Start()
+        {
+            ChangeGameState(GameStates.START);
+
+        }
+
+
+
+        public void ChangeGameState(GameStates state )
+        {
+            if (actualGameState == state) return;
+            foreach(GameplayStateClassHandler gameState in gameStateList)
+            {
+                //gameState.DisableObjects(gameState.State != state);
+                gameState.EnableClassController(gameState.State == state);
+
+            }
+            actualGameState = state;
+        }
 
     }
-
-
-
 
 
 }

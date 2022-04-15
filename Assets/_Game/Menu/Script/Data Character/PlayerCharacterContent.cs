@@ -18,15 +18,15 @@ namespace CharacterSelection
         [SerializeField] private Timer timer;
         [SerializeField] private Characters characters;
         [SerializeField] private PlayerDataStorage playerDataStorage;
-        [SerializeField] private string layer;
+        [SerializeField] private string layerName;
         /*[SerializeField] */
         private Animator animator;
         private InputJoystick inputJoystick;
         public CharacterProperty targetCharacter => targetCharacterList[characterIndex];
 
         public PlayerDataStorage PlayerDataStorage { get => playerDataStorage; set => playerDataStorage = value; }
-        public string Layer { get => layer; set => layer = value; }
-        public List<CharacterProperty> targetCharacterList => (layer == "TeamA") ? 
+        public string LayerName { get => layerName; set => layerName = value; }
+        public List<CharacterProperty> targetCharacterList => (layerName == "TeamA") ? 
             characters.CharactersTeamA : characters.CharactersTeamB;
 
         

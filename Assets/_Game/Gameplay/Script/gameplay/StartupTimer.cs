@@ -1,8 +1,5 @@
 ﻿using Managers;
-using Photon.Pun;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +7,8 @@ public class StartupTimer : MonoBehaviour
 {
     private TMP_Text text_Time;
     private Timer timer;
+    public event Action StartupTimeOver;
+
     private void Awake()
     {
         timer = GetComponent<Timer>();
@@ -19,18 +18,25 @@ public class StartupTimer : MonoBehaviour
     private void OnEnable()
     {
         timer.timerChange += UpdateTimerText;
+        timer.timeOver += OnStartupTimeOver;
+    }
+
+    private void Start()
+    {
+        timer.StartTime();
 
     }
 
     private void OnDisable()
     {
         timer.timerChange -= UpdateTimerText;
+        timer.timeOver -= OnStartupTimeOver;
         timer.StopTime();
     }
 
-    private void Start()
+    public void OnStartupTimeOver()
     {
-        timer.StartTime();
+        StartupTimeOver?.Invoke();
     }
 
     public void UpdateTimerText(int time)

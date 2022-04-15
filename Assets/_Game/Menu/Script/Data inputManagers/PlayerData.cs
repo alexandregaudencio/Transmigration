@@ -9,21 +9,21 @@ namespace PlayerDataNamespace
     [Serializable]
     public class PlayerData
     {
-        [Range(1, 6)] private int joystickTeamIndex;
-        [Range(1, 6)] private Joystick joystick;
-        private LayerMask teamLayer;
-        private CharacterProperty character;
+        [SerializeField] private int joystickTeamIndex;
+        [SerializeField] private Joystick joystick;
+        [SerializeField] private string layerName;
+        [SerializeField] private CharacterProperty character;
 
-        public PlayerData(int joystickTeamIndex, Joystick joystick, LayerMask teamLayer, CharacterProperty character)
+        public PlayerData(int joystickTeamIndex, Joystick joystick, string layerName, CharacterProperty character)
         {
             this.joystick = joystick;
             this.joystickTeamIndex = joystickTeamIndex;
-            this.teamLayer = teamLayer;
+            this.LayerName = layerName;
             this.character = character;
         }
 
         public int JoystickTeamIndex { get => joystickTeamIndex; set => joystickTeamIndex = value; }
-        public LayerMask TeamLayer { get => teamLayer; set => teamLayer = value; }
+        public string LayerName { get => layerName; set => layerName = value; }
         public CharacterProperty Character { get => character; set => character = value; }
         public Joystick Joystick { get => joystick; set => joystick = value; }
     }

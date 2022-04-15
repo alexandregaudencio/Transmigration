@@ -25,7 +25,7 @@ namespace Gameplay
             foreach(PlayerData playerData in playerDataStorage.PlayerList)
             {
                 //Debug.Log(playerData.TeamLayer);
-                if (LayerMask.LayerToName(playerData.TeamLayer) == layerNameTarget)
+                if (playerData.LayerName == layerNameTarget)
                 {
                     //Debug.Log(playerData.JoystickTeamIndex + " instantiated");
 

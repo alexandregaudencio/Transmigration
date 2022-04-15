@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67711377358422e47aa31f0b46a85b4d, type: 3}
   m_Name: PlayerDataStorage
   m_EditorClassIdentifier: 
-  playerList: []
+  playerList:
+  - joystickTeamIndex: 0
+    joystick: 0
+    layerName: TeamA
+    character: {fileID: 11400000, guid: 28708f98adcdd2741881f6eff1b17fd3, type: 2}
+  - joystickTeamIndex: 0
+    joystick: 1
+    layerName: TeamB
+    character: {fileID: 11400000, guid: 2f3e6f6a2e4cb5045b8f0ad592ebf8df, type: 2}

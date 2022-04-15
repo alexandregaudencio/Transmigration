@@ -14,7 +14,7 @@ namespace Managers
         public  Action timeInitalize;
         public Action<int> timerChange;
         private int currentTime;
-
+        public static Timer instance;
         public int timePassed => (maxTimeInSeconds - currentTime);
         public int CurrentTime { get => currentTime; }
 
@@ -44,6 +44,12 @@ namespace Managers
             timeInitalize -= OnTimeInitialize;
             StopTime();
         }
+
+        private void Start()
+        {
+            instance = this;
+        }
+
         public void OnTimeInitialize()
         {
             currentTime = maxTimeInSeconds+1; //correção
@@ -64,17 +70,10 @@ namespace Managers
 
         }
 
-        private string StringTimeFormated()
+        public string StringTimeFormated()
         {
-            if (currentTime < 0)
-            {
-                currentTime = 0;
-            }
-            else if (currentTime > 0)
-            {
-                currentTime += 1;
-            }
-
+            if (currentTime < 0) currentTime = 0;
+           
             float minutes = Mathf.FloorToInt(currentTime / 60);
             float seconds = Mathf.FloorToInt(currentTime % 60);
 

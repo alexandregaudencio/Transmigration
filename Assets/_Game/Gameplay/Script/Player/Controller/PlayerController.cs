@@ -11,7 +11,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(DashManager))]
+[RequireComponent(typeof(StaminManager))]
 [RequireComponent(typeof(ManaManager))]
 [RequireComponent(typeof(InputJoystick))]
 public class PlayerController : MonoBehaviour
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private WeaponArmController weaponArmController;
     private PlayerAudioManager audioManager;
-    private DashManager dashManager;
+    private StaminManager dashManager;
     private InputJoystick inputJoystick;
     private PlayerScore lastToDamage;
     [SerializeField] private CharacterProperty characterProperty;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public WeaponArmController WeaponArmController { get => weaponArmController; set => weaponArmController = value; }
     public PlayerAudioManager AudioManager { get => audioManager; set => audioManager = value; }
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
-    public DashManager DahsManager { get => dashManager; set => dashManager = value; }
+    public StaminManager DahsManager { get => dashManager; set => dashManager = value; }
     public InputJoystick InputJoystick { get => inputJoystick; set => inputJoystick = value; }
     public PlayerScore PlayerScore => playerScore;
 
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         Animator = GetComponent<Animator>();
         weaponArmController = GetComponentInChildren<WeaponArmController>();
         audioManager = GetComponent<PlayerAudioManager>();
-        dashManager = GetComponent<DashManager>();
+        dashManager = GetComponent<StaminManager>();
         inputJoystick = GetComponent<InputJoystick>();
         playerScore = GetComponent<PlayerScoreManager>().PlayerScore;
     }

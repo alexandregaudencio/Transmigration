@@ -8,7 +8,7 @@ namespace CanvasOverPlayerNamespace
     public class StaminCanvasOverPlayer : MonoBehaviour
     {
         [SerializeField] private Image image_StaminFill;
-        [SerializeField] private DashManager dashManager;
+        [SerializeField] private StaminManager dashManager;
         private PhotonView PV;
 
         private void OnEnable()

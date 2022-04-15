@@ -25,5 +25,5 @@ MonoBehaviour:
   characterClass: 
   spriteIcon: {fileID: 0}
   animationClip: {fileID: 7400000, guid: d440127790a06414398b6919f91d3dfd, type: 2}
-  characterPrefab: {fileID: 3074866688293795986, guid: 36bc9181f7209eb48b03e7deca7f67e3,
+  characterPrefab: {fileID: 2211199811386079847, guid: 2b9b9678a1201a04096bc0305a4afe39,
     type: 3}

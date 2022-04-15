@@ -19,7 +19,7 @@ namespace PlayerDataNamespace
                     //Debug.Log("Update PlayerData " + p.JoystickTeamIndex);
                     p.JoystickTeamIndex = newPlayerData.JoystickTeamIndex;
                     p.Character = newPlayerData.Character;
-                    p.TeamLayer = newPlayerData.TeamLayer;
+                    p.LayerName = newPlayerData.LayerName;
                     Debug.Log("update: " + newPlayerData.Joystick);
 
                     return;
