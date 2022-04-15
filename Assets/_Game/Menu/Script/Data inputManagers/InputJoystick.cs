@@ -44,8 +44,10 @@ namespace PlayerDataNamespace
         public bool dashInputDown => Input.GetKeyDown(dashInput);
         public bool getShootInput => Input.GetKey(shootInput);
         public bool StartInputDown => Input.GetKeyDown(startInput);
-        public Vector2 LAxis => Vector2.ClampMagnitude(new Vector2( Input.GetAxis(LHorizontal), Input.GetAxis(LVertical)), 1);
-        public Vector2 RAxis => Vector2.ClampMagnitude(new Vector2( Input.GetAxis(RHorizontal), Input.GetAxis(RVertical)), 1);
+        public Vector2 LAxis => Vector2.ClampMagnitude(new Vector2( Input.GetAxis(LHorizontal), Input.GetAxis(LVertical)), 0.7f);
+        public Vector2 RAxis => Vector2.ClampMagnitude(new Vector2( Input.GetAxis(RHorizontal), Input.GetAxis(RVertical)), 0.7f);
+        public Vector2 LAxisRaw => Vector2.ClampMagnitude(new Vector2(Input.GetAxisRaw(LHorizontal), Input.GetAxisRaw(LVertical)), 0.7f);
+        public Vector2 RAxisRaw => Vector2.ClampMagnitude(new Vector2(Input.GetAxisRaw(RHorizontal), Input.GetAxisRaw(RVertical)), 0.7f);
 
 
         //public enum DPadButton
@@ -107,6 +109,17 @@ namespace PlayerDataNamespace
             joystickTeamIndex.Add(Joystick.Joystick4, 1);
             joystickTeamIndex.Add(Joystick.Joystick5, 2);
             joystickTeamIndex.Add(Joystick.Joystick6, 2);
+        }
+
+        private void OnGUI()
+        {
+            if(joystick == Joystick.Joystick1)
+            {
+                GUI.Label(new Rect(10, 100, 500, 100), "LAxis: " + LAxis.magnitude);
+
+            }
+
+
         }
 
 

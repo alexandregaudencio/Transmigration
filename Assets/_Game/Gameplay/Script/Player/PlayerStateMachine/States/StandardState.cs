@@ -77,8 +77,16 @@ namespace PlayerStateMachine
         private void ProcessDashInput(PlayerController playerController ,StateController stateController)
         {
             if (playerController.InputJoystick.dashInputDown)
-                if(playerController.DahsManager.CanDash)
-                    stateController.TransitionToState(stateController.ListedStates.dashState); 
+            {
+                bool canDash = playerController.DahsManager.CanSpentStamin && 
+                    playerController.InputJoystick.LAxisRaw != Vector2.zero;
+                if (canDash) {
+                    stateController.TransitionToState(stateController.ListedStates.dashState);
+
+                }
+            }
+
+
         }
 
         private void ProcessPrayInput(PlayerController playerController, StateController stateController)

@@ -25,7 +25,7 @@ namespace CharacterNamespace
         public float DashStaminFraction => dashStamin / maxDashStamin;
         public float MaxDashStamin { get => maxDashStamin; }
         public float DashStamin { get => dashStamin; }
-        public bool CanDash => (dashStamin >= characterProperty.DashStaminCost);
+        public bool CanSpentStamin => (dashStamin >= characterProperty.DashStaminCost);
         
         public void spentStamin()
         {
