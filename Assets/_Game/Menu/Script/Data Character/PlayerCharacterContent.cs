@@ -68,7 +68,8 @@ namespace CharacterSelection
                 if (inputJoystick.IsLeftButtonDown) GetLeftCharacterInList();
                 if (inputJoystick.StartInputDown)
                 {
-                    Debug.Log(inputJoystick.Joystick + " Escolheu:" + targetCharacter);
+                Debug.Log("ESCOLHEU!");
+                    //Debug.Log(inputJoystick.Joystick + " Escolheu:" + targetCharacter);
                     choseCharacter?.Invoke(targetCharacter);
                     ChoseCharacter?.Invoke();
                     //isCharacterChoosed = true;

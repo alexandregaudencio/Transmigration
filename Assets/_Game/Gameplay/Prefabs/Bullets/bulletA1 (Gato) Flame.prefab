@@ -175,8 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b862645af43743d4085f735bd1b17a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisioneffect: {fileID: 4687662161196642538, guid: d7acfec6aeae5b7478a1bffee6c35a5d,
-    type: 3}
+  collisioneffect: {fileID: 0}
   collisionTagsToIgnore:
   - vision
   - healing

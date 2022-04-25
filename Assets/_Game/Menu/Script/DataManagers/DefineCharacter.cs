@@ -39,6 +39,7 @@ namespace CharacterSelection
                     playerCharacterContent.LayerName,
                     character);
                 playerCharacterContent.PlayerDataStorage.AddPlayerToList(playerData);
+                Debug.Log(playerData.Character.name);
             }
         }
 
