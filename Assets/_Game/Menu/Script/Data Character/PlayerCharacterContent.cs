@@ -4,11 +4,13 @@ using PlayerDataNamespace;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CharacterSelection
 {
     public class PlayerCharacterContent : MonoBehaviour
     {
+
         /*[SerializeField] */
         public int characterIndex = 0; // index do characterProperty no characters
         //[SerializeField] private RawImage rawImage_Character;
@@ -19,6 +21,9 @@ namespace CharacterSelection
         [SerializeField] private Characters characters;
         [SerializeField] private PlayerDataStorage playerDataStorage;
         [SerializeField] private string layerName;
+        [SerializeField] private UnityEvent ChoseCharacter;
+        private AudioManager audioManager;
+        private bool isCharacterChoosed = false;
         /*[SerializeField] */
         private Animator animator;
         private InputJoystick inputJoystick;
@@ -35,8 +40,8 @@ namespace CharacterSelection
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
-            inputJoystick = GetComponent<InputJoystick>();       
-            
+            inputJoystick = GetComponent<InputJoystick>();
+            audioManager = GetComponent<AudioManager>();
         }
 
         private void OnEnable()
@@ -48,7 +53,6 @@ namespace CharacterSelection
         {
             characterContentUpdate -= UpdateCharacterContent;
             //timer.timeOver -= choseCharacterOntimerOver;
-
         }
 
         private void Start()
@@ -60,14 +64,18 @@ namespace CharacterSelection
 
         private void Update()
         {
+                if (inputJoystick.IsRigthButtonDown) GetRightCharacterInList();
+                if (inputJoystick.IsLeftButtonDown) GetLeftCharacterInList();
+                if (inputJoystick.StartInputDown)
+                {
+                    Debug.Log(inputJoystick.Joystick + " Escolheu:" + targetCharacter);
+                    choseCharacter?.Invoke(targetCharacter);
+                    ChoseCharacter?.Invoke();
+                    //isCharacterChoosed = true;
 
-            if (inputJoystick.IsRigthButtonDown) GetRightCharacterInList();
-            if (inputJoystick.IsLeftButtonDown)  GetLeftCharacterInList();
-            if (inputJoystick.StartInputDown)
-            {
-                Debug.Log(inputJoystick.Joystick + " Escolheu:" + targetCharacter);
-                choseCharacter?.Invoke(targetCharacter);
-            }
+                }
+            
+
         }
         
         private void UpdateCharacterContent(CharacterProperty character)
@@ -76,6 +84,7 @@ namespace CharacterSelection
             //text_CharacterName.SetText(character.CharacterName);
             //text_CharacterClass.SetText(character.CharacterClass);
             animator?.Play(character.AnimationClip.name);
+            audioManager.PlayAudioClip();
 
         }
 

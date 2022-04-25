@@ -64,7 +64,7 @@ public class GameConfigs : MonoBehaviour
     private void Start()
     {
         instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
 
     }
 }

@@ -102,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004296899, y: 0.0038679838}
+  m_Offset: {x: 0.06880887, y: 0.004857874}
   serializedVersion: 2
-  m_Radius: 0.022408843
+  m_Radius: 0.029405307
 --- !u!50 &1917589463773469823
 Rigidbody2D:
   serializedVersion: 4
@@ -175,12 +175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b862645af43743d4085f735bd1b17a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
+  collisioneffect: {fileID: 4687662161196642538, guid: d7acfec6aeae5b7478a1bffee6c35a5d,
     type: 3}
   collisionTagsToIgnore:
   - vision
   - healing
   - tomb
+  - fruit
   collisionTagsToDetect:
   - bullet
   - sentinel

@@ -75,20 +75,20 @@ namespace Player.Data.Score
         private void UpdateTextDamageUI(float damage)
         {
             int damageAmount = (int)playerScore.DamageAmount;
-            text_Damage.SetText("Dano: "+ damageAmount.ToString());
+            text_Damage?.SetText("Dano: "+ damageAmount.ToString());
         }
         private void UpdateTextKillUI()
         {
-            text_Kill.SetText("Derrubou: "+playerScore.KillCount.ToString());
+            text_Kill?.SetText("Derrubou: "+playerScore.KillCount.ToString());
         }
         private void UpdateTextDeathUI()
         {
-            text_Death.SetText("Perdeu: "+playerScore.DeathCount.ToString());
+            text_Death?.SetText("Perdeu: "+playerScore.DeathCount.ToString());
         }
 
         private void UpdateTextScoreUI(float score)
         {
-            text_Score.SetText(playerScore.score.ToString());
+            text_Score?.SetText(playerScore.score.ToString());
         }
     }
 

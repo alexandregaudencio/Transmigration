@@ -15,9 +15,5 @@ MonoBehaviour:
   playerList:
   - joystickTeamIndex: 0
     joystick: 0
-    layerName: TeamA
-    character: {fileID: 11400000, guid: 28708f98adcdd2741881f6eff1b17fd3, type: 2}
-  - joystickTeamIndex: 0
-    joystick: 1
-    layerName: TeamB
-    character: {fileID: 11400000, guid: 2f3e6f6a2e4cb5045b8f0ad592ebf8df, type: 2}
+    layerName: 
+    character: {fileID: 11400000, guid: 007e9dd673bbffb489287a1dc7d138fc, type: 2}

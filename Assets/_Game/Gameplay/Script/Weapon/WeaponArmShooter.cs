@@ -14,6 +14,7 @@ public class WeaponArmShooter : MonoBehaviour
     private CharacterProperty characterProperty;
     private InputJoystick inputJoystick;
     [SerializeField] private Transform bulletSpawnPoint;
+    private PlayerController playerController;
     /*[SerializeField] */private PlayerScoreManager scoreManager;
 
     /*[SerializeField]*/
@@ -35,6 +36,7 @@ public class WeaponArmShooter : MonoBehaviour
         inputJoystick = GetComponentInParent<InputJoystick>();
         manaManager = GetComponentInParent<ManaManager>();
         scoreManager = GetComponentInParent<PlayerScoreManager>();
+        playerController = GetComponentInParent<PlayerController>();
 
     }
 
@@ -85,6 +87,7 @@ public class WeaponArmShooter : MonoBehaviour
 
     public void OnShoot()
     {
+        playerController.AudioManager.PlayAudio(playerController.AudioManager.ShootClip, false);
         //animations, audios, effeccts...
     }
 

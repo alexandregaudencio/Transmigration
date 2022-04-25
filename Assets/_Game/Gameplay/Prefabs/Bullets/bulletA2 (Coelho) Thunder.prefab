@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8175160278412299690}
   - component: {fileID: 5147764311506952885}
-  - component: {fileID: 5788695173827908515}
+  - component: {fileID: 22877025316635565}
   - component: {fileID: 5321735635880772695}
   - component: {fileID: 745021238662440126}
   - component: {fileID: 384386785088798482}
@@ -89,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5788695173827908515
-CircleCollider2D:
+--- !u!70 &22877025316635565
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004296899, y: 0.0038679838}
-  serializedVersion: 2
-  m_Radius: 0.022408843
+  m_Offset: {x: 0.054202326, y: -0.0043970672}
+  m_Size: {x: 0.08654105, y: 0.0337802}
+  m_Direction: 1
 --- !u!50 &5321735635880772695
 Rigidbody2D:
   serializedVersion: 4
@@ -177,8 +177,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
     type: 3}
-  collisionTagsToIgnore: []
-  collisionTagsToDetect: []
+  collisionTagsToIgnore:
+  - vision
+  - healing
+  - tomb
+  - fruit
+  collisionTagsToDetect:
+  - bullet
+  - sentinel
+  - ground
+  - shield
 --- !u!95 &6000552995769217076
 Animator:
   serializedVersion: 3

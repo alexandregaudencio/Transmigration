@@ -102,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004296899, y: 0.0038679838}
+  m_Offset: {x: -0.010410428, y: -0.010804486}
   serializedVersion: 2
-  m_Radius: 0.022408843
+  m_Radius: 0.015072608
 --- !u!50 &6695763292735689844
 Rigidbody2D:
   serializedVersion: 4
@@ -177,8 +177,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisioneffect: {fileID: 8864583180818302559, guid: c9d5002f91487684fa2fb36e022e8fd7,
     type: 3}
-  collisionTagsToIgnore: []
-  collisionTagsToDetect: []
+  collisionTagsToIgnore:
+  - vision
+  - healing
+  - tomb
+  - fruit
+  collisionTagsToDetect:
+  - bullet
+  - sentinel
+  - ground
+  - shield
 --- !u!95 &5075702225055031319
 Animator:
   serializedVersion: 3

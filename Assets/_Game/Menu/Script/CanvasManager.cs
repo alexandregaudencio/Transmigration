@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour
 {
     [SerializeField]
     private List<MenuSate> menuStateList;
+    private AudioManager audioManager;
 
     bool inMenu = false;
 
@@ -29,12 +30,10 @@ public class CanvasManager : MonoBehaviour
         if(Input.anyKeyDown && !inMenu)
         {
             OnClick_SwitchState(1);
+            audioManager.PlayAudioClip();
+            
         }
-        //if (Input.GetButton("Joy1LHorizontal"))
-        //{
 
-        //    Debug.Log("Joysstick press!");
-        //}
     }
     
 

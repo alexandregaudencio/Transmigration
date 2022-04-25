@@ -68,12 +68,12 @@ public class PlayerController : MonoBehaviour
         playerScore = GetComponent<PlayerScoreManager>().PlayerScore;
     }
 
-    private void OnEnable()
+    private void Start()
     {
         hpManager.hpEmpty += stateController.GoDeathState;
         weaponArmController.WeaponArmShooter.R_AxisButtonDown += IdleAttackAnimationTransition;
     }
-    private void OnDisable()
+    private void OnDestroy()
     {
         hpManager.hpEmpty -= stateController.GoDeathState;
         weaponArmController.WeaponArmShooter.R_AxisButtonDown -= IdleAttackAnimationTransition;
@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
 
     public void IdleAttackAnimationTransition(bool value)
     {
+        Debug.Log("trocou: " + value);
         animator.SetBool("idle-atk", value);
     }
 

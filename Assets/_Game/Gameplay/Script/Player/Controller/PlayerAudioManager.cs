@@ -25,7 +25,11 @@ public class PlayerAudioManager : MonoBehaviour
         audioSource.loop = onLoop;
         audioSource.Play();
     }
-
+    public void PlayAudio(AudioClip audio)
+    {
+        audioSource.clip = audio;
+        audioSource.Play();
+    }
     public void StopAudio()
     {
         audioSource.Stop();
