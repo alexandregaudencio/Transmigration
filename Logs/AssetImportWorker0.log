@@ -15,11 +15,11 @@ C:/Projetos UNITY/SpoopyJam2021
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57051
+52204
 Successfully changed project path to: C:/Projetos UNITY/SpoopyJam2021
 C:/Projetos UNITY/SpoopyJam2021
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 57.12 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 197.83 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -35,47 +35,47 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56376
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002381 seconds.
+Registered in 0.003399 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 55.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 55.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.484 seconds
+- Completed reload, in  3.199 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2485ms)
-		BeginReloadAssembly (48ms)
+	ReloadAssembly (3200ms)
+		BeginReloadAssembly (41ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (384ms)
-			LoadAssemblies (47ms)
+		EndReloadAssembly (379ms)
+			LoadAssemblies (40ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (136ms)
+			SetupTypeCache (132ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (164ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (160ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (55ms)
 				BeforeProcessingInitializeOnLoad (14ms)
-				ProcessInitializeOnLoadAttributes (69ms)
-				ProcessInitializeOnLoadMethodAttributes (22ms)
+				ProcessInitializeOnLoadAttributes (62ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009491 seconds.
+Registered in 0.233398 seconds.
 Begin MonoManager ReloadAssembly
 Script error: OnCollisionEnter
 The message must have 0 or 1 parameters.
@@ -95,32 +95,32 @@ The message will be ignored.
 
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 54.35 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 52.49 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.264 seconds
+- Completed reload, in  1.274 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1265ms)
-		BeginReloadAssembly (126ms)
+	ReloadAssembly (1274ms)
+		BeginReloadAssembly (121ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (1084ms)
-			LoadAssemblies (84ms)
+		EndReloadAssembly (1098ms)
+			LoadAssemblies (118ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (314ms)
+			SetupTypeCache (281ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (533ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (543ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (54ms)
+				RefreshPlugins (53ms)
 				BeforeProcessingInitializeOnLoad (81ms)
-				ProcessInitializeOnLoadAttributes (377ms)
-				ProcessInitializeOnLoadMethodAttributes (11ms)
+				ProcessInitializeOnLoadAttributes (389ms)
+				ProcessInitializeOnLoadMethodAttributes (12ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -129,14 +129,14 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.12 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3133 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 129.3 MB.
 System memory in use after: 129.5 MB.
 
 Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 3572.
-Total: 3.379700 ms (FindLiveObjects: 0.296800 ms CreateObjectMapping: 0.159000 ms MarkObjects: 2.895500 ms  DeleteObjects: 0.027400 ms)
+Total: 3.348800 ms (FindLiveObjects: 0.288700 ms CreateObjectMapping: 0.151600 ms MarkObjects: 2.868500 ms  DeleteObjects: 0.039200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -150,31 +150,112 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/_Game/Gameplay/Prefabs/Bullets/bulletA2 (Coelho) Thunder.prefab
-  artifactKey: Guid(1adb76eec28b2514897fb6bbeb7424e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Gameplay/Prefabs/Bullets/bulletA2 (Coelho) Thunder.prefab using Guid(1adb76eec28b2514897fb6bbeb7424e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1e896931af9d4193ed8fcc0eb86189b') in 0.097077 seconds 
-  Import took 0.103142 seconds .
+  path: Assets/_Game/Gameplay/shader.shadersubgraph
+  artifactKey: Guid(f533dc0c981b17945b5f642d5b491757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/shader.shadersubgraph using Guid(f533dc0c981b17945b5f642d5b491757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae1954216432a647ac5286850ffcc2b2') in 0.032723 seconds 
+  Import took 0.039295 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 61.066985 seconds.
-  path: Assets/_Game/Gameplay/Prefabs/Bullets/bulletA4 (Rato) Hell.prefab
-  artifactKey: Guid(258e751b9075d8541a5f8b4e36fd65bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Gameplay/Prefabs/Bullets/bulletA4 (Rato) Hell.prefab using Guid(258e751b9075d8541a5f8b4e36fd65bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8387adac7797a83154a661bca0928718') in 0.021895 seconds 
-  Import took 0.028506 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001302 seconds.
-  path: Assets/_Game/Gameplay/Prefabs/Bullets/bulletA4 (Rato) Hell.prefab
-  artifactKey: Guid(258e751b9075d8541a5f8b4e36fd65bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Gameplay/Prefabs/Bullets/bulletA4 (Rato) Hell.prefab using Guid(258e751b9075d8541a5f8b4e36fd65bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8387adac7797a83154a661bca0928718') in 0.015673 seconds 
-  Import took 0.021746 seconds .
+  Time since last request: 10.193454 seconds.
+  path: Assets/_Game/Gameplay/Script/gameplay/ArenaAudioManager.cs
+  artifactKey: Guid(e47a7b6dd1fbaed48af74c69599226b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Script/gameplay/ArenaAudioManager.cs using Guid(e47a7b6dd1fbaed48af74c69599226b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '779928e31155245a9433151ab68dd83d') in 0.026994 seconds 
+  Import took 0.034882 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004798 seconds.
+Registered in 0.004981 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.442 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1443ms)
+		BeginReloadAssembly (151ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (46ms)
+		EndReloadAssembly (1197ms)
+			LoadAssemblies (123ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (313ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (574ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (101ms)
+				ProcessInitializeOnLoadAttributes (448ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.6 MB.
+System memory in use after: 126.8 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3575.
+Total: 4.509200 ms (FindLiveObjects: 0.297300 ms CreateObjectMapping: 0.285400 ms MarkObjects: 3.904200 ms  DeleteObjects: 0.021200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004707 seconds.
 Script error: OnCollisionEnter
 The message must have 0 or 1 parameters.
 The message will be ignored.
@@ -213,42 +294,147 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.197 seconds
+- Completed reload, in  1.165 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1197ms)
-		BeginReloadAssembly (108ms)
+	ReloadAssembly (1165ms)
+		BeginReloadAssembly (110ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (1036ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1001ms)
 			LoadAssemblies (76ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (307ms)
+			SetupTypeCache (303ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (501ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (478ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (94ms)
-				ProcessInitializeOnLoadAttributes (390ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (369ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.6 MB.
+System memory in use after: 126.9 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3577.
+Total: 3.944200 ms (FindLiveObjects: 0.296300 ms CreateObjectMapping: 0.161800 ms MarkObjects: 3.464500 ms  DeleteObjects: 0.020400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 206.449025 seconds.
+  path: Assets/_Game/Menu/Animations/Gato.controller
+  artifactKey: Guid(8b5f0b309a6f32648a890738df0ee6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Menu/Animations/Gato.controller using Guid(8b5f0b309a6f32648a890738df0ee6a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14fdc22917d2d5fbef05b85b93bbd2af') in 0.024180 seconds 
+  Import took 0.029754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.348715 seconds.
+  path: Assets/_Game/Menu/Animations/Player Cards/card gato.anim
+  artifactKey: Guid(a773d5fa269c2794b8e32726b9bef047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Menu/Animations/Player Cards/card gato.anim using Guid(a773d5fa269c2794b8e32726b9bef047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '789b572030ce4f1752869b656ea33727') in 0.010925 seconds 
+  Import took 0.017065 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005085 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.149 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1150ms)
+		BeginReloadAssembly (107ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (990ms)
+			LoadAssemblies (81ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (275ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (482ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (377ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.6 MB.
-System memory in use after: 129.8 MB.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 126.9 MB.
 
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3581.
-Total: 3.512100 ms (FindLiveObjects: 0.313200 ms CreateObjectMapping: 0.177000 ms MarkObjects: 2.958600 ms  DeleteObjects: 0.061700 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3579.
+Total: 3.414800 ms (FindLiveObjects: 0.289500 ms CreateObjectMapping: 0.162800 ms MarkObjects: 2.944900 ms  DeleteObjects: 0.016600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -261,9 +447,33 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 48.221032 seconds.
+  path: Assets/_Game/Menu/Animations/Coelho.controller
+  artifactKey: Guid(858c57b8601a6154292ea563f9920746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Menu/Animations/Coelho.controller using Guid(858c57b8601a6154292ea563f9920746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a90b25b2ef725021d11aaa1f86b2135') in 0.023098 seconds 
+  Import took 0.029025 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.528835 seconds.
+  path: Assets/_Game/Menu/Animations/Boi.controller
+  artifactKey: Guid(81bb195450383ee4d8122ece04242788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Menu/Animations/Boi.controller using Guid(81bb195450383ee4d8122ece04242788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e17b3663c8333bf2074bdba4b4a69ad') in 0.043482 seconds 
+  Import took 0.050419 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 184.442617 seconds.
+  path: Assets/_Game/Menu/Script/DataManagers/DefineCharacter.cs
+  artifactKey: Guid(0b784256b48caa3469db1759b0f2bb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Menu/Script/DataManagers/DefineCharacter.cs using Guid(0b784256b48caa3469db1759b0f2bb14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd95e0e6a6530a61cd275e0815329025') in 0.009465 seconds 
+  Import took 0.016162 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004778 seconds.
+Registered in 0.013295 seconds.
 Script error: OnCollisionEnter
 The message must have 0 or 1 parameters.
 The message will be ignored.
@@ -302,42 +512,42 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.188 seconds
+- Completed reload, in  1.401 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1188ms)
-		BeginReloadAssembly (103ms)
+	ReloadAssembly (1402ms)
+		BeginReloadAssembly (136ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (32ms)
-		EndReloadAssembly (1032ms)
-			LoadAssemblies (87ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (1178ms)
+			LoadAssemblies (114ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (302ms)
+			SetupTypeCache (377ms)
 			ReleaseScriptCaches (2ms)
 			RebuildScriptCaches (49ms)
-			SetupLoadedEditorAssemblies (492ms)
+			SetupLoadedEditorAssemblies (554ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (88ms)
-				ProcessInitializeOnLoadAttributes (381ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (442ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.6 MB.
-System memory in use after: 129.8 MB.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 126.9 MB.
 
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3583.
-Total: 3.586200 ms (FindLiveObjects: 0.351300 ms CreateObjectMapping: 0.191400 ms MarkObjects: 3.024800 ms  DeleteObjects: 0.017700 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3581.
+Total: 4.309000 ms (FindLiveObjects: 0.325200 ms CreateObjectMapping: 0.186100 ms MarkObjects: 3.773700 ms  DeleteObjects: 0.023100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -352,7 +562,541 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006451 seconds.
+Registered in 0.008100 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.355 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1356ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1158ms)
+			LoadAssemblies (107ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (331ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (544ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (424ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 126.9 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3583.
+Total: 3.573800 ms (FindLiveObjects: 0.314600 ms CreateObjectMapping: 0.159400 ms MarkObjects: 3.068100 ms  DeleteObjects: 0.031000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004882 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.147 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1147ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (991ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (283ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (484ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (374ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 126.9 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3585.
+Total: 3.859900 ms (FindLiveObjects: 0.300000 ms CreateObjectMapping: 0.166600 ms MarkObjects: 3.370100 ms  DeleteObjects: 0.022000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004734 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.127 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1127ms)
+		BeginReloadAssembly (102ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (970ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (283ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (468ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (88ms)
+				ProcessInitializeOnLoadAttributes (362ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 127.0 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3587.
+Total: 3.694300 ms (FindLiveObjects: 0.282000 ms CreateObjectMapping: 0.207000 ms MarkObjects: 3.159000 ms  DeleteObjects: 0.045500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004727 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.132 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1132ms)
+		BeginReloadAssembly (98ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (973ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (276ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (478ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (371ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.7 MB.
+System memory in use after: 127.0 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3589.
+Total: 3.518400 ms (FindLiveObjects: 0.339500 ms CreateObjectMapping: 0.202900 ms MarkObjects: 2.958600 ms  DeleteObjects: 0.016600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004768 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.182 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1183ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (1026ms)
+			LoadAssemblies (76ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (293ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (500ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (387ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.8 MB.
+System memory in use after: 127.0 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3591.
+Total: 4.079600 ms (FindLiveObjects: 0.302600 ms CreateObjectMapping: 0.163600 ms MarkObjects: 3.578900 ms  DeleteObjects: 0.033200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004700 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.262 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1262ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (1096ms)
+			LoadAssemblies (90ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (302ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (566ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (104ms)
+				ProcessInitializeOnLoadAttributes (442ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.35 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.8 MB.
+System memory in use after: 127.0 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3593.
+Total: 4.871000 ms (FindLiveObjects: 0.448300 ms CreateObjectMapping: 0.219700 ms MarkObjects: 4.176000 ms  DeleteObjects: 0.025400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005027 seconds.
 Script error: OnCollisionEnter
 The message must have 0 or 1 parameters.
 The message will be ignored.
@@ -391,948 +1135,42 @@ Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.139 seconds
+- Completed reload, in  1.127 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1140ms)
-		BeginReloadAssembly (100ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (31ms)
-		EndReloadAssembly (981ms)
-			LoadAssemblies (79ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (283ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (472ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (86ms)
-				ProcessInitializeOnLoadAttributes (368ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.6 MB.
-System memory in use after: 129.9 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3585.
-Total: 3.794400 ms (FindLiveObjects: 0.328300 ms CreateObjectMapping: 0.152500 ms MarkObjects: 3.275700 ms  DeleteObjects: 0.037100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 241.535936 seconds.
-  path: Assets/_Game/Gameplay/Audio/Musics/Menu.ogg
-  artifactKey: Guid(c5ff27efda63f35488a103226d354ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Gameplay/Audio/Musics/Menu.ogg using Guid(c5ff27efda63f35488a103226d354ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8474001803d9305f4ab54da0b4c3769') in 0.073463 seconds 
-  Import took 0.079141 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006651 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.187 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1187ms)
-		BeginReloadAssembly (110ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (1025ms)
-			LoadAssemblies (79ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (327ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (49ms)
-			SetupLoadedEditorAssemblies (476ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (88ms)
-				ProcessInitializeOnLoadAttributes (369ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.7 MB.
-System memory in use after: 129.9 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3590.
-Total: 3.685900 ms (FindLiveObjects: 0.289400 ms CreateObjectMapping: 0.152700 ms MarkObjects: 3.219700 ms  DeleteObjects: 0.022900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.027285 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.69 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.017 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3018ms)
-		BeginReloadAssembly (374ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (238ms)
-		EndReloadAssembly (2530ms)
-			LoadAssemblies (371ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (979ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (957ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (129ms)
-				ProcessInitializeOnLoadAttributes (802ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.7 MB.
-System memory in use after: 129.9 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3592.
-Total: 4.367000 ms (FindLiveObjects: 0.489300 ms CreateObjectMapping: 0.275900 ms MarkObjects: 3.577500 ms  DeleteObjects: 0.022500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005348 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.521 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1521ms)
-		BeginReloadAssembly (126ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (1321ms)
-			LoadAssemblies (160ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (425ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (60ms)
-			SetupLoadedEditorAssemblies (565ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (113ms)
-				ProcessInitializeOnLoadAttributes (428ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.7 MB.
-System memory in use after: 129.9 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3594.
-Total: 3.462600 ms (FindLiveObjects: 0.296800 ms CreateObjectMapping: 0.158600 ms MarkObjects: 2.990500 ms  DeleteObjects: 0.015800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005037 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.543 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1544ms)
-		BeginReloadAssembly (123ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (1326ms)
-			LoadAssemblies (110ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (362ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (80ms)
-			SetupLoadedEditorAssemblies (660ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (121ms)
-				ProcessInitializeOnLoadAttributes (513ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.7 MB.
-System memory in use after: 129.9 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3596.
-Total: 5.584600 ms (FindLiveObjects: 0.503300 ms CreateObjectMapping: 0.264900 ms MarkObjects: 4.788500 ms  DeleteObjects: 0.026600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004992 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.132 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1132ms)
-		BeginReloadAssembly (102ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (977ms)
-			LoadAssemblies (77ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (283ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (467ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (90ms)
-				ProcessInitializeOnLoadAttributes (360ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.7 MB.
-System memory in use after: 130.0 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3598.
-Total: 3.707900 ms (FindLiveObjects: 0.286600 ms CreateObjectMapping: 0.162700 ms MarkObjects: 3.238500 ms  DeleteObjects: 0.019200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010134 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.269 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1270ms)
-		BeginReloadAssembly (99ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (32ms)
-		EndReloadAssembly (1117ms)
-			LoadAssemblies (76ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (335ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (58ms)
-			SetupLoadedEditorAssemblies (541ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (90ms)
-				ProcessInitializeOnLoadAttributes (434ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.06 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.7 MB.
-System memory in use after: 130.0 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3600.
-Total: 3.863800 ms (FindLiveObjects: 0.299500 ms CreateObjectMapping: 0.161000 ms MarkObjects: 3.377300 ms  DeleteObjects: 0.024800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007731 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.167 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1168ms)
-		BeginReloadAssembly (100ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (31ms)
-		EndReloadAssembly (1013ms)
-			LoadAssemblies (77ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (279ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (51ms)
-			SetupLoadedEditorAssemblies (513ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (103ms)
-				ProcessInitializeOnLoadAttributes (393ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.7 MB.
-System memory in use after: 130.0 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3602.
-Total: 3.669800 ms (FindLiveObjects: 0.294400 ms CreateObjectMapping: 0.150600 ms MarkObjects: 3.205300 ms  DeleteObjects: 0.018300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007595 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.104 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1104ms)
-		BeginReloadAssembly (95ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (31ms)
-		EndReloadAssembly (957ms)
-			LoadAssemblies (76ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (274ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (468ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (87ms)
-				ProcessInitializeOnLoadAttributes (363ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.8 MB.
-System memory in use after: 130.0 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3604.
-Total: 3.983500 ms (FindLiveObjects: 0.292600 ms CreateObjectMapping: 0.296400 ms MarkObjects: 3.376300 ms  DeleteObjects: 0.017500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004780 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.181 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1182ms)
-		BeginReloadAssembly (101ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (30ms)
-		EndReloadAssembly (1027ms)
-			LoadAssemblies (81ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (287ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (515ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (88ms)
-				ProcessInitializeOnLoadAttributes (408ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.8 MB.
-System memory in use after: 130.0 MB.
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3606.
-Total: 3.780900 ms (FindLiveObjects: 0.292900 ms CreateObjectMapping: 0.160900 ms MarkObjects: 3.307700 ms  DeleteObjects: 0.018200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1035.047675 seconds.
-  path: Assets/_Game/Menu/Script/Data inputManagers/PlayerDataStorage.asset
-  artifactKey: Guid(7a36f80409a858340a320ff3bb15a959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Menu/Script/Data inputManagers/PlayerDataStorage.asset using Guid(7a36f80409a858340a320ff3bb15a959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2aeb95a6c952c1ee44a0bfc9fd7b6a6') in 0.133205 seconds 
-  Import took 0.143000 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015941 seconds.
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Begin MonoManager ReloadAssembly
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Script error: OnCollisionEnter
-The message must have 0 or 1 parameters.
-The message will be ignored.
-
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.205 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1206ms)
-		BeginReloadAssembly (99ms)
+	ReloadAssembly (1127ms)
+		BeginReloadAssembly (103ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1053ms)
-			LoadAssemblies (97ms)
+		EndReloadAssembly (971ms)
+			LoadAssemblies (79ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (330ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (483ms)
+			SetupTypeCache (276ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (475ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (93ms)
-				ProcessInitializeOnLoadAttributes (372ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (368ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.8 MB.
-System memory in use after: 130.1 MB.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.8 MB.
+System memory in use after: 127.0 MB.
 
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3608.
-Total: 3.537700 ms (FindLiveObjects: 0.285400 ms CreateObjectMapping: 0.151700 ms MarkObjects: 3.022400 ms  DeleteObjects: 0.077300 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3595.
+Total: 3.392200 ms (FindLiveObjects: 0.290300 ms CreateObjectMapping: 0.155000 ms MarkObjects: 2.930100 ms  DeleteObjects: 0.015900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -1345,17 +1183,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 219.227340 seconds.
-  path: Assets/_Game/Gameplay/GameplayScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Gameplay/GameplayScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd19850c642892e55ff12e351f5d4aead') in 0.022902 seconds 
-  Import took 0.030501 seconds .
-
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005250 seconds.
+Registered in 0.006730 seconds.
 Script error: OnCollisionEnter
 The message must have 0 or 1 parameters.
 The message will be ignored.
@@ -1391,45 +1221,45 @@ The message will be ignored.
 
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.148 seconds
+- Completed reload, in  1.369 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1149ms)
-		BeginReloadAssembly (102ms)
+	ReloadAssembly (1370ms)
+		BeginReloadAssembly (111ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (985ms)
-			LoadAssemblies (88ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (1200ms)
+			LoadAssemblies (96ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (294ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (49ms)
-			SetupLoadedEditorAssemblies (462ms)
+			SetupTypeCache (358ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (571ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (88ms)
-				ProcessInitializeOnLoadAttributes (357ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (116ms)
+				ProcessInitializeOnLoadAttributes (428ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.8 MB.
-System memory in use after: 130.1 MB.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.8 MB.
+System memory in use after: 127.0 MB.
 
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3610.
-Total: 3.740500 ms (FindLiveObjects: 0.285700 ms CreateObjectMapping: 0.129600 ms MarkObjects: 3.306100 ms  DeleteObjects: 0.018200 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3597.
+Total: 3.687500 ms (FindLiveObjects: 0.366000 ms CreateObjectMapping: 0.226100 ms MarkObjects: 3.074700 ms  DeleteObjects: 0.019500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -1442,25 +1272,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 112.485985 seconds.
-  path: Assets/_Game/Gameplay/GameplayScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Gameplay/GameplayScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e499ffc9afba3fa46071e6d907431774') in 0.015581 seconds 
-  Import took 0.022461 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.539991 seconds.
-  path: Assets/_Game/Menu/MenuScene.unity
-  artifactKey: Guid(a605bcd7f67bc6f46acf07e084d48744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Game/Menu/MenuScene.unity using Guid(a605bcd7f67bc6f46acf07e084d48744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e1014514cc0a84ba2203670307544e4') in 0.007947 seconds 
-  Import took 0.014060 seconds .
-
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004935 seconds.
+Registered in 0.004807 seconds.
 Script error: OnCollisionEnter
 The message must have 0 or 1 parameters.
 The message will be ignored.
@@ -1496,45 +1310,45 @@ The message will be ignored.
 
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.210 seconds
+- Completed reload, in  1.124 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1210ms)
-		BeginReloadAssembly (101ms)
+	ReloadAssembly (1125ms)
+		BeginReloadAssembly (99ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (1049ms)
-			LoadAssemblies (91ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (973ms)
+			LoadAssemblies (75ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (307ms)
+			SetupTypeCache (280ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (494ms)
+			RebuildScriptCaches (47ms)
+			SetupLoadedEditorAssemblies (476ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (90ms)
-				ProcessInitializeOnLoadAttributes (386ms)
+				ProcessInitializeOnLoadAttributes (368ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 129.9 MB.
-System memory in use after: 130.1 MB.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 126.8 MB.
+System memory in use after: 127.0 MB.
 
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3612.
-Total: 3.995100 ms (FindLiveObjects: 0.359500 ms CreateObjectMapping: 0.192600 ms MarkObjects: 3.417100 ms  DeleteObjects: 0.024600 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3599.
+Total: 3.809500 ms (FindLiveObjects: 0.285100 ms CreateObjectMapping: 0.150500 ms MarkObjects: 3.356900 ms  DeleteObjects: 0.016400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -1546,3 +1360,531 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1114.858077 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/dash.anim
+  artifactKey: Guid(2e0558cb8f7accf45955527bc167fe75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/dash.anim using Guid(2e0558cb8f7accf45955527bc167fe75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc69bbb150ba5c054e7f4e7cb6bac411') in 0.046612 seconds 
+  Import took 0.055557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.893376 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/CharacterA1 - Gato.controller
+  artifactKey: Guid(2e7cd6c2516c40640a94e45de63906cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/CharacterA1 - Gato.controller using Guid(2e7cd6c2516c40640a94e45de63906cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7ace7c60b061efb1b9827eed5bf3ba3') in 0.016243 seconds 
+  Import took 0.023178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.496805 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/Pre-walk.anim
+  artifactKey: Guid(6de7e1315a4c414448272c9fc902a1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/Pre-walk.anim using Guid(6de7e1315a4c414448272c9fc902a1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c02a603c4ad1e46a9ab04a88d2c18d') in 0.012101 seconds 
+  Import took 0.018723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.608174 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/pre-walk.anim
+  artifactKey: Guid(6de7e1315a4c414448272c9fc902a1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/pre-walk.anim using Guid(6de7e1315a4c414448272c9fc902a1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9762a1ee2217c5ce43084dc11609c476') in 0.011583 seconds 
+  Import took 0.017704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.132343 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/death.anim
+  artifactKey: Guid(9087b8e7699eeab46ab0e94391a8f82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/death.anim using Guid(9087b8e7699eeab46ab0e94391a8f82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebcc76e7cf6b839b7ea380a08b152114') in 0.011587 seconds 
+  Import took 0.018466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001310 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/death.anim
+  artifactKey: Guid(9087b8e7699eeab46ab0e94391a8f82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/death.anim using Guid(9087b8e7699eeab46ab0e94391a8f82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebcc76e7cf6b839b7ea380a08b152114') in 0.005358 seconds 
+  Import took 0.011344 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.275252 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/CharacterA1 - Gato.controller
+  artifactKey: Guid(2e7cd6c2516c40640a94e45de63906cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/CharacterA1 - Gato.controller using Guid(2e7cd6c2516c40640a94e45de63906cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34fc9c482c826a3c06dcc72452ec9fad') in 0.008434 seconds 
+  Import took 0.015954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.155831 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/hurt.anim
+  artifactKey: Guid(5d68b945fe5b97a4e896a78e9d36da48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/hurt.anim using Guid(5d68b945fe5b97a4e896a78e9d36da48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0c0237a63a9a02f824e7d4cdd472487') in 0.012636 seconds 
+  Import took 0.018777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.384879 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/idle.anim
+  artifactKey: Guid(d03243935f5e2254390ec005f8757d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/idle.anim using Guid(d03243935f5e2254390ec005f8757d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a0f7bd1985b80ed309819154b2d2118') in 0.011595 seconds 
+  Import took 0.018874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000934 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/idle.anim
+  artifactKey: Guid(d03243935f5e2254390ec005f8757d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/idle.anim using Guid(d03243935f5e2254390ec005f8757d73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a0f7bd1985b80ed309819154b2d2118') in 0.006301 seconds 
+  Import took 0.011621 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.269105 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/meditate.anim
+  artifactKey: Guid(6f378bf5615b86042a47afb9167174e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/meditate.anim using Guid(6f378bf5615b86042a47afb9167174e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90afa12de3c00411b55b052f854805e7') in 0.010554 seconds 
+  Import took 0.016586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.021897 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/idle-atk.anim
+  artifactKey: Guid(c079159e55f82ae488a4073eb15ca0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/idle-atk.anim using Guid(c079159e55f82ae488a4073eb15ca0bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afbb41e705a7e5b27ab5ffd8f636f3ed') in 0.010044 seconds 
+  Import took 0.016283 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.803095 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/Gato/walk.anim
+  artifactKey: Guid(ae5ba86d22675ed41a97afcafe26efa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/Gato/walk.anim using Guid(ae5ba86d22675ed41a97afcafe26efa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2745e288a529860ce6e678173ddd462a') in 0.008607 seconds 
+  Import took 0.015506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.665128 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/dogo/CharacterA3 - Dogo.controller
+  artifactKey: Guid(fbfeffa34df531840bcbf54ecf7ffa36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/dogo/CharacterA3 - Dogo.controller using Guid(fbfeffa34df531840bcbf54ecf7ffa36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cab6adb7dd84dce1254310f9b7cc6609') in 0.012207 seconds 
+  Import took 0.018518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.894573 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/dogo/Pre-walk.anim
+  artifactKey: Guid(ad5aaa85a83d21d4db32188dd4ba5f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/dogo/Pre-walk.anim using Guid(ad5aaa85a83d21d4db32188dd4ba5f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd77dce4ac074c8c37673894083e0b725') in 0.005296 seconds 
+  Import took 0.011152 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000912 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/dogo/Pre-walk.anim
+  artifactKey: Guid(ad5aaa85a83d21d4db32188dd4ba5f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/dogo/Pre-walk.anim using Guid(ad5aaa85a83d21d4db32188dd4ba5f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd77dce4ac074c8c37673894083e0b725') in 0.004034 seconds 
+  Import took 0.009622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.175682 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/dogo/pre-walk.anim
+  artifactKey: Guid(ad5aaa85a83d21d4db32188dd4ba5f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/dogo/pre-walk.anim using Guid(ad5aaa85a83d21d4db32188dd4ba5f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daa4f240ec2d74810bf1cdd41d86fd5a') in 0.004194 seconds 
+  Import took 0.011629 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.072684 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/dogo/walk.anim
+  artifactKey: Guid(4fd7a8ce0e3e1084d953726d3943b13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/dogo/walk.anim using Guid(4fd7a8ce0e3e1084d953726d3943b13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30f303caefb0f383815e7df9b24367c7') in 0.005912 seconds 
+  Import took 0.012819 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001057 seconds.
+  path: Assets/_Game/Gameplay/Animations/Characters/dogo/walk.anim
+  artifactKey: Guid(4fd7a8ce0e3e1084d953726d3943b13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Animations/Characters/dogo/walk.anim using Guid(4fd7a8ce0e3e1084d953726d3943b13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30f303caefb0f383815e7df9b24367c7') in 0.004031 seconds 
+  Import took 0.009287 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 50.659188 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle/Dog Idle 8.png
+  artifactKey: Guid(42301e9e036c16549abe877f2120d1e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle/Dog Idle 8.png using Guid(42301e9e036c16549abe877f2120d1e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be3c33be6b5407294bebea1892fe3246') in 0.097284 seconds 
+  Import took 0.104121 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004855 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle/Dog Idle 8.png
+  artifactKey: Guid(42301e9e036c16549abe877f2120d1e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle/Dog Idle 8.png using Guid(42301e9e036c16549abe877f2120d1e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be3c33be6b5407294bebea1892fe3246') in 0.013231 seconds 
+  Import took 0.017937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.223430 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle/Dog Idle 2.png
+  artifactKey: Guid(92b8b66f4bd62bb4c92cedc1ca20b9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle/Dog Idle 2.png using Guid(92b8b66f4bd62bb4c92cedc1ca20b9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5da57d833e5a28ad145286a347d9ff') in 0.020827 seconds 
+  Import took 0.027182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 127.729315 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle_Atk/dog idle atk 1.png
+  artifactKey: Guid(fde0e644466f91f4197a3786ee0d8e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Idle_Atk/dog idle atk 1.png using Guid(fde0e644466f91f4197a3786ee0d8e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bfa101af203cc9e251c7e0807917a15') in 0.019812 seconds 
+  Import took 0.024848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.281147 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Pre_Dash/dog pre dash 3.png
+  artifactKey: Guid(1c174def915c5e7489a90ae5e9e1cf5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Pre_Dash/dog pre dash 3.png using Guid(1c174def915c5e7489a90ae5e9e1cf5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b21556803bc3c7fde564c15079ed5fa') in 0.019053 seconds 
+  Import took 0.026217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.551815 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Pre_Dash/dog pre dash 2.png
+  artifactKey: Guid(47999048e5f420f4894fa2db33fb2a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Pre_Dash/dog pre dash 2.png using Guid(47999048e5f420f4894fa2db33fb2a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a67a90e8c6770dcb8cee50c54c7f98c') in 0.017853 seconds 
+  Import took 0.023420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 50.058786 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Walk/dog walk 4.png
+  artifactKey: Guid(62b213e7425e79b4dbc8cd19f8d5fd24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Walk/dog walk 4.png using Guid(62b213e7425e79b4dbc8cd19f8d5fd24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12f88c9af35ea222fb088c811dc146da') in 0.021182 seconds 
+  Import took 0.026918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 111.413303 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto
+  artifactKey: Guid(72de5b7faf9c6c94c99fdf0ecfc8c528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto using Guid(72de5b7faf9c6c94c99fdf0ecfc8c528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e10699bebadbfdb3ce374aca3a2fc20') in 0.008629 seconds 
+  Import took 0.014412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.820082 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high1.png
+  artifactKey: Guid(e41e580f8dbb41447a1084baddaf0270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high1.png using Guid(e41e580f8dbb41447a1084baddaf0270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2367a0976994adf400691bb4b181d87c') in 0.020133 seconds 
+  Import took 0.026508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.585566 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high2.png
+  artifactKey: Guid(d00d202efaf5e6f4a95124f264330b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high2.png using Guid(d00d202efaf5e6f4a95124f264330b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec27fea10d646e3f6e5d482404d3f112') in 0.017994 seconds 
+  Import took 0.024033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.528947 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high3.png
+  artifactKey: Guid(779232ab8dc7ab045b7b541c6daec62c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high3.png using Guid(779232ab8dc7ab045b7b541c6daec62c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9486f6d2f88376e59f5f43397dbb8a3') in 0.018854 seconds 
+  Import took 0.024648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.631299 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high4.png
+  artifactKey: Guid(d1aadfe415b8f5a44ac22f3d3a1d57b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/alto/attack_high4.png using Guid(d1aadfe415b8f5a44ac22f3d3a1d57b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49b2ea7027a275a6d22e4e6ccbb7c420') in 0.017437 seconds 
+  Import took 0.023040 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.009798 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo
+  artifactKey: Guid(b2d7fd8d98cb3974e82de8d1766385ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo using Guid(b2d7fd8d98cb3974e82de8d1766385ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06e945a7fdd567455f450e6cb1e3f380') in 0.008770 seconds 
+  Import took 0.015255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.719647 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot2.png
+  artifactKey: Guid(8289fea82f63b484aa16dcf1131f582d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot2.png using Guid(8289fea82f63b484aa16dcf1131f582d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33c40ad96c364f761733f446e18edb3') in 0.018824 seconds 
+  Import took 0.024315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.775251 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot1.png
+  artifactKey: Guid(4a71fca4afc934d4b9faebfe1fa6bda8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot1.png using Guid(4a71fca4afc934d4b9faebfe1fa6bda8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2ed4b7598e647059a04070b4c6f9c43') in 0.017850 seconds 
+  Import took 0.023709 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.962154 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot4.png
+  artifactKey: Guid(120fb26ea64800a488bbcb1fec30d1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot4.png using Guid(120fb26ea64800a488bbcb1fec30d1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4992e3e5ca9667df4f9a1dba576fefc') in 0.016805 seconds 
+  Import took 0.022525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.448078 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot3.png
+  artifactKey: Guid(ffc018f0ff9163c4287535ce2fefee59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/baixo/attack_tobot3.png using Guid(ffc018f0ff9163c4287535ce2fefee59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '458792457652be26cf7e770cab76c59e') in 0.017839 seconds 
+  Import took 0.023991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.328928 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto
+  artifactKey: Guid(fe96a07ca1a9681409386cfb0a28d00e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto using Guid(fe96a07ca1a9681409386cfb0a28d00e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dbc5358338b08e1302819b660a32f42') in 0.007768 seconds 
+  Import took 0.015777 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.904890 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline1.png
+  artifactKey: Guid(b2324c717731af941b475f5ebbc51700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline1.png using Guid(b2324c717731af941b475f5ebbc51700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f197bfcdd994746664d14ab7e7bce78e') in 0.019671 seconds 
+  Import took 0.024381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.567873 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline2.png
+  artifactKey: Guid(77bcaca43b264204c8364e3023d0b4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline2.png using Guid(77bcaca43b264204c8364e3023d0b4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7eb956fdcdf44574fff9d05a449f3a3a') in 0.018039 seconds 
+  Import took 0.024525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.415824 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline3.png
+  artifactKey: Guid(7b253ea78a9c5c34fb2efdbf1361d2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline3.png using Guid(7b253ea78a9c5c34fb2efdbf1361d2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5afc5ec73367f43c880a8746dd0720b') in 0.018159 seconds 
+  Import took 0.024107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.343291 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline4.png
+  artifactKey: Guid(ab7b3a51244112c42966b5b686bb59b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/atk/reto/attack_inline4.png using Guid(ab7b3a51244112c42966b5b686bb59b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eb6326e6fdf3b178aa37d13c03012fd') in 0.018548 seconds 
+  Import took 0.024366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.377899 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png
+  artifactKey: Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png using Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae9467983d05d42e8f622a1ad40e7238') in 0.020490 seconds 
+  Import took 0.025900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 92.771758 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/idle_Atk/Idle-Atk4.png
+  artifactKey: Guid(7e3e59716c3c06f4aa0d1da4a49094cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/idle_Atk/Idle-Atk4.png using Guid(7e3e59716c3c06f4aa0d1da4a49094cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a963dc6722b3393eb891e317ea780a9c') in 0.018859 seconds 
+  Import took 0.025015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.900914 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/pre-walk/Pre-Dash1.png
+  artifactKey: Guid(6c5bf7e34a2efb84dbef6ae381ffc96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/pre-walk/Pre-Dash1.png using Guid(6c5bf7e34a2efb84dbef6ae381ffc96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49faca33dd8fb150ad9b466a4bdd9ccb') in 0.020469 seconds 
+  Import took 0.025324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.737986 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/pre-walk/Pre-Dash2.png
+  artifactKey: Guid(56d763a4b2f3a7743b7653b07b0e0025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/pre-walk/Pre-Dash2.png using Guid(56d763a4b2f3a7743b7653b07b0e0025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85ece4e4ebfb2492ed01e778961a28cc') in 0.017812 seconds 
+  Import took 0.024343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.851421 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/walk/Walk1.png
+  artifactKey: Guid(4ed7f6dd7d4191d47858f70b30efa892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/walk/Walk1.png using Guid(4ed7f6dd7d4191d47858f70b30efa892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '865095772654f156b6c36ed37a2cd20c') in 0.017023 seconds 
+  Import took 0.023097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.438848 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/walk/Walk4.png
+  artifactKey: Guid(c0ab6cdeabf20f34d8de902a6e69b092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/walk/Walk4.png using Guid(c0ab6cdeabf20f34d8de902a6e69b092) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21f199a0484c8fe2eddf6f99a556f719') in 0.019419 seconds 
+  Import took 0.026362 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 84.805988 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png
+  artifactKey: Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png using Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97cb5cce07b6e66f460a3024463d4822') in 0.016983 seconds 
+  Import took 0.024810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.923609 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death5.png
+  artifactKey: Guid(1154d5d1ad5ddbd43a2ed1f2c9143fb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death5.png using Guid(1154d5d1ad5ddbd43a2ed1f2c9143fb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb7f0d294922e8b144cebbef4da63d1b') in 0.019652 seconds 
+  Import took 0.025904 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.330214 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death2.png
+  artifactKey: Guid(7082f13831dd8454bbd19551e8f03cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death2.png using Guid(7082f13831dd8454bbd19551e8f03cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2757c1d6433c178fe9ae462ce7015805') in 0.016396 seconds 
+  Import took 0.021291 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.488409 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png
+  artifactKey: Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png using Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44987dc3843e92f0d68bf148f364f9fc') in 0.017910 seconds 
+  Import took 0.025753 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.744390 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png
+  artifactKey: Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png using Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c55a7677cea13983d8f0c189493a7760') in 0.018314 seconds 
+  Import took 0.024050 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 55.080397 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/hurt/Hurt1.png
+  artifactKey: Guid(fcb9eac8a5326da409130745e7436a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/hurt/Hurt1.png using Guid(fcb9eac8a5326da409130745e7436a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c30460e9e0028f9f6afec21a90e03ac') in 0.018819 seconds 
+  Import took 0.024067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 159.896111 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png
+  artifactKey: Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/Death/Death1.png using Guid(7b642d148f80f194cb427fb1c905a52b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ee0fd790256b56ade48c4bd78173014') in 0.018314 seconds 
+  Import took 0.025399 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 41.544321 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/hurt/Hurt1.png
+  artifactKey: Guid(fcb9eac8a5326da409130745e7436a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/hurt/Hurt1.png using Guid(fcb9eac8a5326da409130745e7436a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81f561ff63de29f68aa97de74bed3a08') in 0.015421 seconds 
+  Import took 0.020970 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.343704 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/A1 - Gato/hurt/Hurt1.png
+  artifactKey: Guid(fcb9eac8a5326da409130745e7436a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/A1 - Gato/hurt/Hurt1.png using Guid(fcb9eac8a5326da409130745e7436a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5f17f7f721c63b9358f145a9caec53c') in 0.016969 seconds 
+  Import took 0.023506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 75.840949 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Hurt/Dog Hurt 2.png
+  artifactKey: Guid(2b57139e89c02d0488af0c3468a2896d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Hurt/Dog Hurt 2.png using Guid(2b57139e89c02d0488af0c3468a2896d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5c162c8bd3d949307ba8ec32485710') in 0.017128 seconds 
+  Import took 0.024114 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.206638 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Hurt/Dog Hurt 1.png
+  artifactKey: Guid(4fefa47ad13ec9348988d8805c9d5cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Hurt/Dog Hurt 1.png using Guid(4fefa47ad13ec9348988d8805c9d5cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bca209c3e182e6355148953e2f5fad6c') in 0.020185 seconds 
+  Import took 0.025921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.130127 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Hurt/Dog Hurt 1.png
+  artifactKey: Guid(4fefa47ad13ec9348988d8805c9d5cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Hurt/Dog Hurt 1.png using Guid(4fefa47ad13ec9348988d8805c9d5cbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a781cc67c826082b0b54d82435045f90') in 0.019052 seconds 
+  Import took 0.024228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.380349 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png
+  artifactKey: Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png using Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'def48926972fc6c3301a0bcc0ba81bee') in 0.018676 seconds 
+  Import took 0.025149 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.058685 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png
+  artifactKey: Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png using Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ca05f5c37fcbb9662491c90bdd8f090') in 0.016477 seconds 
+  Import took 0.022141 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.942089 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png
+  artifactKey: Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png using Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb16b81fcdaaa9e0e70248d25e6a8150') in 0.019779 seconds 
+  Import took 0.025525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.809257 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png
+  artifactKey: Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png using Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '205693f61672ccf7790e9c5e1b6e51e4') in 0.016027 seconds 
+  Import took 0.022413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.425328 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png
+  artifactKey: Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 1.png using Guid(7fd07d160811e174581c25b7bed56f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ba19de7155ea913a1157030aa76ac1a') in 0.017560 seconds 
+  Import took 0.023783 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007495 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 10.png
+  artifactKey: Guid(98313a9c3759fe04d898a21468b61b84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 10.png using Guid(98313a9c3759fe04d898a21468b61b84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6491bdd137de92ded6379929ea79b3b7') in 0.021250 seconds 
+  Import took 0.026789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014330 seconds.
+  path: Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 10.png
+  artifactKey: Guid(98313a9c3759fe04d898a21468b61b84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Character/Time A3 - Dogo/Death/dog death 10.png using Guid(98313a9c3759fe04d898a21468b61b84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6491bdd137de92ded6379929ea79b3b7') in 0.013482 seconds 
+  Import took 0.020147 seconds .
+

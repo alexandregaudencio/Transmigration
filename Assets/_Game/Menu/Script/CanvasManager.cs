@@ -22,6 +22,7 @@ public class CanvasManager : MonoBehaviour
 
     private void Start()
     {
+        
         SwitchCanvasActivity(MenuStates.PRE_MENU);
 
     }
