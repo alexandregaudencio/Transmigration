@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
     public void IdleAttackAnimationTransition(bool value)
     {
-        Debug.Log("trocou: " + value);
+        //Debug.Log("trocou: " + value);
         animator.SetBool("idle-atk", value);
     }
 

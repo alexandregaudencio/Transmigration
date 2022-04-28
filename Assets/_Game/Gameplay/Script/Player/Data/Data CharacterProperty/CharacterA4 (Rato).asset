@@ -25,5 +25,5 @@ MonoBehaviour:
   characterClass: Speedsters
   spriteIcon: {fileID: 0}
   animationClip: {fileID: 7400000, guid: 518c363d0d78c6a49b7d89cd5bc47b00, type: 2}
-  characterPrefab: {fileID: 3074866688293795986, guid: 36bc9181f7209eb48b03e7deca7f67e3,
+  characterPrefab: {fileID: 2939059547802083657, guid: e9057c10a006dc54ab1f1d5674ef7f87,
     type: 3}

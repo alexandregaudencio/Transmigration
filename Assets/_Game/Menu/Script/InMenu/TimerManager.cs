@@ -27,7 +27,7 @@ namespace Managers
             timer.StopTime();
         }
 
-        public  void UpdateTimerText(int time)
+        public  void UpdateTimerText(float time)
         {
             text_Time.SetText(time.ToString());
         }

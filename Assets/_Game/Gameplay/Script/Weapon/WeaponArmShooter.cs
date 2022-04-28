@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponArmShooter : MonoBehaviour
 {
@@ -16,14 +17,15 @@ public class WeaponArmShooter : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint;
     private PlayerController playerController;
     /*[SerializeField] */private PlayerScoreManager scoreManager;
+    private PlayerAudioManager audioManager;
 
     /*[SerializeField]*/
     private GameObject bulletPrefab => characterProperty.Weapon.Bullet.BulletPrefab;
-
+    
     public event Action<bool> R_AxisButtonDown;
     public event Action<bool> L_AxisButtonDown;
 
-    public event Action shootAction;
+    public UnityEvent shootAction;
 
     private bool isManaEnough => (manaManager.Mana >= characterProperty.Weapon.Bullet.ManaCost);
     private bool cooldownRelease = true;
@@ -31,23 +33,27 @@ public class WeaponArmShooter : MonoBehaviour
     private LayerMask ShooterLayer => gameObject.transform.parent.gameObject.layer;
     private void Awake()
     {
+
         //PV = GetComponent<PhotonView>();
         characterProperty = GetComponentInParent<PlayerController>().CharacterProperty;
         inputJoystick = GetComponentInParent<InputJoystick>();
         manaManager = GetComponentInParent<ManaManager>();
         scoreManager = GetComponentInParent<PlayerScoreManager>();
         playerController = GetComponentInParent<PlayerController>();
+        audioManager = GetComponent<PlayerAudioManager>();
 
     }
 
     private void OnEnable()
     {
-        shootAction += OnShoot;
+        shootAction.AddListener(OnShoot);
+        //shootAction += OnShoot;
 
     }
     private void OnDisable()
     {
-        shootAction -= OnShoot;
+        shootAction.RemoveListener(OnShoot);
+        //shootAction -= OnShoot;
 
     }
     public void ProcessShootInput()
@@ -87,7 +93,7 @@ public class WeaponArmShooter : MonoBehaviour
 
     public void OnShoot()
     {
-        playerController.AudioManager.PlayAudio(playerController.AudioManager.ShootClip, false);
+        //playerCKontroller.AudioManager.PlayAudio(playerController.AudioManager.ShootClip, false);
         //animations, audios, effeccts...
     }
 

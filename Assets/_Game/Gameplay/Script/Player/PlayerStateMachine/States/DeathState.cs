@@ -11,7 +11,7 @@ namespace PlayerStateMachine
             playerController.PlayerScore.IncreaseDeathCount();
             playerController.Animator.SetTrigger("dead");
             playerController.StartCoroutine(ReturnToNormalState(stateController, playerController));
-            playerController.AudioManager.PlayAudio(playerController.AudioManager.DeathClip, false);
+            //playerController.AudioManager.PlayAudio(playerController.AudioManager.DeathClip, false);
 
         }
 

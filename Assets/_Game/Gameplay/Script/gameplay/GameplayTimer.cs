@@ -36,7 +36,7 @@ public class GameplayTimer : MonoBehaviour
     //    text_Time.SetText(time.ToString());
     //}
 
-    private void SetTimerText(int timeToDisplay)
+    private void SetTimerText(float timeToDisplay)
     {
         text_Time.SetText(timer.StringTimeFormated());
     }

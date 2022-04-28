@@ -8,6 +8,7 @@ namespace Gameplay
 {
     public class GameplayBattle : MonoBehaviour
     {
+
         [SerializeField] private Timer gameplayTimer;
         //[SerializeField] private GameObject canvas_HUD;
         [SerializeField] private GameObject canvas_FinalUserInterface;

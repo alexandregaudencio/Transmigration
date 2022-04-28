@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class StartupTimer : MonoBehaviour
 {
-    private TMP_Text text_Time;
+    [SerializeField] private TMP_Text text_Time;
     private Timer timer;
     public event Action StartupTimeOver;
 
     private void Awake()
     {
         timer = GetComponent<Timer>();
-        text_Time = GetComponentInChildren<TMP_Text>();
+        //text_Time = GetComponentInChildren<TMP_Text>();
     }
 
     private void OnEnable()
@@ -39,7 +39,7 @@ public class StartupTimer : MonoBehaviour
         StartupTimeOver?.Invoke();
     }
 
-    public void UpdateTimerText(int time)
+    public void UpdateTimerText(float time)
     {
         text_Time.SetText(time.ToString());
     }

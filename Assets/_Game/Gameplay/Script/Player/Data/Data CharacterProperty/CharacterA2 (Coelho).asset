@@ -25,5 +25,5 @@ MonoBehaviour:
   characterClass: Sniper
   spriteIcon: {fileID: 0}
   animationClip: {fileID: 7400000, guid: a1e073bf40c209c4c83a75e489f55567, type: 2}
-  characterPrefab: {fileID: 3074866688293795986, guid: 36bc9181f7209eb48b03e7deca7f67e3,
+  characterPrefab: {fileID: 5409529581592222885, guid: 2ed276b511d153a4795c35c2bb1c25a2,
     type: 3}

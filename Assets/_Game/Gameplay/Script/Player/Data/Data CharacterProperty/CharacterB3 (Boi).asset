@@ -25,5 +25,5 @@ MonoBehaviour:
   characterClass: Marine
   spriteIcon: {fileID: 21300000, guid: e41e580f8dbb41447a1084baddaf0270, type: 3}
   animationClip: {fileID: 7400000, guid: dc1f34af6aea6e540843956cf8ed5344, type: 2}
-  characterPrefab: {fileID: 2211199811386079847, guid: 2b9b9678a1201a04096bc0305a4afe39,
+  characterPrefab: {fileID: 8738478920237020479, guid: 14197412aef4ba34a835549ab47a8e81,
     type: 3}

@@ -9,18 +9,19 @@ namespace Managers
 
     public class Timer : MonoBehaviour
     {
-        [SerializeField] private int maxTimeInSeconds;
+        [SerializeField] private float maxTimeInSeconds;
+        [SerializeField] private float deltaTime;
         public Action  timeOver;
         public  Action timeInitalize;
-        public Action<int> timerChange;
-        private int currentTime;
+        public Action<float> timerChange;
+        private float currentTime;
         public static Timer instance;
-        public int timePassed => (maxTimeInSeconds - currentTime);
-        public int CurrentTime { get => currentTime; }
+        public float timePassed => (maxTimeInSeconds - currentTime);
+        public float CurrentTime { get => currentTime; }
 
         public bool IsTimeOver => (CurrentTime > 0.00f) ? false : true;
 
-        public void ResetTime() => currentTime = maxTimeInSeconds + 1;
+        public void ResetTime() => currentTime = maxTimeInSeconds;
 
 
         public void StartTime()
@@ -52,7 +53,7 @@ namespace Managers
 
         public void OnTimeInitialize()
         {
-            currentTime = maxTimeInSeconds+1; //correção
+            currentTime = maxTimeInSeconds; //correção
             StartCoroutine(TimerCountdown());
         }
 
@@ -61,10 +62,10 @@ namespace Managers
         {
             while(!IsTimeOver)
             {
-                currentTime--;
+                currentTime -= deltaTime;
                 timerChange?.Invoke(currentTime);
                 if (IsTimeOver) timeOver?.Invoke();
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(deltaTime);
                 
             }
 
