@@ -506,6 +506,12 @@ TextureImporter:
   - first:
       213: -6141983832102253625
     second: environment-tiles_167
+  - first:
+      213: 5846831030523506914
+    second: environment-tiles_168
+  - first:
+      213: 2939998080479746484
+    second: environment-tiles_169
   externalObjects: {}
   serializedVersion: 11
   mipmaps:

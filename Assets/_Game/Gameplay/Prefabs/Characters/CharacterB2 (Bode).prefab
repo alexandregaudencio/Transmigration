@@ -246,7 +246,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 1c0b614ef61b6b64ca525f579ed2366e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -301,13 +301,14 @@ MonoBehaviour:
   shootAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: -8695618247883748983}
+        m_TargetAssemblyTypeName: PlayerAudioManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 8300000, guid: 473dcaff72487c0488becd46115b743f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -421,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07977c053d96d346bc118ef53740563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootClip: {fileID: 8300000, guid: 473dcaff72487c0488becd46115b743f, type: 3}
+  playerAudios: []
 --- !u!1 &1993115068851110545
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +444,7 @@ GameObject:
   - component: {fileID: 4357949104278079794}
   - component: {fileID: 993998220504086207}
   - component: {fileID: 339405056709621953}
+  - component: {fileID: -8695618247883748983}
   - component: {fileID: 3609146217335397411}
   m_Layer: 9
   m_Name: CharacterB2 (Bode)
@@ -460,7 +462,7 @@ Transform:
   m_GameObject: {fileID: 1993115068851110545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.64, y: -3.66, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children:
   - {fileID: 1993115068299382562}
   - {fileID: 7207731222695461474}
@@ -554,7 +556,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ec74e01cd1c707b40ab2d452477c9a6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -688,6 +690,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: {fileID: 0}
+--- !u!114 &-8695618247883748983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993115068851110545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07977c053d96d346bc118ef53740563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAudios:
+  - audioName: Dash
+    audioClip: {fileID: 8300000, guid: 7edfaa3f44600a549ab85a206e764718, type: 3}
+  - audioName: Hurt
+    audioClip: {fileID: 8300000, guid: 31a48ad7e62ce2348bd38db8492c6c10, type: 3}
+  - audioName: Death
+    audioClip: {fileID: 8300000, guid: fc4739dd45ec630498752271ca9dc645, type: 3}
 --- !u!82 &3609146217335397411
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1111,7 +1132,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b4f0cdd6e30659b4fa831023a3c6d2e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1532,7 +1553,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
     type: 3}

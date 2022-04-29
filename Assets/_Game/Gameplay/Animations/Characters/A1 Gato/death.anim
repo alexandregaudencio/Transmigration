@@ -107,7 +107,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: PlayAudio
-    data: 
+    data: Death
     objectReferenceParameter: {fileID: 8300000, guid: 926c950ead87e5947b97d95c4ff5d3a4,
       type: 3}
     floatParameter: 0

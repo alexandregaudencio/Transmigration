@@ -74,7 +74,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: PlayAudio
-    data: 
+    data: Hurt
     objectReferenceParameter: {fileID: 8300000, guid: b78a586cdeeb1f2468146ca7cf57568b,
       type: 3}
     floatParameter: 0

@@ -73,8 +73,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: OnEnable
-    data: 
+    functionName: PlayAudio
+    data: Hurt
     objectReferenceParameter: {fileID: 8300000, guid: b78a586cdeeb1f2468146ca7cf57568b,
       type: 3}
     floatParameter: 0

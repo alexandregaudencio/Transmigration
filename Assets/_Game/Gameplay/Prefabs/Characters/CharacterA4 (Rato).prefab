@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b4f0cdd6e30659b4fa831023a3c6d2e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -524,7 +524,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a3a960e6773040f4eafa0e5fc06cf218, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -576,6 +576,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 2939059546908097992}
+  shootAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2985913257458940659}
+        m_TargetAssemblyTypeName: PlayerAudioManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 473dcaff72487c0488becd46115b743f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2939059547802083657
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,8 +613,8 @@ GameObject:
   - component: {fileID: 1088708998755379946}
   - component: {fileID: 4515474985982874983}
   - component: {fileID: 4023011443397499673}
-  - component: {fileID: 105579310359216123}
   - component: {fileID: 2985913257458940659}
+  - component: {fileID: 105579310359216123}
   m_Layer: 8
   m_Name: CharacterA4 (Rato)
   m_TagString: character
@@ -615,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 2939059547802083657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.05, y: -2.78, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children:
   - {fileID: 2939059547280076026}
   - {fileID: 6297815505569751482}
@@ -709,7 +725,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0294cbfbde5b6c54386954e0a5335c55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -843,6 +859,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: {fileID: 0}
+--- !u!114 &2985913257458940659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939059547802083657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07977c053d96d346bc118ef53740563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAudios:
+  - audioName: Dash
+    audioClip: {fileID: 8300000, guid: 7edfaa3f44600a549ab85a206e764718, type: 3}
+  - audioName: Hurt
+    audioClip: {fileID: 8300000, guid: 31a48ad7e62ce2348bd38db8492c6c10, type: 3}
+  - audioName: Death
+    audioClip: {fileID: 8300000, guid: fc4739dd45ec630498752271ca9dc645, type: 3}
 --- !u!82 &105579310359216123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -939,19 +974,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2985913257458940659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2939059547802083657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a07977c053d96d346bc118ef53740563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootClip: {fileID: 8300000, guid: 473dcaff72487c0488becd46115b743f, type: 3}
 --- !u!1 &3339805550627443949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1459,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
     type: 3}

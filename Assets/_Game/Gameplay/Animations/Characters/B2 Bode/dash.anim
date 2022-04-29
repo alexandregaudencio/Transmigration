@@ -80,7 +80,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: PlayAudio
-    data: 
+    data: Dash
     objectReferenceParameter: {fileID: 8300000, guid: 7edfaa3f44600a549ab85a206e764718,
       type: 3}
     floatParameter: 0

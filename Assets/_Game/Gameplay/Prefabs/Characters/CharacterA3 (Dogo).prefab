@@ -335,7 +335,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a3a960e6773040f4eafa0e5fc06cf218, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -387,6 +387,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 2211199810466752230}
+  shootAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2240111853510156765}
+        m_TargetAssemblyTypeName: PlayerAudioManager, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 473dcaff72487c0488becd46115b743f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2211199811386079847
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,13 +419,13 @@ GameObject:
   - component: {fileID: 223717829833658785}
   - component: {fileID: 2211199811386079845}
   - component: {fileID: 1661328632324145739}
-  - component: {fileID: 2240111853510156765}
-  - component: {fileID: 3968082797711729877}
   - component: {fileID: 3172819025830651188}
   - component: {fileID: 842841760926118849}
   - component: {fileID: 4142676714917507524}
   - component: {fileID: 633970735757299273}
   - component: {fileID: 122435030121136183}
+  - component: {fileID: 2240111853510156765}
+  - component: {fileID: 3968082797711729877}
   m_Layer: 8
   m_Name: CharacterA3 (Dogo)
   m_TagString: character
@@ -426,7 +442,7 @@ Transform:
   m_GameObject: {fileID: 2211199811386079847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.12, y: -2.91, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children:
   - {fileID: 2211199810835068884}
   - {fileID: 6989644074702338708}
@@ -520,7 +536,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fde0e644466f91f4197a3786ee0d8e64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -593,6 +609,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425ef20eeb55b4046853dbbd134935c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3172819025830651188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211199811386079847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e521a66ccd3c5a4cb5e50431d5c8612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &842841760926118849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211199811386079847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8176440942835914da51337a87324129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4142676714917507524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211199811386079847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16886a6883c42184ab25bc2e037387a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &633970735757299273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211199811386079847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be9f45850a9b5046a9c20ad43494cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &122435030121136183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211199811386079847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aaaefae5e69c7342baee3f8d7619ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScore: {fileID: 11400000, guid: ae8e769df6e27724f9389af10526767e, type: 2}
 --- !u!114 &2240111853510156765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,10 +682,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07977c053d96d346bc118ef53740563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootClip: {fileID: 8300000, guid: 473dcaff72487c0488becd46115b743f, type: 3}
-  hurtClip: {fileID: 0}
-  deathClip: {fileID: 8300000, guid: fc4739dd45ec630498752271ca9dc645, type: 3}
-  meditationClip: {fileID: 8300000, guid: bdecfc81f7668c14b90bdf779f696a86, type: 3}
+  playerAudios:
+  - audioName: Dash
+    audioClip: {fileID: 8300000, guid: 7edfaa3f44600a549ab85a206e764718, type: 3}
+  - audioName: Hurt
+    audioClip: {fileID: 8300000, guid: 31a48ad7e62ce2348bd38db8492c6c10, type: 3}
+  - audioName: Death
+    audioClip: {fileID: 8300000, guid: fc4739dd45ec630498752271ca9dc645, type: 3}
 --- !u!82 &3968082797711729877
 AudioSource:
   m_ObjectHideFlags: 0
@@ -705,67 +785,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3172819025830651188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2211199811386079847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e521a66ccd3c5a4cb5e50431d5c8612, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &842841760926118849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2211199811386079847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8176440942835914da51337a87324129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4142676714917507524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2211199811386079847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16886a6883c42184ab25bc2e037387a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &633970735757299273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2211199811386079847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0be9f45850a9b5046a9c20ad43494cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &122435030121136183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2211199811386079847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aaaefae5e69c7342baee3f8d7619ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScore: {fileID: 11400000, guid: ae8e769df6e27724f9389af10526767e, type: 2}
 --- !u!1 &2485845815931849078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1021,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b4f0cdd6e30659b4fa831023a3c6d2e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1423,7 +1442,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 226871943
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
     type: 3}
