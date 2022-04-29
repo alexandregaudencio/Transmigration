@@ -307,3 +307,302 @@ Received Import Request.
 Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary.png using Guid(1d737430af77ac944b72ac16599e578a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35d4d49a5d501acd4b3a808a03a43bc1') in 0.016441 seconds 
   Import took 0.029761 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 584.616605 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-tiles.png
+  artifactKey: Guid(bb67c3f987cdde64991bd2c5ad09cd45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-tiles.png using Guid(bb67c3f987cdde64991bd2c5ad09cd45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f76aa2b3cf4a25839c04ed7eaee5b1') in 0.568055 seconds 
+  Import took 0.576016 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 219.380983 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 1.png
+  artifactKey: Guid(e77f79329b823b14385aa07a6d6261f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 1.png using Guid(e77f79329b823b14385aa07a6d6261f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7834ac9eda6626c1db4eb2279ebfbcdf') in 0.096868 seconds 
+  Import took 0.102639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.398958 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 1.png
+  artifactKey: Guid(e77f79329b823b14385aa07a6d6261f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 1.png using Guid(e77f79329b823b14385aa07a6d6261f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3440ba92fd7c1d96ee4d784dae82f9c') in 0.056891 seconds 
+  Import took 0.064910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.335571 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 1.png
+  artifactKey: Guid(e77f79329b823b14385aa07a6d6261f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 1.png using Guid(e77f79329b823b14385aa07a6d6261f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29e7c1d715bae106ac232bb42d8651d8') in 0.082736 seconds 
+  Import took 0.098867 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.907301 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-tiles.png
+  artifactKey: Guid(bb67c3f987cdde64991bd2c5ad09cd45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-tiles.png using Guid(bb67c3f987cdde64991bd2c5ad09cd45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cefcfde333306fff550ad7974aaa0c1b') in 0.497953 seconds 
+  Import took 0.504604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 578.936184 seconds.
+  path: Assets/_Game/Gameplay/Level/TilePallete/Versão off tilepalette/Versao off tilepalette.prefab
+  artifactKey: Guid(1e49bff3923929242bbc290310893cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Level/TilePallete/Versão off tilepalette/Versao off tilepalette.prefab using Guid(1e49bff3923929242bbc290310893cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a3aad0eb1e1f4327ecb50c4f807eec2') in 0.112532 seconds 
+  Import took 0.122148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.396220 seconds.
+  path: Assets/_Game/Gameplay/Level/TilePallete/Versão off tilepalette/Versao off tilepalette.prefab
+  artifactKey: Guid(1e49bff3923929242bbc290310893cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Level/TilePallete/Versão off tilepalette/Versao off tilepalette.prefab using Guid(1e49bff3923929242bbc290310893cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0fc0c026d4f84efce807a0c4e5f18f7') in 0.073796 seconds 
+  Import took 0.081030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.191829 seconds.
+  path: Assets/_Game/Gameplay/Level/TileAsset/TileAsset versao off 2/environment-tiles_0.asset
+  artifactKey: Guid(cf8f1a7ea58dea849809bce63c5a33c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Level/TileAsset/TileAsset versao off 2/environment-tiles_0.asset using Guid(cf8f1a7ea58dea849809bce63c5a33c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b23fb97277d218b0392b877414fb8ca') in 0.019573 seconds 
+  Import took 0.030513 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 211.089887 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 3.png
+  artifactKey: Guid(c3766f75c44b3de4aac5be40bf0b5d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/Scenary 3.png using Guid(c3766f75c44b3de4aac5be40bf0b5d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4630b71252a11df73959b72914e9494') in 0.039466 seconds 
+  Import took 0.048073 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 472.547100 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background.png
+  artifactKey: Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background.png using Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b677829c05426e1ea4d9b76cca46bfb') in 0.033923 seconds 
+  Import took 0.039900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.867271 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png
+  artifactKey: Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png using Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a4c8120fe24cde3b70ea0c2c6ad44e2') in 0.023728 seconds 
+  Import took 0.030514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.476539 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png
+  artifactKey: Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png using Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a17083ef45b1d35b23cb6aad092adb51') in 0.017051 seconds 
+  Import took 0.023006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.045055 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png
+  artifactKey: Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png using Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a17083ef45b1d35b23cb6aad092adb51') in 0.015058 seconds 
+  Import took 0.021711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.483481 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png
+  artifactKey: Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png using Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fc8fb9cad1f2cb03fac1a0f1fd834d7') in 0.802321 seconds 
+  Import took 0.811393 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.351607 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.518 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1520ms)
+		BeginReloadAssembly (261ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (28ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (123ms)
+		EndReloadAssembly (1200ms)
+			LoadAssemblies (113ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (369ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (553ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (111ms)
+				ProcessInitializeOnLoadAttributes (421ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 129.8 MB.
+System memory in use after: 130.0 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3594.
+Total: 4.115700 ms (FindLiveObjects: 0.377000 ms CreateObjectMapping: 0.180800 ms MarkObjects: 3.528700 ms  DeleteObjects: 0.027500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4130.217950 seconds.
+  path: Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png
+  artifactKey: Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/Gameplay/Art/Scenary/Versão off/environment-background-tiles.png using Guid(73c7a125247b709429a10dfd46ee46ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69d445a6e7b099a998fc29781385264e') in 1.060945 seconds 
+  Import took 1.067988 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.053272 seconds.
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Begin MonoManager ReloadAssembly
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Script error: OnCollisionEnter
+The message must have 0 or 1 parameters.
+The message will be ignored.
+
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.819 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1820ms)
+		BeginReloadAssembly (122ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (39ms)
+		EndReloadAssembly (1640ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (314ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (1047ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (917ms)
+				ProcessInitializeOnLoadMethodAttributes (19ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (27ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 5.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 129.9 MB.
+System memory in use after: 130.1 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 3597.
+Total: 14.183900 ms (FindLiveObjects: 1.294400 ms CreateObjectMapping: 1.399700 ms MarkObjects: 11.378100 ms  DeleteObjects: 0.107100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
