@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 4023011443397499673}
   - component: {fileID: 2985913257458940659}
   - component: {fileID: 105579310359216123}
+  - component: {fileID: 2047385358952167059}
   m_Layer: 8
   m_Name: CharacterA4 (Rato)
   m_TagString: character
@@ -974,6 +975,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2047385358952167059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939059547802083657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0066062018d08434f87894e3c6582868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shield: {fileID: 7218976706279608687}
 --- !u!1 &3339805550627443949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee21e9eb92bce67449b6b2152fa07789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToDisableInSeconds: 0
 --- !u!1 &8346188466843306794
 GameObject:
   m_ObjectHideFlags: 0

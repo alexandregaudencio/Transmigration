@@ -426,6 +426,7 @@ GameObject:
   - component: {fileID: 122435030121136183}
   - component: {fileID: 2240111853510156765}
   - component: {fileID: 3968082797711729877}
+  - component: {fileID: 4778552654057371006}
   m_Layer: 8
   m_Name: CharacterA3 (Dogo)
   m_TagString: character
@@ -785,6 +786,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4778552654057371006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211199811386079847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0066062018d08434f87894e3c6582868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shield: {fileID: 5929152204609473089}
 --- !u!1 &2485845815931849078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee21e9eb92bce67449b6b2152fa07789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToDisableInSeconds: 0
 --- !u!1 &6978611098566671903
 GameObject:
   m_ObjectHideFlags: 0

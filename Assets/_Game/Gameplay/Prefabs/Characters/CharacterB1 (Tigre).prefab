@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee21e9eb92bce67449b6b2152fa07789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToDisableInSeconds: 0
 --- !u!1 &2632636745209265144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1059,7 @@ GameObject:
   - component: {fileID: 5281186831866850366}
   - component: {fileID: 5381151944691490166}
   - component: {fileID: 9216906033710598364}
+  - component: {fileID: 8164877202027453235}
   m_Layer: 9
   m_Name: CharacterB1 (Tigre)
   m_TagString: character
@@ -1417,6 +1419,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8164877202027453235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221639257276569198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0066062018d08434f87894e3c6582868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shield: {fileID: 1923289892347143752}
 --- !u!1 &6641830547744728107
 GameObject:
   m_ObjectHideFlags: 0
