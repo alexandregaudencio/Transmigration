@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class EffectController : MonoBehaviour
 {
-    AudioSource audioSource;
+    private AudioSource audioSource;
     //0: não organico   //1: organico
     [SerializeField] private AudioClip[] audioList;
 

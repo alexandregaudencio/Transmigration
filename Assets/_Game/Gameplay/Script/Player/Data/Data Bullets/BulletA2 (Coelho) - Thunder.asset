@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 40
   speed: 1.5
-  manaCost: 3
+  manaCost: 20
   bulletPrefab: {fileID: 2824951896708961409, guid: 1adb76eec28b2514897fb6bbeb7424e5,
     type: 3}

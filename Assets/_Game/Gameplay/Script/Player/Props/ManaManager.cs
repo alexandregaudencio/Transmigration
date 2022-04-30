@@ -32,12 +32,12 @@ namespace CharacterNamespace
 
         private void OnEnable()
         {
-            WeaponArmShooter.shootAction.AddListener(SpentMana);
+            WeaponArmShooter.onShoot.AddListener(SpentMana);
         }
 
         private void OnDisable()
         {
-            WeaponArmShooter.shootAction.RemoveListener(SpentMana);
+            WeaponArmShooter.onShoot.RemoveListener(SpentMana);
         }
 
         private void FixedUpdate()
