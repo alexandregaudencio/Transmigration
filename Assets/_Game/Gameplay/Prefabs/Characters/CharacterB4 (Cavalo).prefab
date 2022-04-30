@@ -604,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 5619801298916539682}
   m_LocalRotation: {x: 0, y: 0, z: 0.89879405, w: 0.4383712}
   m_LocalPosition: {x: 0.17, y: 0.008, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0}
   m_Children: []
   m_Father: {fileID: 6240074350330280921}
   m_RootOrder: 2
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1909073828499326540}
-  characterProperty: {fileID: 11400000, guid: c3da65fb669e87c47a5b1b465325a8e1, type: 2}
+  characterProperty: {fileID: 11400000, guid: 33ead3c1baade814e8521c271dc4b11a, type: 2}
   weaponSpriteRenderer: {fileID: 6240074350330280870}
   canvasOverPlayer: {fileID: 8269280042642946150}
 --- !u!114 &6861455698037280326
@@ -1157,7 +1157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6240074349618031338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.207, y: 0.008, z: 0}
+  m_LocalPosition: {x: 0.133, y: 0.011, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 6240074350330280921}

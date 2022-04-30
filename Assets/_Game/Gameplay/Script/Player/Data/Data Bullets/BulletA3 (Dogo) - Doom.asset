@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulletA3 (Dogo) - Doom
   m_EditorClassIdentifier: 
   damage: 40
-  speed: 3
+  speed: 1.3
   manaCost: 3
   bulletPrefab: {fileID: 3603589608992736418, guid: a45d6fba39724594fb288b144a1fe066,
     type: 3}
