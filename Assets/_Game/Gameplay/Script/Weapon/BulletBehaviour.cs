@@ -14,6 +14,18 @@ public class BulletBehaviour : MonoBehaviour
     private void OnEnable()
     {
         GetComponent<Rigidbody2D>().AddForce(transform.right*bulletProperty.Speed, ForceMode2D.Impulse);
+        StartCoroutine(WaitToDisable());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(WaitToDisable());
+    }
+
+    private IEnumerator WaitToDisable()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 
 }
