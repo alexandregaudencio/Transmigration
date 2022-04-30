@@ -512,7 +512,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 68a64fbaedf71334bb21af66d6345cfd, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &3074866688293795982
 SpriteRenderer:
@@ -702,9 +702,9 @@ MonoBehaviour:
   - audioName: Dash
     audioClip: {fileID: 8300000, guid: 7edfaa3f44600a549ab85a206e764718, type: 3}
   - audioName: Hurt
-    audioClip: {fileID: 8300000, guid: 31a48ad7e62ce2348bd38db8492c6c10, type: 3}
+    audioClip: {fileID: 0}
   - audioName: Death
-    audioClip: {fileID: 8300000, guid: fc4739dd45ec630498752271ca9dc645, type: 3}
+    audioClip: {fileID: 8300000, guid: fffd1643cfb3e7749b3f157c1b15b1e0, type: 3}
 --- !u!82 &221426466214061600
 AudioSource:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7edfaa3f44600a549ab85a206e764718, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.9
   m_Pitch: 1

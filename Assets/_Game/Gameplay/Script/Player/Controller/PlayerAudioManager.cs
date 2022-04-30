@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,15 +15,6 @@ public class PlayerAudioManager : MonoBehaviour
 {
     private AudioSource audioSource;
     [SerializeField] private List<PlayerAudio> playerAudios;
-    //[SerializeField] private AudioClip shootClip;
-    //[SerializeField] private AudioClip hurtClip;
-    //[SerializeField] private AudioClip deathClip;
-    //[SerializeField] private AudioClip meditationClip;
-
-    //public AudioClip ShootClip { get => shootClip; set => shootClip = value; }
-    //public AudioClip HurtClip { get => hurtClip; set => hurtClip = value; }
-    //public AudioClip DeathClip { get => deathClip; set => deathClip = value; }
-    //public AudioClip MeditationClip { get => meditationClip; set => meditationClip = value; }
 
     private Dictionary<string, AudioClip> audioDictionary= new Dictionary<string, AudioClip>();
     private void Start()
@@ -69,18 +59,14 @@ public class PlayerAudioManager : MonoBehaviour
 
 
 
-
-
 }
 
 
 [Serializable]
 public class PlayerAudio
 {
-
     [SerializeField] private string audioName;
     [SerializeField] private AudioClip audioClip;
-
     public string AudioName { get => audioName; set => audioName = value; }
     public AudioClip AudioClip { get => audioClip; set => audioClip = value; }
 

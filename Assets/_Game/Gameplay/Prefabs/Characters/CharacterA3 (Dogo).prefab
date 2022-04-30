@@ -496,7 +496,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 68a64fbaedf71334bb21af66d6345cfd, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &2211199811386079867
 SpriteRenderer:
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd5258f7bbcab148bbbc203ac2fbab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: 1
+  joystick: 0
 --- !u!114 &2211199811386079845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,9 +686,9 @@ MonoBehaviour:
   - audioName: Dash
     audioClip: {fileID: 8300000, guid: 7edfaa3f44600a549ab85a206e764718, type: 3}
   - audioName: Hurt
-    audioClip: {fileID: 8300000, guid: 31a48ad7e62ce2348bd38db8492c6c10, type: 3}
+    audioClip: {fileID: 0}
   - audioName: Death
-    audioClip: {fileID: 8300000, guid: fc4739dd45ec630498752271ca9dc645, type: 3}
+    audioClip: {fileID: 8300000, guid: 088948ba375a48540ae53dea080c6d0f, type: 3}
 --- !u!82 &3968082797711729877
 AudioSource:
   m_ObjectHideFlags: 0
