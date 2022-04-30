@@ -113,12 +113,5 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("idle-atk", value);
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            shield.SetActive(true);
-        }
-    }
 }
 
