@@ -5,13 +5,18 @@ using UnityEngine;
 
 namespace InteractableObjects
 {
-    [RequireComponent(typeof(CircleCollider2D))]
+    [RequireComponent(typeof(Collider2D))]
     public class HealingFruit : MonoBehaviour
     {
 
         [SerializeField] [Min(0)] private int healingAmount;
         public event Action<GameObject> healing;
+        private ItemSpawnManager itemSpawnManager;
 
+        private void Start()
+        {
+            itemSpawnManager = GetComponentInParent<ItemSpawnManager>();
+        }
         private void OnEnable()
         {
             healing += OnHealing;
@@ -28,6 +33,7 @@ namespace InteractableObjects
             if (collision.gameObject.CompareTag("character"))
             {
                 healing?.Invoke(collision.gameObject);
+                itemSpawnManager.ItemCollect();
             }
 
         }

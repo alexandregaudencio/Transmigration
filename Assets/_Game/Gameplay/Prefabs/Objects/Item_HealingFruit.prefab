@@ -4815,10 +4815,11 @@ GameObject:
   - component: {fileID: 453578076723444587}
   - component: {fileID: 453578076723444586}
   - component: {fileID: 453578076723444629}
+  - component: {fileID: 453578077204131053}
   - component: {fileID: 453578076723444628}
   m_Layer: 0
-  m_Name: HealingFruit
-  m_TagString: Untagged
+  m_Name: Item_HealingFruit
+  m_TagString: fruit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4875,10 +4876,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1491418317
-  m_SortingLayer: 3
+  m_SortingLayerID: -491318263
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
+  m_Sprite: {fileID: 7293598183456022363, guid: 4a547a53ee63d004b96e7795a48c6f30,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4903,9 +4904,28 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00034499168, y: 0.0016914606}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3128146
+--- !u!95 &453578077204131053
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453578076723444631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 195e56eb77abaa743b76590b6a59e517, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &453578076723444628
 MonoBehaviour:
   m_ObjectHideFlags: 0
