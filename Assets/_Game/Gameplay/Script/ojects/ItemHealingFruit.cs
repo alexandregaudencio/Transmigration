@@ -24,6 +24,7 @@ namespace InteractableObjects
         private void HealingApply(GameObject targetObject)
         {
             targetObject.GetComponent<HPManager>()?.IncreaseHP(healingAmount);
+            targetObject.GetComponentInChildren<HealingEffect>()?.InitializeAnimator();
             Destroy(gameObject);
 
         }

@@ -13,6 +13,8 @@ namespace PowerUps
             barrier.SetActive(true);
         }
 
+        
+
     }
 
 }

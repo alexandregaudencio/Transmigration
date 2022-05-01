@@ -1,6 +1,4 @@
-﻿using CharacterNamespace;
-using Photon.Pun;
-using System;
+﻿using CharacterNamespace;using System;
 using UnityEngine;
 
 public class HPManager : MonoBehaviour
@@ -35,8 +33,9 @@ public class HPManager : MonoBehaviour
 
     public void IncreaseHP(float value)
     {
-            Hp =  (Hp + value <= MaxHP) ? (Hp+value) : MaxHP;
-            changeHP?.Invoke(Hp);
+        Hp =  (Hp + value <= MaxHP) ? (Hp+value) : MaxHP;
+        changeHP?.Invoke(Hp);
+
     }
     
 
