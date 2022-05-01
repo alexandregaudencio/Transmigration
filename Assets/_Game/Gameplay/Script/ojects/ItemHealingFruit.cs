@@ -12,16 +12,16 @@ namespace InteractableObjects
 
         private void OnEnable()
         {
-            collect += Healing;
+            collect += HealingApply;
         }
 
         private void OnDisable()
         {
-            collect -= Healing;
+            collect -= HealingApply;
 
         }
 
-        private void Healing(GameObject targetObject)
+        private void HealingApply(GameObject targetObject)
         {
             targetObject.GetComponent<HPManager>()?.IncreaseHP(healingAmount);
             Destroy(gameObject);

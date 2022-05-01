@@ -16,7 +16,6 @@ using UnityEngine;
 [RequireComponent(typeof(InputJoystick))]
 public class PlayerController : MonoBehaviour
 {
-    public GameObject shield;
     private Rigidbody2D RigidBody2D;
     private StateController stateController;
     private HPManager hpManager;
