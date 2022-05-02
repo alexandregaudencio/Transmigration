@@ -181,7 +181,7 @@ MonoBehaviour:
   - vision
   - healing
   - tomb
-  - fruit
+  - item
   collisionTagsToDetect:
   - bullet
   - sentinel

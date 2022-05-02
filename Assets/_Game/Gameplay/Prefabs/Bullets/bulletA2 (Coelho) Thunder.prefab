@@ -102,8 +102,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.054202326, y: -0.0043970672}
-  m_Size: {x: 0.08654105, y: 0.0337802}
+  m_Offset: {x: 0.008667825, y: -0.0052677486}
+  m_Size: {x: 0.031459033, y: 0.02855697}
   m_Direction: 1
 --- !u!50 &5321735635880772695
 Rigidbody2D:
@@ -181,7 +181,7 @@ MonoBehaviour:
   - vision
   - healing
   - tomb
-  - fruit
+  - item
   collisionTagsToDetect:
   - bullet
   - sentinel

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2913569363864969310}
   - component: {fileID: 9115618354795775512}
   - component: {fileID: 548612124}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: bulletA1 (Gato) Flame
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   - vision
   - healing
   - tomb
-  - fruit
+  - item
   collisionTagsToDetect:
   - bullet
   - sentinel
