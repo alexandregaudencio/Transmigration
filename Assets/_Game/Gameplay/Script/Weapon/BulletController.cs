@@ -20,6 +20,7 @@ public class BulletController : MonoBehaviourPunCallbacks
         }
     }
 
+
     //private void OnTriggerStay2D(Collider2D collision)
     //{
     //    if (!collisionTagsListIgnore.Contains(collision.tag) && this.gameObject.layer != collision.gameObject.layer)
@@ -38,7 +39,7 @@ public class BulletController : MonoBehaviourPunCallbacks
         if(collisioneffect != null)
         {
             GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
-            effect.GetComponent<EffectController>().PlayAudioClip(isDamageable);
+            //effect.GetComponent<EffectController>().PlayAudioClip(isDamageable);
         }
 
         DestroyBullet();
