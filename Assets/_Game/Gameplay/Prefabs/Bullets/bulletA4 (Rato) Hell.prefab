@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 7935227844161071189}
   - component: {fileID: 4103248549985226259}
   - component: {fileID: 5075702225055031319}
-  - component: {fileID: -4703061411466097073}
   m_Layer: 0
   m_Name: bulletA4 (Rato) Hell
   m_TagString: bullet
@@ -34,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 3603589608992736418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.216, y: -2.792, z: -1.1499023}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -103,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010410428, y: -0.010804486}
+  m_Offset: {x: -0.007620129, y: -0.010804487}
   serializedVersion: 2
-  m_Radius: 0.015072608
+  m_Radius: 0.017862909
 --- !u!50 &6695763292735689844
 Rigidbody2D:
   serializedVersion: 4
@@ -123,9 +122,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &2260916684094370973
 MonoBehaviour:
@@ -139,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1407ca8fbd4e754681aa4f00b08d080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 11400000, guid: 16c6c659f3953fc4cae73dcf6d54040a, type: 2}
+  bullet: {fileID: 11400000, guid: 3dc8c6e573517e34b85dc37581f19de2, type: 2}
 --- !u!114 &1180830265769471793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,12 +175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b862645af43743d4085f735bd1b17a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisioneffect: {fileID: 0}
+  collisioneffect: {fileID: 8864583180818302559, guid: b0b33135ecf08244293e1aa7739c501f,
+    type: 3}
   collisionTagsToIgnore:
   - vision
   - healing
   - tomb
-  - fruit
+  - item
   collisionTagsToDetect:
   - bullet
   - sentinel
@@ -206,99 +206,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &-4703061411466097073
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3603589608992736418}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 473dcaff72487c0488becd46115b743f, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.8
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4

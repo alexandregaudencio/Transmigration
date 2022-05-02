@@ -30,9 +30,9 @@ namespace DamageableNamespace
             if(damageable != null)
             {
                 damageable.TakeDamage(bulletProperty.Damage);
-                // isso abaixo não ta legal, just works!
+                // isso abaixo não ta legal, "but works!"
                 playerScore.addDamageAmount(bulletProperty.Damage);
-                collision.gameObject.GetComponent<PlayerController>().LastToDamage = PlayerScore;
+                collision.gameObject.GetComponent<PlayerController>().PlayerScore = PlayerScore;
             }
             
 

@@ -25,7 +25,7 @@ public class WeaponArmShooter : MonoBehaviour
     public event Action<bool> R_AxisButtonDown;
     public event Action<bool> L_AxisButtonDown;
 
-    public UnityEvent shootAction;
+    public UnityEvent onShoot;
 
     private bool isManaEnough => (manaManager.Mana >= characterProperty.Weapon.Bullet.ManaCost);
     private bool cooldownRelease = true;
@@ -46,13 +46,13 @@ public class WeaponArmShooter : MonoBehaviour
 
     private void OnEnable()
     {
-        shootAction.AddListener(OnShoot);
+        onShoot.AddListener(OnShoot);
         //shootAction += OnShoot;
 
     }
     private void OnDisable()
     {
-        shootAction.RemoveListener(OnShoot);
+        onShoot.RemoveListener(OnShoot);
         //shootAction -= OnShoot;
 
     }
@@ -77,7 +77,7 @@ public class WeaponArmShooter : MonoBehaviour
             bullet.layer = ShooterLayer;
             cooldownRelease = false;
             StartCoroutine(Cooldown());
-            shootAction?.Invoke();
+            onShoot?.Invoke();
             bullet.GetComponent<TriggerDamage>().PlayerScore = scoreManager.PlayerScore;
 
         }

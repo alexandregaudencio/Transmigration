@@ -18,7 +18,7 @@ MonoBehaviour:
   hp: 30
   dashStaminCost: 20
   dashStamin: 50
-  dashStaminRecoveryPercentagemInSeconds: 15
+  dashStaminRecoveryPercentagemInSeconds: 10
   mana: 50
   weapon: {fileID: 11400000, guid: 615db72d9bd4850489254f9c8675a657, type: 2}
   characterName: Conjurer

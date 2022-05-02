@@ -2,10 +2,10 @@
 using Photon.Pun;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public class EffectController : MonoBehaviour
 {
-    AudioSource audioSource;
+    private AudioSource audioSource;
     //0: não organico   //1: organico
     [SerializeField] private AudioClip[] audioList;
 
@@ -18,13 +18,14 @@ public class EffectController : MonoBehaviour
     {
         if(isTargetDamageable)
         {
-            audioSource.clip = (AudioClip)audioList.GetValue(0);
+            audioSource.clip = audioList[0];
             audioSource.Play();
-        } else
-        {
-            audioSource.clip = (AudioClip)audioList.GetValue(1);
-            audioSource.Play();
-        }
+        } 
+        //else
+        //{
+        //    audioSource.clip = (AudioClip)audioList.GetValue(1);
+        //    audioSource.Play();
+        //}
 
     }
 

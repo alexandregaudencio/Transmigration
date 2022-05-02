@@ -20,7 +20,7 @@ MonoBehaviour:
   dashStamin: 50
   dashStaminRecoveryPercentagemInSeconds: 15
   mana: 50
-  weapon: {fileID: 11400000, guid: 280fcf30f03769945a57148551d6160e, type: 2}
+  weapon: {fileID: 11400000, guid: 86202195372513341a20e90aad194bd6, type: 2}
   characterName: Dragoon
   characterClass: Marine
   spriteIcon: {fileID: 21300000, guid: e41e580f8dbb41447a1084baddaf0270, type: 3}

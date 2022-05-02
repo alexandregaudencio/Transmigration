@@ -8,8 +8,6 @@ using UnityEngine;
 
 public class WeaponArmController : MonoBehaviour
 {
-
-    private PhotonView PV;
     private WeaponArmRotation weaponArmRotation;
     private WeaponArmShooter weaponArmShooter;
     private SpriteRenderer spriteRenderer;
@@ -22,7 +20,6 @@ public class WeaponArmController : MonoBehaviour
 
     private void Awake()
     {
-        PV = GetComponent<PhotonView>();
         weaponArmShooter = GetComponent<WeaponArmShooter>();
         weaponArmRotation = GetComponent<WeaponArmRotation>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,18 +28,18 @@ public class WeaponArmController : MonoBehaviour
 
     private void OnEnable()
     {
-        weaponArmShooter.R_AxisButtonDown += SpriterenderActive;
+        weaponArmShooter.R_AxisButtonDown += WeaponSpriteRenders;
     }
 
     private void OnDisable()
     {
-        weaponArmShooter.R_AxisButtonDown -= SpriterenderActive;
+        weaponArmShooter.R_AxisButtonDown -= WeaponSpriteRenders;
 
     }
 
     //eviar apra os colegas
 
-    public void SpriterenderActive(bool value)
+    public void WeaponSpriteRenders(bool value)
     {
 
         spriteRenderer.enabled = value;

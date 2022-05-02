@@ -7,8 +7,9 @@ namespace PlayerStateMachine
     {
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
-            playerController.LastToDamage.IncreaseKillCount();
-            playerController.PlayerScore.IncreaseDeathCount();
+
+            playerController.PlayerScore?.IncreaseKillCount();
+            playerController.PlayerScore?.IncreaseDeathCount();
             playerController.Animator.SetTrigger("dead");
             playerController.StartCoroutine(ReturnToNormalState(stateController, playerController));
             //playerController.AudioManager.PlayAudio(playerController.AudioManager.DeathClip, false);
@@ -36,7 +37,10 @@ namespace PlayerStateMachine
         private IEnumerator ReturnToNormalState(StateController stateController, PlayerController playerController)
         {
             //Desabilita tudo;
+
             playerController.SwitchPlayerActivityComponent(false);
+            playerController.PlayerRigidbody2D.velocity = playerController.PlayerRigidbody2D.velocity /4;
+
             yield return new WaitForSeconds(3);
             //habilita tudo;
             playerController.SwitchPlayerActivityComponent(true);

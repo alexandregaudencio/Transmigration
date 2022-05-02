@@ -16,7 +16,6 @@ using UnityEngine;
 [RequireComponent(typeof(InputJoystick))]
 public class PlayerController : MonoBehaviour
 {
-    public GameObject shield;
     private Rigidbody2D RigidBody2D;
     private StateController stateController;
     private HPManager hpManager;
@@ -27,11 +26,10 @@ public class PlayerController : MonoBehaviour
     private PlayerAudioManager audioManager;
     private StaminManager dashManager;
     private InputJoystick inputJoystick;
-    private PlayerScore lastToDamage;
+    private PlayerScore playerScore;
     [SerializeField] private CharacterProperty characterProperty;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject canvasOverPlayer;
-    private PlayerScore playerScore;
     public Rigidbody2D PlayerRigidbody2D { get => RigidBody2D; set => RigidBody2D = value; }
     public StateController StateController { get => stateController; set => stateController = value; }
     public HPManager HPManager { get => hpManager; set => hpManager = value; }
@@ -43,14 +41,13 @@ public class PlayerController : MonoBehaviour
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
     public StaminManager DahsManager { get => dashManager; set => dashManager = value; }
     public InputJoystick InputJoystick { get => inputJoystick; set => inputJoystick = value; }
-    public PlayerScore PlayerScore => playerScore;
+    public PlayerScore PlayerScore { get => playerScore; set => playerScore = value; }
 
     //public string Team { get => PV.Controller.GetPhotonTeam().Name; }
     //public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
 
     private Vector3 spawnPosition = new Vector2(0, -3);
     public Vector3 SpawnPosition { get => spawnPosition; set => spawnPosition = value; }
-    public PlayerScore LastToDamage { get => lastToDamage; set => lastToDamage = value; }
 
     private void Awake()
     {
@@ -91,8 +88,10 @@ public class PlayerController : MonoBehaviour
     public void SwitchPlayerActivityComponent(bool value)
     {
         canvasOverPlayer.SetActive(value);
+        weaponArmController.WeaponSpriteRenders(value);
+        //bracinho off
         //spriteRenderer.enabled = value;
-        weaponArmController.enabled = value;
+        //weaponArmController.enabled = value;
         //Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
     }
@@ -113,12 +112,5 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("idle-atk", value);
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            shield.SetActive(true);
-        }
-    }
 }
 

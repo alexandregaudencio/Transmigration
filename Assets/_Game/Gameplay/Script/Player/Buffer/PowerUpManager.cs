@@ -6,7 +6,14 @@ namespace PowerUps
 {
     public class PowerUpManager : MonoBehaviour
     {
-        [SerializeField] private Shield shild;
+        [SerializeField] private GameObject barrier;
+
+        public void ActiveBarrier()
+        {
+            barrier.SetActive(true);
+        }
+
+        
 
     }
 
