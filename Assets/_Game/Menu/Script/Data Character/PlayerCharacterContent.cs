@@ -57,18 +57,17 @@ namespace CharacterSelection
 
         private void Update()
         {
-                if (inputJoystick.IsRigthButtonDown) GetRightCharacterInList();
-                if (inputJoystick.IsLeftButtonDown) GetLeftCharacterInList();
-                if (inputJoystick.StartInputDown)
-                {
-                Debug.Log("ESCOLHEU!");
-                    //Debug.Log(inputJoystick.Joystick + " Escolheu:" + targetCharacter);
-                    choseCharacter?.Invoke(targetCharacter);
-                    ChoseCharacter?.Invoke();
-                    //isCharacterChoosed = true;
+            if (inputJoystick.IsRigthButtonDown) GetRightCharacterInList();
+            if (inputJoystick.IsLeftButtonDown) GetLeftCharacterInList();
+            if (inputJoystick.StartInputDown)
+            {
+                //Debug.Log(inputJoystick.Joystick + " Escolheu:" + targetCharacter);
+                choseCharacter?.Invoke(targetCharacter);
+                ChoseCharacter?.Invoke();
+                //isCharacterChoosed = true;
+                characterContentUpdate?.Invoke(targetCharacter);
 
-                }
-            
+            }
 
         }
         
