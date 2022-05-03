@@ -65,7 +65,7 @@ namespace CharacterSelection
                 choseCharacter?.Invoke(targetCharacter);
                 ChoseCharacter?.Invoke();
                 //isCharacterChoosed = true;
-                characterContentUpdate?.Invoke(targetCharacter);
+                //characterContentUpdate?.Invoke(targetCharacter);
 
             }
 

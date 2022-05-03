@@ -41,7 +41,8 @@ public class StartupTimer : MonoBehaviour
 
     public void UpdateTimerText(float time)
     {
-        text_Time.SetText(time.ToString());
+        
+        text_Time.SetText(string.Format("{0:0}", time));
     }
 
 
