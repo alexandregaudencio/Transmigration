@@ -15,11 +15,10 @@ public class BulletController : MonoBehaviourPunCallbacks
     {
         if(!collisionTagsToIgnore.Contains(collision.tag) && gameObject.layer != collision.gameObject.layer)
         {
-            OnBulletCollision(collision.gameObject.tag);
+            OnBulletCollision(collision);
 
         }
     }
-
 
     //private void OnTriggerStay2D(Collider2D collision)
     //{
@@ -30,16 +29,14 @@ public class BulletController : MonoBehaviourPunCallbacks
 
     //}
 
-
-
-
-    void OnBulletCollision(string targetTag)
+    void OnBulletCollision(Collider2D collision)
     {
-        bool isDamageable = collisionTagsToDetect.Contains(targetTag);
         if(collisioneffect != null)
         {
             GameObject effect = Instantiate(collisioneffect, transform.position, Quaternion.identity);
-            //effect.GetComponent<EffectController>().PlayAudioClip(isDamageable);
+            IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
+            if (damageable != null) effect.GetComponent<AudioSource>().Play();
+
         }
 
         DestroyBullet();

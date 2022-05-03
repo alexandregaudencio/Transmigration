@@ -18,7 +18,8 @@ public class EffectController : MonoBehaviour
     {
         if(isTargetDamageable)
         {
-            audioSource.clip = audioList[0];
+
+            //audioSource.clip = audioList[0];
             audioSource.Play();
         } 
         //else

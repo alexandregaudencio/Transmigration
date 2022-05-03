@@ -22,15 +22,15 @@ public class PingFPSGUI : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 25, 500, 100), "FPS: " + fps);
-        GUI.Label(new Rect(10, 40, 500, 100), 
-            "LAxis: " + 
-            Input.GetAxis("Joy"+ joystickPlayerIndex+"LHorizontal") + " "+
-            Input.GetAxis("Joy" + joystickPlayerIndex + "LVertical"));
-        GUI.Label(new Rect(10, 60, 500, 100),
-            "RAxis: " +
-            Input.GetAxis("Joy" + joystickPlayerIndex + "RHorizontal") + " " +
-            Input.GetAxis("Joy" + joystickPlayerIndex + "RVertical"));
+        GUI.Label(new Rect(5, 5, 500, 100), "FPS: " + fps);
+        //GUI.Label(new Rect(10, 40, 500, 100), 
+        //    "LAxis: " + 
+        //    Input.GetAxis("Joy"+ joystickPlayerIndex+"LHorizontal") + " "+
+        //    Input.GetAxis("Joy" + joystickPlayerIndex + "LVertical"));
+        //GUI.Label(new Rect(10, 60, 500, 100),
+        //    "RAxis: " +
+        //    Input.GetAxis("Joy" + joystickPlayerIndex + "RHorizontal") + " " +
+        //    Input.GetAxis("Joy" + joystickPlayerIndex + "RVertical"));
 
     }
 

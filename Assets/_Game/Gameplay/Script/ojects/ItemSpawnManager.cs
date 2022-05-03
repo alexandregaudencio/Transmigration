@@ -13,11 +13,13 @@ public class ItemSpawnManager : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private AudioSource audioSource;
     private event Action itemCollect;
-    [SerializeField] private GameObject spawnObject;
+    [SerializeField] private GameObject[] spawnObjects;
     //<summary>
     //Set the Category 
     //</summary>
     [SerializeField] private float waitTimeToSpawnInSeconds;
+    private GameObject GetRandomSpawnObject => spawnObjects[UnityEngine.Random.Range(0, spawnObjects.Length)];
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -66,7 +68,7 @@ public class ItemSpawnManager : MonoBehaviour
  
     private void SpawnItem()
     {
-        GameObject objectSpawn = Instantiate(spawnObject, transform.position, Quaternion.identity);
+        GameObject objectSpawn = Instantiate(GetRandomSpawnObject, transform.position, Quaternion.identity);
         objectSpawn.transform.SetParent(transform);
     }
 
