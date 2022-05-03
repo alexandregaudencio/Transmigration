@@ -1,4 +1,5 @@
 ﻿using Photon.Pun;
+using Player.Data.Score;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class BulletController : MonoBehaviourPunCallbacks
 
     [SerializeField] private List<string> collisionTagsToIgnore;
     [SerializeField] private List<string> collisionTagsToDetect;
+    [SerializeField] private PlayerScore playerScore;
+
+    public PlayerScore PlayerScore { get => playerScore; set => playerScore = value; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

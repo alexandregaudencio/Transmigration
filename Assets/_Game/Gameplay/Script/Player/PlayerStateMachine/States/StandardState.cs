@@ -4,18 +4,11 @@ namespace PlayerStateMachine
 {
     public class StandardState : State
     {
-        //float period = 0;
-        //float frequency = 0;
-        //float angularFrequency = 0;
-        //float elapsedTime = 0;
-        //float amplitude = 0;
-        //float phase = 0;
 
         float time = 0;
         public override void EnterState(PlayerController playerController, StateController stateController)
         {
             playerController.Animator.Play("idle");
-
         }
 
         public override void FixedUpdateState(PlayerController playerController, StateController stateController)
@@ -33,16 +26,10 @@ namespace PlayerStateMachine
                 ProcessFloatingMovement(playerController);
             }
 
-
-            
-            
-
             playerController.WeaponArmController.WeaponArmShooter.ProcessRAxisInput();
             playerController.WeaponArmController.WeaponArmShooter.ProcessLAxisInput();
 
             playerController.WeaponArmController.WeaponArmShooter.ProcessShootInput();
-
-
 
             playerController.SpriteRenderer.flipX = ProcessInputsToFlipRenderer(playerController);
 

@@ -62,11 +62,11 @@ public class PlayerController : MonoBehaviour
         audioManager = GetComponent<PlayerAudioManager>();
         dashManager = GetComponent<StaminManager>();
         inputJoystick = GetComponent<InputJoystick>();
-        playerScore = GetComponent<PlayerScoreManager>().PlayerScore;
     }
 
     private void Start()
     {
+        playerScore = GetComponent<PlayerScoreManager>().PlayerScore;
         hpManager.hpEmpty += stateController.GoDeathState;
         weaponArmController.WeaponArmShooter.R_AxisButtonDown += IdleAttackAnimationTransition;
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Player.Data.Score;
+using System;
 using UnityEngine;
 
 namespace DamageableNamespace
@@ -7,9 +8,10 @@ namespace DamageableNamespace
     {
         public event Action<float> TakingDamage;
         //public event Action DeathEvent;
-
         private PlayerController playerController;
         private HPManager hpManager;
+
+
         private void Awake()
         {
             playerController = GetComponent<PlayerController>();
@@ -21,7 +23,6 @@ namespace DamageableNamespace
         public void TakeDamage(float damage)
         {
             playerController.Animator.SetTrigger("hurt");
-            //playerController.AudioManager.PlayAudio(playerController.AudioManager.HurtClip, false);
             hpManager.DecreaseHP(damage);
             TakingDamage?.Invoke(damage);
 

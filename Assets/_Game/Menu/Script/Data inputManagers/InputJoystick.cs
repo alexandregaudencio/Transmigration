@@ -11,7 +11,9 @@ namespace PlayerDataNamespace
         Joystick3,
         Joystick4,
         Joystick5,
-        Joystick6
+        Joystick6,
+        Joystick7,
+        Joystick8
     }
 
 
@@ -36,7 +38,7 @@ namespace PlayerDataNamespace
         public string TriangleInput => "joystick " + GetJoystick + " button 0";
 
         public Joystick Joystick { set => joystick = value; get => joystick; }
-
+        public int JoyStickNum => (int)Joystick + 1;
         public float LHorizontalAxis => Input.GetAxis(LHorizontal);
         public float LVerticalAxis => Input.GetAxis(LVertical);
         public float RHorizontalAxis => Input.GetAxis(RHorizontal);
@@ -91,11 +93,6 @@ namespace PlayerDataNamespace
 
         public Dictionary<Joystick, int> JoystickTeamIndex { get => joystickTeamIndex; set => joystickTeamIndex = value; }
 
-        //private void Update()
-        //{
-        //    if (StartInputDown) joystickActiveHadler.UpdateDictionaryValue(GetJoystick, true);
-        //}
-
         private void Start()
         {
             SetAllJoystickTeamIndex();
@@ -108,7 +105,9 @@ namespace PlayerDataNamespace
             joystickTeamIndex.Add(Joystick.Joystick3, 1);
             joystickTeamIndex.Add(Joystick.Joystick4, 1);
             joystickTeamIndex.Add(Joystick.Joystick5, 2);
-            joystickTeamIndex.Add(Joystick.Joystick6, 2);
+            joystickTeamIndex.Add(Joystick.Joystick6, 2); 
+            joystickTeamIndex.Add(Joystick.Joystick7, 3);
+            joystickTeamIndex.Add(Joystick.Joystick8, 3);
         }
 
         private void OnGUI()

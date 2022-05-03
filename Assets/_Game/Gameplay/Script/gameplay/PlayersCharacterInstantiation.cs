@@ -1,5 +1,6 @@
 using CharacterNamespace;
 using CharacterSelection;
+using Player.Data.Score;
 using PlayerDataNamespace;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,6 +39,7 @@ namespace Gameplay
 
                     SetCharacterJoystick(characterObject, playerData.Joystick);
                     SetSpawnPosition(characterObject, spawnPosition);
+                    SetCharacterPlayerScore(characterObject);
                     //return;
                 }
             }
@@ -57,6 +59,11 @@ namespace Gameplay
             playerController.SpawnPosition = spawnPosition;
         }
 
+        private void SetCharacterPlayerScore(GameObject characterObject) 
+        {
+            PlayerScoreManager playerScoreManager = characterObject.GetComponent<PlayerScoreManager>();
+            //playerScoreManager.PlayerScore = 
+        }
 
 
     }

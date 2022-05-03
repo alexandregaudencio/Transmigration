@@ -54,6 +54,7 @@ public class HPManager : MonoBehaviour
         if (HP <= 0)
         {
             hpEmpty?.Invoke();
+
         }
     }
 

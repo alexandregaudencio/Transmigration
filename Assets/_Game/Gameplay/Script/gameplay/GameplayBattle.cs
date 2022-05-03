@@ -31,6 +31,7 @@ namespace Gameplay
         private void Start()
         {
             canvas_FinalUserInterface.SetActive(false);
+            StartCoroutine(GambiarraAsPressas());
         }
 
         private void LateUpdate()
@@ -65,7 +66,16 @@ namespace Gameplay
             }
 
         }
+
+        private IEnumerator GambiarraAsPressas()
+        {
+            canvas_FinalUserInterface.SetActive(true);
+            yield return new WaitForEndOfFrame();
+            canvas_FinalUserInterface.SetActive(false);
+        }
+
     }
+
 }
 
 

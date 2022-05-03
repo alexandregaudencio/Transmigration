@@ -1,27 +1,38 @@
-using CharacterNamespace;
-using DamageableNamespace;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
+using PlayerDataNamespace;
 using UnityEngine;
 
 namespace Player.Data.Score
 {
     public class PlayerScoreManager : MonoBehaviour, IScore
     {
+        [SerializeField] private PlayerScore[] playerScoreList;
         [SerializeField] private PlayerScore playerScore;
-        private CharacterProperty characterProperty;
+        public PlayerScore lastPlayerDamager;
+        private InputJoystick inputJoystick;
+        private HPManager hPManager;
         public PlayerScore PlayerScore { get => playerScore; set => playerScore = value; }
 
         private void Awake()
         {
-            characterProperty = GetComponent<PlayerController>().CharacterProperty;
+            inputJoystick = GetComponent<InputJoystick>();
+            hPManager = GetComponent<HPManager>();
         }
 
+        private void OnEnable()
+        {
+            hPManager.hpEmpty += lastPlayerDamager.IncreaseKillCount;
+            hPManager.hpEmpty += playerScore.IncreaseDeathCount;
+        }
+        private void OnDisable()
+        {
+            hPManager.hpEmpty-= lastPlayerDamager.IncreaseKillCount;
+            hPManager.hpEmpty -= playerScore.IncreaseDeathCount;
+        }
         private void Start()
         {
+            PlayerScore = playerScoreList[(int)inputJoystick.Joystick];
             PlayerScore.ResetScore();
-            PlayerScore.CharacterProperty = characterProperty;
         }
         public void addDamageAmount(float damage)
         {
@@ -30,12 +41,12 @@ namespace Player.Data.Score
 
         public void IncreaseDeathCount()
         {
-            PlayerScore.DeathCount++;
+            PlayerScore.IncreaseDeathCount();
         }
 
         public void IncreaseKillCount()
         {
-            PlayerScore.KillCount++;
+            PlayerScore.IncreaseKillCount();
         }
 
  

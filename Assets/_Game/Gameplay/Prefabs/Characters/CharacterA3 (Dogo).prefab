@@ -766,7 +766,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaaefae5e69c7342baee3f8d7619ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: {fileID: 11400000, guid: ae8e769df6e27724f9389af10526767e, type: 2}
+  playerScoreList:
+  - {fileID: 11400000, guid: b2de8c76f0d719647a98c118fe2f0ea9, type: 2}
+  - {fileID: 11400000, guid: ae8e769df6e27724f9389af10526767e, type: 2}
+  - {fileID: 11400000, guid: 9cdf03db003f37642b441dffd75ca7a8, type: 2}
+  - {fileID: 11400000, guid: e463948e656210e48838b706de06dc2b, type: 2}
+  - {fileID: 11400000, guid: b1138624a7a19e446a8046f9de53c7bf, type: 2}
+  - {fileID: 11400000, guid: 58ca1cb11e942284ca05f006467343eb, type: 2}
+  - {fileID: 11400000, guid: 3410b954f9e47004aa5f19f61a1c6274, type: 2}
+  - {fileID: 11400000, guid: d95cf51a76f558f4c860be45252373c1, type: 2}
+  playerScore: {fileID: 0}
 --- !u!114 &2240111853510156765
 MonoBehaviour:
   m_ObjectHideFlags: 0

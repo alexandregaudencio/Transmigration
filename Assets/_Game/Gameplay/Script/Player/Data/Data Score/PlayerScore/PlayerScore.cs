@@ -23,23 +23,22 @@ namespace Player.Data.Score
         public event Action<float> damageUpdate;
         public event Action<float> scoreUpdated;
 
-        public float score => KillCount;
+        public float score => KillCount*100+damageAmount-deathCount*50;
 
-        public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
         public Joystick PlayerJoystick { get => playerJoystick; set => playerJoystick = value; }
 
         public void addDamageAmount(float damage)
         {
             damageAmount += damage;
             damageUpdate?.Invoke(damage);
-            //scoreUpdated?.Invoke(damage);
+            scoreUpdated?.Invoke(damage);
         }
 
         public void IncreaseDeathCount()
         {
             deathCount++;
             increaseDeath?.Invoke(); 
-            //scoreUpdated?.Invoke(1);
+            scoreUpdated?.Invoke(1);
 
         }
 

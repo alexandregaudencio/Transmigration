@@ -23,7 +23,6 @@ namespace Managers
 
         public void ResetTime() => currentTime = maxTimeInSeconds;
 
-
         public void StartTime()
         {
             timeInitalize?.Invoke();

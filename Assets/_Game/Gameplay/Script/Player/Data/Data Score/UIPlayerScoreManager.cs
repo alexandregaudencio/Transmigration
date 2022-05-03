@@ -8,9 +8,6 @@ using UnityEngine.UI;
 
 namespace Player.Data.Score
 {
-
-
-
     public class UIPlayerScoreManager : MonoBehaviour
     {
         //[SerializeField] private Joystick playerIndex;
@@ -22,7 +19,7 @@ namespace Player.Data.Score
         [SerializeField] private TMP_Text text_Death;
         [SerializeField] private TMP_Text text_Score;
         private CharacterProperty characterProperty;
-
+        public float score => playerScore.score;
 
         private void Start()
         {
@@ -41,23 +38,14 @@ namespace Player.Data.Score
             playerScore.increaseKill -= UpdateTextKillUI;
             playerScore.increaseDeath -= UpdateTextDeathUI;
             playerScore.scoreUpdated -= UpdateTextScoreUI;
-
-
         }
-
 
         private void UIManagerActive()
         {
             characterProperty = SetCharacterPropertyTarget();
             if(characterProperty == null)
             {
-                Debug.Log("Character NULL");
                 gameObject.SetActive(false);
-            } else
-            {
-                
-                Debug.Log(characterProperty.name);
-
             }
         }
 
@@ -71,16 +59,17 @@ namespace Player.Data.Score
             return null;
         }
 
-
         private void UpdateTextDamageUI(float damage)
         {
             int damageAmount = (int)playerScore.DamageAmount;
             text_Damage?.SetText(damageAmount.ToString());
         }
+
         private void UpdateTextKillUI()
         {
             text_Kill?.SetText(playerScore.KillCount.ToString());
         }
+
         private void UpdateTextDeathUI()
         {
             text_Death?.SetText(playerScore.DeathCount.ToString());
@@ -88,8 +77,11 @@ namespace Player.Data.Score
 
         private void UpdateTextScoreUI(float score)
         {
-            text_Score?.SetText(playerScore.score.ToString());
+            //this.score += score;
+            text_Score?.SetText(score.ToString());
         }
+
+
     }
 
 
