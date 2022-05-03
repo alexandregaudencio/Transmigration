@@ -5525,7 +5525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41296cca045f454692aab4c51c3c9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 10
+  maxTimeInSeconds: 300
   deltaTime: 1
 --- !u!1 &1371028313
 GameObject:
@@ -8498,8 +8498,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41296cca045f454692aab4c51c3c9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTimeInSeconds: 4
-  deltaTime: 1
+  maxTimeInSeconds: 4.1
+  deltaTime: 0.1
 --- !u!1001 &4706331809528568841
 PrefabInstance:
   m_ObjectHideFlags: 0
