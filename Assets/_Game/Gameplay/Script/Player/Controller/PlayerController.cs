@@ -9,7 +9,6 @@ using UnityEngine;
 [RequireComponent(typeof(HPManager))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
-
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(StaminManager))]
 [RequireComponent(typeof(ManaManager))]
@@ -43,15 +42,11 @@ public class PlayerController : MonoBehaviour
     public InputJoystick InputJoystick { get => inputJoystick; set => inputJoystick = value; }
     public PlayerScoreManager PlayerScoreManager { get => playerScoreManager; set => playerScoreManager = value; }
 
-    //public string Team { get => PV.Controller.GetPhotonTeam().Name; }
-    //public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
-
     private Vector3 spawnPosition = new Vector2(0, -3);
     public Vector3 SpawnPosition { get => spawnPosition; set => spawnPosition = value; }
 
     private void Awake()
     {
-
         PlayerRigidbody2D = GetComponent<Rigidbody2D>();
         StateController = GetComponent<StateController>();
         HPManager = GetComponent<HPManager>();
@@ -89,10 +84,6 @@ public class PlayerController : MonoBehaviour
     {
         canvasOverPlayer.SetActive(value);
         weaponArmController.WeaponSpriteRenders(value);
-        //bracinho off
-        //spriteRenderer.enabled = value;
-        //weaponArmController.enabled = value;
-        //Animator.SetBool("dead", !value);
         BoxCollider2D.enabled = value;
     }
 
@@ -108,7 +99,6 @@ public class PlayerController : MonoBehaviour
 
     public void IdleAttackAnimationTransition(bool value)
     {
-        //Debug.Log("trocou: " + value);
         animator.SetBool("idle-atk", value);
     }
 

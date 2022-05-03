@@ -1,10 +1,8 @@
-﻿using Photon.Pun;
-using Player.Data.Score;
-using System.Collections;
+﻿using Player.Data.Score;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviourPunCallbacks
+public class BulletController : MonoBehaviour
 {
 
     [SerializeField] private GameObject collisioneffect;
@@ -23,15 +21,6 @@ public class BulletController : MonoBehaviourPunCallbacks
 
         }
     }
-
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (!collisionTagsListIgnore.Contains(collision.tag) && this.gameObject.layer != collision.gameObject.layer)
-    //    {
-    //        OnBulletCollision(collision.gameObject.tag);
-    //    }
-
-    //}
 
     void OnBulletCollision(Collider2D collision)
     {

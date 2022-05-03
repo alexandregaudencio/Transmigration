@@ -11,11 +11,11 @@ public class MenuSceneManager : MonoBehaviour
     
     private void OnEnable()
     {
-        timer.timeOver += GoToGameplayScene;
+        timer.onTimeOver += GoToGameplayScene;
     }
     private void OnDisable()
     {
-        timer.timeOver -= GoToGameplayScene;
+        timer.onTimeOver -= GoToGameplayScene;
     }
 
     public  void GoToGameplayScene()

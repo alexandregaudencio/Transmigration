@@ -14,7 +14,7 @@ namespace Player.Data.Score
         [SerializeField] private TMP_Text text_totalScore;
         [SerializeField] private TeamScoreManager anotherTeamScoreManager;
         private Image image_FinishUI;
-        public float totalTeamScore = 0;
+        [Min(0)] public float totalTeamScore = 0;
         [SerializeField] private Sprite winnerSprite;
         [SerializeField] private Sprite LooserSprite;
         [SerializeField] private Timer gameplayTimer;
@@ -26,7 +26,7 @@ namespace Player.Data.Score
 
         private void Start()
         {
-            gameplayTimer.timeOver += UpdateUIonEndGame;
+            gameplayTimer.onTimeOver += UpdateUIonEndGame;
 
             foreach (PlayerScore playerScore in playerScores)
             {
@@ -36,7 +36,7 @@ namespace Player.Data.Score
 
         private void OnDestroy()
         {
-            gameplayTimer.timeOver -= UpdateUIonEndGame;
+            gameplayTimer.onTimeOver -= UpdateUIonEndGame;
 
             foreach (PlayerScore playerScore in playerScores)
             {

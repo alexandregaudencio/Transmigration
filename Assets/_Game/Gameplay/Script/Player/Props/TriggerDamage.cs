@@ -1,8 +1,4 @@
-﻿using BulletNamespace;
-using Photon.Pun;
-using Player.Data.Score;
-using System;
-using System.Collections.Generic;
+﻿using Player.Data.Score;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +7,7 @@ namespace DamageableNamespace
     public class TriggerDamage : MonoBehaviour
     {
         private BulletProperty bulletProperty;
-        public PlayerScore playerScoreOrigin;
+        private PlayerScore playerScoreOrigin;
         public PlayerScore PlayerScoreOrigin { get => playerScoreOrigin; set => playerScoreOrigin = value; }
         public UnityEvent<float> onDamage;
 

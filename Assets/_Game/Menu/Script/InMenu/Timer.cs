@@ -11,7 +11,7 @@ namespace Managers
     {
         [SerializeField] private float maxTimeInSeconds;
         [SerializeField] private float deltaTime;
-        public Action  timeOver;
+        public Action  onTimeOver;
         public  Action timeInitalize;
         public Action<float> timerChange;
         private float currentTime;
@@ -63,7 +63,7 @@ namespace Managers
             {
                 currentTime -= deltaTime;
                 timerChange?.Invoke(currentTime);
-                if (IsTimeOver) timeOver?.Invoke();
+                if (IsTimeOver) onTimeOver?.Invoke();
                 yield return new WaitForSeconds(deltaTime);
                 
             }

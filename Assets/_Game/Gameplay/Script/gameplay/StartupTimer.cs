@@ -18,7 +18,7 @@ public class StartupTimer : MonoBehaviour
     private void OnEnable()
     {
         timer.timerChange += UpdateTimerText;
-        timer.timeOver += OnStartupTimeOver;
+        timer.onTimeOver += OnStartupTimeOver;
     }
 
     private void Start()
@@ -30,7 +30,7 @@ public class StartupTimer : MonoBehaviour
     private void OnDisable()
     {
         timer.timerChange -= UpdateTimerText;
-        timer.timeOver -= OnStartupTimeOver;
+        timer.onTimeOver -= OnStartupTimeOver;
         timer.StopTime();
     }
 

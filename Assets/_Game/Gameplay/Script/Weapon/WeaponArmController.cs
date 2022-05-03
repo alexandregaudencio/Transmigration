@@ -1,9 +1,4 @@
-﻿using Photon.Pun;
-using PlayerDataNamespace;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using PlayerDataNamespace;
 using UnityEngine;
 
 public class WeaponArmController : MonoBehaviour

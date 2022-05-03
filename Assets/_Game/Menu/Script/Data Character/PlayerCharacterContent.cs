@@ -11,12 +11,7 @@ namespace CharacterSelection
     public class PlayerCharacterContent : MonoBehaviour
     {
 
-        /*[SerializeField] */
-        public int characterIndex = 0; // index do characterProperty no characters
-        //[SerializeField] private RawImage rawImage_Character;
-        //[SerializeField] private TMP_Text text_CharacterName;
-        //[SerializeField] private TMP_Text text_CharacterClass;
-
+        [SerializeField] public int characterIndex = 0; // index do characterProperty no characters
         [SerializeField] private Timer timer;
         [SerializeField] private Characters characters;
         [SerializeField] private PlayerDataStorage playerDataStorage;
@@ -28,12 +23,10 @@ namespace CharacterSelection
         private Animator animator;
         private InputJoystick inputJoystick;
         public CharacterProperty targetCharacter => targetCharacterList[characterIndex];
-
         public PlayerDataStorage PlayerDataStorage { get => playerDataStorage; set => playerDataStorage = value; }
         public string LayerName { get => layerName; set => layerName = value; }
         public List<CharacterProperty> targetCharacterList => (layerName == "TeamA") ? 
             characters.CharactersTeamA : characters.CharactersTeamB;
-
         
         public event Action<CharacterProperty> characterContentUpdate;
         public event Action<CharacterProperty> choseCharacter;
@@ -105,7 +98,6 @@ namespace CharacterSelection
 
 
         }
-
 
         //private void choseCharacterOntimerOver()
         //{

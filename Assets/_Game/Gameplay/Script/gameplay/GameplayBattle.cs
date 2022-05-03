@@ -18,13 +18,13 @@ namespace Gameplay
         //private event Action GameplayTimeOver;
         private void OnEnable()
         {
-            gameplayTimer.timeOver += OnGameplayTimerOver;
+            gameplayTimer.onTimeOver += OnGameplayTimerOver;
             OnGameplayBattle(true);
  
         }
         private void OnDisable()
         {
-            gameplayTimer.timeOver -= OnGameplayTimerOver;
+            gameplayTimer.onTimeOver -= OnGameplayTimerOver;
             OnGameplayBattle(false);
         }
 

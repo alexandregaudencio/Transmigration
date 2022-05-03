@@ -1,6 +1,7 @@
-using System.Collections;
+using Managers;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
@@ -8,15 +9,27 @@ namespace Gameplay
     {
         [SerializeField] private GameController gameController;
         [SerializeField] private List<GameObject> stateGameObjects;
+        [SerializeField] private GameObject text_ExitGameplay;
+        private Timer timer;
 
+        private void Awake()
+        {
+            timer = GetComponent<Timer>();
+        }
         private void OnEnable()
         {
+            timer.StartTime();
             OnGameplayFinish(true);
+            timer.onTimeOver += ShowExitText;
+            text_ExitGameplay.SetActive(false);
         }
 
         private void OnDisable()
         {
+            timer.StopTime();
             OnGameplayFinish(false);
+            timer.onTimeOver -= ShowExitText;
+
         }
 
 
@@ -29,7 +42,21 @@ namespace Gameplay
 
         }
 
+        private void ShowExitText()
+        {
+            text_ExitGameplay.SetActive(true);
+        }
 
+        private void Update()
+        {
+            if (timer.IsTimeOver) {
+               if(Input.anyKeyDown)
+                {
+                    SceneManager.LoadScene(0);
+                }
+            } 
+           
+        }
     }
 }
 

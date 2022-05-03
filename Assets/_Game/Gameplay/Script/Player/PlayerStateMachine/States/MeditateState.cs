@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PlayerStateMachine
 {
@@ -34,7 +32,6 @@ namespace PlayerStateMachine
                 playerController.AudioManager.StopAudio();
                 playerController.Animator.SetBool("meditating", false);
                 stateController.TransitionToState(stateController.ListedStates.standardState);
-
             }
         }
     }

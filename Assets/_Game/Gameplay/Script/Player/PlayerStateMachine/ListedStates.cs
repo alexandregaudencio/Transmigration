@@ -1,6 +1,4 @@
-﻿using PlayerStateMachine;
-
-namespace  PlayerStateMachine{
+﻿namespace  PlayerStateMachine{
     public class ListedStates
     {
         public readonly StandardState standardState;

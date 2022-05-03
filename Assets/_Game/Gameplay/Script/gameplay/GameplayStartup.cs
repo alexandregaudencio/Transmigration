@@ -20,14 +20,14 @@ namespace Gameplay
         private void OnEnable()
         {
             OnGameplayStartup(true);
-            timer.timeOver += OnStartupTimerOver;
+            timer.onTimeOver += OnStartupTimerOver;
         }
 
         private void OnDisable()
         {
             OnStartupTimerOver();
             OnGameplayStartup(false);
-            timer.timeOver -= OnStartupTimerOver;
+            timer.onTimeOver -= OnStartupTimerOver;
         }
 
         private void OnStartupTimerOver()

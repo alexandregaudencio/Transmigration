@@ -19,7 +19,6 @@ namespace Player.Data.Score
         [SerializeField] private TMP_Text text_Death;
         [SerializeField] private TMP_Text text_Score;
         private CharacterProperty characterProperty;
-        public float score => playerScore.score;
 
         private void Start()
         {
