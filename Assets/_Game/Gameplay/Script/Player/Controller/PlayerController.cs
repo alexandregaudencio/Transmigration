@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private PlayerAudioManager audioManager;
     private StaminManager dashManager;
     private InputJoystick inputJoystick;
-    private PlayerScore playerScore;
+    private PlayerScoreManager playerScoreManager;
     [SerializeField] private CharacterProperty characterProperty;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private GameObject canvasOverPlayer;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public CharacterProperty CharacterProperty { get => characterProperty; set => characterProperty = value; }
     public StaminManager DahsManager { get => dashManager; set => dashManager = value; }
     public InputJoystick InputJoystick { get => inputJoystick; set => inputJoystick = value; }
-    public PlayerScore PlayerScore { get => playerScore; set => playerScore = value; }
+    public PlayerScoreManager PlayerScoreManager { get => playerScoreManager; set => playerScoreManager = value; }
 
     //public string Team { get => PV.Controller.GetPhotonTeam().Name; }
     //public LayerMask GetLayer => LayerMask.NameToLayer((Team == "Blue") ? "TeamB" : "TeamA");
@@ -62,11 +62,11 @@ public class PlayerController : MonoBehaviour
         audioManager = GetComponent<PlayerAudioManager>();
         dashManager = GetComponent<StaminManager>();
         inputJoystick = GetComponent<InputJoystick>();
+        playerScoreManager = GetComponent<PlayerScoreManager>();
     }
 
     private void Start()
     {
-        playerScore = GetComponent<PlayerScoreManager>().PlayerScore;
         hpManager.hpEmpty += stateController.GoDeathState;
         weaponArmController.WeaponArmShooter.R_AxisButtonDown += IdleAttackAnimationTransition;
     }

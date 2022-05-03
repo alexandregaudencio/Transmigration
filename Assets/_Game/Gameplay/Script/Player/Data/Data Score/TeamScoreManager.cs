@@ -53,7 +53,6 @@ namespace Player.Data.Score
 
         public void UpdateUIonEndGame()
         {
-            Debug.Log("CHAMEI NO UI END GAME");
             bool weWin = anotherTeamScoreManager.totalTeamScore < totalTeamScore;
             image_FinishUI.sprite = weWin ? winnerSprite : LooserSprite;
         }

@@ -34,7 +34,7 @@ namespace Player.Data.Score
             scoreUpdated?.Invoke(damage);
         }
 
-        public void IncreaseDeathCount()
+        public void IncreaseDeathToPlayer()
         {
             deathCount++;
             increaseDeath?.Invoke(); 
@@ -42,7 +42,7 @@ namespace Player.Data.Score
 
         }
 
-        public void IncreaseKillCount()
+        public void IncreaseKillToDamager()
         {
             killCount++;
             increaseKill?.Invoke(); 

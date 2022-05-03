@@ -38,7 +38,6 @@ namespace PlayerDataNamespace
         public string TriangleInput => "joystick " + GetJoystick + " button 0";
 
         public Joystick Joystick { set => joystick = value; get => joystick; }
-        public int JoyStickNum => (int)Joystick + 1;
         public float LHorizontalAxis => Input.GetAxis(LHorizontal);
         public float LVerticalAxis => Input.GetAxis(LVertical);
         public float RHorizontalAxis => Input.GetAxis(RHorizontal);
@@ -109,18 +108,6 @@ namespace PlayerDataNamespace
             joystickTeamIndex.Add(Joystick.Joystick7, 3);
             joystickTeamIndex.Add(Joystick.Joystick8, 3);
         }
-
-        private void OnGUI()
-        {
-            if(joystick == Joystick.Joystick1)
-            {
-                GUI.Label(new Rect(10, 100, 500, 100), "LAxis: " + LAxis.magnitude);
-
-            }
-
-
-        }
-
 
     }
 }

@@ -7,9 +7,9 @@ namespace Player.Data.Score
 {
     public interface IScore
     {
-        public void IncreaseKillCount();
+        public void IncreaseKillToDamager();
         public void addDamageAmount(float damage);
-        public void IncreaseDeathCount();
+        public void IncreaseDeathToPlayer();
 
 
     }

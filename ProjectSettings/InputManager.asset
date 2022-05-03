@@ -35,7 +35,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 0
+    axis: 2
     joyNum: 2
   - serializedVersion: 3
     m_Name: Joy3LHorizontal
@@ -163,7 +163,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 2
+    axis: 3
     joyNum: 4
   - serializedVersion: 3
     m_Name: Joy5RHorizontal
@@ -195,7 +195,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 2
+    axis: 3
     joyNum: 6
   - serializedVersion: 3
     m_Name: Joy1LVertical
@@ -355,7 +355,7 @@ InputManager:
     snap: 0
     invert: 1
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 4
   - serializedVersion: 3
     m_Name: Joy5RVertical
@@ -371,7 +371,7 @@ InputManager:
     snap: 0
     invert: 1
     type: 2
-    axis: 3
+    axis: 4
     joyNum: 5
   - serializedVersion: 3
     m_Name: Joy6RVertical
@@ -387,7 +387,7 @@ InputManager:
     snap: 0
     invert: 1
     type: 2
-    axis: 3
+    axis: 4
     joyNum: 6
   - serializedVersion: 3
     m_Name: Enable Debug Button 1

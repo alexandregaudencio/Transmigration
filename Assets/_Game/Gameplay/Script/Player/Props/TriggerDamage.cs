@@ -34,7 +34,7 @@ namespace DamageableNamespace
             IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
             if(damageable != null)
             {
-                collision.gameObject.GetComponent<PlayerScoreManager>().lastPlayerDamager = PlayerScoreOrigin;
+                collision.gameObject.GetComponent<PlayerScoreManager>().LastPlayerDamager = PlayerScoreOrigin;
                 damageable.TakeDamage(bulletProperty.Damage);
                 onDamage?.Invoke(bulletProperty.Damage);
 

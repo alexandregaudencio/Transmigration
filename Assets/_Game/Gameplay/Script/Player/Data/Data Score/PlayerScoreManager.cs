@@ -7,11 +7,13 @@ namespace Player.Data.Score
     public class PlayerScoreManager : MonoBehaviour, IScore
     {
         [SerializeField] private PlayerScore[] playerScoreList;
-        [SerializeField] private PlayerScore playerScore;
-        public PlayerScore lastPlayerDamager;
+        private PlayerScore playerScore;
+        private PlayerScore lastPlayerDamager;
         private InputJoystick inputJoystick;
         private HPManager hPManager;
         public PlayerScore PlayerScore { get => playerScore; set => playerScore = value; }
+        public PlayerScore PlayerScore1 { get => playerScore; set => playerScore = value; }
+        public PlayerScore LastPlayerDamager { get => lastPlayerDamager; set => lastPlayerDamager = value; }
 
         private void Awake()
         {
@@ -21,13 +23,13 @@ namespace Player.Data.Score
 
         private void OnEnable()
         {
-            hPManager.hpEmpty += lastPlayerDamager.IncreaseKillCount;
-            hPManager.hpEmpty += playerScore.IncreaseDeathCount;
+            hPManager.hpEmpty += lastPlayerDamager.IncreaseKillToDamager;
+            hPManager.hpEmpty += playerScore.IncreaseDeathToPlayer;
         }
         private void OnDisable()
         {
-            hPManager.hpEmpty-= lastPlayerDamager.IncreaseKillCount;
-            hPManager.hpEmpty -= playerScore.IncreaseDeathCount;
+            hPManager.hpEmpty-= lastPlayerDamager.IncreaseKillToDamager;
+            hPManager.hpEmpty -= playerScore.IncreaseDeathToPlayer;
         }
         private void Start()
         {
@@ -39,14 +41,14 @@ namespace Player.Data.Score
             PlayerScore.DamageAmount += damage;
         }
 
-        public void IncreaseDeathCount()
+        public void IncreaseDeathToPlayer()
         {
-            PlayerScore.IncreaseDeathCount();
+            PlayerScore.IncreaseDeathToPlayer();
         }
 
-        public void IncreaseKillCount()
+        public void IncreaseKillToDamager()
         {
-            PlayerScore.IncreaseKillCount();
+            lastPlayerDamager.IncreaseKillToDamager();
         }
 
  

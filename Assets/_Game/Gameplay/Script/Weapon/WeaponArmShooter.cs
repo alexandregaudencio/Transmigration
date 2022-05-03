@@ -79,7 +79,7 @@ public class WeaponArmShooter : MonoBehaviour
             StartCoroutine(Cooldown());
             onShoot?.Invoke();
 
-            //Referência do player que lançou a bala par
+            //Referência do player que lançou a bala para aplicar pontuação
             bullet.GetComponent<TriggerDamage>().PlayerScoreOrigin = scoreManager.PlayerScore;
 
         }
