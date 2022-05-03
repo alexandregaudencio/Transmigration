@@ -39,7 +39,7 @@ namespace Player.Data.Score
         {
             deathCount++;
             increaseDeath?.Invoke(); 
-            scoreUpdated?.Invoke(deathPoints);
+            scoreUpdated?.Invoke(0);
 
         }
 

@@ -9,7 +9,7 @@ namespace Player.Data.Score
 
         [SerializeField] private List<PlayerScore> playerScoresTeam;
         private TMP_Text text_score;
-        private float teamScore = 0;
+        [Min(0)] private float totalTeamScore = 0;
         
 
         private void Awake()
@@ -35,10 +35,10 @@ namespace Player.Data.Score
             }
         }
 
-        private void UpdateTeamScore(float value)
+        private void UpdateTeamScore(float newAmmount)
         {
-            teamScore += value;
-            text_score.SetText(teamScore.ToString());
+            totalTeamScore += newAmmount;
+            text_score.SetText(string.Format("{0:0}", totalTeamScore));
         }
 
     }

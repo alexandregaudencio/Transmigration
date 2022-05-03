@@ -23,13 +23,13 @@ namespace Player.Data.Score
 
         private void OnEnable()
         {
-            hPManager.hpEmpty += lastPlayerDamager.IncreaseKillToDamager;
-            hPManager.hpEmpty += playerScore.IncreaseDeathToPlayer;
+            //hPManager.hpEmpty += lastPlayerDamager.IncreaseKillToDamager;
+            //hPManager.hpEmpty += playerScore.IncreaseDeathToPlayer;
         }
         private void OnDisable()
         {
-            hPManager.hpEmpty-= lastPlayerDamager.IncreaseKillToDamager;
-            hPManager.hpEmpty -= playerScore.IncreaseDeathToPlayer;
+            //hPManager.hpEmpty-= lastPlayerDamager.IncreaseKillToDamager;
+            //hPManager.hpEmpty -= playerScore.IncreaseDeathToPlayer;
         }
         private void Start()
         {
