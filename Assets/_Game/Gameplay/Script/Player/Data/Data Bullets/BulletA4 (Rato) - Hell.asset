@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610c5050c94043a489c1149b6f982a8e, type: 3}
   m_Name: BulletA4 (Rato) - Hell
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 2
   speed: 2
-  manaCost: 3
+  manaCost: 2
   bulletPrefab: {fileID: 3603589608992736418, guid: 258e751b9075d8541a5f8b4e36fd65bf,
     type: 3}
