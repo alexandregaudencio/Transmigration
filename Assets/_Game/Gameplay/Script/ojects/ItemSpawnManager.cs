@@ -17,7 +17,9 @@ public class ItemSpawnManager : MonoBehaviour
     //<summary>
     //Set the Category 
     //</summary>
-    [SerializeField] private float waitTimeToSpawnInSeconds;
+    [SerializeField] private float minTimeToSpawnInSeconds;
+    [SerializeField] private float maxTimeToSpawnInSeconds;
+    private float getRandomWaitTimeToSpawn => UnityEngine.Random.Range(minTimeToSpawnInSeconds, maxTimeToSpawnInSeconds);
     private GameObject GetRandomSpawnObject => spawnObjects[UnityEngine.Random.Range(0, spawnObjects.Length)];
 
     private void Awake()
@@ -61,7 +63,7 @@ public class ItemSpawnManager : MonoBehaviour
     private IEnumerator TimeToSpawn()
     {
         //Recomeçando o temporizador para spawnar um novo item coletável.
-        yield return new WaitForSeconds(waitTimeToSpawnInSeconds);
+        yield return new WaitForSeconds(getRandomWaitTimeToSpawn);
         SpawnItem();
 
     }

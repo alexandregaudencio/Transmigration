@@ -10,10 +10,11 @@ namespace Player.Data.Score
         [SerializeField] private List<PlayerScore> playerScoresTeam;
         private TMP_Text text_score;
         [Min(0)] private float totalTeamScore = 0;
-        
 
+        Animator animator;
         private void Awake()
         {
+            animator = GetComponent<Animator>();
             text_score = GetComponent<TMP_Text>();
         }
 
@@ -39,6 +40,7 @@ namespace Player.Data.Score
         {
             totalTeamScore += newAmmount;
             text_score.SetText(string.Format("{0:0}", totalTeamScore));
+            animator.Play("ScoreReact");
         }
 
     }

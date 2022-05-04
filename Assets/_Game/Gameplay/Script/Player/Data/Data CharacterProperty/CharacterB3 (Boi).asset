@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CharacterB3 (Boi)
   m_EditorClassIdentifier: 
   speed: 250
-  defense: 50
+  defense: 0
   dashSpeed: 20
-  hp: 50
-  dashStaminCost: 20
+  hp: 140
+  dashStaminCost: 35
   dashStamin: 50
   dashStaminRecoveryPercentagemInSeconds: 15
   mana: 50

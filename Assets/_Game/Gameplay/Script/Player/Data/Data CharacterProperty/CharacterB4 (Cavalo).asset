@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CharacterB4 (Cavalo)
   m_EditorClassIdentifier: 
   speed: 400
-  defense: 50
+  defense: 0
   dashSpeed: 20
-  hp: 50
+  hp: 60
   dashStaminCost: 20
   dashStamin: 50
   dashStaminRecoveryPercentagemInSeconds: 15

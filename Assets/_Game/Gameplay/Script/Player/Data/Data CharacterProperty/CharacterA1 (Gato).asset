@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 300
   defense: 0
-  dashSpeed: 30
+  dashSpeed: 20
   hp: 100
-  dashStaminCost: 20
+  dashStaminCost: 30
   dashStamin: 50
   dashStaminRecoveryPercentagemInSeconds: 15
   mana: 50

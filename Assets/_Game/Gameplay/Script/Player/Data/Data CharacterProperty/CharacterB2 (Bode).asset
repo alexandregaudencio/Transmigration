@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a451a1ab9e88b34990b221c521908d2, type: 3}
   m_Name: CharacterB2 (Bode)
   m_EditorClassIdentifier: 
-  speed: 250
-  defense: 50
+  speed: 350
+  defense: 0
   dashSpeed: 20
-  hp: 50
-  dashStaminCost: 20
+  hp: 80
+  dashStaminCost: 30
   dashStamin: 50
   dashStaminRecoveryPercentagemInSeconds: 15
   mana: 50

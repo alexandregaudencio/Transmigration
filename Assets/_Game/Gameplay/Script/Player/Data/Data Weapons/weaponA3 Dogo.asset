@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6955fe804aed2448b2574fbcbc1fa5c, type: 3}
   m_Name: weaponA3 Dogo
   m_EditorClassIdentifier: 
-  cooldownInSeconds: 0.1
-  manaRecoveryPercentagePerSecond: 15
+  cooldownInSeconds: 4
+  manaRecoveryPercentagePerSecond: 25
   bullet: {fileID: 11400000, guid: eed1020a2205308459d3aa77256ebecb, type: 2}

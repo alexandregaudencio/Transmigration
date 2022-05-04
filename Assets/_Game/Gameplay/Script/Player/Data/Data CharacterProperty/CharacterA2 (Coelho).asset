@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: CharacterA2 (Coelho)
   m_EditorClassIdentifier: 
   speed: 350
-  defense: 50
+  defense: 0
   dashSpeed: 20
-  hp: 30
-  dashStaminCost: 20
+  hp: 80
+  dashStaminCost: 30
   dashStamin: 50
-  dashStaminRecoveryPercentagemInSeconds: 10
+  dashStaminRecoveryPercentagemInSeconds: 15
   mana: 50
   weapon: {fileID: 11400000, guid: 615db72d9bd4850489254f9c8675a657, type: 2}
   characterName: Conjurer

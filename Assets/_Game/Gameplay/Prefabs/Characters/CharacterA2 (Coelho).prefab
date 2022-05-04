@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 5380456996812818207}
   - component: {fileID: 7110118087711801879}
   - component: {fileID: -9156921984063709757}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: CharacterA2 (Coelho)
   m_TagString: character
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58ca1cb11e942284ca05f006467343eb, type: 2}
   - {fileID: 11400000, guid: 3410b954f9e47004aa5f19f61a1c6274, type: 2}
   - {fileID: 11400000, guid: d95cf51a76f558f4c860be45252373c1, type: 2}
-  playerScore: {fileID: 0}
 --- !u!114 &5380456996812818207
 MonoBehaviour:
   m_ObjectHideFlags: 0

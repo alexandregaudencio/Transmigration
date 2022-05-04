@@ -7,7 +7,7 @@ namespace Player.Data.Score
     public class PlayerScoreManager : MonoBehaviour, IScore
     {
         [SerializeField] private PlayerScore[] playerScoreList;
-        private PlayerScore playerScore;
+       [SerializeField] private PlayerScore playerScore;
         private PlayerScore lastPlayerDamager;
         private InputJoystick inputJoystick;
         private HPManager hPManager;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610c5050c94043a489c1149b6f982a8e, type: 3}
   m_Name: BulletA1 (Gato) - Flame
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 4
   speed: 2
   manaCost: 3.3
   bulletPrefab: {fileID: 8390771117579472041, guid: dc0da414fd23eac46a78372e0e7cc669,

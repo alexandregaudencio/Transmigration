@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulletA4 (Rato) - Hell
   m_EditorClassIdentifier: 
   damage: 3
-  speed: 1.8
+  speed: 2
   manaCost: 3
   bulletPrefab: {fileID: 3603589608992736418, guid: 258e751b9075d8541a5f8b4e36fd65bf,
     type: 3}

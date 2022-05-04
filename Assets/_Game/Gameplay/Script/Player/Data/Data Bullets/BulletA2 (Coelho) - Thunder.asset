@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610c5050c94043a489c1149b6f982a8e, type: 3}
   m_Name: BulletA2 (Coelho) - Thunder
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 60
   speed: 1.5
-  manaCost: 20
+  manaCost: 25
   bulletPrefab: {fileID: 2824951896708961409, guid: 1adb76eec28b2514897fb6bbeb7424e5,
     type: 3}

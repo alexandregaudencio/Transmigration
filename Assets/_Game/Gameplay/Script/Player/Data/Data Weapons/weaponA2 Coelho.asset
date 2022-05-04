@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: weaponA2 Coelho
   m_EditorClassIdentifier: 
   cooldownInSeconds: 2
-  manaRecoveryPercentagePerSecond: 20
+  manaRecoveryPercentagePerSecond: 12
   bullet: {fileID: 11400000, guid: 16c6c659f3953fc4cae73dcf6d54040a, type: 2}

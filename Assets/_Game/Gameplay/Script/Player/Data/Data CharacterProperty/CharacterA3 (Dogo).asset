@@ -15,8 +15,8 @@ MonoBehaviour:
   speed: 250
   defense: 0
   dashSpeed: 20
-  hp: 160
-  dashStaminCost: 20
+  hp: 140
+  dashStaminCost: 35
   dashStamin: 50
   dashStaminRecoveryPercentagemInSeconds: 15
   mana: 50
