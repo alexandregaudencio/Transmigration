@@ -6,10 +6,10 @@ public class PingFPSGUI : MonoBehaviour
 {
     private float fps;
     //[SerializeField] private int targetFrameRate;
-    [Range(1,6)] public int joystickPlayerIndex;
+    //[Range(1,6)] public int joystickPlayerIndex;
     private void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         StartCoroutine(SetFpsAndPing());
         //Application.targetFrameRate = targetFrameRate;
 

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: weaponA4 Rato
   m_EditorClassIdentifier: 
   cooldownInSeconds: 0.05
-  manaRecoveryPercentagePerSecond: 15
+  manaRecoveryPercentagePerSecond: 20
   bullet: {fileID: 11400000, guid: 3dc8c6e573517e34b85dc37581f19de2, type: 2}
